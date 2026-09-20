@@ -68,8 +68,14 @@ class PostDraft:
     image_path: str | None = None
     image_meta: dict[str, Any] = field(default_factory=dict)
     item_ids: list[str] = field(default_factory=list)
+    # Trimmed copies of the items this post was written from. They are what
+    # makes the "Переписать" button work: the post can be regenerated from the
+    # same facts on a later run, when the original items are long gone from
+    # the collector. See pipeline.run.regenerate_rewrites.
+    source_items: list[dict[str, Any]] = field(default_factory=list)
     gate: dict[str, Any] = field(default_factory=dict)
     approval: dict[str, Any] = field(default_factory=dict)
+    rewrite_count: int = 0
     publish_key: str = ""           # idempotency key, see pipeline.publish
 
     def to_dict(self) -> dict[str, Any]:

@@ -51,11 +51,32 @@ def compose_text(payload: dict[str, Any]) -> str:
     return "\n\n".join(p for p in parts if p)
 
 
+# Fields kept when a draft snapshots the items it was written from.
+# raw_text is dropped on purpose: it is up to 4000 characters per item and
+# state/queue.json is committed to git on every run.
+_SNAPSHOT_FIELDS = (
+    "item_id", "source_id", "category", "title", "summary", "url",
+    "canonical_url", "published_at", "collected_at", "lang",
+)
+
+
+def snapshot_items(items: list[NormalizedItem]) -> list[dict[str, Any]]:
+    out = []
+    for item in items:
+        data = item.to_dict()
+        row = {key: data.get(key) for key in _SNAPSHOT_FIELDS}
+        row["summary"] = (row.get("summary") or "")[:600]
+        out.append(row)
+    return out
+
+
 def generate_for_rubric(
     settings: Settings,
     rubric: str,
     items: list[NormalizedItem],
     provider: Any = None,
+    *,
+    extra_instruction: str = "",
 ) -> PostDraft | None:
     if not items:
         log.info("Рубрика %s: нет подходящих материалов", rubric)
@@ -65,6 +86,8 @@ def generate_for_rubric(
     max_chars = int(meta.get("max_chars", 900))
     provider = provider or get_provider(settings)
     system, user = prompts.build_prompt(rubric, items)
+    if extra_instruction:
+        user = f"{user}\n\n{extra_instruction}"
 
     last_error = ""
     for attempt in range(1, MAX_ATTEMPTS + 1):
@@ -106,6 +129,7 @@ def generate_for_rubric(
             status="draft" if verdict["passed"] else "failed",
             created_at=datetime.now(timezone.utc).isoformat(),
             item_ids=[i.item_id for i in items],
+            source_items=snapshot_items(items),
             gate=verdict,
         )
         if not verdict["passed"]:

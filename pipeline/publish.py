@@ -67,7 +67,39 @@ def publish_one(settings: Settings, post: dict[str, Any], client: TelegramClient
                 message_ids.append((response.get("result") or {}).get("message_id"))
     except Exception as exc:
         log.error("Публикация %s не удалась: %s", post.get("post_id"), exc)
-        # Release the claim so the next run can retry.
+        sent = [m for m in message_ids if m]
+        if sent:
+            # Part of the post is already in the channel (typically the photo
+            # went out and the follow-up text did not). Releasing the key here
+            # would make the next run send the photo a second time, so the
+            # claim stays and the post is marked for manual attention.
+            record = {
+                "post_id": post.get("post_id"),
+                "publish_key": key,
+                "rubric": post.get("rubric"),
+                "message_ids": sent,
+                "published_at": datetime.now(timezone.utc).isoformat(),
+                "mode": plan["mode"],
+                "partial": True,
+                "error": str(exc),
+                "length_chars": post.get("length_chars", 0),
+                "has_photo": bool(post.get("image_path")),
+                "has_cta": bool(post.get("cta")),
+                "source_ids": [s.get("source_id") for s in (post.get("sources") or [])],
+                "image_meta": post.get("image_meta") or {},
+                "dry_run": settings.dry_run,
+            }
+            published.setdefault("posts", []).append(record)
+            if persist:
+                state.save("published.json", published)
+            log.error(
+                "Пост %s ушёл частично (%d сообщений). Повтора не будет, "
+                "чтобы не задвоить. Допубликуйте хвост руками.",
+                post.get("post_id"), len(sent),
+            )
+            return {"post_id": post.get("post_id"), "published": False,
+                    "partial": True, "record": record, "error": str(exc)}
+        # Nothing left the process: release the claim so the next run retries.
         published["keys"] = [k for k in published.get("keys", []) if k != key]
         if persist:
             state.save("published.json", published)

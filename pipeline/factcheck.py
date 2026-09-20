@@ -46,7 +46,20 @@ BANNED_PATTERNS = (
 # Numbers that carry no factual claim and never need a source.
 _NOISE_NUMBERS = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "0", "100"}
 
-_NUMBER_RE = re.compile(r"\d[\d\s .,]*\d|\d")
+def _calendar_years() -> set[str]:
+    """The current year and its neighbours: "в 2026 году" is a calendar fact, not a claim."""
+    from datetime import datetime, timezone
+
+    year = datetime.now(timezone.utc).year
+    return {str(year - 1), str(year), str(year + 1)}
+
+
+# A number is digits, optionally with space-separated thousand groups of
+# exactly three digits, plus one decimal tail: "1 850 000", "12,7", "3.5".
+# The previous pattern let the separator class run across a sentence
+# boundary, so "Дубай, 2026. 15 проектов" yielded the phantom number
+# 202615 and the post was rejected for a figure nobody had written.
+_NUMBER_RE = re.compile(r"\d+(?:[\u00a0\u202f ]\d{3})*(?:[.,]\d+)?")
 _CYRILLIC_RE = re.compile(r"[а-яёА-ЯЁ]")
 
 
@@ -88,13 +101,27 @@ def check(payload: dict[str, Any], items: list[NormalizedItem], *, max_chars: in
     body = payload.get("body", "")
     combined = f"{payload.get('title', '')}\n{body}\n{payload.get('cta', '')}"
 
+    input_urls = {canonical_url(i.url) for i in items if i.url}
+
     # 1. numbers
     allowed_digits = _haystack_digits(items)
+    allowed_digits |= _calendar_years()
+    # A declared fact only vouches for its number if it points at a URL that
+    # really was in the input. Without this check the model can invent any
+    # figure, list it in ``facts`` with a made-up source_url and walk straight
+    # through the gate — which defeats the whole anti-hallucination rule of
+    # the brief (§4). Verified by tests/test_factcheck.py.
     for fact in payload.get("facts") or []:
-        allowed_digits.update(_digits(str(fact.get("value", ""))) for _ in (0,))
         digits = _digits(str(fact.get("value", "")))
-        if digits:
+        if not digits:
+            continue
+        fact_url = canonical_url(str(fact.get("source_url") or fact.get("url") or ""))
+        if fact_url and fact_url in input_urls:
             allowed_digits.add(digits)
+        else:
+            warnings.append(
+                f"Факт {fact.get('value')!r} ссылается на источник вне входных данных"
+            )
     unsourced = sorted({n for n in extract_numbers(combined) if n not in allowed_digits})
     if unsourced:
         errors.append(
@@ -102,7 +129,6 @@ def check(payload: dict[str, Any], items: list[NormalizedItem], *, max_chars: in
         )
 
     # 2. sources
-    input_urls = {canonical_url(i.url) for i in items}
     cited = [canonical_url(str(s.get("url", ""))) for s in (payload.get("sources") or [])]
     if items and not cited:
         errors.append("В посте не указан ни один источник")

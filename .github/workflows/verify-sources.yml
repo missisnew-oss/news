@@ -1,0 +1,35 @@
+# Еженедельная перепроверка реестра источников реальными HTTP-запросами.
+# 02:00 UTC по воскресеньям = 06:00 воскресенья по Дубаю.
+name: Verify Sources
+
+on:
+  schedule:
+    - cron: "0 2 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Установка зависимостей
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install -r requirements.txt
+
+      # Нерабочие источники не должны валить workflow — их надо зафиксировать.
+      - name: Проверка источников
+        run: python -m pipeline.verify_sources || true
+
+      - name: Коммит результата проверки
+        run: bash scripts/commit_state.sh "state: проверка источников" config/sources.yml

@@ -1,0 +1,59 @@
+{
+  "_comment": "Демонстрационные данные для DRY_RUN. Домены example.com выбраны намеренно: это не настоящие новости и не настоящие URL, чтобы сухой прогон никогда не выдавал выдуманные факты за реальные.",
+  "items": [
+    {
+      "source_id": "demo_realty_news",
+      "title": "Demo: quarterly residential transaction volume report published",
+      "summary": "Demonstration input for a dry run. Total registered transactions in the quarter: 43000. Average apartment price: 1450000 AED.",
+      "url": "https://example.com/demo/realty/quarterly-report",
+      "published_at": "2026-09-19T08:00:00+00:00",
+      "image_url": null,
+      "raw_text": "Demonstration input for a dry run. Total registered transactions in the quarter: 43000. Average apartment price: 1450000 AED."
+    },
+    {
+      "source_id": "demo_official_data",
+      "title": "Demo: regulator publishes updated escrow rules for off-plan sales",
+      "summary": "Demonstration input. The updated rules take effect on 2026-11-01 and cover 12 categories of off-plan projects.",
+      "url": "https://example.com/demo/official/escrow-rules",
+      "published_at": "2026-09-19T11:30:00+00:00",
+      "image_url": null,
+      "raw_text": "Demonstration input. The updated rules take effect on 2026-11-01 and cover 12 categories of off-plan projects."
+    },
+    {
+      "source_id": "demo_developers",
+      "title": "Demo: developer announces a new waterfront launch with 320 units",
+      "summary": "Demonstration input. The project comprises 320 units, handover targeted for 2029, starting price 1900000 AED.",
+      "url": "https://example.com/demo/developers/waterfront-launch",
+      "published_at": "2026-09-20T06:10:00+00:00",
+      "image_url": null,
+      "raw_text": "Demonstration input. The project comprises 320 units, handover targeted for 2029, starting price 1900000 AED."
+    },
+    {
+      "source_id": "demo_city_gov",
+      "title": "Demo: authority updates residence visa processing timelines",
+      "summary": "Demonstration input. Standard processing moves from 15 to 7 working days starting 2026-10-01.",
+      "url": "https://example.com/demo/gov/visa-timelines",
+      "published_at": "2026-09-18T14:45:00+00:00",
+      "image_url": null,
+      "raw_text": "Demonstration input. Standard processing moves from 15 to 7 working days starting 2026-10-01."
+    },
+    {
+      "source_id": "demo_events",
+      "title": "Demo: winter festival season programme announced for the city",
+      "summary": "Demonstration input. The programme runs from 2026-11-15 to 2027-01-10 and lists 45 events across 12 venues.",
+      "url": "https://example.com/demo/events/winter-festival",
+      "published_at": "2026-09-20T05:00:00+00:00",
+      "image_url": null,
+      "raw_text": "Demonstration input. The programme runs from 2026-11-15 to 2027-01-10 and lists 45 events across 12 venues."
+    },
+    {
+      "source_id": "demo_lifestyle",
+      "title": "Demo: new public transport payment option rolls out for residents",
+      "summary": "Demonstration input. The option covers 9 lines and 78 stations from 2026-10-15.",
+      "url": "https://example.com/demo/lifestyle/transport-payment",
+      "published_at": "2026-09-17T09:20:00+00:00",
+      "image_url": null,
+      "raw_text": "Demonstration input. The option covers 9 lines and 78 stations from 2026-10-15."
+    }
+  ]
+}

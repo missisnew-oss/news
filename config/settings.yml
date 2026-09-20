@@ -1,0 +1,23 @@
+# Ненастраиваемые секреты сюда НЕ пишутся — только безопасные параметры.
+# Секреты берутся из переменных окружения / GitHub Secrets (см. .env.example).
+
+generation:
+  # Сколько постов генерировать за один прогон workflow сбора.
+  max_posts_per_run: 2
+  # Сколько материалов подавать в промпт одной рубрики.
+  items_per_post: 4
+
+queue:
+  # Слоты публикации по времени Asia/Dubai (дублируют pipeline/postqueue.py::SLOTS).
+  slots: ["09:30", "19:30"]
+
+score:
+  # Период полураспада свежести в часах.
+  freshness_half_life_hours: 36
+
+analytics:
+  # Минимум измеренных постов в рубрике, чтобы её вес пересчитывался.
+  min_sample: 3
+  learning_rate: 0.25
+  weight_min: 0.6
+  weight_max: 1.6

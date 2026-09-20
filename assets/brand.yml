@@ -1,0 +1,7 @@
+# Фирменный стиль карточек. Меняйте цвета и подпись — код подхватит без правок.
+name: "DUBAI PROPERTY"
+bg_from: "#0B2B40"
+bg_to: "#155E75"
+accent: "#F2B84B"
+text: "#FFFFFF"
+muted: "#BFD4DE"

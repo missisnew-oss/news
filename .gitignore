@@ -1,0 +1,27 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Real runtime state (only *.example.json is tracked)
+state/*.json
+!state/*.example.json
+
+# Generated artefacts
+out/
+assets/generated/
+assets/cache/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/

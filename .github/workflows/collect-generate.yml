@@ -1,0 +1,64 @@
+# Сбор источников и генерация постов.
+# Время в cron — ВСЕГДА UTC. Дубай = UTC+4.
+#   03:00 UTC = 07:00 Дубай — материалы готовы к утреннему апруву
+#   12:00 UTC = 16:00 Дубай — материалы готовы к вечернему слоту
+name: Collect & Generate
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+    - cron: "0 12 * * *"
+  workflow_dispatch:
+    inputs:
+      max_posts:
+        description: "Сколько постов сгенерировать"
+        required: false
+        default: "2"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pipeline-state
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Установка зависимостей
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install -r requirements.txt
+
+      - name: Сбор и генерация
+        env:
+          DRY_RUN: "0"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_OWNER_ID: ${{ secrets.TELEGRAM_OWNER_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LLM_PROVIDER: ${{ vars.LLM_PROVIDER || 'anthropic' }}
+          LLM_MODEL: ${{ vars.LLM_MODEL || 'claude-sonnet-5' }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: python -m pipeline.run --stage generate --max-posts "${{ inputs.max_posts || 2 }}"
+
+      - name: Превью на апрув владельцу
+        env:
+          DRY_RUN: "0"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_OWNER_ID: ${{ secrets.TELEGRAM_OWNER_ID }}
+        run: python -m pipeline.run --stage approve --rounds 1 --poll-timeout 5
+
+      - name: Коммит состояния
+        run: bash scripts/commit_state.sh "state: сбор и генерация"

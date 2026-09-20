@@ -1,0 +1,14 @@
+# Runtime dependencies for the Dubai real-estate Telegram channel pipeline.
+# Python 3.11+
+requests==2.32.3
+PyYAML==6.0.2
+feedparser==6.0.11
+python-dateutil==2.9.0.post0
+Pillow==10.4.0
+anthropic==0.34.2
+
+# Optional: enable the OpenAI provider (LLM_PROVIDER=openai) by installing this too.
+# openai==1.51.0
+
+# Dev / CI
+pytest==8.3.3

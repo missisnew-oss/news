@@ -1,0 +1,1005 @@
+version: 1
+meta:
+  updated_at: "2026-09-20"
+  timezone: "Asia/Dubai"
+  # ВНИМАНИЕ. Реестр собран в окружении БЕЗ исходящего доступа в интернет
+  # (egress-прокси отвечал 403 на CONNECT ко всем внешним хостам).
+  # Ни один URL ниже НЕ подтверждён реальным HTTP-запросом.
+  # Поэтому у всех источников verification.status: unverified и enabled: false.
+  # ПЕРВЫЙ ШАГ ВЛАДЕЛЬЦА: `make verify-sources` в окружении с обычным интернетом.
+  # Скрипт проставит фактические http_code/items_found и включит только живые.
+  # Подробности и список кандидатов — в docs/SOURCES.md.
+  verification_environment: "no_network_egress"
+defaults:
+  timeout_sec: 20
+  user_agent: "DubaiNewsBot/1.0 (+https://github.com/missisnew-oss/news)"
+  max_items_per_source: 20
+categories:
+  realty_news:   {title: "Новости недвижимости ОАЭ",        weight: 1.0}
+  official_data: {title: "Официальные данные и регуляторы", weight: 1.2}
+  developers:    {title: "Застройщики и лончи",             weight: 1.0}
+  city_gov:      {title: "Город, законы, визы, транспорт",  weight: 0.9}
+  events:        {title: "Афиша и события Дубая",           weight: 0.8}
+  lifestyle:     {title: "Лайфстайл и сервисы",             weight: 0.7}
+sources:
+
+  # ---------------- realty_news ----------------
+  - id: gulf_news_rss
+    title: "Gulf News — общая лента (фильтровать по Property)"
+    url: "https://gulfnews.com/rss"
+    homepage: "https://gulfnews.com/business/property"
+    type: rss
+    category: realty_news
+    topics: [market, prices, transactions]
+    lang: en
+    update_freq: hourly
+    reliability: 4
+    weight: 1.0
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Пересказ своими словами + обязательная ссылка на первоисточник"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Корневой /rss найден только в поисковом индексе. Секционный путь /rss/property НЕ подтверждён — проверить оба."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: khaleej_times_rss
+    title: "Khaleej Times — лента новостей"
+    url: "https://www.khaleejtimes.com/rss"
+    homepage: "https://www.khaleejtimes.com/business/property"
+    type: rss
+    category: realty_news
+    topics: [market, rentals, regulation]
+    lang: en
+    update_freq: hourly
+    reliability: 4
+    weight: 1.0
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Пересказ + ссылка. Полные тексты не перепечатывать"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Раздел /business/property найден в индексе, сам /rss — нет."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: arabian_business_realty_tag
+    title: "Arabian Business — тег Dubai real estate trends"
+    url: "https://www.arabianbusiness.com/tags/dubai-real-estate-trends/feed"
+    homepage: "https://www.arabianbusiness.com/industries/real-estate"
+    type: rss
+    category: realty_news
+    topics: [market, analysis, trends]
+    lang: en
+    update_freq: daily
+    reliability: 3
+    weight: 1.0
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Пересказ + ссылка"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL с суффиксом /feed найден в поисковом индексе — наиболее вероятный рабочий RSS в категории."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: zawya_real_estate
+    title: "Zawya — Real Estate (пресс-релизы рынка)"
+    url: "https://www.zawya.com/en/business/real-estate"
+    homepage: "https://www.zawya.com/en/business/real-estate"
+    type: html
+    category: realty_news
+    topics: [press_release, market]
+    lang: en
+    update_freq: daily
+    reliability: 3
+    weight: 0.9
+    enabled: false
+    license:
+      reuse: press_release
+      note: "Раздел press-release допускает цитирование пресс-материалов со ссылкой"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Домен и формат ссылок press-release видны в индексе."
+    extract:
+      items_path: "article a[href*='/en/']"
+      title_path: "h3, h2"
+      url_path: "@href"
+      date_path: "time@datetime"
+      summary_path: "p"
+
+  - id: property_finder_blog
+    title: "Property Finder — блог и market reports"
+    url: "https://www.propertyfinder.ae/blog/"
+    homepage: "https://www.propertyfinder.ae/"
+    type: html
+    category: realty_news
+    topics: [market_report, prices, guides]
+    lang: en
+    update_freq: weekly
+    reliability: 3
+    weight: 0.9
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Коммерческий портал: только пересказ цифр со ссылкой"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Домен виден в индексе, путь /blog/ — нет."
+    extract:
+      items_path: "article"
+      title_path: "h2 a"
+      url_path: "h2 a@href"
+      date_path: "time@datetime"
+      summary_path: "p"
+
+  # ---------------- official_data ----------------
+  - id: dubai_pulse_dld_transactions_api
+    title: "Dubai Pulse — DLD Transactions (Open API)"
+    url: "https://www.dubaipulse.gov.ae/data/dld-transactions/dld_transactions-open-api"
+    homepage: "https://www.dubaipulse.gov.ae/data/dld-transactions"
+    type: json_api
+    category: official_data
+    topics: [transactions, volumes, open_data]
+    lang: en
+    update_freq: daily
+    reliability: 5
+    weight: 1.3
+    enabled: false
+    license:
+      reuse: open_data
+      note: "Open data Дубая. Нужна регистрация и OAuth client_credentials. Атрибуция DLD/Dubai Pulse обязательна"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Страница датасета видна в индексе. Эндпоинт под OAuth — анонимный GET вернёт 401, это ожидаемо."
+    extract:
+      items_path: "data"
+      title_path: null
+      url_path: null
+      date_path: "instance_date"
+      summary_path: null
+
+  - id: dubai_pulse_dld_transactions_bulk
+    title: "Dubai Pulse — DLD Transactions (bulk CSV)"
+    url: "https://www.dubaipulse.gov.ae/data/dld-transactions/dld_transactions-open"
+    homepage: "https://www.dubaipulse.gov.ae/data/dld-transactions"
+    type: html
+    category: official_data
+    topics: [transactions, csv, open_data]
+    lang: en
+    update_freq: daily
+    reliability: 5
+    weight: 1.2
+    enabled: false
+    license:
+      reuse: open_data
+      note: "Open data, свободное использование с атрибуцией DLD"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Страница датасета видна в индексе. Прямая ссылка на CSV добывается со страницы."
+    extract:
+      items_path: "a[href$='.csv']"
+      title_path: "@title"
+      url_path: "@href"
+      date_path: null
+      summary_path: null
+
+  - id: dld_open_data_portal
+    title: "Dubai Land Department — Open Data / Real Estate Data"
+    url: "https://dubailand.gov.ae/en/open-data/real-estate-data/"
+    homepage: "https://dubailand.gov.ae/en/open-data/"
+    type: html
+    category: official_data
+    topics: [indices, reports, transactions]
+    lang: en
+    update_freq: weekly
+    reliability: 5
+    weight: 1.2
+    enabled: false
+    license:
+      reuse: open_data
+      note: "Официальные данные регулятора, атрибуция DLD"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в поисковом индексе."
+    extract:
+      items_path: ".card, .listing-item"
+      title_path: "h3"
+      url_path: "a@href"
+      date_path: null
+      summary_path: "p"
+
+  - id: dld_api_gateway
+    title: "Dubai Land Department — API Gateway (Dubai REST)"
+    url: "https://dubailand.gov.ae/en/eservices/api-gateway/"
+    homepage: "https://dubailand.gov.ae/en/eservices/"
+    type: html
+    category: official_data
+    topics: [api, dubai_rest, valuation]
+    lang: en
+    update_freq: irregular
+    reliability: 5
+    weight: 1.0
+    enabled: false
+    license:
+      reuse: api_terms
+      note: "Доступ по договору/ключу. Условия переиспользования — по api_terms DLD"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в индексе. Это точка входа для регистрации, не сам фид."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: bayanat_ckan_api
+    title: "Bayanat.ae — федеральный open data портал (CKAN API)"
+    url: "https://data.bayanat.ae/api/3/action/package_search?q=dubai&rows=20"
+    homepage: "https://bayanat.ae/en/developersapiguide"
+    type: json_api
+    category: official_data
+    topics: [open_data, statistics, federal]
+    lang: en
+    update_freq: irregular
+    reliability: 4
+    weight: 1.0
+    enabled: false
+    license:
+      reuse: open_data
+      note: "Открытые данные ОАЭ, свободное использование"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Портал опознан как CKAN по странице developersapiguide. Путь /api/3/action/package_search — стандартный CKAN, но конкретно он НЕ проверен."
+    extract:
+      items_path: "result.results"
+      title_path: "title"
+      url_path: "name"
+      date_path: "metadata_modified"
+      summary_path: "notes"
+
+  - id: cbuae_press_releases
+    title: "Central Bank of the UAE — пресс-релизы"
+    url: "https://www.centralbank.ae/en/news-and-publications/news-and-insights/press-release/media-center-news-room-press-releases-announcements/"
+    homepage: "https://www.centralbank.ae/en/news-and-publications/"
+    type: html
+    category: official_data
+    topics: [rates, mortgage, regulation]
+    lang: en
+    update_freq: weekly
+    reliability: 5
+    weight: 1.2
+    enabled: false
+    license:
+      reuse: press_release
+      note: "Официальные пресс-релизы регулятора — цитирование разрешено со ссылкой"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в поисковом индексе."
+    extract:
+      items_path: ".news-list__item, article"
+      title_path: "h3, h2"
+      url_path: "a@href"
+      date_path: "time@datetime, .date"
+      summary_path: "p"
+
+  # ---------------- developers ----------------
+  - id: emaar_press_releases
+    title: "Emaar Properties — пресс-релизы"
+    url: "https://www.emaar.com/en/press-release-listing"
+    homepage: "https://www.emaar.com/en/"
+    type: html
+    category: developers
+    topics: [launches, financials, handover]
+    lang: en
+    update_freq: weekly
+    reliability: 5
+    weight: 1.1
+    enabled: false
+    license:
+      reuse: press_release
+      note: "Пресс-материалы застройщика — можно цитировать и использовать фото из пресс-кита со ссылкой"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в поисковом индексе."
+    extract:
+      items_path: ".press-release-item, article"
+      title_path: "h3, h2"
+      url_path: "a@href"
+      date_path: ".date, time@datetime"
+      summary_path: "p"
+
+  - id: emaar_ma_press_feed
+    title: "Emaar (ma.emaar.com) — тег press-release, WordPress-фид"
+    url: "https://ma.emaar.com/en/tag/press-release/feed/"
+    homepage: "https://ma.emaar.com/en/tag/press-release/"
+    type: rss
+    category: developers
+    topics: [launches, press_release]
+    lang: en
+    update_freq: weekly
+    reliability: 4
+    weight: 1.0
+    enabled: false
+    license:
+      reuse: press_release
+      note: "Пресс-материалы застройщика"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Страница тега видна в индексе, сайт на WordPress — суффикс /feed/ достроен по паттерну и НЕ проверен."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: nakheel_media_centre
+    title: "Nakheel — Media Centre"
+    url: "https://www.nakheel.com/en/media-centre"
+    homepage: "https://www.nakheel.com/en"
+    type: html
+    category: developers
+    topics: [launches, masterplans, press_release]
+    lang: en
+    update_freq: weekly
+    reliability: 5
+    weight: 1.0
+    enabled: false
+    license:
+      reuse: press_release
+      note: "Пресс-материалы застройщика"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в поисковом индексе."
+    extract:
+      items_path: ".media-item, article"
+      title_path: "h3, h2"
+      url_path: "a@href"
+      date_path: ".date, time@datetime"
+      summary_path: "p"
+
+  - id: aldar_media_hub
+    title: "Aldar Properties — Media Centre"
+    url: "https://www.aldar.com/en/media"
+    homepage: "https://www.aldar.com/en"
+    type: html
+    category: developers
+    topics: [launches, financials, abu_dhabi]
+    lang: en
+    update_freq: weekly
+    reliability: 5
+    weight: 0.9
+    enabled: false
+    license:
+      reuse: press_release
+      note: "Пресс-материалы застройщика"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в индексе. Aldar — преимущественно Абу-Даби, вес понижен."
+    extract:
+      items_path: ".media-item, article"
+      title_path: "h3, h2"
+      url_path: "a@href"
+      date_path: ".date, time@datetime"
+      summary_path: "p"
+
+  - id: zawya_developer_press
+    title: "Zawya — пресс-релизы компаний (лончи застройщиков)"
+    url: "https://www.zawya.com/en/press-release/companies-news"
+    homepage: "https://www.zawya.com/en/press-release"
+    type: html
+    category: developers
+    topics: [press_release, launches]
+    lang: en
+    update_freq: daily
+    reliability: 3
+    weight: 0.9
+    enabled: false
+    license:
+      reuse: press_release
+      note: "Агрегатор официальных пресс-релизов — цитирование со ссылкой"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Формат ссылок /en/press-release/companies-news/... виден в индексе; сама страница-листинг — нет."
+    extract:
+      items_path: "article a[href*='/press-release/']"
+      title_path: "h3, h2"
+      url_path: "@href"
+      date_path: "time@datetime"
+      summary_path: "p"
+
+  # ---------------- city_gov ----------------
+  - id: wam_rss
+    title: "WAM (Emirates News Agency) — RSS-хаб"
+    url: "https://www.wam.ae/en/rss"
+    homepage: "https://www.wam.ae/en"
+    type: rss
+    category: city_gov
+    topics: [government, laws, visas, official]
+    lang: en
+    update_freq: hourly
+    reliability: 5
+    weight: 1.1
+    enabled: false
+    license:
+      reuse: press_release
+      note: "Государственное информагентство — цитирование со ссылкой на WAM"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL опознан как страница RSS-лент. Это ХАБ со списком лент — при проверке разобрать на конкретные фиды."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: dubai_media_office_news
+    title: "Government of Dubai Media Office — новости"
+    url: "https://mediaoffice.ae/en/news"
+    homepage: "https://www.mediaoffice.ae/"
+    type: html
+    category: city_gov
+    topics: [government, dubai, official, decrees]
+    lang: en
+    update_freq: daily
+    reliability: 5
+    weight: 1.1
+    enabled: false
+    license:
+      reuse: press_release
+      note: "Официальные сообщения правительства Дубая — цитирование со ссылкой"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Домен и формат ссылок видны в индексе; листинг /en/news — нет."
+    extract:
+      items_path: "article, .news-card"
+      title_path: "h3, h2"
+      url_path: "a@href"
+      date_path: "time@datetime, .date"
+      summary_path: "p"
+
+  - id: gulf_news_uae
+    title: "Gulf News — раздел UAE (визы, законы, транспорт)"
+    url: "https://gulfnews.com/uae"
+    homepage: "https://gulfnews.com/uae"
+    type: html
+    category: city_gov
+    topics: [visas, laws, transport, utilities]
+    lang: en
+    update_freq: hourly
+    reliability: 4
+    weight: 1.0
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Пересказ + ссылка"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в индексе."
+    extract:
+      items_path: "article a[href*='-1.']"
+      title_path: "h3, h2"
+      url_path: "@href"
+      date_path: "time@datetime"
+      summary_path: "p"
+
+  - id: emirates247_rss
+    title: "Emirates 24|7 — RSS-хаб (UAE, лайфстайл, экономика)"
+    url: "https://www.emirates247.com/rss"
+    homepage: "https://www.emirates247.com/"
+    type: rss
+    category: city_gov
+    topics: [uae, economy, services]
+    lang: en
+    update_freq: daily
+    reliability: 3
+    weight: 0.8
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Пересказ + ссылка"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Страница RSS видна в индексе. Это хаб со списком лент по рубрикам."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  # ---------------- events ----------------
+  - id: visitdubai_events_calendar
+    title: "Visit Dubai — официальный Dubai Calendar"
+    url: "https://www.visitdubai.com/en/festivals-and-events/dubai-events-calendar"
+    homepage: "https://www.visitdubai.com/en/festivals-and-events"
+    type: html
+    category: events
+    topics: [festivals, seasonal, official_calendar]
+    lang: en
+    update_freq: weekly
+    reliability: 5
+    weight: 1.2
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Официальный туристический портал (DET). Анонсы пересказывать со ссылкой"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в индексе. Сайт SPA — ожидается JSON-подложка (__NEXT_DATA__ / _next/data), проверить при верификации."
+    extract:
+      items_path: "script#__NEXT_DATA__"
+      title_path: null
+      url_path: null
+      date_path: null
+      summary_path: null
+
+  - id: dubai_culture_events
+    title: "Dubai Culture — события и выставки"
+    url: "https://dubaiculture.gov.ae/en/events"
+    homepage: "https://dubaiculture.gov.ae/en"
+    type: html
+    category: events
+    topics: [culture, exhibitions, heritage]
+    lang: en
+    update_freq: weekly
+    reliability: 5
+    weight: 1.0
+    enabled: false
+    license:
+      reuse: press_release
+      note: "Государственный орган культуры — анонсы можно цитировать со ссылкой"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в индексе."
+    extract:
+      items_path: ".event-card, article"
+      title_path: "h3, h2"
+      url_path: "a@href"
+      date_path: ".event-date, time@datetime"
+      summary_path: "p"
+
+  - id: platinumlist_dubai_calendar
+    title: "Platinumlist Dubai — календарь событий"
+    url: "https://dubai.platinumlist.net/calendar/today"
+    homepage: "https://dubai.platinumlist.net/"
+    type: html
+    category: events
+    topics: [concerts, tickets, shows, calendar]
+    lang: en
+    update_freq: daily
+    reliability: 4
+    weight: 1.1
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Коммерческий тикетинг. Только анонс + ссылка, без копирования описаний и афиш"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в индексе. В индексе также видны query-фильтры вида ?date=YYYY-MM-DD."
+    extract:
+      items_path: ".event-card, [itemtype*='Event']"
+      title_path: "[itemprop='name']"
+      url_path: "a@href"
+      date_path: "[itemprop='startDate']@content"
+      summary_path: "[itemprop='description']"
+
+  - id: platinumlist_arena_events
+    title: "Platinumlist — афиша Coca-Cola Arena"
+    url: "https://dubai.platinumlist.net/coca-cola-arena-events"
+    homepage: "https://dubai.platinumlist.net/venue/6351/coca-cola-arena"
+    type: html
+    category: events
+    topics: [concerts, arena, sport]
+    lang: en
+    update_freq: weekly
+    reliability: 4
+    weight: 1.0
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Только анонс + ссылка"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Оба URL (категория и venue/6351) найдены в индексе."
+    extract:
+      items_path: "[itemtype*='Event']"
+      title_path: "[itemprop='name']"
+      url_path: "a@href"
+      date_path: "[itemprop='startDate']@content"
+      summary_path: null
+
+  - id: coca_cola_arena_events
+    title: "Coca-Cola Arena — официальная афиша"
+    url: "https://cocacolaarenadubai.com/events"
+    homepage: "https://cocacolaarenadubai.com/"
+    type: html
+    category: events
+    topics: [concerts, sport, comedy]
+    lang: en
+    update_freq: weekly
+    reliability: 5
+    weight: 1.1
+    enabled: false
+    license:
+      reuse: press_release
+      note: "Официальная площадка — анонсы и пресс-фото по пресс-киту"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в индексе. При проверке посмотреть JSON-LD Event и /sitemap.xml."
+    extract:
+      items_path: "script[type='application/ld+json']"
+      title_path: "name"
+      url_path: "url"
+      date_path: "startDate"
+      summary_path: "description"
+
+  - id: dwtc_events
+    title: "Dubai World Trade Centre — What's On (выставки)"
+    url: "https://www.dwtc.com/en/events/"
+    homepage: "https://www.dwtc.com/en/"
+    type: html
+    category: events
+    topics: [exhibitions, b2b, conferences]
+    lang: en
+    update_freq: weekly
+    reliability: 5
+    weight: 1.0
+    enabled: false
+    license:
+      reuse: press_release
+      note: "Официальная площадка — календарь и пресс-релизы можно цитировать со ссылкой"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в индексе."
+    extract:
+      items_path: ".event-listing__item, article"
+      title_path: "h3, h2"
+      url_path: "a@href"
+      date_path: ".event-date, time@datetime"
+      summary_path: "p"
+
+  - id: expocity_events
+    title: "Expo City Dubai — события и воркшопы"
+    url: "https://www.expocitydubai.com/en/things-to-do/events-and-workshops/"
+    homepage: "https://expocitydubai.com/en/"
+    type: html
+    category: events
+    topics: [family, workshops, seasonal]
+    lang: en
+    update_freq: weekly
+    reliability: 4
+    weight: 0.9
+    enabled: false
+    license:
+      reuse: press_release
+      note: "Официальная площадка, есть Media Centre с пресс-материалами"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в индексе. Пресс-центр: /en/media-centre/"
+    extract:
+      items_path: ".event-card, article"
+      title_path: "h3, h2"
+      url_path: "a@href"
+      date_path: ".date, time@datetime"
+      summary_path: "p"
+
+  - id: eventbrite_dubai
+    title: "Eventbrite — события в Дубае"
+    url: "https://www.eventbrite.com/d/united-arab-emirates--dubai/events/"
+    homepage: "https://www.eventbrite.com/d/united-arab-emirates--dubai/events/"
+    type: html
+    category: events
+    topics: [community, meetups, niche]
+    lang: en
+    update_freq: daily
+    reliability: 3
+    weight: 0.7
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Только анонс + ссылка. Публичный поисковый API Eventbrite отключён — остаётся HTML/JSON-LD"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. URL найден в индексе. Парсить JSON-LD со страницы."
+    extract:
+      items_path: "script[type='application/ld+json']"
+      title_path: "name"
+      url_path: "url"
+      date_path: "startDate"
+      summary_path: "description"
+
+  - id: ticketmaster_discovery_ae
+    title: "Ticketmaster Discovery API v2 — события AE"
+    url: "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=AE&size=20"
+    homepage: "https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/"
+    type: json_api
+    category: events
+    topics: [concerts, sport, tickets, api]
+    lang: en
+    update_freq: daily
+    reliability: 4
+    weight: 0.9
+    enabled: false
+    license:
+      reuse: api_terms
+      note: "Требуется бесплатный API-ключ (добавить &apikey=... в URL). Условия и атрибуция — по Ticketmaster API terms"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети и нет ключа. Документация Discovery API v2 видна в индексе; фактическую наполненность по Дубаю НУЖНО проверить вручную."
+    extract:
+      items_path: "_embedded.events"
+      title_path: "name"
+      url_path: "url"
+      date_path: "dates.start.dateTime"
+      summary_path: "info"
+
+  # ---------------- lifestyle ----------------
+  - id: whatson_ae_feed
+    title: "What's On Dubai — лента"
+    url: "https://whatson.ae/feed"
+    homepage: "https://whatson.ae/"
+    type: rss
+    category: lifestyle
+    topics: [restaurants, brunch, nightlife, things_to_do]
+    lang: en
+    update_freq: daily
+    reliability: 3
+    weight: 1.0
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Пересказ + ссылка"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Адрес достроен по WordPress-паттерну и НЕ проверен."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: timeout_dubai
+    title: "Time Out Dubai — что происходит в городе"
+    url: "https://www.timeoutdubai.com/"
+    homepage: "https://www.timeoutdubai.com/"
+    type: html
+    category: lifestyle
+    topics: [restaurants, things_to_do, reviews, offers]
+    lang: en
+    update_freq: daily
+    reliability: 4
+    weight: 1.1
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Пересказ + ссылка, изображения не переиспользовать"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Домен виден в индексе. Наличие /feed НЕ подтверждено — проверить /feed, /rss, /sitemap.xml."
+    extract:
+      items_path: "article"
+      title_path: "h2 a, h3 a"
+      url_path: "h2 a@href, h3 a@href"
+      date_path: "time@datetime"
+      summary_path: "p"
+
+  - id: lovin_dubai
+    title: "Lovin Dubai — городской лайфстайл"
+    url: "https://lovin.co/dubai/"
+    homepage: "https://lovin.co/"
+    type: html
+    category: lifestyle
+    topics: [city_life, food, deals, viral]
+    lang: en
+    update_freq: daily
+    reliability: 3
+    weight: 0.9
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Пересказ + ссылка"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Домен lovin.co виден в индексе, путь /dubai/ — нет."
+    extract:
+      items_path: "article"
+      title_path: "h2 a, h3 a"
+      url_path: "h2 a@href, h3 a@href"
+      date_path: "time@datetime"
+      summary_path: "p"
+
+  - id: dubai_edited_rss_hub
+    title: "Dubai Edited — хаб RSS-лент по рубрикам"
+    url: "https://dubaiedited.ae/rss-feeds/"
+    homepage: "https://dubaiedited.ae/"
+    type: html
+    category: lifestyle
+    topics: [food_and_drink, brunch, attractions, things_to_do]
+    lang: en
+    update_freq: daily
+    reliability: 3
+    weight: 0.8
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Пересказ + ссылка"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Страница-хаб видна в индексе: на ней перечислены фиды по рубрикам — распарсить и завести отдельными источниками."
+    extract:
+      items_path: "a[href*='feed']"
+      title_path: null
+      url_path: "@href"
+      date_path: null
+      summary_path: null
+
+  - id: dubai_city_guide_rss
+    title: "Dubai City Guide — новости города"
+    url: "https://www.dubaicityguide.com/site/main/rss-news.asp"
+    homepage: "https://www.dubaicityguide.com/"
+    type: rss
+    category: lifestyle
+    topics: [city_services, listings, practical]
+    lang: en
+    update_freq: weekly
+    reliability: 2
+    weight: 0.6
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Пересказ + ссылка"
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Точный URL RSS найден в поисковом индексе. Сайт старый — вероятна низкая свежесть, проверить latest_item_at."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}

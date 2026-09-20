@@ -1,0 +1,44 @@
+# Недельный отчёт и пересчёт весов рубрик.
+# Время в cron — UTC. Дубай = UTC+4.
+#   04:00 UTC в понедельник = 08:00 понедельника по Дубаю.
+name: Weekly Analytics
+
+on:
+  schedule:
+    - cron: "0 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pipeline-state
+  cancel-in-progress: false
+
+jobs:
+  analytics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Установка зависимостей
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install -r requirements.txt
+
+      - name: Недельный отчёт
+        env:
+          DRY_RUN: "0"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_OWNER_ID: ${{ secrets.TELEGRAM_OWNER_ID }}
+        run: python -m pipeline.run --stage analytics
+
+      - name: Коммит состояния
+        run: bash scripts/commit_state.sh "state: недельная аналитика"

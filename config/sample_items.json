@@ -8,7 +8,9 @@
       "url": "https://example.com/demo/realty/quarterly-report",
       "published_at": "2026-09-19T08:00:00+00:00",
       "image_url": null,
-      "raw_text": "Demonstration input for a dry run. Total registered transactions in the quarter: 43000. Average apartment price: 1450000 AED."
+      "raw_text": "Demonstration input for a dry run. Total registered transactions in the quarter: 43000. Average apartment price: 1450000 AED.",
+      "category": "realty_news",
+      "lang": "en"
     },
     {
       "source_id": "demo_official_data",
@@ -17,7 +19,9 @@
       "url": "https://example.com/demo/official/escrow-rules",
       "published_at": "2026-09-19T11:30:00+00:00",
       "image_url": null,
-      "raw_text": "Demonstration input. The updated rules take effect on 2026-11-01 and cover 12 categories of off-plan projects."
+      "raw_text": "Demonstration input. The updated rules take effect on 2026-11-01 and cover 12 categories of off-plan projects.",
+      "category": "official_data",
+      "lang": "en"
     },
     {
       "source_id": "demo_developers",
@@ -26,7 +30,9 @@
       "url": "https://example.com/demo/developers/waterfront-launch",
       "published_at": "2026-09-20T06:10:00+00:00",
       "image_url": null,
-      "raw_text": "Demonstration input. The project comprises 320 units, handover targeted for 2029, starting price 1900000 AED."
+      "raw_text": "Demonstration input. The project comprises 320 units, handover targeted for 2029, starting price 1900000 AED.",
+      "category": "developers",
+      "lang": "en"
     },
     {
       "source_id": "demo_city_gov",
@@ -35,7 +41,9 @@
       "url": "https://example.com/demo/gov/visa-timelines",
       "published_at": "2026-09-18T14:45:00+00:00",
       "image_url": null,
-      "raw_text": "Demonstration input. Standard processing moves from 15 to 7 working days starting 2026-10-01."
+      "raw_text": "Demonstration input. Standard processing moves from 15 to 7 working days starting 2026-10-01.",
+      "category": "city_gov",
+      "lang": "en"
     },
     {
       "source_id": "demo_events",
@@ -44,7 +52,9 @@
       "url": "https://example.com/demo/events/winter-festival",
       "published_at": "2026-09-20T05:00:00+00:00",
       "image_url": null,
-      "raw_text": "Demonstration input. The programme runs from 2026-11-15 to 2027-01-10 and lists 45 events across 12 venues."
+      "raw_text": "Demonstration input. The programme runs from 2026-11-15 to 2027-01-10 and lists 45 events across 12 venues.",
+      "category": "events",
+      "lang": "en"
     },
     {
       "source_id": "demo_lifestyle",
@@ -53,7 +63,9 @@
       "url": "https://example.com/demo/lifestyle/transport-payment",
       "published_at": "2026-09-17T09:20:00+00:00",
       "image_url": null,
-      "raw_text": "Demonstration input. The option covers 9 lines and 78 stations from 2026-10-15."
+      "raw_text": "Demonstration input. The option covers 9 lines and 78 stations from 2026-10-15.",
+      "category": "lifestyle",
+      "lang": "en"
     }
   ]
 }

@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from .config import ASSETS_DIR, Settings
-from .textutil import sha1
+from .textutil import sha1, truncate
 
 log = logging.getLogger("pipeline.illustrate")
 
@@ -236,7 +236,7 @@ def _download(url: str, meta: dict[str, Any]) -> dict[str, Any] | None:
 def illustrate(settings: Settings, draft) -> tuple[str | None, dict[str, Any]]:
     """Produce an image for a draft. Card first, stock only as a fallback."""
     image_spec = draft.image or {}
-    headline = (image_spec.get("headline") or draft.title or "").strip()
+    headline = truncate((image_spec.get("headline") or draft.title or "").strip(), 64, "…")
     accent = (image_spec.get("accent") or "").strip()
     subtitle = (draft.sources[0].get("title", "") if draft.sources else "")[:80]
 

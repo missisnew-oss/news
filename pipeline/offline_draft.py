@@ -12,6 +12,8 @@ import json
 import re
 from typing import Any
 
+from .textutil import truncate
+
 _RUBRIC_RE = re.compile(r"RUBRIC_ID:\s*([a-z_]+)", re.I)
 _ITEMS_RE = re.compile(r"<INPUT_ITEMS>(.*?)</INPUT_ITEMS>", re.S)
 
@@ -56,13 +58,13 @@ def build_offline_draft(prompt: str) -> dict[str, Any]:
 
     return {
         "rubric": rubric,
-        "title": str(primary.get("title", "Демо-пост"))[:90],
+        "title": truncate(str(primary.get("title", "Демо-пост")), 90, "…"),
         "body": body,
         "hashtags": ["#дубай", "#недвижимость"],
         "cta": "Напишите в личные сообщения, если хотите разобрать свой случай.",
         "image": {
             "mode": "card",
-            "headline": str(primary.get("title", "Демо-пост"))[:60],
+            "headline": truncate(str(primary.get("title", "Демо-пост")), 60, "…"),
             "accent": "",
             "stock_query": "dubai skyline real estate",
         },

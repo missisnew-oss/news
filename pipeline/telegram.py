@@ -130,10 +130,20 @@ class TelegramClient:
         with open(photo_path, "rb") as fh:
             return self.call("sendPhoto", payload, files={"photo": fh}, timeout=60)
 
+    # Reaction counts arrive only as updates, and only if we ask for them
+    # explicitly: there is no "get reactions for message_id" method in Bot API.
+    ALLOWED_UPDATES = ["message", "callback_query", "channel_post", "message_reaction_count"]
+
     def get_updates(self, offset: int, timeout: int = 25) -> list[dict[str, Any]]:
+        import json as _json
+
         data = self.call(
             "getUpdates",
-            {"offset": offset, "timeout": timeout, "allowed_updates": '["callback_query","message"]'},
+            {
+                "offset": offset,
+                "timeout": timeout,
+                "allowed_updates": _json.dumps(self.ALLOWED_UPDATES),
+            },
             timeout=timeout + 10,
         )
         return data.get("result") or []

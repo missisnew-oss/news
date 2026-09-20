@@ -25,6 +25,9 @@ SETTINGS_FILE = CONFIG_DIR / "settings.yml"
 TIMEZONE = "Asia/Dubai"
 
 # Fixed rubric registry. These ids are a contract shared by:
+#   ``per_4weeks`` is the planned number of posts per 4-week cycle. The plan is
+#   49 posts / 28 days (~1.75 per day, within the brief's 1-2) of which 12 are
+#   selling (new_launch + investor_math + case_story) = 24.5%, under the 25% cap.
 #   docs/RUBRICS.md, prompts/<rubric_id>.md and this module.
 # tests/test_prompts_rubrics.py enforces that the three stay in sync.
 RUBRICS: dict[str, dict[str, Any]] = {
@@ -33,70 +36,70 @@ RUBRICS: dict[str, dict[str, Any]] = {
         "categories": ["official_data", "realty_news"],
         "selling": False,
         "max_chars": 900,
-        "per_week": 2,
+        "per_4weeks": 4,
     },
     "new_launch": {
         "title": "Новый лонч",
         "categories": ["developers", "realty_news"],
         "selling": True,
         "max_chars": 900,
-        "per_week": 2,
+        "per_4weeks": 6,
     },
     "investor_math": {
         "title": "Считаем деньги",
         "categories": ["official_data", "realty_news", "developers"],
         "selling": True,
         "max_chars": 1000,
-        "per_week": 1,
+        "per_4weeks": 4,
     },
     "rules_and_laws": {
         "title": "Правила игры",
         "categories": ["city_gov", "official_data"],
         "selling": False,
         "max_chars": 950,
-        "per_week": 2,
+        "per_4weeks": 4,
     },
     "area_guide": {
         "title": "Район под лупой",
         "categories": ["realty_news", "lifestyle", "official_data"],
         "selling": False,
         "max_chars": 1000,
-        "per_week": 1,
+        "per_4weeks": 4,
     },
     "dubai_life": {
         "title": "Жизнь в Дубае",
         "categories": ["lifestyle", "city_gov"],
         "selling": False,
         "max_chars": 900,
-        "per_week": 2,
+        "per_4weeks": 6,
     },
     "events_afisha": {
         "title": "Афиша",
         "categories": ["events", "lifestyle"],
         "selling": False,
         "max_chars": 900,
-        "per_week": 2,
+        "per_4weeks": 5,
     },
     "faq_answer": {
         "title": "Вопрос — ответ",
         "categories": ["realty_news", "city_gov", "official_data"],
         "selling": False,
         "max_chars": 900,
-        "per_week": 1,
+        "per_4weeks": 6,
     },
     "case_story": {
         "title": "История клиента",
         "categories": ["realty_news", "developers"],
         "selling": True,
         "max_chars": 1000,
-        "per_week": 1,
+        "per_4weeks": 2,
     },
     "personal": {
         "title": "Личное",
         "categories": [],
         "selling": False,
         "max_chars": 1000,
-        "per_week": 2,
+        "per_4weeks": 8,
         "manual": True,  # owner writes the text herself from a generated brief
     },
 }

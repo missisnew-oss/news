@@ -29,6 +29,48 @@ log = logging.getLogger("pipeline.approve")
 ACTIONS = {"ok": "approved", "no": "rejected", "later": "postponed", "redo": "rewrite"}
 
 
+def record_reactions(update: dict[str, Any], *, persist: bool = True) -> bool:
+    """Store a message_reaction_count update into state/analytics.json.
+
+    Bot API has no method to ask for a post's reactions: they arrive only as
+    updates, carry absolute totals, and are gone forever if the 24-hour
+    getUpdates window passes unread (see docs/ANALYTICS.md). So we overwrite,
+    never accumulate, and we poll often.
+    """
+    payload = update.get("message_reaction_count")
+    if not payload:
+        return False
+    message_id = payload.get("message_id")
+    if not message_id:
+        return False
+
+    by_emoji: dict[str, int] = {}
+    total = 0
+    for entry in payload.get("reactions") or []:
+        count = int(entry.get("total_count") or 0)
+        total += count
+        emoji = ((entry.get("type") or {}).get("emoji")
+                 or (entry.get("type") or {}).get("custom_emoji_id")
+                 or "other")
+        by_emoji[emoji] = by_emoji.get(emoji, 0) + count
+
+    analytics = state.load("analytics.json")
+    touched = False
+    for post in analytics.get("posts") or []:
+        if post.get("message_id") == message_id:
+            metrics = post.setdefault("metrics", {})
+            metrics["reactions"] = total
+            metrics["reactions_by_emoji"] = by_emoji
+            metrics["reactions_updated_at"] = datetime.now(timezone.utc).isoformat()
+            metrics["manual"] = metrics.get("views") is None
+            touched = True
+    if touched and persist:
+        state.save("analytics.json", analytics)
+    if not touched:
+        log.debug("Реакции для message_id=%s: пост не найден в analytics.json", message_id)
+    return touched
+
+
 def preview_text(post: dict[str, Any]) -> str:
     gate = post.get("gate") or {}
     warnings = gate.get("warnings") or []
@@ -98,6 +140,9 @@ def poll_once(settings: Settings, client: TelegramClient | None = None,
 
     for update in updates:
         offset = max(offset, int(update.get("update_id", 0)) + 1)
+        if update.get("message_reaction_count"):
+            record_reactions(update, persist=persist)
+            continue
         callback = update.get("callback_query")
         if not callback:
             continue

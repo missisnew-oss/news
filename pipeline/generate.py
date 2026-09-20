@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from . import factcheck, prompts
-from .config import RUBRICS, Settings
+from .config import RUBRICS, SELLING_RUBRICS, Settings
 from .llm import LLMError, get_provider, parse_response
 from .models import NormalizedItem, PostDraft
 from .score import select_for_rubric
@@ -29,8 +29,16 @@ def _post_id(rubric: str, items: list[NormalizedItem]) -> str:
     return f"{rubric}-{sha1(seed)[:12]}"
 
 
+# docs/LEGAL.md requires this line on every selling post. It is appended by
+# code, not left to the model, so it can never be forgotten or reworded.
+SELLING_DISCLAIMER = (
+    "<i>Не инвестиционная рекомендация. Условия застройщика могут измениться, "
+    "доходность не гарантирована.</i>"
+)
+
+
 def compose_text(payload: dict[str, Any]) -> str:
-    """Body + CTA + hashtags, sanitised for Telegram HTML."""
+    """Body + CTA + hashtags + legal disclaimer, sanitised for Telegram HTML."""
     parts = [sanitize_telegram_html(payload.get("body", "")).strip()]
     cta = sanitize_telegram_html(payload.get("cta", "")).strip()
     if cta and cta not in parts[0]:
@@ -38,6 +46,8 @@ def compose_text(payload: dict[str, Any]) -> str:
     tags = " ".join(payload.get("hashtags") or [])
     if tags:
         parts.append(tags)
+    if payload.get("rubric") in SELLING_RUBRICS and "инвестиционная рекомендация" not in parts[0]:
+        parts.append(SELLING_DISCLAIMER)
     return "\n\n".join(p for p in parts if p)
 
 

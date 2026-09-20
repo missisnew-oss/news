@@ -61,4 +61,4 @@ jobs:
         run: python -m pipeline.run --stage approve --rounds 1 --poll-timeout 5
 
       - name: Коммит состояния
-        run: bash scripts/commit_state.sh "state: сбор и генерация"
+        run: 'bash scripts/commit_state.sh "state: сбор и генерация"'

@@ -52,10 +52,18 @@ def test_build_prompt_substitutes_every_placeholder():
 
 
 def test_selling_share_stays_within_the_brief_limit():
-    """docs/CONTENT_STRATEGY.md promises <=25% selling content."""
-    total = sum(meta["per_week"] for meta in RUBRICS.values())
-    selling = sum(RUBRICS[rid]["per_week"] for rid in SELLING_RUBRICS)
+    """The brief caps selling content at 25% of the feed."""
+    total = sum(meta["per_4weeks"] for meta in RUBRICS.values())
+    selling = sum(RUBRICS[rid]["per_4weeks"] for rid in SELLING_RUBRICS)
     assert selling / total <= 0.25 + 1e-9, f"продающего контента {selling}/{total}"
+
+
+def test_weekly_volume_matches_the_brief():
+    """The brief allows 1-2 posts a day and exactly 2 personal posts a week."""
+    total = sum(meta["per_4weeks"] for meta in RUBRICS.values())
+    per_day = total / 28
+    assert 1.0 <= per_day <= 2.0, f"{per_day:.2f} постов в день"
+    assert RUBRICS["personal"]["per_4weeks"] == 8, "личных постов должно быть ровно 2 в неделю"
 
 
 def test_personal_rubric_is_marked_manual():

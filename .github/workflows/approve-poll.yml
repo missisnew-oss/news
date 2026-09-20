@@ -44,4 +44,4 @@ jobs:
         run: python -m pipeline.run --stage approve --rounds 2 --poll-timeout 45
 
       - name: Коммит состояния
-        run: bash scripts/commit_state.sh "state: решения по апруву"
+        run: 'bash scripts/commit_state.sh "state: решения по апруву"'

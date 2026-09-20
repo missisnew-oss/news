@@ -45,4 +45,4 @@ jobs:
         run: python -m pipeline.run --stage publish
 
       - name: Коммит состояния
-        run: bash scripts/commit_state.sh "state: публикация"
+        run: 'bash scripts/commit_state.sh "state: публикация"'

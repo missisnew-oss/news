@@ -41,4 +41,4 @@ jobs:
         run: python -m pipeline.run --stage analytics
 
       - name: Коммит состояния
-        run: bash scripts/commit_state.sh "state: недельная аналитика"
+        run: 'bash scripts/commit_state.sh "state: недельная аналитика"'

@@ -22,7 +22,7 @@ from . import postqueue, state
 from .config import Settings
 from .generate import compose_text
 from .telegram import TelegramClient, approval_keyboard
-from .textutil import plan_delivery, truncate
+from .textutil import truncate_html
 
 log = logging.getLogger("pipeline.approve")
 
@@ -84,7 +84,7 @@ def preview_text(post: dict[str, Any]) -> str:
     if warnings:
         lines.append("⚠️ " + "; ".join(warnings[:2]))
     lines.append("—" * 12)
-    lines.append(truncate(compose_text(post), 2500))
+    lines.append(truncate_html(compose_text(post), 2500))
     return "\n".join(lines)
 
 
@@ -106,7 +106,7 @@ def send_previews(settings: Settings, client: TelegramClient | None = None,
                 response = client.send_photo(
                     settings.telegram_owner_id,
                     image_path,
-                    caption=truncate(preview_text(post), 1024),
+                    caption=truncate_html(preview_text(post), 1024),
                     reply_markup=keyboard,
                 )
             else:
@@ -129,6 +129,16 @@ def poll_once(settings: Settings, client: TelegramClient | None = None,
               queue: dict[str, Any] | None = None, *, persist: bool = True,
               poll_timeout: int = 25) -> list[dict[str, Any]]:
     """One long-poll round. Returns the decisions applied."""
+    owner = str(settings.telegram_owner_id or "")
+    if not owner:
+        # Fail closed. Previously an unset owner id skipped the identity check
+        # entirely, so anyone who found the bot could publish to the channel.
+        log.error(
+            "TELEGRAM_OWNER_ID не задан — кнопки апрува не обрабатываются. "
+            "Задайте секрет TELEGRAM_OWNER_ID (docs/SETUP.md, шаг 6)."
+        )
+        return []
+
     client = client or TelegramClient(settings.telegram_bot_token, dry_run=settings.dry_run)
     queue = queue if queue is not None else postqueue.load_queue()
     offset_state = state.load("telegram_offset.json")
@@ -136,71 +146,111 @@ def poll_once(settings: Settings, client: TelegramClient | None = None,
 
     updates = client.get_updates(offset, timeout=poll_timeout)
     decisions: list[dict[str, Any]] = []
-    owner = str(settings.telegram_owner_id or "")
 
-    for update in updates:
-        offset = max(offset, int(update.get("update_id", 0)) + 1)
-        if update.get("message_reaction_count"):
-            record_reactions(update, persist=persist)
-            continue
-        callback = update.get("callback_query")
-        if not callback:
-            continue
-        from_id = str(((callback.get("from") or {}).get("id")) or "")
-        data = str(callback.get("data") or "")
-        if owner and from_id != owner:
-            log.warning("Проигнорирована кнопка от постороннего пользователя %s", from_id)
+    try:
+        for update in updates:
             try:
-                client.answer_callback(callback.get("id", ""), "Недостаточно прав")
-            except Exception:
-                pass
-            continue
-        action, _, post_id = data.partition(":")
-        if action not in ACTIONS or not post_id:
-            continue
+                decision = _apply_update(settings, client, queue, update, owner,
+                                         persist=persist)
+            except Exception as exc:
+                # One malformed update must not cost us the whole batch's
+                # offset, which would replay every update on the next run.
+                log.warning("Обновление %s не обработано: %s", update.get("update_id"), exc)
+                decision = None
+            offset = max(offset, int(update.get("update_id", 0)) + 1)
+            if decision:
+                decisions.append(decision)
+    finally:
+        offset_state["offset"] = offset
+        offset_state["updated_at"] = datetime.now(timezone.utc).isoformat()
+        if persist:
+            state.save("telegram_offset.json", offset_state)
+            postqueue.save_queue(queue)
 
-        status = ACTIONS[action]
-        if status == "postponed":
-            postqueue.postpone(queue, post_id)
-            applied = "postponed"
-        elif status == "rewrite":
-            postqueue.set_status(queue, post_id, "draft", approval={"sent_at": None, "action": "redo"})
-            applied = "rewrite"
-        else:
-            postqueue.set_status(
-                queue,
-                post_id,
-                status,
-                approval={
-                    "sent_at": (
-                        (next((p for p in queue.get("posts", []) if p.get("post_id") == post_id), {})
-                         .get("approval") or {}).get("sent_at")
-                    ),
-                    "decided_at": datetime.now(timezone.utc).isoformat(),
-                    "by": from_id,
-                    "action": action,
-                },
-            )
-            applied = status
-
-        decisions.append({"post_id": post_id, "action": action, "status": applied})
-        try:
-            client.answer_callback(callback.get("id", ""), f"Принято: {applied}")
-            message = callback.get("message") or {}
-            if message.get("message_id"):
-                client.edit_reply_markup(
-                    settings.telegram_owner_id, message["message_id"], {"inline_keyboard": []}
-                )
-        except Exception as exc:
-            log.warning("Не удалось подтвердить нажатие: %s", exc)
-
-    offset_state["offset"] = offset
-    offset_state["updated_at"] = datetime.now(timezone.utc).isoformat()
-    if persist:
-        state.save("telegram_offset.json", offset_state)
-        postqueue.save_queue(queue)
     log.info("Обработано обновлений: %d, решений: %d", len(updates), len(decisions))
     return decisions
+
+
+# A decision on a post in one of these states is final: the post is already in
+# the channel or already cancelled. Telegram keeps old inline keyboards alive
+# in the chat history, and an update can be redelivered after a crashed run,
+# so the same button can legitimately arrive twice.
+TERMINAL_STATUSES = {"published", "rejected"}
+
+
+def _apply_update(settings: Settings, client: TelegramClient, queue: dict[str, Any],
+                  update: dict[str, Any], owner: str, *, persist: bool) -> dict[str, Any] | None:
+    if update.get("message_reaction_count"):
+        record_reactions(update, persist=persist)
+        return None
+    callback = update.get("callback_query")
+    if not callback:
+        return None
+
+    from_id = str(((callback.get("from") or {}).get("id")) or "")
+    if from_id != owner:
+        log.warning("Проигнорирована кнопка от постороннего пользователя %s", from_id)
+        try:
+            client.answer_callback(callback.get("id", ""), "Недостаточно прав")
+        except Exception:
+            pass
+        return None
+
+    action, _, post_id = str(callback.get("data") or "").partition(":")
+    if action not in ACTIONS or not post_id:
+        return None
+
+    post = next((p for p in (queue.get("posts") or []) if p.get("post_id") == post_id), None)
+    if post is None:
+        _ack(client, settings, callback, "Пост не найден")
+        return None
+    if post.get("status") in TERMINAL_STATUSES:
+        log.info("Кнопка %r по посту %s в статусе %s — решение уже принято",
+                 action, post_id, post["status"])
+        _ack(client, settings, callback,
+             "Пост уже опубликован" if post["status"] == "published" else "Пост уже отклонён")
+        return None
+
+    status = ACTIONS[action]
+    if status == "postponed":
+        postqueue.postpone(queue, post_id)
+        applied = "postponed"
+    elif status == "rewrite":
+        # "rewrite" is picked up by pipeline.run.stage_generate, which
+        # regenerates the post from the items stored on it.
+        postqueue.set_status(
+            queue, post_id, "rewrite",
+            approval={"sent_at": None, "action": "redo",
+                      "requested_at": datetime.now(timezone.utc).isoformat()},
+        )
+        applied = "rewrite"
+    else:
+        postqueue.set_status(
+            queue, post_id, status,
+            approval={
+                "sent_at": (post.get("approval") or {}).get("sent_at"),
+                "decided_at": datetime.now(timezone.utc).isoformat(),
+                "by": from_id,
+                "action": action,
+            },
+        )
+        applied = status
+
+    _ack(client, settings, callback, f"Принято: {applied}")
+    return {"post_id": post_id, "action": action, "status": applied}
+
+
+def _ack(client: TelegramClient, settings: Settings, callback: dict[str, Any], text: str) -> None:
+    """Answer the callback and take the buttons off the preview message."""
+    try:
+        client.answer_callback(callback.get("id", ""), text)
+        message = callback.get("message") or {}
+        if message.get("message_id"):
+            client.edit_reply_markup(
+                settings.telegram_owner_id, message["message_id"], {"inline_keyboard": []}
+            )
+    except Exception as exc:
+        log.warning("Не удалось подтвердить нажатие: %s", exc)
 
 
 def run(settings: Settings, *, rounds: int = 1, poll_timeout: int = 25) -> list[dict[str, Any]]:

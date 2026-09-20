@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from . import state
-from .config import RUBRICS
+from .config import RUBRICS, SELLING_RUBRICS
 from .models import NormalizedItem
 
 log = logging.getLogger("pipeline.score")
@@ -111,11 +111,48 @@ def select_for_rubric(items: list[NormalizedItem], rubric: str, limit: int = 4) 
     return picked[:limit]
 
 
-def plan_rubrics(items: list[NormalizedItem], max_posts: int = 2) -> list[str]:
-    """Choose which rubrics to generate this run, by available material.
+# Brief §4: selling content is capped at ~20-25% of the feed.
+SELLING_SHARE_CAP = 0.25
+# How many recent posts count as "the feed" when measuring that share.
+RECENT_WINDOW = 28
 
-    ``personal`` is excluded: those posts are written by the owner from a brief
-    produced on a separate schedule.
+
+def recent_rubrics(limit: int = RECENT_WINDOW) -> list[str]:
+    """Rubrics of the posts that are already out, or committed to go out.
+
+    Read from ``state/published.json`` plus the part of ``state/queue.json``
+    that is not published yet, so a post approved this morning already counts
+    against the selling share of the post planned this evening.
+    """
+    history = [
+        post.get("rubric")
+        for post in (state.load("published.json").get("posts") or [])
+        if post.get("rubric")
+    ]
+    history += [
+        post.get("rubric")
+        for post in (state.load("queue.json").get("posts") or [])
+        if post.get("rubric") and post.get("status") in {"queued", "approved", "postponed"}
+    ]
+    return history[-limit:]
+
+
+def plan_rubrics(
+    items: list[NormalizedItem],
+    max_posts: int = 2,
+    *,
+    history: list[str] | None = None,
+    cap: float = SELLING_SHARE_CAP,
+) -> list[str]:
+    """Choose which rubrics to generate this run.
+
+    Rubrics are ranked by the quality of the material available for them, but
+    the selection is then filtered so the share of selling posts in the recent
+    feed stays under ``cap``. Ranking by score alone always picked the selling
+    rubrics — they feed on the highest-weight source categories — and produced
+    runs that were 100% selling, against the brief's 20-25% ceiling.
+
+    ``personal`` is excluded: those posts are written by the owner from a brief.
     """
     available: dict[str, float] = {}
     for rubric_id, meta in RUBRICS.items():
@@ -126,4 +163,32 @@ def plan_rubrics(items: list[NormalizedItem], max_posts: int = 2) -> list[str]:
             continue
         available[rubric_id] = sum(i.score for i in pool) / len(pool)
     ordered = sorted(available, key=lambda r: available[r], reverse=True)
-    return ordered[:max_posts]
+
+    past = recent_rubrics() if history is None else list(history)
+    selling_so_far = sum(1 for r in past if r in SELLING_RUBRICS)
+    total_so_far = len(past)
+
+    plan: list[str] = []
+    deferred: list[str] = []
+    for rubric_id in ordered:
+        if len(plan) >= max_posts:
+            break
+        if rubric_id in SELLING_RUBRICS:
+            projected_total = total_so_far + len(plan) + 1
+            if (selling_so_far + 1) / projected_total > cap:
+                deferred.append(rubric_id)
+                continue
+            selling_so_far += 1
+        plan.append(rubric_id)
+
+    if deferred:
+        log.info(
+            "Продающие рубрики отложены ради потолка %.0f%%: %s",
+            cap * 100, ", ".join(deferred),
+        )
+    if len(plan) < max_posts:
+        log.info(
+            "План короче запрошенного (%d из %d): не хватает непродающего материала",
+            len(plan), max_posts,
+        )
+    return plan

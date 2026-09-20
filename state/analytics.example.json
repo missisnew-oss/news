@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "posts": [
+    {
+      "post_id": "investor_math-d2f7db5af8b5",
+      "message_id": 1001,
+      "published_at": "2026-09-20T13:49:18.422699+00:00",
+      "rubric": "investor_math",
+      "source_ids": [
+        "demo_developers",
+        "demo_official_data",
+        "demo_realty_news"
+      ],
+      "length_chars": 567,
+      "has_cta": true,
+      "has_photo": true,
+      "metrics": {
+        "views": 1820,
+        "reactions": 41,
+        "reactions_by_emoji": {
+          "fire": 28,
+          "thumbs_up": 13
+        },
+        "comments": 6,
+        "forwards": 3,
+        "reactions_updated_at": "2026-09-28T05:10:00+00:00",
+        "collected_at": "2026-09-28T06:00:00+00:00",
+        "manual": true
+      }
+    }
+  ],
+  "weekly": [
+    {
+      "generated_at": "2026-09-28T06:00:00+00:00",
+      "posts": 12,
+      "subscribers": 1240,
+      "rubrics": {
+        "market_pulse": {
+          "posts": 4,
+          "avg_er": 0.0258,
+          "avg_views": 1800,
+          "measured": 4
+        }
+      }
+    }
+  ],
+  "_comment": "Образец. views, comments и forwards Bot API боту не отдаёт — их вписывает владелица вручную раз в неделю, см. docs/ANALYTICS.md. reactions приходят апдейтом message_reaction_count."
+}

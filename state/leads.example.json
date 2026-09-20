@@ -1,0 +1,41 @@
+{
+  "_comment": "ТОЛЬКО обезличенные записи. Контакты интересантов здесь храниться НЕ МОГУТ. lead_id = sha256(LEAD_HASH_SALT|контакт)[:16]. Подробности в docs/ANALYTICS.md и docs/SECURITY.md.",
+  "version": 1,
+  "updated_at": "2026-09-20T18:05:00+04:00",
+  "counters": {
+    "total": 1,
+    "by_month": {
+      "2026-09": {
+        "new": 1,
+        "qualified": 0,
+        "meeting": 0,
+        "deal": 0,
+        "lost": 0
+      }
+    },
+    "by_launch": {
+      "waterfront-2026-q4": 1
+    },
+    "by_rubric": {
+      "new_launch": 1
+    },
+    "by_channel": {
+      "bot_deeplink": 1
+    }
+  },
+  "leads": [
+    {
+      "lead_id": "7f3a91c0e4d25b18",
+      "created_date": "2026-09-21",
+      "launch_id": "waterfront-2026-q4",
+      "rubric": "new_launch",
+      "post_id": "new_launch-1a2b3c4d5e6f",
+      "cta_payload": "p_a1b2c3d4",
+      "channel": "bot_deeplink",
+      "status": "new",
+      "status_updated_date": "2026-09-21",
+      "budget_band": "1-2m_aed",
+      "notes_code": "invest_yield"
+    }
+  ]
+}

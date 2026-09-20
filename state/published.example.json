@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "posts": [
+    {
+      "post_id": "investor_math-d2f7db5af8b5",
+      "publish_key": "1b46e12bdd4d1f865df56b9bfe2cdf83efc02587",
+      "rubric": "investor_math",
+      "message_ids": [
+        1001
+      ],
+      "published_at": "2026-09-20T13:49:18.422699+00:00",
+      "mode": "photo",
+      "length_chars": 567,
+      "has_photo": true,
+      "has_cta": true,
+      "source_ids": [
+        "demo_developers",
+        "demo_official_data",
+        "demo_realty_news"
+      ],
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Demo: developer announces a new waterfront launch with 320…",
+        "accent": ""
+      },
+      "dry_run": false
+    }
+  ],
+  "keys": [
+    "1b46e12bdd4d1f865df56b9bfe2cdf83efc02587"
+  ],
+  "_comment": "Образец журнала публикаций. keys — ключи идемпотентности sha1(post_id|slot_at); ключ пишется на диск ДО обращения в Telegram, поэтому повторный запуск не создаёт дубль."
+}

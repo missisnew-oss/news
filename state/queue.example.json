@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "posts": [
+    {
+      "post_id": "investor_math-d2f7db5af8b5",
+      "rubric": "investor_math",
+      "title": "Пример заголовка поста",
+      "body": "<b>Пример</b> тела поста в Telegram-HTML.",
+      "hashtags": [
+        "#дубай",
+        "#недвижимость"
+      ],
+      "cta": "Напишите в личные сообщения, если хотите разобрать свой случай.",
+      "image": {
+        "mode": "card",
+        "headline": "Demo: developer announces a new waterfront launch with 320…",
+        "accent": "",
+        "stock_query": "dubai skyline real estate"
+      },
+      "sources": [
+        {
+          "source_id": "demo_developers",
+          "title": "Demo: developer announces a new waterfront launch with 320 units",
+          "url": "https://example.com/demo/developers/waterfront-launch"
+        },
+        {
+          "source_id": "demo_official_data",
+          "title": "Demo: regulator publishes updated escrow rules for off-plan sales",
+          "url": "https://example.com/demo/official/escrow-rules"
+        },
+        {
+          "source_id": "demo_realty_news",
+          "title": "Demo: quarterly residential transaction volume report published",
+          "url": "https://example.com/demo/realty/quarterly-report"
+        }
+      ],
+      "facts": [],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 567,
+      "needs_separate_text": false,
+      "status": "published",
+      "created_at": "2026-09-20T13:49:18.225363+00:00",
+      "slot_at": null,
+      "image_path": "assets/generated/card-0a1b2c3d4e5f.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Demo: developer announces a new waterfront launch with 320…",
+        "accent": ""
+      },
+      "item_ids": [
+        "f4cb6648c620c37c252f3d061c199aa7faa17720",
+        "9271e8f27ff2a97a6e21d0145a010c68fb5fe400",
+        "afeb2076d77bc132fb3988e94f9009707e1363a1"
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 3,
+        "sources_cited": 3
+      },
+      "approval": {},
+      "publish_key": "1b46e12bdd4d1f865df56b9bfe2cdf83efc02587"
+    }
+  ],
+  "_comment": "Образец структуры очереди. Реальный queue.json в .gitignore. Жизненный цикл статуса: draft -> queued -> approved|rejected|postponed|draft -> published."
+}

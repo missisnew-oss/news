@@ -60,13 +60,26 @@ fi
 git commit -m "${MESSAGE} [skip ci]"
 
 # Между запуском и коммитом другой workflow мог обновить ветку.
+# Workflows сериализованы через concurrency-группу pipeline-state, но ручной
+# запуск и плановый всё равно могут пересечься, поэтому push с ретраями.
 for attempt in 1 2 3; do
   if git push; then
     echo "Состояние закоммичено."
     exit 0
   fi
   echo "push не прошёл (попытка ${attempt}), подтягиваем изменения…"
-  git pull --rebase --autostash
+
+  # `set -e` убил бы скрипт прямо посреди rebase и оставил репозиторий
+  # в незавершённом состоянии, поэтому конфликт обрабатываем руками.
+  if ! git pull --rebase --autostash; then
+    echo "ОТКАЗ: конфликт при rebase состояния — откатываем rebase." >&2
+    git rebase --abort 2>/dev/null || true
+    git stash pop 2>/dev/null || true
+    echo "Состояние НЕ сохранено. Перезапустите workflow вручную:" >&2
+    echo "  Actions → нужный workflow → Run workflow." >&2
+    echo "Повторный запуск безопасен: публикация идемпотентна." >&2
+    exit 1
+  fi
   sleep $((attempt * 3))
 done
 

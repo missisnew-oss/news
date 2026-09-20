@@ -10,12 +10,22 @@ on:
 permissions:
   contents: write
 
+# Тот же замок, что и у остальных: workflow переписывает config/sources.yml
+# и state/, и одновременный запуск с другим дал бы non-fast-forward.
+concurrency:
+  group: pipeline-state
+  cancel-in-progress: false
+
 jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Полная история: scripts/commit_state.sh делает git pull --rebase,
+          # а на shallow-клоне rebase падает.
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:

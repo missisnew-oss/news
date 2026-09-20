@@ -19,11 +19,44 @@ from .config import Settings
 log = logging.getLogger("pipeline.llm")
 
 DEFAULT_MAX_TOKENS = 2000
-RETRY_STATUSES = {429, 500, 502, 503, 504, 529}
+# 429 = rate limit, 529 = Anthropic "overloaded". Everything else in the 4xx
+# range is a bug in our request (bad key, bad model name, bad body) and
+# retrying it just burns four workflow minutes before failing anyway.
+RETRY_STATUSES = {408, 409, 429, 500, 502, 503, 504, 529}
+MAX_LLM_ATTEMPTS = 4
 
 
 class LLMError(RuntimeError):
     pass
+
+
+def _status_code(exc: Exception) -> int | None:
+    for attribute in ("status_code", "http_status", "code"):
+        value = getattr(exc, attribute, None)
+        if isinstance(value, int):
+            return value
+    response = getattr(exc, "response", None)
+    value = getattr(response, "status_code", None)
+    return value if isinstance(value, int) else None
+
+
+def is_retryable(exc: Exception) -> bool:
+    """True for transient failures only: rate limits, 5xx and connection errors."""
+    status = _status_code(exc)
+    if status is not None:
+        return status in RETRY_STATUSES
+    # No status at all: a connection/timeout error, which is worth a retry.
+    return type(exc).__name__ in {
+        "APIConnectionError", "APITimeoutError", "APIConnectionTimeoutError",
+        "ConnectionError", "Timeout", "ReadTimeout", "ConnectTimeout",
+    }
+
+
+def _retry_sleep(attempt: int) -> float:
+    """Exponential backoff with jitter, so parallel runs do not sync up."""
+    import random
+
+    return min(30.0, 2 ** attempt) * (0.7 + random.random() * 0.6)
 
 
 class LLMProvider(Protocol):
@@ -48,7 +81,7 @@ class AnthropicProvider:
 
     def complete(self, system: str, user: str, *, max_tokens: int = DEFAULT_MAX_TOKENS) -> str:
         last_error: Exception | None = None
-        for attempt in range(4):
+        for attempt in range(MAX_LLM_ATTEMPTS):
             try:
                 response = self._client.messages.create(
                     model=self.model,
@@ -61,8 +94,13 @@ class AnthropicProvider:
                 )
             except Exception as exc:
                 last_error = exc
-                delay = 2 ** attempt
-                log.warning("Anthropic: попытка %d не удалась (%s), пауза %ds", attempt + 1, exc, delay)
+                if not is_retryable(exc):
+                    raise LLMError(f"Anthropic отказал без шанса на повтор: {exc}") from exc
+                if attempt == MAX_LLM_ATTEMPTS - 1:
+                    break
+                delay = _retry_sleep(attempt)
+                log.warning("Anthropic: попытка %d не удалась (%s), пауза %.1fs",
+                            attempt + 1, exc, delay)
                 time.sleep(delay)
         raise LLMError(f"Anthropic недоступен: {last_error}")
 
@@ -82,7 +120,7 @@ class OpenAIProvider:
 
     def complete(self, system: str, user: str, *, max_tokens: int = DEFAULT_MAX_TOKENS) -> str:
         last_error: Exception | None = None
-        for attempt in range(4):
+        for attempt in range(MAX_LLM_ATTEMPTS):
             try:
                 response = self._client.chat.completions.create(
                     model=self.model,
@@ -95,8 +133,13 @@ class OpenAIProvider:
                 return response.choices[0].message.content or ""
             except Exception as exc:
                 last_error = exc
-                delay = 2 ** attempt
-                log.warning("OpenAI: попытка %d не удалась (%s), пауза %ds", attempt + 1, exc, delay)
+                if not is_retryable(exc):
+                    raise LLMError(f"OpenAI отказал без шанса на повтор: {exc}") from exc
+                if attempt == MAX_LLM_ATTEMPTS - 1:
+                    break
+                delay = _retry_sleep(attempt)
+                log.warning("OpenAI: попытка %d не удалась (%s), пауза %.1fs",
+                            attempt + 1, exc, delay)
                 time.sleep(delay)
         raise LLMError(f"OpenAI недоступен: {last_error}")
 

@@ -54,6 +54,8 @@ def save(name: str, data: dict[str, Any]) -> Path:
         with os.fdopen(fd, "w", encoding="utf-8") as fh:
             json.dump(data, fh, ensure_ascii=False, indent=2, sort_keys=False)
             fh.write("\n")
+        # mkstemp creates 0600; state files are ordinary tracked files.
+        os.chmod(tmp, 0o644)
         os.replace(tmp, path)
     finally:
         if os.path.exists(tmp):

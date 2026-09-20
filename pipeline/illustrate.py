@@ -83,11 +83,40 @@ def _load_font(size: int, bold: bool = False):
     return ImageFont.load_default()
 
 
+def _break_long_word(draw, word: str, font, max_width: int) -> list[str]:
+    """Hyphenate a word that cannot fit on a line by itself.
+
+    Russian produces words like «Достопримечательности» that are wider than
+    the whole text box at the largest heading size. Without this they used to
+    be emitted as a single line and ran off the right edge of the card.
+    """
+    parts: list[str] = []
+    current = ""
+    for char in word:
+        candidate = current + char
+        if current and draw.textlength(candidate + "-", font=font) > max_width:
+            parts.append(current + "-")
+            current = char
+        else:
+            current = candidate
+    if current:
+        parts.append(current)
+    return parts or [word]
+
+
 def _wrap(draw, text: str, font, max_width: int) -> list[str]:
-    words = (text or "").split()
     lines: list[str] = []
     current = ""
-    for word in words:
+    for word in (text or "").split():
+        if draw.textlength(word, font=font) > max_width:
+            # Flush what we have, then split the oversized word itself.
+            if current:
+                lines.append(current)
+                current = ""
+            pieces = _break_long_word(draw, word, font, max_width)
+            lines.extend(pieces[:-1])
+            current = pieces[-1]
+            continue
         candidate = f"{current} {word}".strip()
         if draw.textlength(candidate, font=font) <= max_width or not current:
             current = candidate
@@ -128,10 +157,13 @@ def render_card(headline: str, accent: str = "", *, subtitle: str = "", out_path
 
     # Headline, wrapped, shrinking until it fits the available box.
     box_width = width - margin * 2
+    # Shrink until the headline fits in four lines AND no line is wider than
+    # the box (a single long word can overflow at any size).
     for size in (74, 66, 58, 50, 44, 38):
         font = _load_font(size, bold=True)
         lines = _wrap(draw, headline, font, box_width)
-        if len(lines) <= 4:
+        widest = max((draw.textlength(line, font=font) for line in lines), default=0)
+        if len(lines) <= 4 and widest <= box_width:
             break
     line_height = int(size * 1.22)
     block_height = line_height * len(lines)

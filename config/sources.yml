@@ -1226,3 +1226,33 @@ sources:
       checked_at: null
       note: "Нет сети. Инвестиционный канал. Роль — сигнал; цифры доходности из чужих каналов не переносить без первоисточника. Проверить: открывается ли t.me/s/dubai_invest1 с постами (у канала может быть выключено превью)."
     extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  # ---------------- telegram_private: приватные каналы через аккаунт владельца ----------------
+  # Читаются через пользовательскую сессию (Telethon), см. docs/SETUP.md «Приватные каналы».
+  # Ссылки-приглашения (t.me/+…) в реестр НЕ записываются: по ним может вступить кто угодно.
+  # Канал адресуется числовым channel_id — его печатает scripts/telegram_login.py.
+  - id: tg_private_1
+    title: "Приватный канал №1 (заполнить название после входа)"
+    url: "https://t.me/c/0"
+    channel_id: null
+    role: signal
+    type: telegram_private
+    category: realty_news
+    topics: [market, offplan, launches]
+    lang: ru
+    update_freq: daily
+    reliability: 2
+    weight: 0.6
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Закрытый канал: пересказ только с опорой на первоисточник; ссылка t.me/c/… для читателей не открывается, поэтому в пост идёт ссылка на первоисточник, а не на канал."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Ожидает channel_id из scripts/telegram_login.py и секреты TELEGRAM_API_ID / TELEGRAM_API_HASH / TELEGRAM_SESSION."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}

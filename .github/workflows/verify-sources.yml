@@ -39,6 +39,12 @@ jobs:
 
       # Нерабочие источники не должны валить workflow — их надо зафиксировать.
       - name: Проверка источников
+        env:
+          DRY_RUN: "0"
+          # Приватные каналы-источники (опционально, см. docs/SETUP.md «Приватные каналы»)
+          TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+          TELEGRAM_SESSION: ${{ secrets.TELEGRAM_SESSION }}
         run: python -m pipeline.verify_sources || true
 
       - name: Коммит результата проверки

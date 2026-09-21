@@ -14,6 +14,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from .config import CONFIG_DIR, Settings, enabled_sources, load_sources
+from .telegram_private import fetch_private
 from .telegram_source import parse_preview
 from .textutil import canonical_url, strip_html
 
@@ -200,7 +201,12 @@ def collect(settings: Settings, sources_doc: dict[str, Any] | None = None) -> li
         return items
 
     raw: list[dict[str, Any]] = []
-    for source in enabled_sources(doc):
+    active = enabled_sources(doc)
+    # Private channels are read through a user session, not over HTTP.
+    raw.extend(fetch_private(active, settings, limit=limit))
+    for source in active:
+        if source["type"] == "telegram_private":
+            continue
         parser = PARSERS.get(source["type"])
         if parser is None:
             log.warning("Источник %s: тип %s не поддерживается", source["id"], source["type"])

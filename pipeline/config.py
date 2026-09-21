@@ -143,6 +143,10 @@ class Settings:
     telegram_bot_token: str = ""
     telegram_channel_id: str = ""
     telegram_owner_id: str = ""
+    # Reading private channels through a user account (Telethon). Optional.
+    telegram_api_id: str = ""
+    telegram_api_hash: str = ""
+    telegram_session: str = ""
 
     llm_provider: str = "anthropic"
     llm_model: str = "claude-sonnet-5"
@@ -160,6 +164,8 @@ class Settings:
         """Every secret-like value, used by the log redactor."""
         values = [
             self.telegram_bot_token,
+            self.telegram_session,
+            self.telegram_api_hash,
             self.anthropic_api_key,
             self.openai_api_key,
             self.unsplash_access_key,
@@ -190,6 +196,9 @@ def load_settings() -> Settings:
         telegram_bot_token=os.environ.get("TELEGRAM_BOT_TOKEN", "").strip(),
         telegram_channel_id=os.environ.get("TELEGRAM_CHANNEL_ID", "").strip(),
         telegram_owner_id=os.environ.get("TELEGRAM_OWNER_ID", "").strip(),
+        telegram_api_id=os.environ.get("TELEGRAM_API_ID", "").strip(),
+        telegram_api_hash=os.environ.get("TELEGRAM_API_HASH", "").strip(),
+        telegram_session=os.environ.get("TELEGRAM_SESSION", "").strip(),
         llm_provider=os.environ.get("LLM_PROVIDER", "anthropic").strip().lower(),
         llm_model=os.environ.get("LLM_MODEL", "claude-sonnet-5").strip(),
         anthropic_api_key=os.environ.get("ANTHROPIC_API_KEY", "").strip(),
@@ -199,6 +208,12 @@ def load_settings() -> Settings:
         pexels_api_key=os.environ.get("PEXELS_API_KEY", "").strip(),
     )
     settings.tuning = load_settings_file()
+    if not settings.telegram_channel_id:
+        # The destination channel is not a secret; config/settings.yml may carry it
+        # so the owner has one secret fewer to create.
+        settings.telegram_channel_id = str(
+            (settings.tuning.get("telegram") or {}).get("channel") or ""
+        ).strip()
     return settings
 
 
@@ -229,7 +244,9 @@ def load_sources(path: Path | None = None) -> dict[str, Any]:
     return doc
 
 
-ALLOWED_SOURCE_TYPES = {"rss", "atom", "json_api", "html", "ics", "sitemap", "telegram"}
+ALLOWED_SOURCE_TYPES = {
+    "rss", "atom", "json_api", "html", "ics", "sitemap", "telegram", "telegram_private",
+}
 ALLOWED_VERIFICATION_STATUS = {"ok", "failed", "unverified"}
 ALLOWED_REUSE = {
     "summary_with_link",
@@ -275,6 +292,12 @@ def validate_sources_doc(doc: dict[str, Any]) -> None:
                 raise ValueError(
                     f"{where}: для type telegram url должен быть https://t.me/s/<username>"
                 )
+        if src["type"] == "telegram_private":
+            channel_id = src.get("channel_id")
+            if channel_id is not None and not isinstance(channel_id, int):
+                raise ValueError(f"{where}: channel_id должен быть числом (см. scripts/telegram_login.py)")
+            if src.get("enabled") and channel_id is None:
+                raise ValueError(f"{where}: приватный канал нельзя включить без channel_id")
         verification = src.get("verification") or {}
         status = verification.get("status", "unverified")
         if status not in ALLOWED_VERIFICATION_STATUS:

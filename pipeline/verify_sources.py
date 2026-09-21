@@ -29,6 +29,31 @@ def _now() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
+def check_private_source(source: dict[str, Any], settings: Any) -> dict[str, Any]:
+    """A private channel is verified by actually reading it with the user session."""
+    from .telegram_private import fetch_private, is_configured
+
+    result: dict[str, Any] = {
+        "status": "failed", "http_code": None, "content_type": "mtproto",
+        "items_found": 0, "latest_item_at": None, "checked_at": _now(), "note": "",
+    }
+    if source.get("channel_id") is None:
+        result["note"] = "не заполнен channel_id — возьмите его из вывода scripts/telegram_login.py"
+        return result
+    if not is_configured(settings):
+        result["note"] = "не заданы TELEGRAM_API_ID / TELEGRAM_API_HASH / TELEGRAM_SESSION"
+        return result
+    items = fetch_private([source], settings, limit=20)
+    result["items_found"] = len(items)
+    dated = [i["published_at"] for i in items if i.get("published_at")]
+    if dated:
+        result["latest_item_at"] = max(dated)
+    result["status"] = "ok" if items else "failed"
+    if not items:
+        result["note"] = "сессия работает, но постов не прочитано: аккаунт не в канале или id неверный"
+    return result
+
+
 def check_source(source: dict[str, Any], *, timeout: int, user_agent: str) -> dict[str, Any]:
     import requests
 
@@ -140,6 +165,9 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     setup_logging("INFO")
+    from .config import load_settings
+
+    settings = load_settings()
     doc = load_sources()
     defaults = doc.get("defaults") or {}
     timeout = int(defaults.get("timeout_sec", 20))
@@ -150,7 +178,10 @@ def main(argv: list[str] | None = None) -> int:
     for source in doc.get("sources") or []:
         if args.only and source["id"] != args.only:
             continue
-        verdict = check_source(source, timeout=timeout, user_agent=user_agent)
+        if source["type"] == "telegram_private":
+            verdict = check_private_source(source, settings)
+        else:
+            verdict = check_source(source, timeout=timeout, user_agent=user_agent)
         source["verification"] = verdict
         if verdict["status"] != "ok":
             source["enabled"] = False

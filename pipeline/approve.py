@@ -298,10 +298,15 @@ def _answer_id_request(client: TelegramClient, message: dict[str, Any], owner: s
     """
     chat = message.get("chat") or {}
     text = str(message.get("text") or "").strip().lower()
-    if chat.get("type") != "private" or not text.startswith(ID_COMMANDS):
+    if chat.get("type") != "private" or not text:
         return
     from_id = str(((message.get("from") or {}).get("id")) or "")
     if not from_id:
+        return
+    # A stranger's private message can only mean "who am I to this bot?" —
+    # people type "id", "старт" or "привет" as readily as "/id", so any text
+    # gets the answer. The owner is only answered on the explicit commands.
+    if from_id == owner and not text.startswith(ID_COMMANDS):
         return
     if from_id == owner:
         reply = (f"Ваш ID: <code>{from_id}</code>. Он уже прописан как владелец — "

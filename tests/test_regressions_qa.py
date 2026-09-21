@@ -608,11 +608,21 @@ def test_owner_gets_a_confirmation_and_groups_are_ignored(settings):
     client = _ChattyClient([
         _message_update(1, "/id", from_id=settings.telegram_owner_id),
         _message_update(2, "/id", from_id="555", chat_type="supergroup"),
-        _message_update(3, "привет", from_id="555"),
+        _message_update(3, "спасибо", from_id=settings.telegram_owner_id),
     ])
     approve.poll_once(settings, client=client, queue=_queue(), persist=False)
     sent = [c for c in client.calls if c[0] == "send"]
     assert len(sent) == 1 and "владелец" in sent[0][2]
+
+
+def test_a_stranger_typing_plain_id_without_slash_still_gets_the_answer(settings):
+    """Was: the owner typed «id» (no slash) and the bot stayed silent."""
+    from pipeline import approve
+
+    client = _ChattyClient([_message_update(1, "id", from_id="252033658")])
+    approve.poll_once(settings, client=client, queue=_queue(), persist=False)
+    sent = [c for c in client.calls if c[0] == "send"]
+    assert sent and "252033658" in sent[0][2]
 
 
 def test_truncated_model_answer_is_reported_not_parsed(monkeypatch):

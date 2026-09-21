@@ -10,8 +10,8 @@ on:
 permissions:
   contents: write
 
-# Тот же замок, что и у остальных: workflow переписывает config/sources.yml
-# и state/, и одновременный запуск с другим дал бы non-fast-forward.
+# Тот же замок, что и у остальных: workflow пишет state/sources_health.json,
+# и одновременный запуск с другим дал бы non-fast-forward.
 concurrency:
   group: pipeline-state
   cancel-in-progress: false
@@ -48,4 +48,4 @@ jobs:
         run: python -m pipeline.verify_sources || true
 
       - name: Коммит результата проверки
-        run: 'bash scripts/commit_state.sh "state: проверка источников" config/sources.yml'
+        run: 'bash scripts/commit_state.sh "state: проверка источников"'

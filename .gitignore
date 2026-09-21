@@ -5,9 +5,9 @@
 *.pem
 *.key
 
-# Real runtime state (only *.example.json is tracked)
-state/*.json
-!state/*.example.json
+# state/*.json IS tracked on purpose: the repository is the pipeline's database
+# (scripts/commit_state.sh commits it from Actions). Temp files of atomic writes:
+state/.*.tmp
 
 # Generated artefacts
 out/

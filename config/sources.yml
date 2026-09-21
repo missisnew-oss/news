@@ -2,14 +2,14 @@ version: 1
 meta:
   updated_at: "2026-09-20"
   timezone: "Asia/Dubai"
-  # ВНИМАНИЕ. Реестр собран в окружении БЕЗ исходящего доступа в интернет
-  # (egress-прокси отвечал 403 на CONNECT ко всем внешним хостам).
-  # Ни один URL ниже НЕ подтверждён реальным HTTP-запросом.
-  # Поэтому у всех источников verification.status: unverified и enabled: false.
-  # ПЕРВЫЙ ШАГ ВЛАДЕЛЬЦА: `make verify-sources` в окружении с обычным интернетом.
-  # Скрипт проставит фактические http_code/items_found и включит только живые.
-  # Подробности и список кандидатов — в docs/SOURCES.md.
-  verification_environment: "no_network_egress"
+  # КАК ВКЛЮЧАЮТСЯ ИСТОЧНИКИ. `enabled: true` здесь значит «разрешён», не «работает».
+  # Реально используются только источники, у которых последняя проверка
+  # (workflow Verify Sources → state/sources_health.json) дала status: ok.
+  # Этот файл руками не переписывается ни роботом, ни владельцем ради включения.
+  # Блоки verification ниже — заметки исследователя на момент составления
+  # (собирался без доступа в интернет); живой статус — в state/sources_health.json.
+  # Чтобы навсегда выключить источник — поставьте ему enabled: true.
+  verification_environment: "no_network_egress_at_authoring"
 defaults:
   timeout_sec: 20
   user_agent: "DubaiNewsBot/1.0 (+https://github.com/missisnew-oss/news)"
@@ -35,7 +35,7 @@ sources:
     update_freq: hourly
     reliability: 4
     weight: 1.0
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Пересказ своими словами + обязательная ссылка на первоисточник"
@@ -60,7 +60,7 @@ sources:
     update_freq: hourly
     reliability: 4
     weight: 1.0
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Пересказ + ссылка. Полные тексты не перепечатывать"
@@ -85,7 +85,7 @@ sources:
     update_freq: daily
     reliability: 3
     weight: 1.0
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Пересказ + ссылка"
@@ -110,7 +110,7 @@ sources:
     update_freq: daily
     reliability: 3
     weight: 0.9
-    enabled: false
+    enabled: true
     license:
       reuse: press_release
       note: "Раздел press-release допускает цитирование пресс-материалов со ссылкой"
@@ -140,7 +140,7 @@ sources:
     update_freq: weekly
     reliability: 3
     weight: 0.9
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Коммерческий портал: только пересказ цифр со ссылкой"
@@ -171,7 +171,7 @@ sources:
     update_freq: daily
     reliability: 5
     weight: 1.3
-    enabled: false
+    enabled: true
     license:
       reuse: open_data
       note: "Open data Дубая. Нужна регистрация и OAuth client_credentials. Атрибуция DLD/Dubai Pulse обязательна"
@@ -201,7 +201,7 @@ sources:
     update_freq: daily
     reliability: 5
     weight: 1.2
-    enabled: false
+    enabled: true
     license:
       reuse: open_data
       note: "Open data, свободное использование с атрибуцией DLD"
@@ -231,7 +231,7 @@ sources:
     update_freq: weekly
     reliability: 5
     weight: 1.2
-    enabled: false
+    enabled: true
     license:
       reuse: open_data
       note: "Официальные данные регулятора, атрибуция DLD"
@@ -261,7 +261,7 @@ sources:
     update_freq: irregular
     reliability: 5
     weight: 1.0
-    enabled: false
+    enabled: true
     license:
       reuse: api_terms
       note: "Доступ по договору/ключу. Условия переиспользования — по api_terms DLD"
@@ -286,7 +286,7 @@ sources:
     update_freq: irregular
     reliability: 4
     weight: 1.0
-    enabled: false
+    enabled: true
     license:
       reuse: open_data
       note: "Открытые данные ОАЭ, свободное использование"
@@ -316,7 +316,7 @@ sources:
     update_freq: weekly
     reliability: 5
     weight: 1.2
-    enabled: false
+    enabled: true
     license:
       reuse: press_release
       note: "Официальные пресс-релизы регулятора — цитирование разрешено со ссылкой"
@@ -347,7 +347,7 @@ sources:
     update_freq: weekly
     reliability: 5
     weight: 1.1
-    enabled: false
+    enabled: true
     license:
       reuse: press_release
       note: "Пресс-материалы застройщика — можно цитировать и использовать фото из пресс-кита со ссылкой"
@@ -377,7 +377,7 @@ sources:
     update_freq: weekly
     reliability: 4
     weight: 1.0
-    enabled: false
+    enabled: true
     license:
       reuse: press_release
       note: "Пресс-материалы застройщика"
@@ -402,7 +402,7 @@ sources:
     update_freq: weekly
     reliability: 5
     weight: 1.0
-    enabled: false
+    enabled: true
     license:
       reuse: press_release
       note: "Пресс-материалы застройщика"
@@ -432,7 +432,7 @@ sources:
     update_freq: weekly
     reliability: 5
     weight: 0.9
-    enabled: false
+    enabled: true
     license:
       reuse: press_release
       note: "Пресс-материалы застройщика"
@@ -462,7 +462,7 @@ sources:
     update_freq: daily
     reliability: 3
     weight: 0.9
-    enabled: false
+    enabled: true
     license:
       reuse: press_release
       note: "Агрегатор официальных пресс-релизов — цитирование со ссылкой"
@@ -493,7 +493,7 @@ sources:
     update_freq: hourly
     reliability: 5
     weight: 1.1
-    enabled: false
+    enabled: true
     license:
       reuse: press_release
       note: "Государственное информагентство — цитирование со ссылкой на WAM"
@@ -518,7 +518,7 @@ sources:
     update_freq: daily
     reliability: 5
     weight: 1.1
-    enabled: false
+    enabled: true
     license:
       reuse: press_release
       note: "Официальные сообщения правительства Дубая — цитирование со ссылкой"
@@ -548,7 +548,7 @@ sources:
     update_freq: hourly
     reliability: 4
     weight: 1.0
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Пересказ + ссылка"
@@ -578,7 +578,7 @@ sources:
     update_freq: daily
     reliability: 3
     weight: 0.8
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Пересказ + ссылка"
@@ -604,7 +604,7 @@ sources:
     update_freq: weekly
     reliability: 5
     weight: 1.2
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Официальный туристический портал (DET). Анонсы пересказывать со ссылкой"
@@ -634,7 +634,7 @@ sources:
     update_freq: weekly
     reliability: 5
     weight: 1.0
-    enabled: false
+    enabled: true
     license:
       reuse: press_release
       note: "Государственный орган культуры — анонсы можно цитировать со ссылкой"
@@ -664,7 +664,7 @@ sources:
     update_freq: daily
     reliability: 4
     weight: 1.1
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Коммерческий тикетинг. Только анонс + ссылка, без копирования описаний и афиш"
@@ -694,7 +694,7 @@ sources:
     update_freq: weekly
     reliability: 4
     weight: 1.0
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Только анонс + ссылка"
@@ -724,7 +724,7 @@ sources:
     update_freq: weekly
     reliability: 5
     weight: 1.1
-    enabled: false
+    enabled: true
     license:
       reuse: press_release
       note: "Официальная площадка — анонсы и пресс-фото по пресс-киту"
@@ -754,7 +754,7 @@ sources:
     update_freq: weekly
     reliability: 5
     weight: 1.0
-    enabled: false
+    enabled: true
     license:
       reuse: press_release
       note: "Официальная площадка — календарь и пресс-релизы можно цитировать со ссылкой"
@@ -784,7 +784,7 @@ sources:
     update_freq: weekly
     reliability: 4
     weight: 0.9
-    enabled: false
+    enabled: true
     license:
       reuse: press_release
       note: "Официальная площадка, есть Media Centre с пресс-материалами"
@@ -814,7 +814,7 @@ sources:
     update_freq: daily
     reliability: 3
     weight: 0.7
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Только анонс + ссылка. Публичный поисковый API Eventbrite отключён — остаётся HTML/JSON-LD"
@@ -844,7 +844,7 @@ sources:
     update_freq: daily
     reliability: 4
     weight: 0.9
-    enabled: false
+    enabled: true
     license:
       reuse: api_terms
       note: "Требуется бесплатный API-ключ (добавить &apikey=... в URL). Условия и атрибуция — по Ticketmaster API terms"
@@ -875,7 +875,7 @@ sources:
     update_freq: daily
     reliability: 3
     weight: 1.0
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Пересказ + ссылка"
@@ -900,7 +900,7 @@ sources:
     update_freq: daily
     reliability: 4
     weight: 1.1
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Пересказ + ссылка, изображения не переиспользовать"
@@ -930,7 +930,7 @@ sources:
     update_freq: daily
     reliability: 3
     weight: 0.9
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Пересказ + ссылка"
@@ -960,7 +960,7 @@ sources:
     update_freq: daily
     reliability: 3
     weight: 0.8
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Пересказ + ссылка"
@@ -990,7 +990,7 @@ sources:
     update_freq: weekly
     reliability: 2
     weight: 0.6
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Пересказ + ссылка"
@@ -1024,7 +1024,7 @@ sources:
     update_freq: daily
     reliability: 3
     weight: 0.9
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
@@ -1051,7 +1051,7 @@ sources:
     update_freq: daily
     reliability: 3
     weight: 0.9
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
@@ -1078,7 +1078,7 @@ sources:
     update_freq: daily
     reliability: 3
     weight: 0.7
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
@@ -1105,7 +1105,7 @@ sources:
     update_freq: daily
     reliability: 2
     weight: 0.7
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
@@ -1132,7 +1132,7 @@ sources:
     update_freq: daily
     reliability: 2
     weight: 0.6
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
@@ -1159,7 +1159,7 @@ sources:
     update_freq: daily
     reliability: 2
     weight: 0.6
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
@@ -1186,7 +1186,7 @@ sources:
     update_freq: daily
     reliability: 2
     weight: 0.6
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
@@ -1213,7 +1213,7 @@ sources:
     update_freq: daily
     reliability: 2
     weight: 0.6
-    enabled: false
+    enabled: true
     license:
       reuse: summary_with_link
       note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."

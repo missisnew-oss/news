@@ -94,7 +94,7 @@ def test_registry_rejects_a_telegram_source_with_a_wrong_url():
         validate_sources_doc({**doc, "sources": [bad]})
 
 
-def test_owner_channels_are_registered_but_unverified():
+def test_owner_channels_are_registered_and_allowed():
     doc = load_sources()
     tg = [s for s in doc["sources"] if s["type"] == "telegram"]
     usernames = {s["channel"].lower() for s in tg}
@@ -105,7 +105,7 @@ def test_owner_channels_are_registered_but_unverified():
     for s in tg:
         assert s["url"] == f"https://t.me/s/{s['channel'][1:]}"
         assert s["role"] in {"news", "signal"}
-        assert not s["enabled"] and s["verification"]["status"] == "unverified"
+        assert s["enabled"], "разрешён в реестре; включает его живая проверка, не YAML"
 
 
 def test_verify_marks_hidden_preview_as_failed(monkeypatch, no_preview_html, preview_html):

@@ -52,17 +52,12 @@ def test_types_and_licences_are_from_the_allowed_sets():
         assert (source.get("license") or {}).get("reuse", "unknown") in ALLOWED_REUSE
 
 
-def test_unverified_sources_are_not_enabled():
-    """The brief forbids collecting from a URL nobody ever requested."""
+def test_registry_alone_never_switches_a_source_on():
+    """The brief forbids collecting from a URL nobody ever requested:
+    without a health snapshot from a real check nothing is active."""
     doc = load_sources()
-    offenders = [
-        s["id"] for s in doc["sources"]
-        if s.get("enabled") and (s.get("verification") or {}).get("status") != "ok"
-    ]
-    assert not offenders, (
-        "источники включены, но не подтверждены HTTP-проверкой: "
-        f"{offenders}. Запустите `make verify-sources`."
-    )
+    assert enabled_sources(doc, health={}) == []
+    assert enabled_sources(doc, health={"sources": {}}) == []
 
 
 def test_enabled_sources_helper_filters_correctly():
@@ -70,14 +65,28 @@ def test_enabled_sources_helper_filters_correctly():
         "categories": {"realty_news": {"weight": 1.0}},
         "sources": [
             {"id": "a", "title": "A", "url": "https://example.com/a", "type": "rss",
-             "category": "realty_news", "lang": "en", "enabled": True,
-             "verification": {"status": "ok"}},
+             "category": "realty_news", "lang": "en", "enabled": True},
             {"id": "b", "title": "B", "url": "https://example.com/b", "type": "rss",
-             "category": "realty_news", "lang": "en", "enabled": False,
-             "verification": {"status": "failed"}},
+             "category": "realty_news", "lang": "en", "enabled": True},
+            {"id": "c", "title": "C", "url": "https://example.com/c", "type": "rss",
+             "category": "realty_news", "lang": "en", "enabled": False},
         ],
     }
     validate_sources_doc(doc)
+    health = {"sources": {"a": {"status": "ok"}, "b": {"status": "failed"}, "c": {"status": "ok"}}}
+    assert [s["id"] for s in enabled_sources(doc, health)] == ["a"], (
+        "a — разрешён и живой; b — разрешён, но упал; c — живой, но выключен владельцем"
+    )
+
+
+def test_enabled_sources_reads_the_health_snapshot_from_state(isolated_state):
+    from pipeline import state
+
+    doc = {"categories": {"realty_news": {}}, "sources": [
+        {"id": "a", "title": "A", "url": "https://example.com/a", "type": "rss",
+         "category": "realty_news", "lang": "en", "enabled": True}]}
+    assert enabled_sources(doc) == []
+    state.save("sources_health.json", {"version": 1, "sources": {"a": {"status": "ok"}}})
     assert [s["id"] for s in enabled_sources(doc)] == ["a"]
 
 

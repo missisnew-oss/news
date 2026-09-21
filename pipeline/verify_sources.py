@@ -1,11 +1,10 @@
 """Verify every source in config/sources.yml with a real HTTP request.
 
-Run it with ``make verify-sources``. It rewrites the ``verification`` block of
-each source in place, flips ``enabled`` to false for sources that fail, and
-writes a machine-readable health snapshot to ``state/sources_health.json``.
-
-This is the tool that turns an unverified registry into a verified one: the
-brief forbids shipping URLs that were never actually requested.
+Run it with ``make verify-sources``. It writes the verdicts to
+``state/sources_health.json`` — the collector only uses sources whose latest
+verdict there is ``ok`` (see ``config.enabled_sources``). The curated
+``config/sources.yml`` is never rewritten: a YAML dump would strip every
+comment and produce a diff the state guard rightly refuses.
 """
 
 from __future__ import annotations
@@ -19,7 +18,7 @@ from pathlib import Path
 from typing import Any
 
 from . import state
-from .config import SOURCES_FILE, load_sources
+from .config import load_sources
 from .logging_setup import setup_logging
 
 log = logging.getLogger("pipeline.verify_sources")
@@ -158,8 +157,6 @@ def check_source(source: dict[str, Any], *, timeout: int, user_agent: str) -> di
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Проверка источников из config/sources.yml")
-    parser.add_argument("--write", action="store_true", default=True,
-                        help="переписать verification в sources.yml (по умолчанию да)")
     parser.add_argument("--dry", action="store_true", help="только показать результат, ничего не писать")
     parser.add_argument("--only", help="проверить один источник по id")
     args = parser.parse_args(argv)
@@ -173,7 +170,12 @@ def main(argv: list[str] | None = None) -> int:
     timeout = int(defaults.get("timeout_sec", 20))
     user_agent = defaults.get("user_agent", "DubaiNewsBot/1.0")
 
-    health: dict[str, Any] = {"version": 1, "checked_at": _now(), "sources": {}}
+    # Start from the previous snapshot so `--only` refreshes one verdict
+    # without forgetting the rest.
+    health: dict[str, Any] = state.load("sources_health.json") if args.only else {"version": 1, "sources": {}}
+    health["version"] = 1
+    health["checked_at"] = _now()
+    health.setdefault("sources", {})
     ok = failed = 0
     for source in doc.get("sources") or []:
         if args.only and source["id"] != args.only:
@@ -182,9 +184,7 @@ def main(argv: list[str] | None = None) -> int:
             verdict = check_private_source(source, settings)
         else:
             verdict = check_source(source, timeout=timeout, user_agent=user_agent)
-        source["verification"] = verdict
         if verdict["status"] != "ok":
-            source["enabled"] = False
             failed += 1
             log.warning("%-30s FAILED %s %s", source["id"], verdict["http_code"], verdict["note"])
         else:
@@ -196,14 +196,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.dry:
         return 0 if failed == 0 else 1
 
-    import yaml
-
-    SOURCES_FILE.write_text(
-        yaml.safe_dump(doc, allow_unicode=True, sort_keys=False, width=100),
-        encoding="utf-8",
-    )
     state.save("sources_health.json", health)
-    print(f"Обновлены {SOURCES_FILE} и state/sources_health.json")
+    print("Обновлён state/sources_health.json — включены источники со status: ok")
     return 0 if failed == 0 else 1
 
 

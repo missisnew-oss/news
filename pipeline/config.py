@@ -307,11 +307,26 @@ def validate_sources_doc(doc: dict[str, Any]) -> None:
             raise ValueError(f"{where}: недопустимый license.reuse {reuse!r}")
 
 
-def enabled_sources(doc: dict[str, Any]) -> list[dict[str, Any]]:
+def enabled_sources(doc: dict[str, Any], health: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     """Sources the collector may actually hit.
 
-    A source is used only when it is explicitly enabled. Its verification
-    status is surfaced to the caller but does not, by itself, disable it —
-    ``pipeline.verify_sources`` is what flips ``enabled`` after a real check.
+    Two gates, both required:
+    * the registry allows it — ``enabled`` is not explicitly ``false``;
+    * the last real check passed — ``state/sources_health.json`` (written by
+      ``pipeline.verify_sources``) says ``status: ok``.
+
+    So nobody edits YAML by hand to switch sources on: the weekly check does it,
+    and a source that breaks drops out on the next check.
     """
-    return [s for s in (doc.get("sources") or []) if s.get("enabled")]
+    if health is None:
+        from . import state
+
+        health = state.load("sources_health.json")
+    checks = health.get("sources") or {}
+    active: list[dict[str, Any]] = []
+    for src in doc.get("sources") or []:
+        if src.get("enabled") is False:
+            continue
+        if (checks.get(src["id"]) or {}).get("status") == "ok":
+            active.append(src)
+    return active

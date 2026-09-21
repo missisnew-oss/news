@@ -103,6 +103,25 @@ def check_source(source: dict[str, Any], *, timeout: int, user_agent: str) -> di
             result["note"] = "JSON получен, но список элементов не найден"
         return result
 
+    if kind == "telegram":
+        from .telegram_source import has_preview, parse_preview
+
+        if not has_preview(response.content):
+            result["note"] = (
+                "t.me отдал страницу без постов: канал приватный или у него выключено "
+                "веб-превью — через t.me/s его не прочитать"
+            )
+            return result
+        items = parse_preview(response.content, source, limit=50)
+        result["items_found"] = len(items)
+        dated = [i["published_at"] for i in items if i.get("published_at")]
+        if dated:
+            result["latest_item_at"] = max(dated)
+        result["status"] = "ok" if items else "failed"
+        if not items:
+            result["note"] = "превью есть, но текстовых постов нет (только медиа/стикеры)"
+        return result
+
     # html / ics / sitemap: a 200 with a non-trivial body is all we can assert.
     body_len = len(response.content)
     result["items_found"] = 1 if body_len > 500 else 0

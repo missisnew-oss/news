@@ -1,6 +1,7 @@
 """Stage 1 — COLLECT: fetch raw items from every enabled source.
 
-Supported source types: rss, atom, json_api, html (link harvest), sitemap.
+Supported source types: rss, atom, json_api, html (link harvest), sitemap,
+telegram (public channel preview at t.me/s/<name>, see telegram_source.py).
 Network access is skipped entirely in DRY_RUN; the pipeline then reads
 ``config/sample_items.json`` so a dry run is reproducible and offline.
 """
@@ -13,6 +14,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from .config import CONFIG_DIR, Settings, enabled_sources, load_sources
+from .telegram_source import parse_preview
 from .textutil import canonical_url, strip_html
 
 log = logging.getLogger("pipeline.collect")
@@ -172,6 +174,7 @@ PARSERS = {
     "json_api": _parse_json_api,
     "html": _parse_html,
     "sitemap": _parse_html,
+    "telegram": parse_preview,
 }
 
 

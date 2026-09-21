@@ -73,7 +73,8 @@ make verify-sources   # реальная HTTP-проверка реестра и
 |---|---|
 | `pipeline/run.py` | CLI: `python -m pipeline.run --dry-run`, `--stage <имя>` |
 | `pipeline/config.py` | пути, настройки из окружения, реестр рубрик, валидация `sources.yml` |
-| `pipeline/collect.py` | загрузка источников (rss/atom/json_api/html), в DRY_RUN — офлайн-фикстура |
+| `pipeline/collect.py` | загрузка источников (rss/atom/json_api/html/telegram), в DRY_RUN — офлайн-фикстура |
+| `pipeline/telegram_source.py` | чтение публичных Telegram-каналов через веб-превью t.me/s/… |
 | `pipeline/normalize.py` | приведение к единой схеме, дедупликация, очистка от prompt injection |
 | `pipeline/score.py` | скоринг материалов и выбор рубрик на прогон |
 | `pipeline/prompts.py` | загрузка промптов из `prompts/` и подстановка плейсхолдеров |

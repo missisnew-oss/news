@@ -1003,3 +1003,226 @@ sources:
       checked_at: null
       note: "Нет сети. Точный URL RSS найден в поисковом индексе. Сайт старый — вероятна низкая свежесть, проверить latest_item_at."
     extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  # ---------------- telegram: каналы, указанные владельцем ----------------
+  # Читаются через публичное веб-превью https://t.me/s/<username> без логина.
+  # role: news   — новостной канал, пост может стать основой пересказа (+ ссылка на пост).
+  # role: signal — канал коллеги/конкурента: используем как индикатор тем и лончей,
+  #                а факты и цифры берём только из первоисточника (застройщик, регулятор, СМИ).
+  # Сеть в среде сборки заблокирована — превью ни одного канала не проверено; см. docs/SOURCES.md §7.
+
+  - id: tg_uaegeneralnews
+    title: "Новости ОАЭ (@uaegeneralnews)"
+    url: "https://t.me/s/uaegeneralnews"
+    homepage: "https://t.me/uaegeneralnews"
+    channel: "@uaegeneralnews"
+    role: news
+    type: telegram
+    category: city_gov
+    topics: [city_news, laws, visas, transport]
+    lang: ru
+    update_freq: daily
+    reliability: 3
+    weight: 0.9
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Русскоязычная новостная лента об ОАЭ. Указан владельцем канала как источник. Проверить: открывается ли t.me/s/uaegeneralnews с постами (у канала может быть выключено превью)."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_russianemiratesnews
+    title: "Русские Эмираты — новости (@russianemiratesnews)"
+    url: "https://t.me/s/russianemiratesnews"
+    homepage: "https://t.me/russianemiratesnews"
+    channel: "@russianemiratesnews"
+    role: news
+    type: telegram
+    category: city_gov
+    topics: [city_news, community, events, laws]
+    lang: ru
+    update_freq: daily
+    reliability: 3
+    weight: 0.9
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Русскоязычные новости ОАЭ. Указан владельцем канала как источник. Проверить: открывается ли t.me/s/russianemiratesnews с постами (у канала может быть выключено превью)."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_dubaimap
+    title: "Dubai Map (@dubaimap)"
+    url: "https://t.me/s/dubaimap"
+    homepage: "https://t.me/dubaimap"
+    channel: "@dubaimap"
+    role: news
+    type: telegram
+    category: lifestyle
+    topics: [places, districts, lifestyle, practical]
+    lang: ru
+    update_freq: daily
+    reliability: 3
+    weight: 0.7
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Городской канал о Дубае. Указан владельцем канала как источник. Проверить: открывается ли t.me/s/dubaimap с постами (у канала может быть выключено превью)."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_offplanmariya
+    title: "Off-plan Мария (@offplanmariya)"
+    url: "https://t.me/s/offplanmariya"
+    homepage: "https://t.me/offplanmariya"
+    channel: "@offplanmariya"
+    role: signal
+    type: telegram
+    category: developers
+    topics: [launches, offplan, developers]
+    lang: ru
+    update_freq: daily
+    reliability: 2
+    weight: 0.7
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Канал коллеги-брокера по off-plan. Роль — сигнал о лончах и настроении рынка, не источник для пересказа чужих продающих постов. Проверить: открывается ли t.me/s/offplanmariya с постами (у канала может быть выключено превью)."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_eltsovairina_80
+    title: "Ирина Ельцова (@eltsovairina_80)"
+    url: "https://t.me/s/eltsovairina_80"
+    homepage: "https://t.me/eltsovairina_80"
+    channel: "@eltsovairina_80"
+    role: signal
+    type: telegram
+    category: realty_news
+    topics: [market, offplan, broker_view]
+    lang: ru
+    update_freq: daily
+    reliability: 2
+    weight: 0.6
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Личный канал брокера. Роль — сигнал о темах, которые обсуждает рынок. Проверить: открывается ли t.me/s/eltsovairina_80 с постами (у канала может быть выключено превью)."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_neginskiuae
+    title: "Neginski UAE (@NeginskiUAE)"
+    url: "https://t.me/s/NeginskiUAE"
+    homepage: "https://t.me/NeginskiUAE"
+    channel: "@NeginskiUAE"
+    role: signal
+    type: telegram
+    category: realty_news
+    topics: [market, investment, broker_view]
+    lang: ru
+    update_freq: daily
+    reliability: 2
+    weight: 0.6
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Канал агентства/брокера. Роль — сигнал. Проверить: открывается ли t.me/s/NeginskiUAE с постами (у канала может быть выключено превью)."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_burjuyinvest
+    title: "Burjuy Invest (@burjuyinvest)"
+    url: "https://t.me/s/burjuyinvest"
+    homepage: "https://t.me/burjuyinvest"
+    channel: "@burjuyinvest"
+    role: signal
+    type: telegram
+    category: realty_news
+    topics: [investment, market, offplan]
+    lang: ru
+    update_freq: daily
+    reliability: 2
+    weight: 0.6
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Инвестиционный канал. Роль — сигнал; цифры доходности из чужих каналов не переносить без первоисточника. Проверить: открывается ли t.me/s/burjuyinvest с постами (у канала может быть выключено превью)."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_dubai_invest1
+    title: "Dubai Invest (@dubai_invest1)"
+    url: "https://t.me/s/dubai_invest1"
+    homepage: "https://t.me/dubai_invest1"
+    channel: "@dubai_invest1"
+    role: signal
+    type: telegram
+    category: realty_news
+    topics: [investment, market, offplan]
+    lang: ru
+    update_freq: daily
+    reliability: 2
+    weight: 0.6
+    enabled: false
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Нет сети. Инвестиционный канал. Роль — сигнал; цифры доходности из чужих каналов не переносить без первоисточника. Проверить: открывается ли t.me/s/dubai_invest1 с постами (у канала может быть выключено превью)."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}

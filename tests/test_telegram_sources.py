@@ -1,0 +1,137 @@
+"""Telegram channels as a source: the t.me/s/<name> preview parser and its wiring."""
+
+from __future__ import annotations
+
+from pathlib import Path
+
+import pytest
+
+from pipeline import collect, verify_sources
+from pipeline.config import ALLOWED_SOURCE_TYPES, load_sources, validate_sources_doc
+from pipeline.normalize import normalize_one, scrub_untrusted
+from pipeline.telegram_source import channel_username, has_preview, parse_preview, preview_url
+
+FIXTURES = Path(__file__).parent / "fixtures"
+SOURCE = {"id": "tg_demo", "type": "telegram", "category": "city_gov", "lang": "ru",
+          "url": "https://t.me/s/demo_channel"}
+
+
+@pytest.fixture
+def preview_html() -> bytes:
+    return (FIXTURES / "tme_preview_sample.html").read_bytes()
+
+
+@pytest.fixture
+def no_preview_html() -> bytes:
+    return (FIXTURES / "tme_no_preview_sample.html").read_bytes()
+
+
+def test_preview_parses_text_posts_newest_first(preview_html):
+    items = parse_preview(preview_html, SOURCE)
+    assert [i["url"] for i in items] == [
+        "https://t.me/demo_channel/103", "https://t.me/demo_channel/101",
+    ], "пост 102 — только фото без текста, его пересказывать нечего"
+    newest = items[0]
+    assert newest["source_id"] == "tg_demo"
+    assert newest["title"] == "Застройщик открыл продажи в новой башне на набережной"
+    assert "320 квартир, рассрочка 60/40" in newest["summary"]
+    assert newest["published_at"] == "2026-09-20T10:15:03+00:00"
+    assert newest["image_url"] == "https://cdn4.telesco.pe/file/demo103.jpg"
+    assert newest["views"] == 1_200_000
+    assert items[1]["views"] == 12_300
+    assert items[1]["image_url"] is None
+
+
+def test_entities_and_markup_do_not_leak_into_text(preview_html):
+    items = parse_preview(preview_html, SOURCE)
+    old = items[1]
+    assert "&amp;" not in old["summary"] and "регулятора & в приложении" in old["summary"]
+    assert "<" not in items[0]["summary"]
+
+
+def test_injection_inside_a_channel_post_is_scrubbed_by_normalize(preview_html):
+    items = parse_preview(preview_html, SOURCE)
+    item = normalize_one(items[0], {"tg_demo": SOURCE})
+    assert item is not None
+    assert "ignore previous instructions" not in item.summary.lower()
+    assert "ignore previous instructions" not in scrub_untrusted(items[0]["raw_text"]).lower()
+    assert item.category == "city_gov" and item.lang == "ru"
+
+
+def test_private_or_hidden_channel_is_detected(no_preview_html, preview_html):
+    assert has_preview(preview_html)
+    assert not has_preview(no_preview_html)
+    assert parse_preview(no_preview_html, SOURCE) == []
+
+
+def test_limit_is_respected(preview_html):
+    assert len(parse_preview(preview_html, SOURCE, limit=1)) == 1
+
+
+@pytest.mark.parametrize("url,expected", [
+    ("https://t.me/s/uaegeneralnews", "uaegeneralnews"),
+    ("https://t.me/uaegeneralnews", "uaegeneralnews"),
+    ("https://t.me/+AbCdEf", None),
+    ("https://example.com/s/x", None),
+])
+def test_channel_username_extraction(url, expected):
+    assert channel_username(url) == expected
+
+
+def test_preview_url_strips_at_sign():
+    assert preview_url("@NeginskiUAE") == "https://t.me/s/NeginskiUAE"
+
+
+def test_collector_knows_the_telegram_type():
+    assert "telegram" in ALLOWED_SOURCE_TYPES
+    assert collect.PARSERS["telegram"] is parse_preview
+
+
+def test_registry_rejects_a_telegram_source_with_a_wrong_url():
+    doc = load_sources()
+    bad = dict(doc["sources"][0], id="tg_bad", type="telegram", url="https://t.me/+invite")
+    with pytest.raises(ValueError, match="t.me/s"):
+        validate_sources_doc({**doc, "sources": [bad]})
+
+
+def test_owner_channels_are_registered_but_unverified():
+    doc = load_sources()
+    tg = [s for s in doc["sources"] if s["type"] == "telegram"]
+    usernames = {s["channel"].lower() for s in tg}
+    assert usernames >= {
+        "@eltsovairina_80", "@offplanmariya", "@dubaimap", "@neginskiuae",
+        "@burjuyinvest", "@dubai_invest1", "@uaegeneralnews", "@russianemiratesnews",
+    }
+    for s in tg:
+        assert s["url"] == f"https://t.me/s/{s['channel'][1:]}"
+        assert s["role"] in {"news", "signal"}
+        assert not s["enabled"] and s["verification"]["status"] == "unverified"
+
+
+def test_verify_marks_hidden_preview_as_failed(monkeypatch, no_preview_html, preview_html):
+    class Resp:
+        def __init__(self, body):
+            self.status_code, self.content, self.headers = 200, body, {"Content-Type": "text/html"}
+
+    import requests
+
+    monkeypatch.setattr(requests, "get", lambda *a, **k: Resp(no_preview_html))
+    verdict = verify_sources.check_source(SOURCE, timeout=5, user_agent="t")
+    assert verdict["status"] == "failed" and "превью" in verdict["note"]
+
+    monkeypatch.setattr(requests, "get", lambda *a, **k: Resp(preview_html))
+    verdict = verify_sources.check_source(SOURCE, timeout=5, user_agent="t")
+    assert verdict["status"] == "ok"
+    assert verdict["items_found"] == 2
+    assert verdict["latest_item_at"] == "2026-09-20T10:15:03+00:00"
+
+
+def test_text_with_nested_divs_and_no_footer_is_still_extracted():
+    block = (
+        '<div class="tgme_widget_message_wrap"><div class="tgme_widget_message" data-post="c/7">'
+        '<div class="tgme_widget_message_text js-message_text" dir="auto">Цитата ниже:'
+        '<div class="quote">Внутренний блок с 15 словами о рынке</div> и хвост текста</div></div></div>'
+    )
+    items = parse_preview(block, SOURCE)
+    assert len(items) == 1
+    assert items[0]["summary"] == "Цитата ниже: Внутренний блок с 15 словами о рынке и хвост текста"

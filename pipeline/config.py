@@ -229,7 +229,7 @@ def load_sources(path: Path | None = None) -> dict[str, Any]:
     return doc
 
 
-ALLOWED_SOURCE_TYPES = {"rss", "atom", "json_api", "html", "ics", "sitemap"}
+ALLOWED_SOURCE_TYPES = {"rss", "atom", "json_api", "html", "ics", "sitemap", "telegram"}
 ALLOWED_VERIFICATION_STATUS = {"ok", "failed", "unverified"}
 ALLOWED_REUSE = {
     "summary_with_link",
@@ -268,6 +268,13 @@ def validate_sources_doc(doc: dict[str, Any]) -> None:
             )
         if not str(src["url"]).startswith(("http://", "https://")):
             raise ValueError(f"{where}: url должен быть абсолютным")
+        if src["type"] == "telegram":
+            from .telegram_source import channel_username
+
+            if not channel_username(str(src["url"])):
+                raise ValueError(
+                    f"{where}: для type telegram url должен быть https://t.me/s/<username>"
+                )
         verification = src.get("verification") or {}
         status = verification.get("status", "unverified")
         if status not in ALLOWED_VERIFICATION_STATUS:

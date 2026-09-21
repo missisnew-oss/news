@@ -18,7 +18,7 @@ from .config import Settings
 
 log = logging.getLogger("pipeline.llm")
 
-DEFAULT_MAX_TOKENS = 4096
+DEFAULT_MAX_TOKENS = 16000
 # 429 = rate limit, 529 = Anthropic "overloaded". Everything else in the 4xx
 # range is a bug in our request (bad key, bad model name, bad body) and
 # retrying it just burns four workflow minutes before failing anyway.
@@ -100,12 +100,24 @@ class AnthropicProvider:
                 response = self._client.messages.create(
                     model=self.model,
                     max_tokens=max_tokens,
+                    # Thinking is on by default and shares max_tokens with the
+                    # answer; a short post does not need deep reasoning, and at
+                    # 4096 the JSON came back cut off.
+                    output_config={"effort": "medium"},
                     system=system,
                     messages=[{"role": "user", "content": user}],
                 )
-                return "".join(
+                text = "".join(
                     block.text for block in response.content if getattr(block, "type", "") == "text"
                 )
+                stop = getattr(response, "stop_reason", None)
+                if stop == "max_tokens":
+                    raise LLMError(
+                        f"ответ модели обрезан по max_tokens={max_tokens} — увеличьте лимит"
+                    )
+                if stop == "refusal":
+                    raise LLMError("модель отказалась отвечать (stop_reason=refusal)")
+                return text
             except Exception as exc:
                 last_error = exc
                 if not is_retryable(exc):

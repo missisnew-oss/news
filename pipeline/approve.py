@@ -183,6 +183,10 @@ def _apply_update(settings: Settings, client: TelegramClient, queue: dict[str, A
     if update.get("message_reaction_count"):
         record_reactions(update, persist=persist)
         return None
+    message = update.get("message")
+    if message:
+        _answer_id_request(client, message, owner)
+        return None
     callback = update.get("callback_query")
     if not callback:
         return None
@@ -238,6 +242,37 @@ def _apply_update(settings: Settings, client: TelegramClient, queue: dict[str, A
 
     _ack(client, settings, callback, f"Принято: {applied}")
     return {"post_id": post_id, "action": action, "status": applied}
+
+
+ID_COMMANDS = ("/start", "/id")
+
+
+def _answer_id_request(client: TelegramClient, message: dict[str, Any], owner: str) -> None:
+    """Tell a private-chat sender their numeric id.
+
+    The owner has to put their own user id into TELEGRAM_OWNER_ID, and the
+    number people copy from third-party bots is often the wrong one (the
+    bot's own id, a chat id). Replying with the id from inside this bot gives
+    them the exact value; it reveals nothing but the sender's own id.
+    """
+    chat = message.get("chat") or {}
+    text = str(message.get("text") or "").strip().lower()
+    if chat.get("type") != "private" or not text.startswith(ID_COMMANDS):
+        return
+    from_id = str(((message.get("from") or {}).get("id")) or "")
+    if not from_id:
+        return
+    if from_id == owner:
+        reply = (f"Ваш ID: <code>{from_id}</code>. Он уже прописан как владелец — "
+                 "превью постов будут приходить сюда.")
+    else:
+        reply = (f"Ваш ID: <code>{from_id}</code>.\n\nВставьте это число в секрет "
+                 "<b>TELEGRAM_OWNER_ID</b> в GitHub (Settings → Secrets and variables → "
+                 "Actions), и превью постов начнут приходить в этот чат.")
+    try:
+        client.send_message(str(chat.get("id") or from_id), reply)
+    except Exception as exc:
+        log.warning("Не удалось ответить на %s: %s", text.split()[0], exc)
 
 
 def _ack(client: TelegramClient, settings: Settings, callback: dict[str, Any], text: str) -> None:

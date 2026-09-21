@@ -574,3 +574,64 @@ def test_total_failure_still_releases_the_key(settings):
     result = publish.publish_one(settings, post, client, published, persist=False)
     assert result["published"] is False and not result.get("partial")
     assert not publish.already_published(published, publish.publish_key(post))
+
+
+def _message_update(update_id, text, from_id="777", chat_type="private"):
+    return {"update_id": update_id, "message": {
+        "message_id": update_id, "text": text,
+        "from": {"id": int(from_id)}, "chat": {"id": int(from_id), "type": chat_type},
+    }}
+
+
+class _ChattyClient(_FakeClient):
+    def send_message(self, chat_id, text, **kw):
+        self.calls.append(("send", str(chat_id), text))
+        return {"ok": True}
+
+
+def test_start_in_private_chat_replies_with_the_senders_id(settings):
+    """Was: TELEGRAM_OWNER_ID held the bot's own id and previews failed with
+    «the bot can't send messages to the bot» — the owner had no way to learn
+    the right number from inside the bot."""
+    from pipeline import approve
+
+    client = _ChattyClient([_message_update(1, "/start", from_id="777")])
+    approve.poll_once(settings, client=client, queue=_queue(), persist=False)
+    sent = [c for c in client.calls if c[0] == "send"]
+    assert sent and sent[0][1] == "777" and "777" in sent[0][2] and "TELEGRAM_OWNER_ID" in sent[0][2]
+
+
+def test_owner_gets_a_confirmation_and_groups_are_ignored(settings):
+    from pipeline import approve
+
+    client = _ChattyClient([
+        _message_update(1, "/id", from_id=settings.telegram_owner_id),
+        _message_update(2, "/id", from_id="555", chat_type="supergroup"),
+        _message_update(3, "привет", from_id="555"),
+    ])
+    approve.poll_once(settings, client=client, queue=_queue(), persist=False)
+    sent = [c for c in client.calls if c[0] == "send"]
+    assert len(sent) == 1 and "владелец" in sent[0][2]
+
+
+def test_truncated_model_answer_is_reported_not_parsed(monkeypatch):
+    from pipeline import llm
+
+    class _Block:
+        type, text = "text", '{"title": "x", "body": "cut off'
+
+    class _Resp:
+        content, stop_reason = [_Block()], "max_tokens"
+
+    class _Messages:
+        def create(self, **kw):
+            assert kw["output_config"] == {"effort": "medium"}
+            return _Resp()
+
+    class _Client:
+        messages = _Messages()
+
+    provider = llm.AnthropicProvider.__new__(llm.AnthropicProvider)
+    provider.model, provider._client = "claude-opus-5", _Client()
+    with pytest.raises(llm.LLMError, match="max_tokens"):
+        provider.complete("s", "u")

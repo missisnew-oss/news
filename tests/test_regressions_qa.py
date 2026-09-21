@@ -685,3 +685,17 @@ def test_publish_reuses_the_uploaded_file_id(settings, monkeypatch):
     publish.publish_one(settings, post, client, published={"keys": [], "posts": []}, persist=False)
     photo_calls = [c for c in client.calls if c[0] == "photo"]
     assert photo_calls and photo_calls[0][2] == "BIG" and photo_calls[0][1] is None
+
+
+def test_owner_id_equal_to_the_bots_own_id_is_called_out(settings, caplog):
+    from pipeline import approve
+
+    class _Me(_FakeClient):
+        def call(self, method, payload=None, **kw):
+            assert method == "getMe"
+            return {"ok": True, "result": {"id": 42, "username": "mary_news_bot"}}
+
+    settings.telegram_owner_id = "42"
+    with caplog.at_level(logging.INFO):
+        approve._log_bot_identity(_Me([]), settings)
+    assert "@mary_news_bot" in caplog.text and "равен id самого бота" in caplog.text

@@ -1227,6 +1227,33 @@ sources:
       note: "Нет сети. Инвестиционный канал. Роль — сигнал; цифры доходности из чужих каналов не переносить без первоисточника. Проверить: открывается ли t.me/s/dubai_invest1 с постами (у канала может быть выключено превью)."
     extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
 
+  - id: tg_ruble_uae
+    title: "Рубль в ОАЭ (@ruble_uae)"
+    url: "https://t.me/s/ruble_uae"
+    homepage: "https://t.me/ruble_uae"
+    channel: "@ruble_uae"
+    role: news
+    type: telegram
+    category: lifestyle
+    topics: [money, exchange, banking, practical]
+    lang: ru
+    update_freq: daily
+    reliability: 3
+    weight: 0.7
+    enabled: true
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Добавлен владельцем 21.09.2026. Живой статус — в state/sources_health.json после Verify Sources."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
   # ---------------- telegram_private: приватные каналы через аккаунт владельца ----------------
   # Читаются через пользовательскую сессию (Telethon), см. docs/SETUP.md «Приватные каналы».
   # Ссылки-приглашения (t.me/+…) в реестр НЕ записываются: по ним может вступить кто угодно.

@@ -249,6 +249,27 @@ def _apply_update(settings: Settings, client: TelegramClient, queue: dict[str, A
     return {"post_id": post_id, "action": action, "status": applied}
 
 
+def _log_bot_identity(client: TelegramClient, settings: Settings) -> None:
+    """Say which bot this token belongs to and catch the classic mix-up.
+
+    Owners often have several bots (BotFather, @userinfobot, their own) and
+    write /id to the wrong one, or put the bot's own id into
+    TELEGRAM_OWNER_ID. Both are invisible without this line in the log.
+    """
+    try:
+        me = (client.call("getMe") or {}).get("result") or {}
+    except Exception as exc:
+        log.warning("getMe не выполнен: %s", exc)
+        return
+    username, bot_id = me.get("username"), str(me.get("id") or "")
+    log.info("Бот: @%s (id %s) — команды /id и кнопки принимает именно он", username, bot_id)
+    if bot_id and str(settings.telegram_owner_id) == bot_id:
+        log.error(
+            "TELEGRAM_OWNER_ID равен id самого бота (%s). Нужен ВАШ id: напишите @%s "
+            "в личку /id и вставьте число из ответа в секрет.", bot_id, username
+        )
+
+
 ID_COMMANDS = ("/start", "/id")
 
 
@@ -301,6 +322,7 @@ def run(settings: Settings, *, rounds: int = 1, poll_timeout: int = 25) -> list[
             client.call("deleteWebhook", {"drop_pending_updates": "false"})
         except Exception as exc:
             log.warning("deleteWebhook не выполнен: %s", exc)
+        _log_bot_identity(client, settings)
     queue = postqueue.load_queue()
     send_previews(settings, client=client, queue=queue, persist=True)
     decisions: list[dict[str, Any]] = []

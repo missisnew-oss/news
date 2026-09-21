@@ -402,6 +402,7 @@ Bot API не умеет читать чужие каналы, поэтому п�
 | `tg_neginskiuae` | @NeginskiUAE | realty_news | signal | темы рынка |
 | `tg_burjuyinvest` | @burjuyinvest | realty_news | signal | инвест-повестка |
 | `tg_dubai_invest1` | @dubai_invest1 | realty_news | signal | инвест-повестка |
+| `tg_ruble_uae` | @ruble_uae | lifestyle | news | курсы, переводы, банки, деньги в ОАЭ |
 
 **Роль `news`** — пост может стать основой пересказа своими словами со ссылкой на исходный пост.
 **Роль `signal`** — каналы коллег и конкурентов. Они показывают, *о чём говорит рынок* (какой лонч

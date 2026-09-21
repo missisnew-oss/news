@@ -115,8 +115,11 @@ class TelegramClient:
             payload["reply_markup"] = _json.dumps(reply_markup, ensure_ascii=False)
         return self.call("sendMessage", payload)
 
-    def send_photo(self, chat_id: str, photo_path: str | Path, *, caption: str = "",
-                   reply_markup: dict | None = None) -> dict[str, Any]:
+    def send_photo(self, chat_id: str, photo_path: str | Path | None = None, *, caption: str = "",
+                   reply_markup: dict | None = None, file_id: str | None = None) -> dict[str, Any]:
+        """Send a photo from a local file, or by Telegram ``file_id`` once it
+        has been uploaded before (the preview upload makes publishing
+        independent of the local file)."""
         payload: dict[str, Any] = {"chat_id": chat_id, "parse_mode": "HTML"}
         if caption:
             payload["caption"] = caption
@@ -125,14 +128,25 @@ class TelegramClient:
 
             payload["reply_markup"] = _json.dumps(reply_markup, ensure_ascii=False)
         if self.dry_run:
-            payload["photo"] = str(photo_path)
+            payload["photo"] = file_id or str(photo_path)
             return self._dry("sendPhoto", payload)
+        if file_id:
+            payload["photo"] = file_id
+            return self.call("sendPhoto", payload, timeout=60)
+        if not photo_path:
+            raise TelegramError("sendPhoto: нет ни файла, ни file_id")
         with open(photo_path, "rb") as fh:
             return self.call("sendPhoto", payload, files={"photo": fh}, timeout=60)
 
     # Reaction counts arrive only as updates, and only if we ask for them
     # explicitly: there is no "get reactions for message_id" method in Bot API.
     ALLOWED_UPDATES = ["message", "callback_query", "channel_post", "message_reaction_count"]
+
+    @staticmethod
+    def photo_file_id(response: dict[str, Any]) -> str | None:
+        """Largest-size file_id from a sendPhoto result, reusable in later runs."""
+        photos = (response.get("result") or {}).get("photo") or []
+        return (photos[-1] or {}).get("file_id") if photos else None
 
     def get_updates(self, offset: int, timeout: int = 25) -> list[dict[str, Any]]:
         import json as _json

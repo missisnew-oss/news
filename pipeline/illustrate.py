@@ -306,3 +306,36 @@ def illustrate(settings: Settings, draft) -> tuple[str | None, dict[str, Any]]:
     except Exception as exc:
         log.error("Изображение не создано: %s", exc)
         return None, {"provider": "none", "error": str(exc)}
+
+
+def ensure_image(settings: Settings, post: dict[str, Any]) -> str | None:
+    """Path to the post's image, re-rendering the card when the file is gone.
+
+    Every Actions run starts from a clean checkout and assets/generated/ is
+    not committed, so a card drawn in the generate run does not exist in the
+    approve or publish run. The card is deterministic from what the queue
+    already stores (headline, accent, title), so it is simply drawn again.
+    """
+    path = post.get("image_path")
+    if path and Path(path).exists():
+        return str(path)
+    meta = post.get("image_meta") or {}
+    if not path and not meta.get("headline"):
+        return None  # the post was deliberately text-only; keep it that way
+    headline = truncate((meta.get("headline") or post.get("title") or "").strip(), 64, "…")
+    if not headline:
+        return None
+    try:
+        new_path = render_card(headline, (meta.get("accent") or "").strip())
+    except Exception as exc:
+        log.warning("Картинку для %s перерисовать не удалось: %s", post.get("post_id"), exc)
+        return None
+    post["image_path"] = str(new_path)
+    if meta.get("provider") != "own_card":
+        post["image_meta"] = {
+            "provider": "own_card", "license": "собственная графика канала", "author": "канал",
+            "source_url": "", "headline": headline, "accent": meta.get("accent") or "",
+            "note": f"исходная картинка ({meta.get('provider')}) утеряна между запусками, заменена карточкой",
+        }
+    log.info("Картинка для %s перерисована: %s", post.get("post_id"), new_path)
+    return str(new_path)

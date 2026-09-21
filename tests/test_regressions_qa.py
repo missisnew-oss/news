@@ -8,6 +8,7 @@ behaviour fails loudly instead of silently breaking the channel.
 from __future__ import annotations
 
 import logging
+from pathlib import Path
 import re
 from datetime import datetime, timezone
 
@@ -635,3 +636,52 @@ def test_truncated_model_answer_is_reported_not_parsed(monkeypatch):
     provider.model, provider._client = "claude-opus-5", _Client()
     with pytest.raises(llm.LLMError, match="max_tokens"):
         provider.complete("s", "u")
+
+
+def test_missing_card_is_redrawn_before_preview(settings, tmp_path, monkeypatch):
+    """Was: the card lived in assets/generated/ of the generate run only; the
+    approve run (a fresh checkout) failed with FileNotFoundError and the owner
+    never saw the preview."""
+    from pipeline import approve, illustrate
+
+    monkeypatch.setattr(illustrate, "GENERATED_DIR", tmp_path, raising=False)
+    queue = _queue()
+    post = queue["posts"][0]
+    post["image_path"] = str(tmp_path / "gone" / "card-old.png")
+    post["image_meta"] = {"provider": "own_card", "headline": "Заголовок карточки", "accent": "12%"}
+
+    class _Client(_FakeClient):
+        def send_photo(self, chat_id, photo_path=None, *, file_id=None, caption="", reply_markup=None):
+            assert file_id is None and photo_path and Path(photo_path).exists()
+            self.calls.append(("photo", photo_path))
+            return {"ok": True, "result": {"message_id": 5, "photo": [{"file_id": "small"}, {"file_id": "BIG"}]}}
+
+    client = _Client([])
+    assert approve.send_previews(settings, client=client, queue=queue, persist=False) == 1
+    assert post["telegram_file_id"] == "BIG"
+    assert Path(post["image_path"]).exists()
+
+
+def test_publish_reuses_the_uploaded_file_id(settings, monkeypatch):
+    from pipeline import publish
+
+    queue = _queue(status="approved")
+    post = queue["posts"][0]
+    post["telegram_file_id"] = "BIG"
+    post["image_path"] = "/nonexistent/card.png"
+    post["slot_at"] = "2020-01-01T00:00:00+00:00"
+
+    class _Client(_FakeClient):
+        def send_photo(self, chat_id, photo_path=None, *, file_id=None, caption="", reply_markup=None):
+            self.calls.append(("photo", photo_path, file_id))
+            return {"ok": True, "result": {"message_id": 9}}
+
+        def send_message(self, chat_id, text, **kw):
+            self.calls.append(("text", text))
+            return {"ok": True, "result": {"message_id": 10}}
+
+    client = _Client([])
+    settings.dry_run = False
+    publish.publish_one(settings, post, client, published={"keys": [], "posts": []}, persist=False)
+    photo_calls = [c for c in client.calls if c[0] == "photo"]
+    assert photo_calls and photo_calls[0][2] == "BIG" and photo_calls[0][1] is None

@@ -18,7 +18,7 @@ import logging
 from datetime import datetime, timezone
 from typing import Any
 
-from . import postqueue, state
+from . import illustrate, postqueue, state
 from .config import Settings
 from .generate import compose_text
 from .telegram import TelegramClient, approval_keyboard
@@ -100,15 +100,20 @@ def send_previews(settings: Settings, client: TelegramClient | None = None,
     sent = 0
     for post in postqueue.pending_approval(queue):
         keyboard = approval_keyboard(post["post_id"])
-        image_path = post.get("image_path")
+        file_id = post.get("telegram_file_id")
+        image_path = None if file_id else illustrate.ensure_image(settings, post)
         try:
-            if image_path:
+            if file_id or image_path:
                 response = client.send_photo(
                     settings.telegram_owner_id,
                     image_path,
+                    file_id=file_id,
                     caption=truncate_html(preview_text(post), 1024),
                     reply_markup=keyboard,
                 )
+                uploaded = TelegramClient.photo_file_id(response)
+                if uploaded:
+                    post["telegram_file_id"] = uploaded
             else:
                 response = client.send_message(
                     settings.telegram_owner_id, preview_text(post), reply_markup=keyboard

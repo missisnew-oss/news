@@ -14,6 +14,7 @@ import logging
 from datetime import datetime, timezone
 from typing import Any
 
+from . import illustrate
 from . import postqueue, state
 from .config import Settings
 from .generate import compose_text
@@ -44,18 +45,22 @@ def publish_one(settings: Settings, post: dict[str, Any], client: TelegramClient
         state.save("published.json", published)
 
     text = compose_text(post)
-    plan = plan_delivery(text, has_photo=bool(post.get("image_path")))
+    file_id = post.get("telegram_file_id")
+    image_path = None if file_id else illustrate.ensure_image(settings, post)
+    plan = plan_delivery(text, has_photo=bool(file_id or image_path))
     message_ids: list[int] = []
 
     try:
         if plan["mode"] == "photo":
             response = client.send_photo(
-                settings.telegram_channel_id, post["image_path"], caption=plan["caption"] or ""
+                settings.telegram_channel_id, image_path, file_id=file_id,
+                caption=plan["caption"] or "",
             )
             message_ids.append((response.get("result") or {}).get("message_id"))
         elif plan["mode"] == "photo_plus_text":
             response = client.send_photo(
-                settings.telegram_channel_id, post["image_path"], caption=plan["caption"] or ""
+                settings.telegram_channel_id, image_path, file_id=file_id,
+                caption=plan["caption"] or "",
             )
             message_ids.append((response.get("result") or {}).get("message_id"))
             for chunk in plan["texts"]:

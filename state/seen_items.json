@@ -878,7 +878,8 @@
       "source_id": "whatson_ae_feed",
       "title_key": "sheikh mohammed shares heartfelt tribute to his late brother sheikh ahmed bin rashid",
       "url": "https://whatson.ae/2026/09/sheikh-mohammed-shares-heartfelt-tribute-to-his-late-brother-sheikh-ahmed-bin-rashid",
-      "item_id": "7845e6f601d896539288058c5b9a3c7d48cf5ba7"
+      "item_id": "7845e6f601d896539288058c5b9a3c7d48cf5ba7",
+      "used_at": "2026-09-21T11:51:32.325413+00:00"
     },
     "c6a9626c63b9a14e1f4e0784f5d953f00ea3f296": {
       "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
@@ -1018,21 +1019,24 @@
       "source_id": "tg_uaegeneralnews",
       "title_key": "в оаэ скорбят о кончине члена королевской семьи дубая",
       "url": "https://t.me/uaegeneralnews/17752",
-      "item_id": "9f2ab5dc85440fed5064f4e7dc0b8f4518f8162f"
+      "item_id": "9f2ab5dc85440fed5064f4e7dc0b8f4518f8162f",
+      "used_at": "2026-09-21T11:51:32.325413+00:00"
     },
     "da7a9fb5443a11c6436288ed911da573586d75ad": {
       "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
       "source_id": "tg_uaegeneralnews",
       "title_key": "в оаэ разъяснили регламент официального траура",
       "url": "https://t.me/uaegeneralnews/17751",
-      "item_id": "5fc6dd9ffd4168c5408fba0a1822e2bab09eef2a"
+      "item_id": "5fc6dd9ffd4168c5408fba0a1822e2bab09eef2a",
+      "used_at": "2026-09-21T11:51:32.325413+00:00"
     },
     "b504923270496feaea318ea2dcd007242b64963e": {
       "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
       "source_id": "tg_uaegeneralnews",
       "title_key": "в дубае на выборы в госдуму пришло почти две тысячи россиян",
       "url": "https://t.me/uaegeneralnews/17750",
-      "item_id": "1a84b97754252e8699fb9b1a2108733465399e11"
+      "item_id": "1a84b97754252e8699fb9b1a2108733465399e11",
+      "used_at": "2026-09-21T11:51:32.325413+00:00"
     },
     "ea01905127f4e8525433206872d0c1e7b1c52805": {
       "first_seen_at": "2026-09-21T11:36:15.514649+00:00",

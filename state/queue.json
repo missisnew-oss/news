@@ -1,4 +1,124 @@
 {
   "version": 1,
-  "posts": []
+  "posts": [
+    {
+      "post_id": "dubai_life-f0dd55a32774",
+      "rubric": "dubai_life",
+      "title": "Официальный траур в ОАЭ: как сверить свой график на ближайшие дни",
+      "body": "В ОАЭ объявлен официальный траур — 10 дней, начиная с завтрашнего дня. Регламент уже разъяснили официально.\n\nЗачем это знать: на этот период стоит заранее сверить свой график — визиты в ведомства, записи, встречи и публичные мероприятия.\n\nЧто понадобится:\n• ваш календарь на ближайшие дни;\n• контакты тех, у кого вы записаны;\n• текст официального разъяснения, а не его пересказ.\n\nКак сделать:\n• прочитать разъяснение целиком;\n• отметить в календаре весь десятидневный период, а не только завтра;\n• по каждой записи уточнить статус напрямую у организатора или ведомства;\n• перенос согласовывать письменно, чтобы потом не выяснять на словах.\n\nНа чём спотыкаются:\n• ориентируются на пересказы в чатах — формулировки там часто вольные;\n• считают, что речь про один день, и не смотрят на весь срок.\n\nСохраните и сверяйтесь с первоисточником, а не с чатами.",
+      "hashtags": [
+        "#дубай",
+        "#оаэ",
+        "#жизньвдубае"
+      ],
+      "cta": "Сохраните и сверяйтесь с первоисточником, а не с чатами.",
+      "image": {
+        "mode": "stock",
+        "headline": "Официальный траур: как сверить свой график",
+        "accent": "10 дней",
+        "stock_query": "dubai skyline calm quiet morning"
+      },
+      "sources": [
+        {
+          "source_id": "tg_uaegeneralnews",
+          "title": "В ОАЭ разъяснили регламент официального траура",
+          "url": "https://t.me/uaegeneralnews/17751"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "В ОАЭ объявлен официальный траур продолжительностью 10 дней, начиная со следующего дня после публикации",
+          "value": "10 дней",
+          "source_url": "https://t.me/uaegeneralnews/17751"
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 851,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-21T11:49:50.100181+00:00",
+      "slot_at": "2026-09-21T15:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/card-13b9568e13d0.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Официальный траур: как сверить свой график",
+        "accent": "10 дней"
+      },
+      "item_ids": [
+        "9f2ab5dc85440fed5064f4e7dc0b8f4518f8162f",
+        "5fc6dd9ffd4168c5408fba0a1822e2bab09eef2a",
+        "7845e6f601d896539288058c5b9a3c7d48cf5ba7",
+        "1a84b97754252e8699fb9b1a2108733465399e11"
+      ],
+      "source_items": [
+        {
+          "item_id": "9f2ab5dc85440fed5064f4e7dc0b8f4518f8162f",
+          "source_id": "tg_uaegeneralnews",
+          "category": "city_gov",
+          "title": "​В ОАЭ скорбят о кончине члена королевской семьи Дубая",
+          "summary": "​В ОАЭ скорбят о кончине члена королевской семьи Дубая Президент ОАЭ выразил соболезнования в связи со смертью шейха Ахмеда бен Рашида Аль Мактума. https://russianemirates.com/N046036/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/uaegeneralnews/17752",
+          "canonical_url": "https://t.me/uaegeneralnews/17752",
+          "published_at": "2026-09-21T11:20:03+00:00",
+          "collected_at": "2026-09-21T11:48:07.012460+00:00",
+          "lang": "ru"
+        },
+        {
+          "item_id": "5fc6dd9ffd4168c5408fba0a1822e2bab09eef2a",
+          "source_id": "tg_uaegeneralnews",
+          "category": "city_gov",
+          "title": "​В ОАЭ разъяснили регламент официального траура",
+          "summary": "​В ОАЭ разъяснили регламент официального траура С завтрашнего дня в ОАЭ объявлен официальный 10-дневный траур. https://russianemirates.com/N046035/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/uaegeneralnews/17751",
+          "canonical_url": "https://t.me/uaegeneralnews/17751",
+          "published_at": "2026-09-21T11:00:04+00:00",
+          "collected_at": "2026-09-21T11:48:07.012546+00:00",
+          "lang": "ru"
+        },
+        {
+          "item_id": "7845e6f601d896539288058c5b9a3c7d48cf5ba7",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "Sheikh Mohammed shares heartfelt tribute to his late brother Sheikh Ahmed bin Rashid",
+          "summary": "“You are absent from our eyes but not from our prayers and hearts” HH Sheikh Mohammed bin Rashid Al Maktoum, Vice President of the UAE and Ruler of Dubai, has shared a heartfelt tribute to his brother, Sheikh Ahmed bin Rashid Al Maktoum, who has passed away aged 76. In a thoughtful statement shared on […] The post Sheikh Mohammed shares heartfelt tribute to his late brother Sheikh Ahmed bin Rashid appeared first on What's On .",
+          "url": "https://whatson.ae/2026/09/sheikh-mohammed-shares-heartfelt-tribute-to-his-late-brother-sheikh-ahmed-bin-rashid/",
+          "canonical_url": "https://whatson.ae/2026/09/sheikh-mohammed-shares-heartfelt-tribute-to-his-late-brother-sheikh-ahmed-bin-rashid",
+          "published_at": "2026-09-21T09:05:43+00:00",
+          "collected_at": "2026-09-21T11:48:07.011115+00:00",
+          "lang": "en"
+        },
+        {
+          "item_id": "1a84b97754252e8699fb9b1a2108733465399e11",
+          "source_id": "tg_uaegeneralnews",
+          "category": "city_gov",
+          "title": "В Дубае на выборы в Госдуму пришло почти две тысячи россиян",
+          "summary": "В Дубае на выборы в Госдуму пришло почти две тысячи россиян Избирательный участок в Дубае принял более 1,8 тысяч граждан России в день голосования на выборах депутатов Государственной Думы. https://russianemirates.com/N046032/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/uaegeneralnews/17750",
+          "canonical_url": "https://t.me/uaegeneralnews/17750",
+          "published_at": "2026-09-21T10:20:03+00:00",
+          "collected_at": "2026-09-21T11:48:07.012611+00:00",
+          "lang": "ru"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 0,
+        "sources_cited": 1
+      },
+      "approval": {},
+      "rewrite_count": 0,
+      "publish_key": ""
+    }
+  ]
 }

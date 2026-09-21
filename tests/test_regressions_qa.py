@@ -612,7 +612,8 @@ def test_owner_gets_a_confirmation_and_groups_are_ignored(settings):
     ])
     approve.poll_once(settings, client=client, queue=_queue(), persist=False)
     sent = [c for c in client.calls if c[0] == "send"]
-    assert len(sent) == 1 and "владелец" in sent[0][2]
+    assert len(sent) == 2 and "владелец" in sent[0][2]
+    assert "Сохранила" in sent[1][2], "обычный текст владельца — заметка в копилку"
 
 
 def test_a_stranger_typing_plain_id_without_slash_still_gets_the_answer(settings):

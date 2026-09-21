@@ -52,6 +52,20 @@ def is_retryable(exc: Exception) -> bool:
     }
 
 
+def describe(exc: BaseException) -> str:
+    """Error text with its cause chain: the SDK wraps network failures in a
+    bare "Connection error." and the real reason (DNS, TLS, proxy) sits in
+    ``__cause__`` — without it a failed run in Actions is undiagnosable."""
+    parts: list[str] = []
+    seen: set[int] = set()
+    current: BaseException | None = exc
+    while current is not None and id(current) not in seen and len(parts) < 4:
+        seen.add(id(current))
+        parts.append(f"{type(current).__name__}: {current}".strip())
+        current = current.__cause__ or current.__context__
+    return " <- ".join(parts)[:600]
+
+
 def _retry_sleep(attempt: int) -> float:
     """Exponential backoff with jitter, so parallel runs do not sync up."""
     import random
@@ -100,9 +114,9 @@ class AnthropicProvider:
                     break
                 delay = _retry_sleep(attempt)
                 log.warning("Anthropic: попытка %d не удалась (%s), пауза %.1fs",
-                            attempt + 1, exc, delay)
+                            attempt + 1, describe(exc), delay)
                 time.sleep(delay)
-        raise LLMError(f"Anthropic недоступен: {last_error}")
+        raise LLMError(f"Anthropic недоступен: {describe(last_error) if last_error else '?'}")
 
 
 class OpenAIProvider:

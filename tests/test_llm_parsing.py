@@ -98,3 +98,16 @@ def test_parse_response_end_to_end():
     payload = parse_response("```json\n" + json.dumps(VALID, ensure_ascii=False) + "\n```")
     assert payload["self_check"]["language_is_russian"] is True
     assert payload["length_chars"] == 20
+
+
+def test_describe_unwraps_the_cause_chain():
+    from pipeline.llm import describe
+
+    try:
+        try:
+            raise OSError("Name or service not known")
+        except OSError as inner:
+            raise ConnectionError("Connection error.") from inner
+    except ConnectionError as exc:
+        text = describe(exc)
+    assert "Connection error." in text and "Name or service not known" in text

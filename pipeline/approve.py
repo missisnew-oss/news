@@ -185,6 +185,7 @@ TERMINAL_STATUSES = {"published", "rejected"}
 
 def _apply_update(settings: Settings, client: TelegramClient, queue: dict[str, Any],
                   update: dict[str, Any], owner: str, *, persist: bool) -> dict[str, Any] | None:
+    log.info("Обновление %s: %s", update.get("update_id"), describe_update(update))
     if update.get("message_reaction_count"):
         record_reactions(update, persist=persist)
         return None
@@ -268,6 +269,20 @@ def _log_bot_identity(client: TelegramClient, settings: Settings) -> None:
             "TELEGRAM_OWNER_ID равен id самого бота (%s). Нужен ВАШ id: напишите @%s "
             "в личку /id и вставьте число из ответа в секрет.", bot_id, username
         )
+
+
+def describe_update(update: dict[str, Any]) -> str:
+    """One safe line per update for the Actions log: kind, chat type, sender id,
+    and whether there was text — never the text itself."""
+    kind = next((k for k in ("message", "callback_query", "channel_post",
+                             "message_reaction_count", "my_chat_member") if k in update), "?")
+    body = update.get(kind) if kind != "?" else {}
+    body = body or {}
+    chat = body.get("chat") or (body.get("message") or {}).get("chat") or {}
+    sender = (body.get("from") or {}).get("id")
+    text = body.get("text") or body.get("data") or ""
+    return (f"тип={kind} чат={chat.get('type', '?')} от={sender} "
+            f"текст={'есть (' + str(text)[:12] + '…)' if text else 'нет'}")
 
 
 ID_COMMANDS = ("/start", "/id")

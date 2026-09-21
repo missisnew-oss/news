@@ -7,7 +7,9 @@ required: in CI every value comes from GitHub Secrets.
 
 from __future__ import annotations
 
+import logging
 import os
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -126,6 +128,40 @@ def _load_dotenv() -> None:
         os.environ.setdefault(key, value)
 
 
+# What a pasted-in secret should look like. Owners copy from BotFather,
+# @userinfobot or the Anthropic console, and the clipboard often carries the
+# surrounding text too ("Use this token to access the HTTP API: 123:ABC",
+# a whole curl example with --header "x-api-key: sk-ant-..."). A multi-line
+# value then reaches the HTTP layer as an illegal header and every request
+# fails with a bare "Connection error", so the value is trimmed to the token.
+SECRET_SHAPES = {
+    "TELEGRAM_BOT_TOKEN": re.compile(r"\d{6,12}:[A-Za-z0-9_-]{30,}"),
+    "TELEGRAM_OWNER_ID": re.compile(r"(?<![\d:])\d{5,12}(?![\d:])"),
+    "TELEGRAM_CHANNEL_ID": re.compile(r"@[A-Za-z][A-Za-z0-9_]{3,}|-100\d{6,}"),
+    "ANTHROPIC_API_KEY": re.compile(r"sk-ant-[A-Za-z0-9_-]{20,}"),
+    "OPENAI_API_KEY": re.compile(r"sk-[A-Za-z0-9_-]{20,}"),
+    "TELEGRAM_API_ID": re.compile(r"\d{5,12}"),
+    "TELEGRAM_API_HASH": re.compile(r"[0-9a-f]{32}"),
+}
+
+
+def _secret_env(name: str) -> str:
+    """Read a secret from the environment, trimmed to its recognisable token."""
+    raw = os.environ.get(name, "")
+    value = raw.strip().strip("'\"")
+    shape = SECRET_SHAPES.get(name)
+    if not value or shape is None or shape.fullmatch(value):
+        return value
+    match = shape.search(value)
+    if match:
+        logging.getLogger("pipeline.config").warning(
+            "%s содержал лишний текст (%d символов) — использую только сам ключ. "
+            "Лучше перезаписать секрет в GitHub одним значением.", name, len(value)
+        )
+        return match.group(0)
+    return value
+
+
 def _env_bool(name: str, default: bool = False) -> bool:
     raw = os.environ.get(name)
     if raw is None:
@@ -193,16 +229,16 @@ def load_settings() -> Settings:
     settings = Settings(
         dry_run=_env_bool("DRY_RUN", True),
         log_level=os.environ.get("LOG_LEVEL", "INFO").upper(),
-        telegram_bot_token=os.environ.get("TELEGRAM_BOT_TOKEN", "").strip(),
-        telegram_channel_id=os.environ.get("TELEGRAM_CHANNEL_ID", "").strip(),
-        telegram_owner_id=os.environ.get("TELEGRAM_OWNER_ID", "").strip(),
-        telegram_api_id=os.environ.get("TELEGRAM_API_ID", "").strip(),
-        telegram_api_hash=os.environ.get("TELEGRAM_API_HASH", "").strip(),
+        telegram_bot_token=_secret_env("TELEGRAM_BOT_TOKEN"),
+        telegram_channel_id=_secret_env("TELEGRAM_CHANNEL_ID"),
+        telegram_owner_id=_secret_env("TELEGRAM_OWNER_ID"),
+        telegram_api_id=_secret_env("TELEGRAM_API_ID"),
+        telegram_api_hash=_secret_env("TELEGRAM_API_HASH"),
         telegram_session=os.environ.get("TELEGRAM_SESSION", "").strip(),
         llm_provider=os.environ.get("LLM_PROVIDER", "anthropic").strip().lower(),
         llm_model=os.environ.get("LLM_MODEL", "claude-opus-5").strip(),
-        anthropic_api_key=os.environ.get("ANTHROPIC_API_KEY", "").strip(),
-        openai_api_key=os.environ.get("OPENAI_API_KEY", "").strip(),
+        anthropic_api_key=_secret_env("ANTHROPIC_API_KEY"),
+        openai_api_key=_secret_env("OPENAI_API_KEY"),
         openai_model=os.environ.get("OPENAI_MODEL", "gpt-4o-mini").strip(),
         unsplash_access_key=os.environ.get("UNSPLASH_ACCESS_KEY", "").strip(),
         pexels_api_key=os.environ.get("PEXELS_API_KEY", "").strip(),

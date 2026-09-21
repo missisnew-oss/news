@@ -1,0 +1,52 @@
+# Разовая выгрузка постов владельца из публичного канала — сырьё для tone of voice.
+# Запускается только руками: Actions → Voice Samples → Run workflow.
+name: Voice Samples
+
+on:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: "username канала без @"
+        required: true
+        default: "nudeassphilosophy"
+      limit:
+        description: "сколько последних постов"
+        required: false
+        default: "40"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pipeline-state
+  cancel-in-progress: false
+
+jobs:
+  samples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Актуальная вершина ветки
+        run: |
+          git fetch -q origin "$GITHUB_REF_NAME"
+          git checkout -q -B "$GITHUB_REF_NAME" "origin/$GITHUB_REF_NAME"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Установка зависимостей
+        run: |
+          python -m pip install --upgrade pip setuptools wheel
+          pip install -r requirements.txt
+
+      - name: Выгрузка постов
+        run: python -m pipeline.voice_samples --channel "${{ inputs.channel }}" --limit "${{ inputs.limit }}"
+
+      - name: Коммит образцов
+        run: 'bash scripts/commit_state.sh "docs: образцы голоса @${{ inputs.channel }}" docs/voice/'

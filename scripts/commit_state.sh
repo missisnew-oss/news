@@ -28,7 +28,7 @@ fi
 # 1. Разрешены только файлы состояния и реестр источников.
 while IFS= read -r path; do
   case "$path" in
-    state/*.json|config/sources.yml) ;;
+    state/*.json|config/sources.yml|docs/voice/*.md) ;;
     *)
       echo "ОТКАЗ: попытка закоммитить неразрешённый путь: $path" >&2
       exit 1

@@ -147,7 +147,7 @@
 
 | Имя | Значение по умолчанию | Зачем |
 |---|---|---|
-| `LLM_MODEL` | `claude-sonnet-5` | сменить модель |
+| `LLM_MODEL` | `claude-opus-5` | сменить модель |
 | `LLM_PROVIDER` | `anthropic` | переключиться на `openai` |
 
 ---

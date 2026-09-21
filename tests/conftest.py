@@ -31,7 +31,7 @@ def settings() -> Settings:
         telegram_channel_id="@test_channel",
         telegram_owner_id="42",
         llm_provider="anthropic",
-        llm_model="claude-sonnet-5",
+        llm_model="claude-opus-5",
     )
 
 

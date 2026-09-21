@@ -18,7 +18,7 @@ from .config import Settings
 
 log = logging.getLogger("pipeline.llm")
 
-DEFAULT_MAX_TOKENS = 2000
+DEFAULT_MAX_TOKENS = 4096
 # 429 = rate limit, 529 = Anthropic "overloaded". Everything else in the 4xx
 # range is a bug in our request (bad key, bad model name, bad body) and
 # retrying it just burns four workflow minutes before failing anyway.

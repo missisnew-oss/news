@@ -149,7 +149,7 @@ class Settings:
     telegram_session: str = ""
 
     llm_provider: str = "anthropic"
-    llm_model: str = "claude-sonnet-5"
+    llm_model: str = "claude-opus-5"
     anthropic_api_key: str = ""
     openai_api_key: str = ""
     openai_model: str = "gpt-4o-mini"
@@ -200,7 +200,7 @@ def load_settings() -> Settings:
         telegram_api_hash=os.environ.get("TELEGRAM_API_HASH", "").strip(),
         telegram_session=os.environ.get("TELEGRAM_SESSION", "").strip(),
         llm_provider=os.environ.get("LLM_PROVIDER", "anthropic").strip().lower(),
-        llm_model=os.environ.get("LLM_MODEL", "claude-sonnet-5").strip(),
+        llm_model=os.environ.get("LLM_MODEL", "claude-opus-5").strip(),
         anthropic_api_key=os.environ.get("ANTHROPIC_API_KEY", "").strip(),
         openai_api_key=os.environ.get("OPENAI_API_KEY", "").strip(),
         openai_model=os.environ.get("OPENAI_MODEL", "gpt-4o-mini").strip(),

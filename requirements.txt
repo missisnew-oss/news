@@ -5,7 +5,7 @@ PyYAML==6.0.2
 feedparser==6.0.11
 python-dateutil==2.9.0.post0
 Pillow==10.4.0
-anthropic==0.34.2
+anthropic==1.7.0
 # Reading private Telegram channels through a user session (see docs/SETUP.md).
 telethon==1.45.0
 

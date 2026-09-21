@@ -144,7 +144,7 @@ workflow периодически делает long-poll `getUpdates`.
 
 `pipeline/llm.py` — протокол `LLMProvider` с тремя реализациями:
 
-- `AnthropicProvider` — основной, модель по умолчанию `claude-sonnet-5`
+- `AnthropicProvider` — основной, модель по умолчанию `claude-opus-5`
   (переопределяется переменной `LLM_MODEL`);
 - `OpenAIProvider` — тот же интерфейс, включается `LLM_PROVIDER=openai`;
 - `OfflineProvider` — используется в `DRY_RUN` и в тестах, строит корректный

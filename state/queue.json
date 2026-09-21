@@ -119,6 +119,150 @@
       "approval": {},
       "rewrite_count": 0,
       "publish_key": ""
+    },
+    {
+      "post_id": "dubai_life-dcc0bbc2630b",
+      "rubric": "dubai_life",
+      "title": "Как спланировать неделю: осень с 23 сентября и траур в Дубае",
+      "body": "<b>Задача недели: не строить планы вслепую.</b>\n\nВ Дубае объявлен 10-дневный траур в связи с кончиной шейха Ахмеда бин Рашида Аль Мактума, флаги приспущены. Часть публичных мероприятий в такие дни переносится или отменяется, поэтому афишу стоит перепроверять перед выходом из дома.\n\n<b>Что понадобится</b>\n• актуальная афиша на неделю\n• подтверждение брони напрямую у площадки\n\n<b>Как сделать</b>\n1. Сверьтесь со свежими подборками на неделю 21–24 сентября: <a href=\"https://whatson.ae/2026/09/7-things-to-do-in-dubai-this-week-september-21-to-24/\">по Дубаю</a> и <a href=\"https://whatson.ae/2026/09/8-fun-things-to-do-this-week-in-abu-dhabi-sept-21-to-24/\">по Абу-Даби</a>.\n2. Позвоните на площадку и уточните, идёт ли событие.\n3. Планируйте уличные активности ближе к 23 сентября — с этой даты в ОАЭ официально начинается осень, вечера и утра становятся прохладнее.\n\n<b>На чём спотыкаются</b>\n• Верят агрегаторам, а не самой площадке.\n• Считают, что с первым днём осени сразу приходит прохлада: меняются прежде всего утро и вечер.\n\nСохраните — пригодится при планировании недели.\n\n#дубай #жизньвдубае #переезд",
+      "hashtags": [
+        "#дубай",
+        "#жизньвдубае",
+        "#переезд"
+      ],
+      "cta": "Сохраните — пригодится при планировании недели.",
+      "image": {
+        "mode": "stock",
+        "headline": "Планы на неделю в Дубае: что проверить заранее",
+        "accent": "",
+        "stock_query": "dubai city evening autumn calendar planning"
+      },
+      "sources": [
+        {
+          "source_id": "tg_uaegeneralnews",
+          "title": "В Дубае скончался шейх Ахмед бин Рашид Аль Мактум",
+          "url": "https://t.me/uaegeneralnews/17749"
+        },
+        {
+          "source_id": "whatson_ae_feed",
+          "title": "7 things to do in Dubai this week: September 21 to 24",
+          "url": "https://whatson.ae/2026/09/7-things-to-do-in-dubai-this-week-september-21-to-24/"
+        },
+        {
+          "source_id": "whatson_ae_feed",
+          "title": "8 fun things to do this week in Abu Dhabi: Sept 21 to 24",
+          "url": "https://whatson.ae/2026/09/8-fun-things-to-do-this-week-in-abu-dhabi-sept-21-to-24/"
+        },
+        {
+          "source_id": "whatson_ae_feed",
+          "title": "Autumn is officially set to begin in the UAE on September 23",
+          "url": "https://whatson.ae/2026/09/autumn-is-officially-set-to-begin-in-the-uae-on-september-23/"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "В Дубае объявлен траур в связи с кончиной шейха Ахмеда бин Рашида Аль Мактума, флаги приспущены",
+          "value": "10 дней",
+          "source_url": "https://t.me/uaegeneralnews/17749"
+        },
+        {
+          "claim": "Осень в ОАЭ официально начинается",
+          "value": "23 сентября",
+          "source_url": "https://whatson.ae/2026/09/autumn-is-officially-set-to-begin-in-the-uae-on-september-23/"
+        },
+        {
+          "claim": "Подборки событий охватывают период",
+          "value": "21–24 сентября",
+          "source_url": "https://whatson.ae/2026/09/7-things-to-do-in-dubai-this-week-september-21-to-24/"
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 1111,
+      "needs_separate_text": true,
+      "status": "queued",
+      "created_at": "2026-09-21T12:11:45.093187+00:00",
+      "slot_at": "2026-09-22T05:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/card-eecef3e1f5a3.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Планы на неделю в Дубае: что проверить заранее",
+        "accent": ""
+      },
+      "item_ids": [
+        "7691f87f76bc8d372f6d1c709f53222fbab2a789",
+        "c603de7a5cec608e4f37960f637f94dcc39f555e",
+        "d8d64994d3a433d5c058b963d20462736336bdcd",
+        "f933c91de755e1c9d8215c7ff6d665f08cd5e21b"
+      ],
+      "source_items": [
+        {
+          "item_id": "7691f87f76bc8d372f6d1c709f53222fbab2a789",
+          "source_id": "tg_uaegeneralnews",
+          "category": "city_gov",
+          "title": "⚡️ В Дубае скончался шейх Ахмед бин Рашид Аль Мактум",
+          "summary": "⚡️ В Дубае скончался шейх Ахмед бин Рашид Аль Мактум Сегодня, 21 сентября 2026 года, скончался шейх Ахмед бин Рашид Аль Мактум , младший брат правителя Дубая шейха Мохаммеда бин Рашида Аль Мактума. О его смерти официально сообщила администрация Правителя Дубая. Шейху Ахмеду было 76 лет. Он занимал пост заместителя председателя полиции и общественной безопасности Дубая и имел звание генерал-лейтенанта. В связи с его кончиной в Дубае объявлен 10-дневный траур , флаги будут приспущены. Шейх Мохаммед бин Рашид выразил соболезнования в связи со смертью брата: «Мы больше не увидим тебя, но ты остане",
+          "url": "https://t.me/uaegeneralnews/17749",
+          "canonical_url": "https://t.me/uaegeneralnews/17749",
+          "published_at": "2026-09-21T07:42:15+00:00",
+          "collected_at": "2026-09-21T12:10:50.901864+00:00",
+          "lang": "ru"
+        },
+        {
+          "item_id": "c603de7a5cec608e4f37960f637f94dcc39f555e",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "8 fun things to do this week in Abu Dhabi: Sept 21 to 24",
+          "summary": "There’s plenty of fun to be had in Abu Dhabi this week From trying new twists on a classic cocktail across the city to making new friends and getting lost in a unique art experience, here’s all the fun things to do this week in Abu Dhabi. Explore a new spot for Negroni Week in […] The post 8 fun things to do this week in Abu Dhabi: Sept 21 to 24 appeared first on What's On .",
+          "url": "https://whatson.ae/2026/09/8-fun-things-to-do-this-week-in-abu-dhabi-sept-21-to-24/",
+          "canonical_url": "https://whatson.ae/2026/09/8-fun-things-to-do-this-week-in-abu-dhabi-sept-21-to-24",
+          "published_at": "2026-09-21T06:53:16+00:00",
+          "collected_at": "2026-09-21T12:10:50.900718+00:00",
+          "lang": "en"
+        },
+        {
+          "item_id": "d8d64994d3a433d5c058b963d20462736336bdcd",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "7 things to do in Dubai this week: September 21 to 24",
+          "summary": "Here’s what your week could look like Your plans for the week can start here. There’s floating breathwork under the moon, Negroni Week taking over bars across the city and a few more reasons to get out and do something different. Pick one, make a plan or send it to a friend – here are […] The post 7 things to do in Dubai this week: September 21 to 24 appeared first on What's On .",
+          "url": "https://whatson.ae/2026/09/7-things-to-do-in-dubai-this-week-september-21-to-24/",
+          "canonical_url": "https://whatson.ae/2026/09/7-things-to-do-in-dubai-this-week-september-21-to-24",
+          "published_at": "2026-09-21T06:18:48+00:00",
+          "collected_at": "2026-09-21T12:10:50.900845+00:00",
+          "lang": "en"
+        },
+        {
+          "item_id": "f933c91de755e1c9d8215c7ff6d665f08cd5e21b",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "Autumn is officially set to begin in the UAE on September 23",
+          "summary": "It’s official, your favourite season, autumn, is set to begin this week in the UAE After what feels like an endless season of summer, autumn is gradually making itself known in the city with cooler evenings and mornings on the horizon. Set to officially commence on September 23 at precisely 4.05am according to astronomical calculations. […] The post Autumn is officially set to begin in the UAE on September 23 appeared first on What's On .",
+          "url": "https://whatson.ae/2026/09/autumn-is-officially-set-to-begin-in-the-uae-on-september-23/",
+          "canonical_url": "https://whatson.ae/2026/09/autumn-is-officially-set-to-begin-in-the-uae-on-september-23",
+          "published_at": "2026-09-21T06:01:44+00:00",
+          "collected_at": "2026-09-21T12:10:50.900912+00:00",
+          "lang": "en"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 4,
+        "sources_cited": 4
+      },
+      "approval": {},
+      "rewrite_count": 0,
+      "publish_key": ""
     }
   ]
 }

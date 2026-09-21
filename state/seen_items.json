@@ -886,7 +886,8 @@
       "source_id": "whatson_ae_feed",
       "title_key": "8 fun things to do this week in abu dhabi sept 21 to 24",
       "url": "https://whatson.ae/2026/09/8-fun-things-to-do-this-week-in-abu-dhabi-sept-21-to-24",
-      "item_id": "c603de7a5cec608e4f37960f637f94dcc39f555e"
+      "item_id": "c603de7a5cec608e4f37960f637f94dcc39f555e",
+      "used_at": "2026-09-21T12:13:02.946966+00:00"
     },
     "db83884d9bf00b3c27ce721d2a2a0d8c7a08134a": {
       "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
@@ -900,14 +901,16 @@
       "source_id": "whatson_ae_feed",
       "title_key": "7 things to do in dubai this week september 21 to 24",
       "url": "https://whatson.ae/2026/09/7-things-to-do-in-dubai-this-week-september-21-to-24",
-      "item_id": "d8d64994d3a433d5c058b963d20462736336bdcd"
+      "item_id": "d8d64994d3a433d5c058b963d20462736336bdcd",
+      "used_at": "2026-09-21T12:13:02.946966+00:00"
     },
     "b2012dbd5295a14d4278915af89702727cc85dab": {
       "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
       "source_id": "whatson_ae_feed",
       "title_key": "autumn is officially set to begin in the uae on september 23",
       "url": "https://whatson.ae/2026/09/autumn-is-officially-set-to-begin-in-the-uae-on-september-23",
-      "item_id": "f933c91de755e1c9d8215c7ff6d665f08cd5e21b"
+      "item_id": "f933c91de755e1c9d8215c7ff6d665f08cd5e21b",
+      "used_at": "2026-09-21T12:13:02.946966+00:00"
     },
     "ba7cc044cd60803a8ae69ce6bb16f2a6ccbe2352": {
       "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
@@ -1043,7 +1046,8 @@
       "source_id": "tg_uaegeneralnews",
       "title_key": "в дубае скончался шейх ахмед бин рашид аль мактум",
       "url": "https://t.me/uaegeneralnews/17749",
-      "item_id": "7691f87f76bc8d372f6d1c709f53222fbab2a789"
+      "item_id": "7691f87f76bc8d372f6d1c709f53222fbab2a789",
+      "used_at": "2026-09-21T12:13:02.946966+00:00"
     },
     "c47b8ed362f6ab38efcdb94b14b932ac68f66554": {
       "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
@@ -1485,6 +1489,83 @@
       "title_key": "dubai mourns sheikh ahmed key moments from his life 2 m read",
       "url": "https://gulfnews.com/uae/government/dubai-mourns-sheikh-ahmed-bin-rashid-key-moments-from-his-life-1.500682168",
       "item_id": "47b232f9087e427563fa79072c6322d01b89e35d"
+    },
+    "6e9f31315ae27db660a45ab2e6290ad913494fb8": {
+      "first_seen_at": "2026-09-21T12:10:50.907930+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "mideast stocks saudi gulf stocks fall after houthis claim riyadh attacks",
+      "url": "https://www.zawya.com/en/capital-markets/mideast-stocks-saudi-gulf-stocks-fall-after-houthis-claim-riyadh-attacks-1020602",
+      "item_id": "c8ddbf1f3e1edd078c8097a73961aef9b811ab86"
+    },
+    "8c76edd0cb827e5af55954cddd724de413b8625d": {
+      "first_seen_at": "2026-09-21T12:10:50.907930+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae calls for global unity to tackle cross border crime abu dhabi declaration highlight of un congress on crime prevention and criminal justice just now 3 m read",
+      "url": "https://gulfnews.com/uae/uae-to-host-largest-un-crime-congress-in-abu-dhabi-pushes-cross-border-justice-and-ai-safeguards-1.500682458",
+      "item_id": "b4d3060899d312dd3cd2a2679e615b1ccc081942"
+    },
+    "10eecbe34b9da17a108e6ddbcde8f03707f9ad7b": {
+      "first_seen_at": "2026-09-21T12:10:50.907930+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "modi pays tribute to sheikh ahmed bin rashid al maktoum just now 1 m read",
+      "url": "https://gulfnews.com/uae/dubai/indian-pm-modi-offers-condolences-on-death-of-sheikh-ahmed-bin-rashid-al-maktoum-1.500682479",
+      "item_id": "9f994c58da87241b7e2ba5b3b7db133f7a3652e8"
+    },
+    "6d5595ef856953ef0d6f772ebd884c5073bf4cb7": {
+      "first_seen_at": "2026-09-21T12:10:50.907930+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "abu dhabi launches endowment awareness tour 28m ago 2 m read",
+      "url": "https://gulfnews.com/uae/abu-dhabi/abu-dhabi-launches-endowment-awareness-tour-1.500682429",
+      "item_id": "1a4da050466c45d16e75824c29310038d9d3d403"
+    },
+    "5f75e2f356bc9fb1801d3fc5d2722fa14cff8fe5": {
+      "first_seen_at": "2026-09-21T12:10:50.907930+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "chimaev to headline debut tournament raf event in uae 47m ago 3 m read",
+      "url": "https://gulfnews.com/sport/raf-signs-five-year-abu-dhabi-deal-chimaev-to-headline-debut-tournament-1.500682423",
+      "item_id": "9f96d0e722e344b34b1db165b36d51ff6af51a96"
+    },
+    "eddaf9e965a9796fd29a0896c5b636c57ae85b50": {
+      "first_seen_at": "2026-09-21T12:10:50.907930+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai k fest postponed as emirate observes mourning 2h ago 2 m read",
+      "url": "https://gulfnews.com/entertainment/free-kwon-eunbi-oneus-concert-at-dubai-k-fest-rescheduled-over-mourning-period-1.500682300",
+      "item_id": "f9dd362f57a1a7544337b0cb27edb137de1c208b"
+    },
+    "e908ee89a8cbeed25dd7bb9befaa2ac3f5e1af1b": {
+      "first_seen_at": "2026-09-21T12:10:50.907930+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "what emirates is planning for the future of flying 2h ago 4 m read",
+      "url": "https://gulfnews.com/business/aviation/emirates-would-like-to-know-what-you-need-before-you-ask-ai-biometrics-and-the-future-of-flying-1.500682269",
+      "item_id": "f8965b9d8db5e0be0ef7d45420e5d24faebb8a36"
+    },
+    "563aacc787c8af51927f682095b29e9a7f9b82eb": {
+      "first_seen_at": "2026-09-21T12:10:50.907930+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "visa cancelled don t overlook your health insurance 3 m read",
+      "url": "https://gulfnews.com/living-in-uae/visa-immigration/uae-visa-cancellation-health-insurance-grace-period-1.500682203",
+      "item_id": "06f1ff6224886c7efc7a18704300fa38a7721d9b"
+    },
+    "74083e7fd90ed7dbebedf35230a60f65219999e2": {
+      "first_seen_at": "2026-09-21T12:10:50.907930+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "what does official mourning mean in the uae 3 m read",
+      "url": "https://gulfnews.com/uae/government/flags-work-and-closures-how-official-mourning-works-in-the-uae-1.500682197",
+      "item_id": "e94c5cfa20cd029ddbeccfe47c71dda9d4584c71"
+    },
+    "1e1f8fb5f1587222fe9c5c131e79e648b2dbea6b": {
+      "first_seen_at": "2026-09-21T12:10:50.907930+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai forms new leadership network for higher education 2 m read",
+      "url": "https://gulfnews.com/uae/education/dubai-brings-sector-leaders-together-to-shape-education-future-1.500682177",
+      "item_id": "77083ef27a3a98bde75cd8886315c5152be0f798"
+    },
+    "2ec99361f3921ef16fb81759d6a0eaee0b42bc4b": {
+      "first_seen_at": "2026-09-21T12:10:50.907930+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae president mourns sheikh ahmed bin rashid 1 m read",
+      "url": "https://gulfnews.com/uae/government/uae-president-mourns-passing-of-sheikh-ahmed-bin-rashid-al-maktoum-1.500682163",
+      "item_id": "0e0bb4064cc315c97098419304a1a6bbc8d1f461"
     }
   }
 }

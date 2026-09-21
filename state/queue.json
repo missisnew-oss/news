@@ -116,9 +116,13 @@
         "numbers_checked": 0,
         "sources_cited": 1
       },
-      "approval": {},
+      "approval": {
+        "sent_at": "2026-09-21T12:49:47.338251+00:00",
+        "preview_message_id": 5
+      },
       "rewrite_count": 0,
-      "publish_key": ""
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMFarEn63leiDCJOzi32-MEu1bWS-gAAhIjaxt1TYhJiLFo8QLtuaUBAAMCAAN5AAM9BA"
     },
     {
       "post_id": "dubai_life-dcc0bbc2630b",
@@ -260,9 +264,13 @@
         "numbers_checked": 4,
         "sources_cited": 4
       },
-      "approval": {},
+      "approval": {
+        "sent_at": "2026-09-21T12:49:48.134083+00:00",
+        "preview_message_id": 6
+      },
       "rewrite_count": 0,
-      "publish_key": ""
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMGarEn6ztqVVTgG2BAQAy2f79zBy4AAhMjaxt1TYhJf2dlA8ama1YBAAMCAAN5AAM9BA"
     }
   ]
 }

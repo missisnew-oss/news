@@ -25,6 +25,9 @@ DEFAULTS: dict[str, Any] = {
     "analytics.json": {"version": 1, "posts": [], "weekly": []},
     "rubric_weights.json": {"version": 1, "weights": {}, "updated_at": None},
     "sources_health.json": {"version": 1, "checked_at": None, "sources": {}},
+    # Everything the owner forwards or writes to the bot: voice samples,
+    # floor plans, payment plans, FAQ drafts — raw material for later stages.
+    "inbox.json": {"version": 1, "items": []},
 }
 
 

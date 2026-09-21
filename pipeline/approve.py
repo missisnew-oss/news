@@ -191,7 +191,8 @@ def _apply_update(settings: Settings, client: TelegramClient, queue: dict[str, A
         return None
     message = update.get("message")
     if message:
-        _answer_id_request(client, message, owner)
+        if not _store_owner_material(client, message, owner, persist=persist):
+            _answer_id_request(client, message, owner)
         return None
     callback = update.get("callback_query")
     if not callback:
@@ -286,6 +287,59 @@ def describe_update(update: dict[str, Any]) -> str:
 
 
 ID_COMMANDS = ("/start", "/id")
+
+
+def _store_owner_material(client: TelegramClient, message: dict[str, Any], owner: str,
+                          *, persist: bool) -> bool:
+    """Keep what the owner forwards or writes to the bot.
+
+    The owner's own channel has no web preview, so the only way to get their
+    posts as voice samples is a forward. The same inbox later feeds the
+    floor-plan and payment-plan rubrics. Returns True when the message was
+    stored (commands and strangers are left to the other handlers).
+    """
+    chat = message.get("chat") or {}
+    from_id = str(((message.get("from") or {}).get("id")) or "")
+    text = (message.get("text") or message.get("caption") or "").strip()
+    if chat.get("type") != "private" or from_id != owner:
+        return False
+    forwarded = message.get("forward_origin") or {}
+    is_forward = bool(forwarded or message.get("forward_from_chat") or message.get("forward_date"))
+    if not is_forward and (not text or text.startswith("/")):
+        return False
+
+    origin_chat = forwarded.get("chat") or message.get("forward_from_chat") or {}
+    photo = message.get("photo") or []
+    document = message.get("document") or {}
+    entry = {
+        "message_id": message.get("message_id"),
+        "received_at": datetime.now(timezone.utc).isoformat(),
+        "kind": "forward" if is_forward else "note",
+        "origin": {
+            "type": forwarded.get("type"),
+            "chat_username": origin_chat.get("username"),
+            "chat_title": origin_chat.get("title"),
+            "message_id": forwarded.get("message_id"),
+        },
+        "text": text[:8000],
+        "photo_file_id": (photo[-1] or {}).get("file_id") if photo else None,
+        "document": {"file_id": document.get("file_id"), "name": document.get("file_name"),
+                     "mime": document.get("mime_type")} if document else None,
+    }
+    inbox = state.load("inbox.json")
+    items = inbox.setdefault("items", [])
+    if any(i.get("message_id") == entry["message_id"] for i in items):
+        return True
+    items.append(entry)
+    if persist:
+        state.save("inbox.json", inbox)
+    try:
+        label = "пересланный пост" if is_forward else "заметка"
+        client.send_message(str(chat.get("id") or from_id),
+                            f"Сохранила ({label}). В копилке: {len(items)}.")
+    except Exception as exc:
+        log.warning("Не удалось подтвердить сохранение: %s", exc)
+    return True
 
 
 def _answer_id_request(client: TelegramClient, message: dict[str, Any], owner: str) -> None:

@@ -709,3 +709,25 @@ def test_owner_id_equal_to_the_bots_own_id_is_called_out(settings, caplog):
     with caplog.at_level(logging.INFO):
         approve._log_bot_identity(_Me([]), settings)
     assert "@mary_news_bot" in caplog.text and "равен id самого бота" in caplog.text
+
+
+def test_owner_forwards_are_kept_in_the_inbox(settings, isolated_state):
+    from pipeline import approve, state
+
+    fwd = {"update_id": 7, "message": {
+        "message_id": 70, "text": "Мой старый пост про рассрочку 60/40 и почему я её не люблю.",
+        "from": {"id": int(settings.telegram_owner_id)},
+        "chat": {"id": int(settings.telegram_owner_id), "type": "private"},
+        "forward_origin": {"type": "channel", "chat": {"username": "nudeassphilosophy", "title": "NAP"},
+                           "message_id": 415, "date": 1},
+    }}
+    note = _message_update(8, "заметка себе: разобрать планировку 2BR", from_id=settings.telegram_owner_id)
+    stranger = {**_message_update(9, "привет", from_id="999")}
+    client = _ChattyClient([fwd, note, stranger])
+    approve.poll_once(settings, client=client, queue=_queue(), persist=True)
+    items = state.load("inbox.json")["items"]
+    assert [i["kind"] for i in items] == ["forward", "note"]
+    assert items[0]["origin"]["chat_username"] == "nudeassphilosophy"
+    sent = [c for c in client.calls if c[0] == "send"]
+    assert "копилке: 1" in sent[0][2] and "копилке: 2" in sent[1][2]
+    assert "999" in sent[2][2], "посторонний по-прежнему получает свой id"

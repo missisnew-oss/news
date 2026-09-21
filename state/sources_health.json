@@ -1,0 +1,393 @@
+{
+  "version": 1,
+  "sources": {
+    "gulf_news_rss": {
+      "status": "failed",
+      "http_code": 404,
+      "content_type": "text/html",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:31:24Z",
+      "note": "HTTP 404"
+    },
+    "khaleej_times_rss": {
+      "status": "failed",
+      "http_code": 404,
+      "content_type": "text/html",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:31:25Z",
+      "note": "HTTP 404"
+    },
+    "arabian_business_realty_tag": {
+      "status": "failed",
+      "http_code": 405,
+      "content_type": "text/html",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:31:25Z",
+      "note": "HTTP 405"
+    },
+    "zawya_real_estate": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:31:25Z",
+      "note": ""
+    },
+    "property_finder_blog": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:31:25Z",
+      "note": ""
+    },
+    "dubai_pulse_dld_transactions_api": {
+      "status": "failed",
+      "http_code": null,
+      "content_type": null,
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:31:27Z",
+      "note": "сетевая ошибка: HTTPSConnectionPool(host='www.dubaipulse.gov.ae', port=443): Max retries exceeded with url: /data/dld-transactions/dld_transactions-open-api (Caused by ConnectTimeoutError(<HTTPSConnec"
+    },
+    "dubai_pulse_dld_transactions_bulk": {
+      "status": "failed",
+      "http_code": null,
+      "content_type": null,
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:31:48Z",
+      "note": "сетевая ошибка: HTTPSConnectionPool(host='www.dubaipulse.gov.ae', port=443): Max retries exceeded with url: /data/dld-transactions/dld_transactions-open (Caused by ConnectTimeoutError(<HTTPSConnection"
+    },
+    "dld_open_data_portal": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:08Z",
+      "note": ""
+    },
+    "dld_api_gateway": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:09Z",
+      "note": ""
+    },
+    "bayanat_ckan_api": {
+      "status": "failed",
+      "http_code": null,
+      "content_type": null,
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:10Z",
+      "note": "сетевая ошибка: HTTPSConnectionPool(host='data.bayanat.ae', port=443): Max retries exceeded with url: /api/3/action/package_search?q=dubai&rows=20 (Caused by ConnectTimeoutError(<HTTPSConnection(host="
+    },
+    "cbuae_press_releases": {
+      "status": "failed",
+      "http_code": 403,
+      "content_type": "text/html",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:31Z",
+      "note": "HTTP 403"
+    },
+    "emaar_press_releases": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:31Z",
+      "note": ""
+    },
+    "emaar_ma_press_feed": {
+      "status": "failed",
+      "http_code": 500,
+      "content_type": "text/xml",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:32Z",
+      "note": "HTTP 500"
+    },
+    "nakheel_media_centre": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:33Z",
+      "note": ""
+    },
+    "aldar_media_hub": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:33Z",
+      "note": ""
+    },
+    "zawya_developer_press": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:35Z",
+      "note": ""
+    },
+    "wam_rss": {
+      "status": "failed",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:36Z",
+      "note": "фид разобран, но элементов нет"
+    },
+    "dubai_media_office_news": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:38Z",
+      "note": ""
+    },
+    "gulf_news_uae": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:40Z",
+      "note": ""
+    },
+    "emirates247_rss": {
+      "status": "failed",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:40Z",
+      "note": "фид разобран, но элементов нет"
+    },
+    "visitdubai_events_calendar": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:40Z",
+      "note": ""
+    },
+    "dubai_culture_events": {
+      "status": "failed",
+      "http_code": null,
+      "content_type": null,
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:41Z",
+      "note": "сетевая ошибка: HTTPSConnectionPool(host='dubaiculture.gov.ae', port=443): Max retries exceeded with url: /en/events (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] c"
+    },
+    "platinumlist_dubai_calendar": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:42Z",
+      "note": ""
+    },
+    "platinumlist_arena_events": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:47Z",
+      "note": ""
+    },
+    "coca_cola_arena_events": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:54Z",
+      "note": ""
+    },
+    "dwtc_events": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:55Z",
+      "note": ""
+    },
+    "expocity_events": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:55Z",
+      "note": ""
+    },
+    "eventbrite_dubai": {
+      "status": "failed",
+      "http_code": 405,
+      "content_type": "text/html",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:57Z",
+      "note": "HTTP 405"
+    },
+    "ticketmaster_discovery_ae": {
+      "status": "failed",
+      "http_code": 401,
+      "content_type": "application/json",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:57Z",
+      "note": "HTTP 401"
+    },
+    "whatson_ae_feed": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/xml",
+      "items_found": 12,
+      "latest_item_at": "2026-09-21T09:05:43Z",
+      "checked_at": "2026-09-21T11:32:58Z",
+      "note": ""
+    },
+    "timeout_dubai": {
+      "status": "failed",
+      "http_code": 405,
+      "content_type": "text/html",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:59Z",
+      "note": "HTTP 405"
+    },
+    "lovin_dubai": {
+      "status": "failed",
+      "http_code": 403,
+      "content_type": "text/html",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:32:59Z",
+      "note": "HTTP 403"
+    },
+    "dubai_edited_rss_hub": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 1,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:33:00Z",
+      "note": ""
+    },
+    "dubai_city_guide_rss": {
+      "status": "failed",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:33:01Z",
+      "note": "фид разобран, но элементов нет"
+    },
+    "tg_uaegeneralnews": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 20,
+      "latest_item_at": "2026-09-21T11:20:03+00:00",
+      "checked_at": "2026-09-21T11:33:01Z",
+      "note": ""
+    },
+    "tg_russianemiratesnews": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 20,
+      "latest_item_at": "2026-09-21T11:20:05+00:00",
+      "checked_at": "2026-09-21T11:33:02Z",
+      "note": ""
+    },
+    "tg_dubaimap": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 18,
+      "latest_item_at": "2026-09-21T09:03:29+00:00",
+      "checked_at": "2026-09-21T11:33:02Z",
+      "note": ""
+    },
+    "tg_offplanmariya": {
+      "status": "failed",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:33:03Z",
+      "note": "t.me отдал страницу без постов: канал приватный или у него выключено веб-превью — через t.me/s его не прочитать"
+    },
+    "tg_eltsovairina_80": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 8,
+      "latest_item_at": "2026-09-18T11:53:25+00:00",
+      "checked_at": "2026-09-21T11:33:03Z",
+      "note": ""
+    },
+    "tg_neginskiuae": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 3,
+      "latest_item_at": "2026-09-20T07:26:27+00:00",
+      "checked_at": "2026-09-21T11:33:04Z",
+      "note": ""
+    },
+    "tg_burjuyinvest": {
+      "status": "ok",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 12,
+      "latest_item_at": "2026-09-20T08:07:59+00:00",
+      "checked_at": "2026-09-21T11:33:05Z",
+      "note": ""
+    },
+    "tg_dubai_invest1": {
+      "status": "failed",
+      "http_code": 200,
+      "content_type": "text/html",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:33:06Z",
+      "note": "t.me отдал страницу без постов: канал приватный или у него выключено веб-превью — через t.me/s его не прочитать"
+    },
+    "tg_private_1": {
+      "status": "failed",
+      "http_code": null,
+      "content_type": "mtproto",
+      "items_found": 0,
+      "latest_item_at": null,
+      "checked_at": "2026-09-21T11:33:06Z",
+      "note": "не заполнен channel_id — возьмите его из вывода scripts/telegram_login.py"
+    }
+  },
+  "checked_at": "2026-09-21T11:31:24Z"
+}

@@ -118,6 +118,9 @@ def stage_generate(settings: Settings, items: list[Any] | None = None, max_posts
     plan = score_stage.plan_rubrics(items, max_posts=max_posts)
     log.info("План рубрик на этот прогон: %s", ", ".join(plan) or "пусто")
     drafts = generate(settings, items, plan)
+    if drafts and not settings.dry_run:
+        used_ids = {i for d in drafts for i in (d.item_ids or [])}
+        normalize_stage.mark_used([i for i in items if i.item_id in used_ids])
 
     for draft in drafts:
         image_path, image_meta = illustrate_stage.illustrate(settings, draft)

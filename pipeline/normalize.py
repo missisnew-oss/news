@@ -9,7 +9,7 @@ twice, no matter how many feeds carry it.
 from __future__ import annotations
 
 import logging
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Any, Iterable
 
 from . import state
@@ -85,29 +85,60 @@ def normalize_one(raw: dict[str, Any], source_index: dict[str, dict[str, Any]]) 
     )
 
 
-def dedupe(items: Iterable[NormalizedItem], seen: dict[str, Any]) -> tuple[list[NormalizedItem], dict[str, Any]]:
-    """Filter out items already seen, and items duplicated inside this batch.
+ELIGIBLE_HOURS = 72
+
+
+def _parse_ts(raw: Any) -> datetime | None:
+    if not raw:
+        return None
+    try:
+        ts = datetime.fromisoformat(str(raw))
+    except ValueError:
+        return None
+    return ts if ts.tzinfo else ts.replace(tzinfo=timezone.utc)
+
+
+def dedupe(
+    items: Iterable[NormalizedItem],
+    seen: dict[str, Any],
+    *,
+    eligible_hours: int = ELIGIBLE_HOURS,
+) -> tuple[list[NormalizedItem], dict[str, Any]]:
+    """Collapse duplicates and drop what the channel has already used.
 
     Two items collapse when their canonical URL + normalised title hash match,
     or when their normalised titles are byte-identical (same story, two feeds).
+
+    Seeing an item is not using it: a story stays eligible for ``eligible_hours``
+    after it was first seen, so a run that produced no post (network failure,
+    weak plan) does not burn the whole day's news. It leaves the pool only when
+    ``mark_used`` records it in a draft, or when it ages out.
     """
-    known_hashes = set((seen.get("items") or {}).keys())
-    known_titles = {
-        (meta or {}).get("title_key")
-        for meta in (seen.get("items") or {}).values()
+    known = seen.get("items") or {}
+    now_dt = datetime.now(timezone.utc)
+    now = now_dt.isoformat()
+
+    def retired(meta: dict[str, Any] | None) -> bool:
+        meta = meta or {}
+        if meta.get("used_at"):
+            return True
+        first = _parse_ts(meta.get("first_seen_at"))
+        return bool(first) and (now_dt - first) > timedelta(hours=eligible_hours)
+
+    retired_hashes = {h for h, meta in known.items() if retired(meta)}
+    retired_titles = {
+        (meta or {}).get("title_key") for h, meta in known.items() if h in retired_hashes
     }
-    known_titles.discard(None)
+    retired_titles.discard(None)
 
     fresh: list[NormalizedItem] = []
     batch_hashes: set[str] = set()
     batch_titles: set[str] = set()
-    now = datetime.now(timezone.utc).isoformat()
-
     for item in items:
         title_key = normalize_title(item.title)
-        if item.dedupe_hash in known_hashes or item.dedupe_hash in batch_hashes:
+        if item.dedupe_hash in retired_hashes or item.dedupe_hash in batch_hashes:
             continue
-        if title_key and (title_key in known_titles or title_key in batch_titles):
+        if title_key and (title_key in retired_titles or title_key in batch_titles):
             continue
         batch_hashes.add(item.dedupe_hash)
         if title_key:
@@ -116,13 +147,30 @@ def dedupe(items: Iterable[NormalizedItem], seen: dict[str, Any]) -> tuple[list[
 
     items_map = seen.setdefault("items", {})
     for item in fresh:
-        items_map[item.dedupe_hash] = {
-            "first_seen_at": now,
+        meta = items_map.get(item.dedupe_hash) or {}
+        meta.setdefault("first_seen_at", now)  # keep the original sighting
+        meta.update({
             "source_id": item.source_id,
             "title_key": normalize_title(item.title),
             "url": item.canonical_url,
-        }
+            "item_id": item.item_id,
+        })
+        items_map[item.dedupe_hash] = meta
     return fresh, seen
+
+
+def mark_used(items: Iterable[NormalizedItem], *, persist: bool = True) -> dict[str, Any]:
+    """Record that these items went into a draft, so they never come back."""
+    seen = state.load("seen_items.json")
+    items_map = seen.setdefault("items", {})
+    now = datetime.now(timezone.utc).isoformat()
+    for item in items:
+        meta = items_map.setdefault(item.dedupe_hash, {"first_seen_at": now})
+        meta["used_at"] = now
+        meta.setdefault("title_key", normalize_title(item.title))
+    if persist:
+        state.save("seen_items.json", seen)
+    return seen
 
 
 def normalize_and_dedupe(

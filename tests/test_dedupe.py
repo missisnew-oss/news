@@ -39,12 +39,48 @@ def test_dedupe_removes_duplicates_within_batch(sources_doc):
     assert len(seen["items"]) == 2
 
 
-def test_dedupe_respects_previously_seen_state(sources_doc):
+def test_seen_but_unused_item_stays_eligible_for_a_while(sources_doc):
+    """A run that produced no post must not burn the day's news."""
     index = {s["id"]: s for s in sources_doc["sources"]}
     item = normalize_one(_raw("Dubai launches new waterfront project", "https://example.com/news/1"), index)
     fresh, seen = dedupe([item], {"items": {}})
     assert len(fresh) == 1
+    first_seen = seen["items"][item.dedupe_hash]["first_seen_at"]
+    again, seen = dedupe([item], seen)
+    assert len(again) == 1, "увиденный, но не использованный материал остаётся в пуле"
+    assert seen["items"][item.dedupe_hash]["first_seen_at"] == first_seen
+
+
+def test_used_item_never_comes_back(sources_doc):
+    from pipeline.normalize import mark_used
+
+    index = {s["id"]: s for s in sources_doc["sources"]}
+    item = normalize_one(_raw("Dubai launches new waterfront project", "https://example.com/news/1"), index)
+    _, seen = dedupe([item], {"items": {}})
+    seen["items"][item.dedupe_hash]["used_at"] = "2026-09-21T10:00:00+00:00"
     again, _ = dedupe([item], seen)
+    assert again == []
+
+
+def test_item_ages_out_of_the_pool(sources_doc):
+    index = {s["id"]: s for s in sources_doc["sources"]}
+    item = normalize_one(_raw("Dubai launches new waterfront project", "https://example.com/news/1"), index)
+    seen = {"items": {item.dedupe_hash: {"first_seen_at": "2026-01-01T00:00:00+00:00",
+                                         "title_key": "dubai launches new waterfront project"}}}
+    again, _ = dedupe([item], seen)
+    assert again == []
+
+
+def test_mark_used_persists_to_state(sources_doc, isolated_state):
+    from pipeline import state
+    from pipeline.normalize import mark_used
+
+    index = {s["id"]: s for s in sources_doc["sources"]}
+    item = normalize_one(_raw("Dubai launches new waterfront project", "https://example.com/news/1"), index)
+    dedupe([item], state.load("seen_items.json"))
+    mark_used([item])
+    assert state.load("seen_items.json")["items"][item.dedupe_hash]["used_at"]
+    again, _ = dedupe([item], state.load("seen_items.json"))
     assert again == []
 
 

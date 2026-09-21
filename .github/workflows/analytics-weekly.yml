@@ -26,6 +26,14 @@ jobs:
           # а на shallow-клоне rebase падает.
           fetch-depth: 0
 
+      # workflow_dispatch и schedule фиксируют SHA в момент события; пока запуск
+      # ждал в очереди concurrency, другой мог закоммитить state/. Работаем
+      # от актуальной вершины ветки, иначе коммит состояния упрётся в конфликт.
+      - name: Актуальная вершина ветки
+        run: |
+          git fetch -q origin "$GITHUB_REF_NAME"
+          git checkout -q -B "$GITHUB_REF_NAME" "origin/$GITHUB_REF_NAME"
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"

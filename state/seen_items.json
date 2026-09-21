@@ -1,0 +1,1259 @@
+{
+  "version": 1,
+  "items": {
+    "5db478f0a0d61d3c25a42b81c9732551eae9714a": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "sharjah islamic bank mandates banks for sukuk offering",
+      "url": "https://www.zawya.com/en/special-coverage/islamic-economy/sharjah-islamic-bank-mandates-banks-for-sukuk-offering-993603"
+    },
+    "87670aaf589b435500562977d73935230b961bcd": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "kuwait reallocates 2 5mln sqm al zour site for dorra field processing facilities",
+      "url": "https://www.zawya.com/en/projects/kuwait-reallocates-2.5mln-sqm-al-zour-site-for-dorra-field-processing-facilities-862152"
+    },
+    "3c5d8ce9349d43e9facbee7aba9f929ae4be7fcd": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "abu dhabi s adia joins 703mln anchor raise for india s nse ipo",
+      "url": "https://www.zawya.com/en/business/equities/abu-dhabis-adia-joins-703mln-anchor-raise-for-indias-nse-ipo-944888"
+    },
+    "a3cbc6b2bbebb5b96a829fc069a4da758236ad40": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "iilm s 1 26bln sukuk 2 38 times oversubscribed",
+      "url": "https://www.zawya.com/en/economy/iilms-1.26bln-sukuk-2.38-times-oversubscribed-733505"
+    },
+    "ccc7c21721c2a16b187155d442f0e08cc516ed39": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "abu dhabi s ihc names fount trust as ultimate parent following restructure",
+      "url": "https://www.zawya.com/en/capital-markets/abu-dhabis-ihc-names-fount-trust-as-ultimate-parent-following-restructure-1021079"
+    },
+    "56363b76c25450b325a4ff200024097123750b70": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "video gcc central banks raise interest rates after us fed rate increase",
+      "url": "https://www.zawya.com/en/multimedia/videos/video-gcc-central-banks-raise-interest-rates-after-us-fed-rate-increase-1000178"
+    },
+    "7dda4b8d1d918d2cdebd3486719af3357e0455cd": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "podcast how egypt can unlock the growth it needs to reach its full potential",
+      "url": "https://www.zawya.com/en/multimedia/podcasts/podcast-how-egypt-can-unlock-the-growth-it-needs-to-reach-its-full-potential-383897"
+    },
+    "030094a0a335a1686dbef13658ff41a26473bc0d": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "video highlights from zawya s inaugural gcc capital markets forum",
+      "url": "https://www.zawya.com/en/multimedia/videos/video-highlights-from-zawyas-inaugural-gcc-capital-markets-forum-368657"
+    },
+    "e6895b8b2b5eb274b03162d0cc064f6aac19f700": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "video saudi aramco s wa ed ventures invests in cofe tech ahead of ipo",
+      "url": "https://www.zawya.com/en/multimedia/videos/video-saudi-aramcos-waed-ventures-invests-in-cofe-tech-ahead-of-ipo-477054"
+    },
+    "702472baa181e454741c0ad9af8b80f45e38a539": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "video kingdom holding completes 224mln acquisition of 70 stake in al hilal club",
+      "url": "https://www.zawya.com/en/multimedia/videos/video-kingdom-holding-completes-224mln-acquisition-of-70-stake-in-al-hilal-club-478315"
+    },
+    "d6f582b210f0318323ef89b94360dc9771c1891b": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "jazeera airways launches biggest ever sale with buy one get one free offer on 3mln seats",
+      "url": "https://www.zawya.com/en/press-release/companies-news/jazeera-airways-launches-biggest-ever-sale-with-buy-one-get-one-free-offer-on-3mln-seats-1020103"
+    },
+    "ba8053a214ab67592fb67575ad8ad3aaf835e2af": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "qatar launches wealth fund division for domestic investments",
+      "url": "https://www.zawya.com/en/business/swf/qatar-launches-wealth-fund-division-for-domestic-investments-1020658"
+    },
+    "9c76e881a4042b778e078372ae0e8a9f3923debc": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "du achieves world s 1st six carrier aggregation deployment on commercial 5g advanced network advanc",
+      "url": "https://www.zawya.com/en/press-release/companies-news/du-achieves-worlds-1st-six-carrier-aggregation-deployment-on-commercial-5g-advanced-network-advancing-5g-and-6g-readiness-992216"
+    },
+    "1f3a7eb13e967025d521887f6e568b53c7eaed0c": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "qatar launches e commerce licence for 194 business activities",
+      "url": "https://www.zawya.com/en/business/qatar-launches-e-commerce-licence-for-194-business-activities-982332"
+    },
+    "b73f02a692ff1e5564ef98c962c66e3d12047a2c": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "aramco to boost gulf exports to 60mln barrels in september october traders say",
+      "url": "https://www.zawya.com/en/projects/energy/aramco-to-boost-gulf-exports-to-60mln-barrels-in-september-october-traders-say-997854"
+    },
+    "b1dfd3ad3516020630e884759a39da9d90ab7d91": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "sico wealth names ahmed burashid as new ceo",
+      "url": "https://www.zawya.com/en/capital-markets/investment/sico-wealth-names-ahmed-burashid-as-new-ceo-1020546"
+    },
+    "b189234fbb960f5400451ab3d92660375c235836": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "how rising dubai construction costs are reshaping off plan pricing by developers",
+      "url": "https://www.propertyfinder.ae/blog/dubai-construction-cost-impact"
+    },
+    "dcfbd31275120eb3ed84c20e6dec7ac5c4c0c20c": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "why the average is lying to you dubai property price forecasts by community for q3 q4 2026",
+      "url": "https://www.propertyfinder.ae/blog/dubai-sale-property-price-forecast"
+    },
+    "9a91858e574d28720402cc8c47de1000b8ce39d9": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "dubai rent prices are finally stabilizing in late 2026 these are the areas to watch says rera",
+      "url": "https://www.propertyfinder.ae/blog/dubai-rent-price-forecast"
+    },
+    "40c760f9bfa48463867a5baf3be20a464efae8db": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "bus card recharge in abu dhabi a complete guide",
+      "url": "https://www.propertyfinder.ae/blog/abu-dhabi-bus-card-recharge"
+    },
+    "dfd9a3f90eab12f01620d852a09aab4dedd7af59": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "your guide to the sharjah airport bus routes fares and timings",
+      "url": "https://www.propertyfinder.ae/blog/sharjah-airport-bus"
+    },
+    "79842f6aeb5b58a385d4470e2c994e2977e1fd16": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "international city bus station routes timings and key connections",
+      "url": "https://www.propertyfinder.ae/blog/international-city-bus-station"
+    },
+    "56247b7e5a5e8b9fa1a204221fefebe92e5c39f8": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "al baraha bus station routes timings and getting there",
+      "url": "https://www.propertyfinder.ae/blog/al-baraha-bus-station"
+    },
+    "e6b885e7a3b315c823744c10a78fced736d4211b": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "your guide to jebel ali bus station routes sub stations and travel tips",
+      "url": "https://www.propertyfinder.ae/blog/jebel-ali-bus-station"
+    },
+    "dbfd08c04295b2c3fe6a997db8c677f5ee70816c": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "insurance market metro station timings exits fares and what s nearby",
+      "url": "https://www.propertyfinder.ae/blog/insurance-market-metro-station"
+    },
+    "e871b95a20e68ab5de21424f64c81ccb6ea62f86": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "airport terminal 1 metro station everything you need to know",
+      "url": "https://www.propertyfinder.ae/blog/airport-terminal-1-metro-station"
+    },
+    "2f9dcc92f36197d7bc7a448bfc3189fc06c601ba": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "airport terminal 3 metro station timings fares and how to get around dubai",
+      "url": "https://www.propertyfinder.ae/blog/airport-terminal-3-metro-station"
+    },
+    "d7f3366b7a072511e3e7c446126bffac3130fa87": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "emirates metro station in dubai your guide to the area exits and fares",
+      "url": "https://www.propertyfinder.ae/blog/emirates-metro-station"
+    },
+    "701cf08cb0579b3e0d2990213cbe40284fa22186": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "jlt cluster c pros cons and everything you need to know",
+      "url": "https://www.propertyfinder.ae/blog/jlt-cluster-c"
+    },
+    "9a4e7c26fcceb11af7301d062077392d64902677": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "comparing jlt clusters x j and c which one fits you best",
+      "url": "https://www.propertyfinder.ae/blog/jlt-cluster-comparison"
+    },
+    "4a667869a909e97b78b9e78a271030081fe7ad67": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "jlt cluster j pros cons and everything you need to know",
+      "url": "https://www.propertyfinder.ae/blog/jlt-cluster-j"
+    },
+    "31079c7e75b7ab140923497cbfa8811f3f7498fa": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "jlt cluster x pros cons and everything you need to know",
+      "url": "https://www.propertyfinder.ae/blog/jlt-cluster-x"
+    },
+    "3d7e3fa16d8470312c07d7cb4898cc820a8e65d3": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "your guide to moving to abu dhabi from india in 2026",
+      "url": "https://www.propertyfinder.ae/blog/moving-to-abu-dhabi-from-india"
+    },
+    "d17183393e4a63a9fdaba397d9e73f42b4d7f3b8": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "best residential areas to live in dubai 2026 top places for expats families and investors",
+      "url": "https://www.propertyfinder.ae/blog/best-areas-to-live-in-dubai"
+    },
+    "c0ac9856f1623aeb117b1ba5244f21565ef135f6": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "dubai marina vs downtown dubai lifestyle accessibility vibe entertainment",
+      "url": "https://www.propertyfinder.ae/blog/dubai-marina-vs-downtown-dubai-2"
+    },
+    "e7db06cb2b8a61f1548d1437ab7e23b9094fc229": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "jvt vs jvc which dubai community is better for you in 2026",
+      "url": "https://www.propertyfinder.ae/blog/jvt-vs-jvc"
+    },
+    "032fed169041eab8030cbd25637bd182fef0aaeb": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "dld_open_data_portal",
+      "title_key": "dubai land department annual report 2024",
+      "url": "https://dubailand.gov.ae/en/about-dubai-land-department/annual-report-2024"
+    },
+    "b1430451b4370343d8db55ccf9d39b2ea7a69f2a": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "the heights country club wellness",
+      "url": "https://www.emaar.com/en/our-communities/the-heights-country-club-wellness"
+    },
+    "ca142eafcc8d111469eefc3e7af35afe5173ebe6": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "terra woods at expo living by emaar",
+      "url": "https://www.emaar.com/en/properties/terra-woods-at-expo-living"
+    },
+    "a7650e4a9a2c8e2047eea5cbe6bb088813126f01": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "salva at the heights country club and wellness",
+      "url": "https://www.emaar.com/en/properties/salva-at-the-heights-country-club-and-wellness"
+    },
+    "91f8bf251e574724d6d96e33d124a65ecd7cb49b": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "serro 2 at the heights country club and wellness",
+      "url": "https://www.emaar.com/en/properties/serro-2-at-the-heights-country-club-and-wellness"
+    },
+    "e07d55f4ef3ede454e770c01dc6adf3aa1644ca7": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "serro at the heights country club and wellness",
+      "url": "https://www.emaar.com/en/properties/serro-at-the-heights-country-club-and-wellness"
+    },
+    "a40b1f6589f33bc65d4f81a0eea7da5188883bc6": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "dubai vs new york which market offers better returns for property investors",
+      "url": "https://www.emaar.com/en/blog/dubai-vs-new-york-real-estate-investment"
+    },
+    "a1fd221642f154ebf141e664c8c0db79fffacf6c": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "dubai vs hong kong real estate which market offers more stability for investors",
+      "url": "https://www.emaar.com/en/blog/dubai-vs-hong-kong-which-market-offers-more-stability-for-investors"
+    },
+    "29b5486707340c14b78c93b4cd5e34473206d5d0": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "dubai vs london which market offers better returns for property investors",
+      "url": "https://www.emaar.com/en/blog/dubai-vs-london-return-on-real-estate-investments"
+    },
+    "dc02774852fdf036e6789d56b098b4c818b30f55": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "dubai vs mumbai which market offers better returns",
+      "url": "https://www.emaar.com/en/blog/dubai-vs-mumbai-which-market-offers-better-returns"
+    },
+    "dd529409ada79a00019cde5d7f45dab38a840515": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "dubai vs singapore real estate what every investor needs to know",
+      "url": "https://www.emaar.com/en/blog/dubai-vs-singapore-real-estate-what-every-investor-needs-to-know"
+    },
+    "24bdb2812b34ca5041528308a8dc7a43302b65bd": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "properties for sale in dubai hills estate",
+      "url": "https://www.emaar.com/en/property-for-sale/dubai-hills-estate"
+    },
+    "cd848e19b30924c50d55eecf1a6dce517a4fd7d8": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "new luxury apartments for sale in dubai hills estate",
+      "url": "https://www.emaar.com/en/property-for-sale/new-luxury-apartments-for-sale-in-dubai-hills-estate"
+    },
+    "378b0f5aee834a34adb7279e34160737db7ee22e": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "new off plan properties in dubai hills estate",
+      "url": "https://www.emaar.com/en/new-off-plan-properties-in-dubai-hills-estate"
+    },
+    "2ee7cdf8d044b4aefe9b9c91c5f22a4927a47bf5": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "waterfront apartments for sale in dubai",
+      "url": "https://www.emaar.com/en/apartments-for-sale-in-dubai/waterfront-apartments-for-sale-in-dubai"
+    },
+    "48d01966acd5a9c079011e255c90c24eb3347fa1": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "properties for sale in rashid yachts marina",
+      "url": "https://www.emaar.com/en/property-for-sale/rashid-yachts-marina"
+    },
+    "cefbe24d039010995bf6c02944e4533f82ab26c9": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "properties for sale in address al marjan island",
+      "url": "https://www.emaar.com/en/property-for-sale/address-al-marjan-island"
+    },
+    "783b0f9a3805941e868f4c3ba72cca4484dba9a2": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "properties for sale in dubai marina",
+      "url": "https://www.emaar.com/en/property-for-sale/dubai-marina"
+    },
+    "0fd8ad1c57a4f1e4600811e0ae6d66115365240b": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "properties for sale in arabian ranches",
+      "url": "https://www.emaar.com/en/property-for-sale/arabian-ranches"
+    },
+    "8467d113f39f363192b512a2a1c03eec1dce6354": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "properties for sale in emaar beachfront",
+      "url": "https://www.emaar.com/en/property-for-sale/emaar-beachfront"
+    },
+    "dc13c0561812793eb12040b3e9369a9aa2592f57": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "emaar_press_releases",
+      "title_key": "properties for sale in dubai creek harbour",
+      "url": "https://www.emaar.com/en/property-for-sale/dubai-creek-harbour"
+    },
+    "232f3b06122b4447f116d1e77e06990d75bdde82": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "nakheel_media_centre",
+      "title_key": "rixos hotel residences dubai island",
+      "url": "https://www.nakheel.com/en/under-construction/rixos-hotel-residences-dubai-island"
+    },
+    "6d7dd2e5186b246c09395ecd353c9602e7ec9309": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "nakheel_media_centre",
+      "title_key": "four studios one shoreline inside the latest release from palm jebel ali s beach coral collections 20th august 2026",
+      "url": "https://www.nakheel.com/media-centre/press-release/news-detail/2026/08/20/four-studios--one-shoreline--inside-the-latest-release-from-palm-jebel-ali-s-beach---coral-collections"
+    },
+    "ce1e9c2935caa87c0aa6cfc5a77cc2a3333a6ea5": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "nakheel_media_centre",
+      "title_key": "nakheel begins handover of 892 homes at jebel ali village 17th august 2026",
+      "url": "https://www.nakheel.com/media-centre/press-release/news-detail/2026/08/17/nakheel-begins-handover-of-892-homes-at-jebel-ali-village"
+    },
+    "4d055798456b6d1af575c8fd3c2be4896c8c16d4": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "nakheel_media_centre",
+      "title_key": "meraas and nakheel enhance customer experience with dedicated golden visa facilitation 29th june 2026",
+      "url": "https://www.nakheel.com/media-centre/press-release/news-detail/2026/06/29/meraas-and-nakheel-enhance-customer-experience-with-dedicated-golden-visa-facilitation"
+    },
+    "9062fd0fdf60ace964e2b08d5fed4295148e78ee": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "nakheel_media_centre",
+      "title_key": "nakheel releases next phase of palm central private residences amid accelerating demand for beachfront living on palm jebel ali 24th june 2026",
+      "url": "https://www.nakheel.com/media-centre/press-release/news-detail/2026/06/24/nakheel-releases-next-phase-of-palm-central-private-residences-amid-accelerating-demand-for-beachfront-living-on-palm-jebel-ali"
+    },
+    "685d0970f1ad5dfb3c3f67b6b7f6dad4dc1612c3": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "chimaev to headline debut tournament raf event in uae ufc stars khamzat chimaev arman tsarukyan and henry cejudo will compete in abu dhabi 10m ago 3 m read",
+      "url": "https://gulfnews.com/sport/raf-signs-five-year-abu-dhabi-deal-chimaev-to-headline-debut-tournament-1.500682423"
+    },
+    "7e3685f3815bd99e5c53335f14ba0875f530bb43": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai k fest postponed as emirate observes mourning 1h ago 2 m read",
+      "url": "https://gulfnews.com/entertainment/free-kwon-eunbi-oneus-concert-at-dubai-k-fest-rescheduled-over-mourning-period-1.500682300"
+    },
+    "67cf802bf9b97e70cbb1107c9f1c80c270e48b21": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "what emirates is planning for the future of flying 1h ago 4 m read",
+      "url": "https://gulfnews.com/business/aviation/emirates-would-like-to-know-what-you-need-before-you-ask-ai-biometrics-and-the-future-of-flying-1.500682269"
+    },
+    "1ad657066caec57b201e98dfc0616f79c031bac3": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "ihc ownership structure changes above royal group 2h ago 2 m read",
+      "url": "https://gulfnews.com/business/markets/ihc-confirms-fount-trust-as-ultimate-parent-after-ownership-restructuring-1.500682225"
+    },
+    "571ebbbc103a13052c39a13618e0827cb90ee410": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "visa cancelled don t overlook your health insurance 2h ago 3 m read",
+      "url": "https://gulfnews.com/living-in-uae/visa-immigration/uae-visa-cancellation-health-insurance-grace-period-1.500682203"
+    },
+    "0e28a9305fba77aaaeb4d4d8ef05f2c8128d61b0": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "what does official mourning mean in the uae 2h ago 3 m read",
+      "url": "https://gulfnews.com/uae/government/flags-work-and-closures-how-official-mourning-works-in-the-uae-1.500682197"
+    },
+    "a21e62273a2a2bfd6c0951d3ef7e9f49ec957976": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai forms new leadership network for higher education 2h ago 2 m read",
+      "url": "https://gulfnews.com/uae/education/dubai-brings-sector-leaders-together-to-shape-education-future-1.500682177"
+    },
+    "f25fd8467a1e405de76e5f157ea0c3240548a5ca": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae president mourns sheikh ahmed bin rashid 2h ago 1 m read",
+      "url": "https://gulfnews.com/uae/government/uae-president-mourns-passing-of-sheikh-ahmed-bin-rashid-al-maktoum-1.500682163"
+    },
+    "044ecfb495f4df60892806a071838df6c23bfda3": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai mourns sheikh ahmed key moments from his life 2h ago 2 m read",
+      "url": "https://gulfnews.com/uae/government/dubai-mourns-sheikh-ahmed-bin-rashid-key-moments-from-his-life-1.500682168"
+    },
+    "56e96401a3516f047dbf451bbb6f88b147f2d3e6": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dh7 8m recovered for workers in three abu dhabi cases 1 m read",
+      "url": "https://gulfnews.com/uae/government/abu-dhabi-labour-court-recovers-dh78m-for-948-workers-1.500682156"
+    },
+    "b048e724032d97a1c6212407ac7c35a60c60e691": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "no falling leaves 7 real signs autumn is in the uae 5 m read",
+      "url": "https://gulfnews.com/lifestyle/autumn-in-the-uae-starts-this-wednesday-seven-signs-of-the-season-changing-1.500682080"
+    },
+    "97fb6904b30079c6d881d891fa0472fc2dfcf275": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "new abu dhabi holiday home rules for guests operators 4 m read",
+      "url": "https://gulfnews.com/business/property/abu-dhabi-holiday-home-rules-what-guests-and-operators-need-to-know-1.500682123"
+    },
+    "6c2899b2d8f4a4c16292b64ec24e4e4572223f7d": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "visitdubai_events_calendar",
+      "title_key": "discover dubai s best new hotels and upcoming hotel launches in 2026",
+      "url": "https://www.visitdubai.com/en/articles/new-hotels-in-dubai"
+    },
+    "d03de591c8f5fdcc9fe5dc947f00101178e33c84": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "black coffee at ushuaïa dubai harbour experience in dubai",
+      "url": "https://dubai.platinumlist.net/event-tickets/108406/black-coffee-at-ushuaia-dubai-harbour-experience-in-dubai"
+    },
+    "43baeace829367f3e31081227e115a22be8bd8a6": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "valery meladze concert at the agenda in dubai",
+      "url": "https://dubai.platinumlist.net/event-tickets/105916/valery-meladze-concert-at-the-agenda-in-dubai"
+    },
+    "571d8dedee49680f92781b593f22604865d892fb": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "artbat present upperground at ushuaïa dubai harbour experience",
+      "url": "https://dubai.platinumlist.net/event-tickets/108298/artbat-present-upperground-at-ushuaia-dubai-harbour-experience"
+    },
+    "0b2994b83367cf1742803333b219744798101346": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "tony robbins breakthrough 2027 in dubai",
+      "url": "https://dubai.platinumlist.net/event-tickets/106963/tony-robbins-breakthrough-2027"
+    },
+    "12471f3e0c07db072a086ff4a8259939473872f8": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "borderless melodies abida parveen and kailash kher in dubai",
+      "url": "https://dubai.platinumlist.net/event-tickets/108117/borderless-melodies-abida-parveen-and-kailash-kher"
+    },
+    "892aa261b03da77c10dbdaa6bf8d77f365a4b253": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "chanel contre rubinstein at jumeirah beach hotel",
+      "url": "https://dubai.platinumlist.net/event-tickets/104939/chanel-contre-rubinstein-at-jumeirah-beach-hotel"
+    },
+    "8e383d0e9ff73bbd24a28c93bb49c43af37b29a4": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "saleh lel estekhdam ft saleh el nawawy in dubai",
+      "url": "https://dubai.platinumlist.net/event-tickets/108160/saleh-lel-estekhdam-ft-saleh-el-nawawy-in-dubai"
+    },
+    "5aa1a70d995e3365945616e348f09c7465e24557": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "meen amin by ahmed amin live at the agenda in dubai",
+      "url": "https://dubai.platinumlist.net/event-tickets/106612/meen-amin-by-ahmed-amin-live-at-the-agenda-dubai"
+    },
+    "50f65d196f29a8f21510605416f60d6cc92058ba": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "adriatique present x at ushuaïa dubai harbour experience",
+      "url": "https://dubai.platinumlist.net/event-tickets/108106/adriatique-present-x-at-ushuaia-dubai-harbour-experience"
+    },
+    "f09967eda932fb1c52cbdb7a6a2f15bc4968aec9": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "john achkar feena nehke live at dubai comedy festival in dubai",
+      "url": "https://dubai.platinumlist.net/event-tickets/106524/john-achkar-feena-nehke-live-at-dubai-comedy-festival"
+    },
+    "44022bbd2e46a405c9fca0c30b18e440ea17e50a": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "faia younan an evening in jazz in jeddah",
+      "url": "https://jeddah.platinumlist.net/event-tickets/108211/faia-younan-a-jazz-in-jeddah"
+    },
+    "8c0280289e316b16f40b1026384913b116f6b0f6": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "illusion show beyond limits by sergey vorontsov",
+      "url": "https://dubai.platinumlist.net/event-tickets/106734/illusion-show-beyond-limits-by-sergey-vorontsov"
+    },
+    "d562e72d44fb5df78f658851bd7703b5e49db6e4": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "та самая пеппи кукольный спектакль in dubai",
+      "url": "https://dubai.platinumlist.net/event-tickets/107442/ta-samaia-peppi-kukolnyi-spektakl"
+    },
+    "9db5a2953310053f3fd09b0cbb6e268913103bd4": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "in act innellea rafael cerato dish dash 9 oct in riyadh",
+      "url": "https://riyadh.platinumlist.net/event-tickets/106478/in-act-act-x-in-riyadh-9-oct"
+    },
+    "a7720f2c4f6a89ccf4919a3f60c7dd556ffed7c5": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "the amphibian man человек амфибия in dubai",
+      "url": "https://dubai.platinumlist.net/event-tickets/107816/the-amphibian-man-celovek-amfibiia"
+    },
+    "39ddc35ac2864c849d7799a3f93de9e5733198f1": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "women s empowerment convention we convention in dubai",
+      "url": "https://dubai.platinumlist.net/event-tickets/we-convention-womens-empowerment-convention"
+    },
+    "1f4e6d2db1fa29dc6fdf4e1f205531ff637a92d1": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "in act anniversary act xi in jeddah 27 nov",
+      "url": "https://jeddah.platinumlist.net/event-tickets/106479/in-act-anniversary-act-xi-in-jeddah-13-nov"
+    },
+    "4018ebbeba903093c4a8c1afc0a47523bc3370e4": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "origins by weekends experience in jeddah",
+      "url": "https://jeddah.platinumlist.net/event-tickets/weekends-experience"
+    },
+    "adbb32f786693c1e435f0ba4e98dc013a756c774": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "young maestro travels from baroque to romanticism in dubai",
+      "url": "https://dubai.platinumlist.net/event-tickets/young-maestro"
+    },
+    "c9acd39af1b6c6d0ecbddc87ba1e808d6b26e6b0": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "world hits about love performed by the tenors of the xxi century at cultural foundation abu dhabi",
+      "url": "https://abu-dhabi.platinumlist.net/event-tickets/world-hits-about-love-abu-dhabi"
+    },
+    "859458cee1ee45c0edd786a7e0adf861beb53973": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "6 jan kino band 08 00 pm buy tickets kino band wed 6 jan 08 00 pm buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/kino-band-coca-cola-arena-2027-01-06"
+    },
+    "ac95763cf06714598270948e5f2ae150a85477f5": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "17 apr a1 and music travel love 08 00 pm buy tickets a1 and music travel love sat 17 apr 08 00 pm buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/a1-and-music-travel-love-coca-cola-arena-2027-04-17"
+    },
+    "42f1e54633db203bd5cddda19a7d452ae6d486a7": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "24 apr tony robbins breakthrough 02 00 pm buy tickets tony robbins breakthrough sat 24 apr 02 00 pm buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/tony-robbins-breakthrough-coca-cola-arena-2027-04-24"
+    },
+    "74df71b18be4d4f4a0f216b9d992d5d1d561bf84": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "6 jun richard marx 08 00 pm buy tickets richard marx sun 6 jun 08 00 pm buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/richard-marx-coca-cola-arena-2027-06-06"
+    },
+    "0e1d479a06e7f9f8ccfcf6e8fa122478c27d5c48": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "18 oct vir das 08 00 pm buy tickets vir das sun 18 oct 08 00 pm buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/vir-das-coca-cola-arena-2026-10-18"
+    },
+    "c0e05c280da51176756fc8576b8f91736f381a6c": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "24 oct nancy ajram live 09 00 pm buy tickets nancy ajram live sat 24 oct 09 00 pm buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/nancy-ajram-live-coca-cola-arena-2026-10-24"
+    },
+    "08bce174216ff8ba8d8e5d0dc84798fb44697ee4": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "25 oct shaan all of me tour 08 00 pm buy tickets shaan all of me tour sun 25 oct 08 00 pm buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/shaan-all-of-me-tour-coca-cola-arena-2026-10-25"
+    },
+    "452ae57fd961cd272f00b407ee7f7f35add01bf6": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "4 nov jony 09 00 pm buy tickets jony wed 4 nov 09 00 pm buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/jony-coca-cola-arena-2026-11-04"
+    },
+    "98ff8c2318ecf7f4494783d3ac3f314f46984de5": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "7 nov amr diab 09 00 pm buy tickets amr diab sat 7 nov 09 00 pm buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/amr-diab-coca-cola-arena-2026-11-07"
+    },
+    "64f618c65ae3763ca370263bd3a7606aac3ce6d1": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "14 nov pfl dubai nemkov vs bilostenniy 06 00 pm buy tickets pfl dubai nemkov vs bilostenniy sat 14 nov 06 00 pm buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/pfl-dubai-nemkov-vs-bilostenniy-coca-cola-arena-2026-11-14"
+    },
+    "940fd15d83f94887ad6de6b7e7a8777ef9e8beed": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "27 nov atif aslam 09 00 pm buy tickets atif aslam fri 27 nov 09 00 pm buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/atif-aslam-coca-cola-arena-2026-11-27"
+    },
+    "ff8bcb795d4998e7d87c293b3e854055de676004": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "events workshops events workshops",
+      "url": "https://expocitydubai.com/en/things-to-do/events-and-workshops"
+    },
+    "9cf0eecd967527aa6b0ed70170ec7573cc420c13": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "expo city camps update expo city camps update",
+      "url": "https://expocitydubai.com/en/expo-city-camps"
+    },
+    "c5eeef845f9944603f234f3cab4b3f938aec06e2": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "al wasl season al wasl season one destination every celebration",
+      "url": "https://expocitydubai.com/en/al-wasl-season"
+    },
+    "46d0d26f2fba2ebde6190999d60cca025a497520": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "restaurants cafés restaurants cafés",
+      "url": "https://expocitydubai.com/en/eat-and-drink"
+    },
+    "323a635c0ce2b2aea9bce9199e864feaa0226c88": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "dining promotions dining promotions",
+      "url": "https://expocitydubai.com/en/eat-and-drink?type=restaurant-promotion"
+    },
+    "70314c28771c1c85aeacfd83effac1e4e16f93b1": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "expo city dubai app expo city dubai app",
+      "url": "https://expocitydubai.com/en/expo-city-dubai-app"
+    },
+    "d3f05205b8767dbb61f9906b5f170ef2ed89c0d1": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "city map city map navigate expo city dubai with ease discover the latest events landmarks attractions services and hidden gems across the city",
+      "url": "https://expocitydubai.com/en/map"
+    },
+    "ff70c64c4e811eca22190a4c2a8e6f5857ded94d": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "register your interest register your interest",
+      "url": "https://expocitydubai.com/en/expo-living"
+    },
+    "3ae5a41e4d4ee5c970ebcb0efdc72ea6a1804d78": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "expo valley views expo valley views",
+      "url": "https://expocitydubai.com/en/expo-living/expo-valley/expo-valley-views"
+    },
+    "9a6b85e8fba1d952a1f40772f7a09050dd053602": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "al waha residences al waha residences",
+      "url": "https://expocitydubai.com/en/al-waha"
+    },
+    "adfce91765236055ac82a018efbb8088511363dc": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "shamsa townhouses shamsa townhouses",
+      "url": "https://expocitydubai.com/en/expo-living/expo-valley/shamsa-townhouses"
+    },
+    "138bcd3e307ba61e9cdf8ffeeefe22fe1e49c9a3": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "mangrove residences mangrove residences",
+      "url": "https://expocitydubai.com/en/expo-living/mangrove-residences"
+    },
+    "bf2f66b88d415b81aa5ac409bf7556ba65662aa5": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "free zone services free zone services enjoy 100 foreign ownership plus all the benefits",
+      "url": "https://expocitydubai.com/en/business-in-expo-city-dubai/free-zone-services"
+    },
+    "0acdb2c69a3de178f287ee7c6f031b8134542ad8": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "packages featured packages featured",
+      "url": "https://expocitydubai.com/en/business-at-expo-city-dubai/expo-packages"
+    },
+    "bc3d1b0fb9b6915a31d845c2c9e0c9f883542569": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "commercial spaces commercial spaces",
+      "url": "https://expocitydubai.com/en/business-in-expo-city-dubai/workspaces"
+    },
+    "3d89d1ddec0f4fe1f94e223efd453770c7f7902c": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "business directory business directory",
+      "url": "https://expocitydubai.com/en/business-at-expo-city-dubai/business-directory"
+    },
+    "c6f77c85cdcda1b86473105f5c62b3d4fc0830e9": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "new company or branch new company or branch",
+      "url": "https://expocitydubai.com/en/business-in-expo-city-dubai/business-setup/new-company-or-branch"
+    },
+    "529652b3faf99548acbfea9097b1971d0574c1a6": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "retail and restaurants retail and restaurants",
+      "url": "https://expocitydubai.com/en/business-in-expo-city-dubai/business-setup/retail-and-restaurants"
+    },
+    "a21bb17cdb079e5cdfa7bb4d4a16509f86cb7d86": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "expocity_events",
+      "title_key": "future forward business hub future forward business hub",
+      "url": "https://expocitydubai.com/en/future-forward-business-hub"
+    },
+    "c73bd9e83ad1aa36660242b8c518c4e145f52f6d": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "sheikh mohammed shares heartfelt tribute to his late brother sheikh ahmed bin rashid",
+      "url": "https://whatson.ae/2026/09/sheikh-mohammed-shares-heartfelt-tribute-to-his-late-brother-sheikh-ahmed-bin-rashid"
+    },
+    "c6a9626c63b9a14e1f4e0784f5d953f00ea3f296": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "8 fun things to do this week in abu dhabi sept 21 to 24",
+      "url": "https://whatson.ae/2026/09/8-fun-things-to-do-this-week-in-abu-dhabi-sept-21-to-24"
+    },
+    "db83884d9bf00b3c27ce721d2a2a0d8c7a08134a": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "this dhs40 pass gets you unlimited films at sharjah film platform",
+      "url": "https://whatson.ae/2026/09/this-dhs40-pass-gets-you-unlimited-films-at-sharjah-film-platform"
+    },
+    "6d0236f6f4bd9db5329314bb17b9d8c8437fa5b9": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "7 things to do in dubai this week september 21 to 24",
+      "url": "https://whatson.ae/2026/09/7-things-to-do-in-dubai-this-week-september-21-to-24"
+    },
+    "b2012dbd5295a14d4278915af89702727cc85dab": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "autumn is officially set to begin in the uae on september 23",
+      "url": "https://whatson.ae/2026/09/autumn-is-officially-set-to-begin-in-the-uae-on-september-23"
+    },
+    "ba7cc044cd60803a8ae69ce6bb16f2a6ccbe2352": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "dubai s oud metha road project officially completed",
+      "url": "https://whatson.ae/2026/09/dubais-oud-metha-road-project-officially-completed"
+    },
+    "26de76e8bbe07506805654402ab4a46c010092fc": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "sharjah safari is reopening today with new animal encounters and tours",
+      "url": "https://whatson.ae/2026/09/sharjah-safari-is-reopening-today-with-new-animal-encounters-and-tours"
+    },
+    "5017a743b0b6f291b7b63516fbb59fab70513908": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "10 spots to visit for negroni week in abu dhabi",
+      "url": "https://whatson.ae/2026/09/9-spots-to-visit-for-negroni-week-in-abu-dhabi"
+    },
+    "4ba76c05ff4c3ba58326d88e8e2ea9d662c86a98": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "wilfred thesiger in arabia launched in abu dhabi",
+      "url": "https://whatson.ae/2026/09/wilfred-thesiger-in-arabia-launched-in-abu-dhabi"
+    },
+    "eaecfedd09527f80c8be438c44b53b1e910d3c8c": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "your guide to all the dj gigs in dubai this year",
+      "url": "https://whatson.ae/2026/09/your-guide-to-all-the-dj-gigs-in-dubai-this-year-2026"
+    },
+    "e1ea438fea1d6d45ae0319be33009cd713d7694c": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "saadiyat grove announces q4 opening and unveils shops and restaurants",
+      "url": "https://whatson.ae/2026/09/saadiyat-grove-to-open-in-q4-and-unveils-shops-and-restaurants"
+    },
+    "20a0740c0ba3e23cd50f1f1440fd290a4fe6c275": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "just in guggenheim abu dhabi tickets are officially on sale",
+      "url": "https://whatson.ae/2026/09/just-in-guggenheim-abu-dhabi-tickets-are-officially-on-sale"
+    },
+    "a43831598ba27e9927520d1cea251b2e63f9fc4e": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "dubai_edited_rss_hub",
+      "title_key": "the best business lunches in dubai under aed 200",
+      "url": "https://dubaiedited.ae/the-best-business-lunches-in-dubai-under-aed-200"
+    },
+    "2f2ddecbe0d34c7ab849c69575dcdbf206d946f9": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "dubai_edited_rss_hub",
+      "title_key": "the little things wraps up mefcc 2026 with collector exclusives tcg experiences cosplay central and crunchyroll collaboration",
+      "url": "https://dubaiedited.ae/the-little-things-wraps-up-mefcc-2026-with-collector-exclusives-tcg-experiences-cosplay-central-and-crunchyroll-collaboration"
+    },
+    "4884cc7ae1f3f5a5ed23b8713b7d41083e35dfa6": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "dubai_edited_rss_hub",
+      "title_key": "the big chill café celebrates international coffee day with buy one get one free coffee",
+      "url": "https://dubaiedited.ae/the-big-chill-cafe-celebrates-international-coffee-day-with-buy-one-get-one-free-coffee"
+    },
+    "bebd92e6b75e4659d878f185b8afbbf534927232": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "dubai_edited_rss_hub",
+      "title_key": "time out market dubai presents an exclusive negroni masterclass in collaboration with campari",
+      "url": "https://dubaiedited.ae/time-out-market-dubai-presents-an-exclusive-negroni-masterclass-in-collaboration-with-campari"
+    },
+    "061686e5b1f18d05d9b957bc0d97f9d890dbb753": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "dubai_edited_rss_hub",
+      "title_key": "where to watch the world cup 2026 in dubai",
+      "url": "https://dubaiedited.ae/where-to-watch-the-world-cup-2026-in-dubai"
+    },
+    "e51c1fdbeeb3f8453001fd7cf05f07a975d01e2c": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "dubai_edited_rss_hub",
+      "title_key": "15 pool beach clubs in dubai you can actually get into for free this summer",
+      "url": "https://dubaiedited.ae/15-pool-beach-clubs-in-dubai-you-can-actually-get-into-for-free-this-summer"
+    },
+    "436b182f6a7e77b5bb50a076736c03ac70cbdbd2": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "dubai_edited_rss_hub",
+      "title_key": "centara mirage beach resort dubai offers valentine s spa packages for couples and families",
+      "url": "https://dubaiedited.ae/centara-mirage-beach-resort-dubai-offers-valentines-spa-packages-for-couples-and-families"
+    },
+    "8260330f1e446fb92366897755c474357ce5106c": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "dubai_edited_rss_hub",
+      "title_key": "powered by a fill 001d39 b fill 985e23",
+      "url": "https://cookieadmin.net/?amp%3Butm_medium=footer"
+    },
+    "fb72a825120712da293fb4ea1595362990769449": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в оаэ скорбят о кончине члена королевской семьи дубая",
+      "url": "https://t.me/uaegeneralnews/17752"
+    },
+    "da7a9fb5443a11c6436288ed911da573586d75ad": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в оаэ разъяснили регламент официального траура",
+      "url": "https://t.me/uaegeneralnews/17751"
+    },
+    "b504923270496feaea318ea2dcd007242b64963e": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в дубае на выборы в госдуму пришло почти две тысячи россиян",
+      "url": "https://t.me/uaegeneralnews/17750"
+    },
+    "ea01905127f4e8525433206872d0c1e7b1c52805": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в дубае скончался шейх ахмед бин рашид аль мактум",
+      "url": "https://t.me/uaegeneralnews/17749"
+    },
+    "c47b8ed362f6ab38efcdb94b14b932ac68f66554": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "музей гуггенхайма в абу даби открыл продажу билетов",
+      "url": "https://t.me/uaegeneralnews/17748"
+    },
+    "fd61944bf0f7d4ff40a9f44fc82a3e27b74febe2": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в дубай вернется международный кинофестиваль",
+      "url": "https://t.me/uaegeneralnews/17747"
+    },
+    "24d33fcc46abe9f68f6790159471e5a5c7f586eb": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в дубае построят ж д станцию в районе мейдан",
+      "url": "https://t.me/uaegeneralnews/17746"
+    },
+    "dd08c58d61882b8b9ce3f4ecec9c606be5317214": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в дубае предупредили об аферах с билетами на global village",
+      "url": "https://t.me/uaegeneralnews/17745"
+    },
+    "b28f14ef1d0e65147fafba72d1ed66125061ba50": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "к берегам оаэ приплыли горбатые дельфины",
+      "url": "https://t.me/uaegeneralnews/17744"
+    },
+    "53c0981bc4a7e07b57ebd4f9eff292db5c2975e7": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "на севере оаэ проведут испытания летающих авто",
+      "url": "https://t.me/uaegeneralnews/17743"
+    },
+    "18869bf78859fb9d88ad9c7aae5cfdfcc2539834": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "8 вечера избирательный участок no 8248 в дубае оаэ закрыт",
+      "url": "https://t.me/uaegeneralnews/17740"
+    },
+    "7d1bb46298315cacc6dd9a0d2e628004704f4e96": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "выборы в дубае как это было",
+      "url": "https://t.me/uaegeneralnews/17739"
+    },
+    "980b3e4364b4bf287e32a125725be2cd7bcf3457": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "выступающий за оаэ хамзат чимаев выиграл третий бой в лиге raf",
+      "url": "https://t.me/uaegeneralnews/17738"
+    },
+    "d5f0ffb9c4cf80bf6f3176c39c75603f55b12932": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "посольство сша в оаэ выпустило предупреждение для граждан",
+      "url": "https://t.me/uaegeneralnews/17737"
+    },
+    "e6b7f0cb662eed43138696fd5de0e38a298ed1ee": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в дубае проходит голосование на выборах депутатов госдумы россии",
+      "url": "https://t.me/uaegeneralnews/17736"
+    },
+    "b352c356cec5a6da1c2be43299e70e41ce6d3277": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в абу даби проходит голосование на выборах депутатов государственной думы россии",
+      "url": "https://t.me/uaegeneralnews/17735"
+    },
+    "473cf549226c91d6890f5994e03d6cccd45bb4d3": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в дубае открывают новый ресторан нусрета гёкче",
+      "url": "https://t.me/uaegeneralnews/17734"
+    },
+    "abf1e7203164caa048b00cd6d51debce03d3550d": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в столице оаэ запустят новый молл с гастрономической зоной",
+      "url": "https://t.me/uaegeneralnews/17733"
+    },
+    "35e8867a76d1b8a3c172c83271b11d048b4b91b0": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в оаэ 20 сентября 2026 года пройдет голосование на выборах в госдуму",
+      "url": "https://t.me/uaegeneralnews/17732"
+    },
+    "c5beb1eb12ef85891fd7ef1e9ed1414612bcf0fe": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "поездка в люксовом поезде саудовской аравии обойдется в 30 тыс дирхамов",
+      "url": "https://t.me/uaegeneralnews/17731"
+    },
+    "fb0d05021047b6248062c4dd40bdbfac0421b170": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "энергетическая выставка в абу даби соберет 2250 компаний со всего мира",
+      "url": "https://t.me/russianemiratesnews/28114"
+    },
+    "da59e925e470ec99eab21251f7ab0df79ad3e1b2": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "в дубае стартует продажа vip пакетов в global village",
+      "url": "https://t.me/russianemiratesnews/28112"
+    },
+    "9ffa61723f702d7d208b89935a077e5f1967c211": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "в оаэ представили ии киберзащитника",
+      "url": "https://t.me/russianemiratesnews/28111"
+    },
+    "cb04ba63ee7135d13bd53fea42fa37da0c9243fa": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "в оаэ запустили новый грузовой ж д маршрут",
+      "url": "https://t.me/russianemiratesnews/28108"
+    },
+    "e660bd3909f580f884fa520b3e1940fedaec5fc0": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "в дубае напомнили о правиле спального места для рабочих",
+      "url": "https://t.me/russianemiratesnews/28105"
+    },
+    "48d2f4e7d1614ad4aa3b84b1a0b43f207854fa07": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "сафари парк шарджи возвращается к работе",
+      "url": "https://t.me/russianemiratesnews/28103"
+    },
+    "eb1c5667519aebe148ab4e5231d7457c7da4ac18": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "скончался шейх ахмед бин рашид аль мактум брат правителя дубая",
+      "url": "https://t.me/dubaimap/14499"
+    },
+    "0da46a19cc0b2ee7adea4f1b39bbb0eeca389d90": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "на международной книжной ярмарке в абу даби представили редкие исторические артефакты среди которых фрагмент",
+      "url": "https://t.me/dubaimap/14498"
+    },
+    "25f08394f2bb5e3df708f2673d4fd38441420e08": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "emirates признана лучшей авиакомпанией мира по бортовой развлекательной системе",
+      "url": "https://t.me/dubaimap/14497"
+    },
+    "bc5f9cee24f4e000a2afdcc80a7543040c07554f": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "в дубае можно взять кошку или собаку из муниципального приюта подав заявку через сайт dubai municipality или",
+      "url": "https://t.me/dubaimap/14496"
+    },
+    "bb068b261f08fa793d6e8efcf02a8e9be36b2b5e": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "в абу даби няню напавшую на трёхлетнего мальчика приговорили к условному месяцу тюрьмы и штрафу 3 000 aed",
+      "url": "https://t.me/dubaimap/14495"
+    },
+    "bbd8cd66fc6c3acf1f43dea28346421903017d66": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "в пятницу в районе ракна в аль айне зафиксировали самую низкую температуру этого лета в оаэ 18 8 c",
+      "url": "https://t.me/dubaimap/14494"
+    },
+    "a3ed6ac9d11db4e78cf4a78dec18887a816204d0": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "оаэ признали самой благоприятной налоговой юрисдикцией в мире благодаря отсутствию подоходного налога ндс 5 и",
+      "url": "https://t.me/dubaimap/14493"
+    },
+    "43358453d77cee0ae2adeba1833519bed49faed4": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "в дубае стартовали продажи новых iphone некоторые покупатели приехали в dubai mall к 3 00 и уже к 7 00 в тц",
+      "url": "https://t.me/dubaimap/14492"
+    },
+    "a2df35e1e7ddb71c179cc4803d4d6f608b327ebc": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "здание guggenheim abu dhabi получит уникальный архитектурный облик благодаря 10 башням конусам девять из них",
+      "url": "https://t.me/dubaimap/14491"
+    },
+    "32a39f74ca6b347195ea28f3f9528a788e93c8f0": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "flydubai начнёт устанавливать бесплатный высокоскоростной wi fi starlink на самолётах уже в этом году и планирует",
+      "url": "https://t.me/dubaimap/14490"
+    },
+    "d7776401161516e8cd6b5c78a07d7bbbdaeb1478": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "в абу даби разработают и протестируют ии систему которая будет выявлять риски при перевозке хранении использовании",
+      "url": "https://t.me/dubaimap/14488"
+    },
+    "3b2d45cdcab1beb353b9b8ff1c4965c90547a623": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "сеть address откроет 2 новых отеля в оаэ",
+      "url": "https://t.me/dubaimap/14487"
+    },
+    "31222209f7c15582d635f593e9d4eec7f2abc604": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "в дубае до конца года планируют запустить saraab первую в арабском регионе государственную ии модель для",
+      "url": "https://t.me/dubaimap/14486"
+    },
+    "02e6a1d2ec598b72abf8acc238f40552b1a5b6fe": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "в оаэ построят скоростную 12 полосную автомагистраль длиной 80км она свяжет абу даби с шарджей и пройдёт через",
+      "url": "https://t.me/dubaimap/14485"
+    },
+    "e8c955256c7bb40cdbd84a449a141e8f3bb938e9": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "etihad представили новый дизайн лаунжей beyond borders первым в этом стиле полностью обновят зал в лондонском хитроу",
+      "url": "https://t.me/dubaimap/14482"
+    },
+    "a4074d9cbe4e126bf67676fc0dd67b517b42b60b": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "emirates планирует отказаться от всех airbus a380 к 2040 году 116 двухэтажных гигантов будут выводить из парка",
+      "url": "https://t.me/dubaimap/14481"
+    },
+    "98240f7e5d29af6fd3d35288e4bc27964011c6b1": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "бур дубай 60 х годов отель airlines",
+      "url": "https://t.me/dubaimap/14480"
+    },
+    "e437afabfdf4146426c0d7bac1da3ac23e22dbb8": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_eltsovairina_80",
+      "title_key": "дубай сегодня пробки аренда население и настроения",
+      "url": "https://t.me/eltsovairina_80/750"
+    },
+    "64e3812bfd57e95da3f757b4c9678f05a9cfc478": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_eltsovairina_80",
+      "title_key": "sobha история девелопера",
+      "url": "https://t.me/eltsovairina_80/748"
+    },
+    "285b1f69e617c006a1107709dd38191c4a6ba4e6": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_eltsovairina_80",
+      "title_key": "продаю свою квартиру в тбилиси",
+      "url": "https://t.me/eltsovairina_80/742"
+    },
+    "32db7effa9d8a5971d2cd81025b51644ea7cf7e5": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_eltsovairina_80",
+      "title_key": "свершилось в оаэ начинается новая транспортная эпоха",
+      "url": "https://t.me/eltsovairina_80/736"
+    },
+    "8ecd9e66104a7b7cab50f31dff50598cebe76fc0": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_eltsovairina_80",
+      "title_key": "2 июня 2026 г согласно сообщению регулятора рынка недвижимости абу даби adrec gov ae были введены временные меры",
+      "url": "https://t.me/eltsovairina_80/735"
+    },
+    "9f9892a46f6274f9e2a183f9a75cdfcf8db0e6a0": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_eltsovairina_80",
+      "title_key": "памяти умара джабраилова",
+      "url": "https://t.me/eltsovairina_80/734"
+    },
+    "f4e26b25387b24e86278df0863118f5a6149976b": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_eltsovairina_80",
+      "title_key": "хотите знать первую 20 ку стран мира с самой высокой коррупцией на 2026 год",
+      "url": "https://t.me/eltsovairina_80/733"
+    },
+    "ab7cde22bbd166610056b9eb2063ffc3b9b20271": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_neginskiuae",
+      "title_key": "думаете 300 тыс в дубае это только студия под сдачу в аренду",
+      "url": "https://t.me/NeginskiUAE/8476"
+    },
+    "326b40092fe58a206901af3c1a4f1c78e59f4a71": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_neginskiuae",
+      "title_key": "хогвартс переезжает в абу даби чего еще ждать от эмирата",
+      "url": "https://t.me/NeginskiUAE/8466"
+    },
+    "4f4ea606a271aaa13172c2f9480ac4398f22dd91": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_neginskiuae",
+      "title_key": "сектор недвижимости абу даби вырос в 1 полугодии 2026 на 112 в чем секрет рынка",
+      "url": "https://t.me/NeginskiUAE/8454"
+    },
+    "5902674c6219de40b672dae6ef775636e26eb7c8": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_burjuyinvest",
+      "title_key": "сколько на самом деле стоит няня в дубае",
+      "url": "https://t.me/burjuyinvest/5893"
+    },
+    "32d57279365cbfc40c496aefbcc0bbb357c6bb42": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_burjuyinvest",
+      "title_key": "инвестиции по методу матрешка",
+      "url": "https://t.me/burjuyinvest/5892"
+    },
+    "e06cf413a10d8dc9f6b959b2fc6e3d531dacea4e": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_burjuyinvest",
+      "title_key": "дубай август 2026 разбор по данным земельного департамента",
+      "url": "https://t.me/burjuyinvest/5891"
+    },
+    "4f677a7887ca13c6a949fcb4b74aa489c04bac64": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_burjuyinvest",
+      "title_key": "eagle hills открывает рамхан для тех у кого нет 15 миллионов дирхам",
+      "url": "https://t.me/burjuyinvest/5886"
+    },
+    "fd8b012ce9aef0517711d1c782afdc2cb3f7ada4": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_burjuyinvest",
+      "title_key": "ещё одна op 6 the edge от select 2 br с видом на бурж высокий этаж ключи через месяц",
+      "url": "https://t.me/burjuyinvest/5884"
+    },
+    "1e4bc26210f01597216e5e3dff31c595d7303b0b": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_burjuyinvest",
+      "title_key": "ев продаже the edge от select 2 br с видом на бурж высокий этаж ключи через месяц",
+      "url": "https://t.me/burjuyinvest/5883"
+    },
+    "dc7af2fa5f84b19c69e014cb932493ed1e511ea4": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_burjuyinvest",
+      "title_key": "the edge business bay у меня 18 квартир по цене застройщика 6",
+      "url": "https://t.me/burjuyinvest/5880"
+    },
+    "fd9d2edb6847efb2740ee569ef4e48be0bad44b3": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_burjuyinvest",
+      "title_key": "один из крупнейших неосвоенных островов абу даби наконец застроят за развитие острова будет отвечать eagle hills",
+      "url": "https://t.me/burjuyinvest/5879"
+    },
+    "306812347bad623e3b8b026f7481e73ce58c5816": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_burjuyinvest",
+      "title_key": "а был ли dubai islands mall",
+      "url": "https://t.me/burjuyinvest/5878"
+    },
+    "3d0f73657b44d157e5fcd83ceb483bc40fa218c1": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_burjuyinvest",
+      "title_key": "plus 3 units in my the edge stock op 6",
+      "url": "https://t.me/burjuyinvest/5877"
+    },
+    "030811aa8f0c7a826825c325e3209277d8e9d384": {
+      "first_seen_at": "2026-09-21T11:36:15.514649+00:00",
+      "source_id": "tg_burjuyinvest",
+      "title_key": "эксклюзив inside для семьи которая выбирает лучшее почти 300 м2 после апгрейда на первой линии jbr в дубае",
+      "url": "https://t.me/burjuyinvest/5868"
+    }
+  }
+}

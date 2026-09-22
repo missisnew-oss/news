@@ -506,6 +506,262 @@
       "rewrite_count": 0,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMQarHyCY9q28SNVXE0kSucXzq54EoAAiojaxvmpJFJp8I9mAfE0lIBAAMCAAN5AAM9BA"
+    },
+    {
+      "post_id": "dubai_life-bd1230f4520b",
+      "rubric": "dubai_life",
+      "title": "Сезон улицы начинается: парк открывается после летнего перерыва",
+      "body": "Если вы ждали, когда снова можно планировать день на улице, вот два сигнала.\n\nDubai Parks and Resorts открывается после летнего перерыва. Точную дату и график лучше смотреть на сайте комплекса перед поездкой.\n\nПогода пока держится в районе 40 градусов, но утро уже другое и темнеет раньше. Полноценного похолодания ждём позже.\n\nНа чём спотыкаются:\n— едут в парк в первые дни после открытия и стоят в очередях;\n— планируют прогулки на середину дня, а не на утро или вечер.\n\nЯ бы в ближайшие выходные выбирала утро. Сохраните — пригодится при планировании выходных.",
+      "hashtags": [
+        "#дубай",
+        "#жизньвдубае",
+        "#оаэ"
+      ],
+      "cta": "Сохраните — пригодится при планировании выходных.",
+      "image": {
+        "mode": "stock",
+        "headline": "Сезон улицы в Дубае начинается",
+        "accent": "40°C",
+        "stock_query": "dubai outdoor park family evening"
+      },
+      "sources": [
+        {
+          "source_id": "whatson_ae_feed",
+          "title": "UAE weather: Here's when temperatures will start to drop",
+          "url": "https://whatson.ae/2026/09/uae-weather-heres-when-temperatures-will-start-to-drop/"
+        },
+        {
+          "source_id": "tg_russianemiratesnews",
+          "title": "В Дубае открывается популярная достопримечательность",
+          "url": "https://t.me/russianemiratesnews/28122"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Днём всё ещё держится около 40 градусов",
+          "value": "40 °C",
+          "source_url": "https://whatson.ae/2026/09/uae-weather-heres-when-temperatures-will-start-to-drop/"
+        },
+        {
+          "claim": "Dubai Parks and Resorts открывается после летнего перерыва",
+          "value": "открытие после летнего перерыва",
+          "source_url": "https://t.me/russianemiratesnews/28122"
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 563,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-22T07:58:10.500865+00:00",
+      "slot_at": "2026-09-23T15:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/card-dc55051a8380.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Сезон улицы в Дубае начинается",
+        "accent": "40°C"
+      },
+      "item_ids": [
+        "0f2d7c2e53fa0228c343d186cc257202cbf7ebbf",
+        "d05d0d33896543a4b7130c0d5e469ef8963c73e7",
+        "99efdf645c27e1d8f05e2fcd279a93877d90a857",
+        "830b073cd9e6d6db0cb3a67389933696e1b9cc01"
+      ],
+      "source_items": [
+        {
+          "item_id": "0f2d7c2e53fa0228c343d186cc257202cbf7ebbf",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "UAE weather: Here’s when temperatures will start to drop",
+          "summary": "The 40-degree days haven’t disappeared just yet, but the first hints of better UAE weather are already starting to show You can almost feel it coming. The mornings are changing, the sun is setting a little earlier and we’re getting closer to that time of year when life starts moving outdoors again. So, when will […] The post UAE weather: Here’s when temperatures will start to drop appeared first on What's On .",
+          "url": "https://whatson.ae/2026/09/uae-weather-heres-when-temperatures-will-start-to-drop/",
+          "canonical_url": "https://whatson.ae/2026/09/uae-weather-heres-when-temperatures-will-start-to-drop",
+          "published_at": "2026-09-22T06:16:32+00:00",
+          "collected_at": "2026-09-22T07:57:55.849633+00:00",
+          "lang": "en"
+        },
+        {
+          "item_id": "d05d0d33896543a4b7130c0d5e469ef8963c73e7",
+          "source_id": "tg_uaegeneralnews",
+          "category": "city_gov",
+          "title": "​«Дубайскую ночь» весом 100 кг приготовили в Белоруссии",
+          "summary": "​«Дубайскую ночь» весом 100 кг приготовили в Белоруссии Белорусские сыроделы представили гигантский творожный сырок с фисташковой начинкой, вдохновлённой ставшим всемирно известным «дубайским шоколадом». https://russianemirates.com/N046043/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/uaegeneralnews/17759",
+          "canonical_url": "https://t.me/uaegeneralnews/17759",
+          "published_at": "2026-09-22T05:15:03+00:00",
+          "collected_at": "2026-09-22T07:57:55.850635+00:00",
+          "lang": "ru"
+        },
+        {
+          "item_id": "99efdf645c27e1d8f05e2fcd279a93877d90a857",
+          "source_id": "tg_russianemiratesnews",
+          "category": "city_gov",
+          "title": "​В Дубае открывается популярная достопримечательность",
+          "summary": "​В Дубае открывается популярная достопримечательность Тематический комплекс Dubai Parks and Resorts откроется после летнего перерыва. https://russianemirates.family/N046027/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/russianemiratesnews/28122",
+          "canonical_url": "https://t.me/russianemiratesnews/28122",
+          "published_at": "2026-09-22T03:35:05+00:00",
+          "collected_at": "2026-09-22T07:57:55.852080+00:00",
+          "lang": "ru"
+        },
+        {
+          "item_id": "830b073cd9e6d6db0cb3a67389933696e1b9cc01",
+          "source_id": "tg_russianemiratesnews",
+          "category": "city_gov",
+          "title": "В ОАЭ женщина заплатит компенсацию за отмену свадьбы",
+          "summary": "В ОАЭ женщина заплатит компенсацию за отмену свадьбы В Абу-Даби женщина заплатит 60 тысяч дирхамов после отмены свадьбы. https://russianemirates.family/N046042/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/russianemiratesnews/28131",
+          "canonical_url": "https://t.me/russianemiratesnews/28131",
+          "published_at": "2026-09-22T05:05:05+00:00",
+          "collected_at": "2026-09-22T07:57:55.851697+00:00",
+          "lang": "ru"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 1,
+        "sources_cited": 2
+      },
+      "approval": {
+        "sent_at": "2026-09-22T07:59:11.199913+00:00",
+        "preview_message_id": 17
+      },
+      "rewrite_count": 0,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMRarI1Tl8SVBUGS09TAYUKLUfIKEoAArAkaxvmpJFJ23FiYkQzJtIBAAMCAAN5AAM9BA"
+    },
+    {
+      "post_id": "rules_and_laws-47ba1bb367c6",
+      "rubric": "rules_and_laws",
+      "title": "Отмена сделки в ОАЭ: расходы могут взыскать через суд",
+      "body": "Что известно по открытым источникам на 22 сентября 2026 года.\n\nВ Абу-Даби суд обязал женщину выплатить 60 тысяч дирхамов после отмены свадьбы. Для рынка недвижимости логика та же: отказ от договорённостей может стоить денег.\n\nЧто я советую делать:\n— фиксировать все договорённости письменно, не на словах\n— хранить чеки и переводы по задатку\n— заранее читать пункт договора про отмену и возврат депозита\n\nПодводные камни: переписка в мессенджере тоже может стать доказательством, а «вернём депозит» без пункта в договоре ничего не значит.\n\nГде проверить: <a href=\"https://t.me/russianemiratesnews/28131\">сообщение по делу</a>.\n\nЕсть вопрос по вашей ситуации — задайте в боте, разберу в рубрике «Вопрос — ответ».",
+      "hashtags": [
+        "#дубай",
+        "#недвижимость",
+        "#правила"
+      ],
+      "cta": "Есть вопрос по вашей ситуации — задайте в боте, разберу в рубрике «Вопрос — ответ».",
+      "image": {
+        "mode": "card",
+        "headline": "Отмена договорённостей и компенсация в ОАЭ",
+        "accent": "60 000 AED",
+        "stock_query": "dubai government documents passport visa desk"
+      },
+      "sources": [
+        {
+          "source_id": "tg_russianemiratesnews",
+          "title": "В ОАЭ женщина заплатит компенсацию за отмену свадьбы",
+          "url": "https://t.me/russianemiratesnews/28131"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Суд в Абу-Даби обязал выплатить компенсацию после отмены свадьбы",
+          "value": "60 тысяч дирхамов",
+          "source_url": "https://t.me/russianemiratesnews/28131"
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 711,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-22T07:59:09.246563+00:00",
+      "slot_at": "2026-09-24T05:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/card-e6849f3bf851.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Отмена договорённостей и компенсация в ОАЭ",
+        "accent": "60 000 AED"
+      },
+      "item_ids": [
+        "d05d0d33896543a4b7130c0d5e469ef8963c73e7",
+        "99efdf645c27e1d8f05e2fcd279a93877d90a857",
+        "830b073cd9e6d6db0cb3a67389933696e1b9cc01",
+        "0fa66c139b5b3ab342fb5168dae3a4144a155010"
+      ],
+      "source_items": [
+        {
+          "item_id": "d05d0d33896543a4b7130c0d5e469ef8963c73e7",
+          "source_id": "tg_uaegeneralnews",
+          "category": "city_gov",
+          "title": "​«Дубайскую ночь» весом 100 кг приготовили в Белоруссии",
+          "summary": "​«Дубайскую ночь» весом 100 кг приготовили в Белоруссии Белорусские сыроделы представили гигантский творожный сырок с фисташковой начинкой, вдохновлённой ставшим всемирно известным «дубайским шоколадом». https://russianemirates.com/N046043/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/uaegeneralnews/17759",
+          "canonical_url": "https://t.me/uaegeneralnews/17759",
+          "published_at": "2026-09-22T05:15:03+00:00",
+          "collected_at": "2026-09-22T07:57:55.850635+00:00",
+          "lang": "ru"
+        },
+        {
+          "item_id": "99efdf645c27e1d8f05e2fcd279a93877d90a857",
+          "source_id": "tg_russianemiratesnews",
+          "category": "city_gov",
+          "title": "​В Дубае открывается популярная достопримечательность",
+          "summary": "​В Дубае открывается популярная достопримечательность Тематический комплекс Dubai Parks and Resorts откроется после летнего перерыва. https://russianemirates.family/N046027/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/russianemiratesnews/28122",
+          "canonical_url": "https://t.me/russianemiratesnews/28122",
+          "published_at": "2026-09-22T03:35:05+00:00",
+          "collected_at": "2026-09-22T07:57:55.852080+00:00",
+          "lang": "ru"
+        },
+        {
+          "item_id": "830b073cd9e6d6db0cb3a67389933696e1b9cc01",
+          "source_id": "tg_russianemiratesnews",
+          "category": "city_gov",
+          "title": "В ОАЭ женщина заплатит компенсацию за отмену свадьбы",
+          "summary": "В ОАЭ женщина заплатит компенсацию за отмену свадьбы В Абу-Даби женщина заплатит 60 тысяч дирхамов после отмены свадьбы. https://russianemirates.family/N046042/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/russianemiratesnews/28131",
+          "canonical_url": "https://t.me/russianemiratesnews/28131",
+          "published_at": "2026-09-22T05:05:05+00:00",
+          "collected_at": "2026-09-22T07:57:55.851697+00:00",
+          "lang": "ru"
+        },
+        {
+          "item_id": "0fa66c139b5b3ab342fb5168dae3a4144a155010",
+          "source_id": "tg_russianemiratesnews",
+          "category": "city_gov",
+          "title": "Цены на коммерческую недвижимость ОАЭ выросли на 348%",
+          "summary": "Цены на коммерческую недвижимость ОАЭ выросли на 348% Знаковые проекты в Рас-Аль-Хайме и Дубае заставили цены на коммерческую недвижимость подскочить на 348%. https://businessemirates.ae/N046018/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/russianemiratesnews/28130",
+          "canonical_url": "https://t.me/russianemiratesnews/28130",
+          "published_at": "2026-09-22T04:55:04+00:00",
+          "collected_at": "2026-09-22T07:57:55.851741+00:00",
+          "lang": "ru"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 3,
+        "sources_cited": 1
+      },
+      "approval": {
+        "sent_at": "2026-09-22T07:59:11.856009+00:00",
+        "preview_message_id": 18
+      },
+      "rewrite_count": 0,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMSarI1T6m_wWNui7Oww1OSH1lkluYAArEkaxvmpJFJ5mCeCP_pWccBAAMCAAN5AAM9BA"
     }
   ]
 }

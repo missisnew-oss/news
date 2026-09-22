@@ -68,15 +68,23 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--limit", type=int, default=40)
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
-    channel = args.channel.lstrip("@").strip()
-    items = fetch_samples(channel, limit=args.limit)
-    if not items:
-        log.error("@%s: превью не отдало ни одного текстового поста", channel)
-        return 1
-    path = write_markdown(channel, items)
-    total = sum(len(i["raw_text"]) for i in items)
-    log.info("@%s: %d постов, %d символов → %s", channel, len(items), total, path)
-    return 0
+    channels = [c.lstrip("@").strip() for c in args.channel.split(",") if c.strip()]
+    failures = 0
+    for channel in channels:
+        try:
+            items = fetch_samples(channel, limit=args.limit)
+        except Exception as exc:
+            log.error("@%s: не удалось загрузить превью: %s", channel, exc)
+            failures += 1
+            continue
+        if not items:
+            log.error("@%s: превью не отдало ни одного текстового поста", channel)
+            failures += 1
+            continue
+        path = write_markdown(channel, items)
+        total = sum(len(i["raw_text"]) for i in items)
+        log.info("@%s: %d постов, %d символов → %s", channel, len(items), total, path)
+    return 1 if failures == len(channels) else 0
 
 
 if __name__ == "__main__":

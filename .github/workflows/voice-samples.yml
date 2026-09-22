@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       channel:
-        description: "username канала без @"
+        description: "username каналов без @, через запятую"
         required: true
         default: "nudeassphilosophy"
       limit:
@@ -46,7 +46,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Выгрузка постов
-        run: python -m pipeline.voice_samples --channel "${{ inputs.channel }}" --limit "${{ inputs.limit }}"
+        run: python -m pipeline.voice_samples --channel "${{ inputs.channel }}" --limit "${{ inputs.limit }}" || true
 
       - name: Коммит образцов
-        run: 'bash scripts/commit_state.sh "docs: образцы голоса @${{ inputs.channel }}" docs/voice/'
+        run: 'bash scripts/commit_state.sh "docs: образцы голоса ${{ inputs.channel }}" docs/voice/'

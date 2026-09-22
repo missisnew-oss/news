@@ -732,3 +732,38 @@ def test_owner_forwards_are_kept_in_the_inbox(settings, isolated_state):
     sent = [c for c in client.calls if c[0] == "send"]
     assert "копилке: 1" in sent[0][2] and "копилке: 2" in sent[1][2]
     assert "999" in sent[2][2], "посторонний по-прежнему получает свой id"
+
+
+def test_model_may_skip_a_rubric_instead_of_stretching(settings, monkeypatch):
+    """Was: an Abu Dhabi wedding-cancellation story became a «rules_and_laws» post
+    about property deals."""
+    from pipeline import generate
+    from pipeline.normalize import NormalizedItem
+
+    class _Provider:
+        name = "fake"
+
+        def complete(self, system, user, **kw):
+            return '{"skip": true, "skip_reason": "во входных данных нет материала по рубрике"}'
+
+    item = NormalizedItem(item_id="i", source_id="s", category="city_gov", title="Суд взыскал расходы на свадьбу",
+                          summary="История про отменённую свадьбу", url="https://example.com/a",
+                          canonical_url="https://example.com/a", published_at=None,
+                          collected_at="2026-09-22T00:00:00Z", lang="ru")
+    assert generate.generate_for_rubric(settings, "rules_and_laws", [item], provider=_Provider()) is None
+
+
+def test_phantom_offers_in_cta_are_rejected():
+    from pipeline import factcheck
+    from pipeline.normalize import NormalizedItem
+
+    item = NormalizedItem(item_id="i", source_id="s", category="lifestyle", title="Dubai Marina",
+                          summary="район", url="https://example.com/m", canonical_url="https://example.com/m",
+                          published_at=None, collected_at="2026-09-22T00:00:00Z", lang="ru")
+    base = {"title": "Dubai Marina", "body": "Район у воды. Подходит тем, кто живёт без машины.",
+            "hashtags": [], "image_prompt": "", "sources": [{"source_id": "s", "url": "https://example.com/m"}],
+            "self_check": {}}
+    ok = factcheck.check({**base, "cta": "Напишите мне — расскажу подробнее"}, [item], max_chars=600)
+    assert ok["passed"]
+    bad = factcheck.check({**base, "cta": "PDF-гид по району — заберите в боте"}, [item], max_chars=600)
+    assert not bad["passed"] and any("несуществующего" in e for e in bad["errors"])

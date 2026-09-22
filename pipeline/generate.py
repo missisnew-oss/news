@@ -8,7 +8,7 @@ from typing import Any
 
 from . import factcheck, prompts
 from .config import RUBRICS, SELLING_RUBRICS, Settings
-from .llm import LLMError, get_provider, parse_response
+from .llm import extract_json, LLMError, get_provider, parse_response
 from .models import NormalizedItem, PostDraft
 from .score import select_for_rubric
 from .textutil import sanitize_telegram_html, sha1, truncate
@@ -98,6 +98,13 @@ def generate_for_rubric(
         )
         try:
             raw = provider.complete(system, prompt)
+            probe = extract_json(raw)
+            if probe.get("skip"):
+                # Better no post than a stretched one: the model is allowed to
+                # say the inputs do not carry a real story for this rubric.
+                log.info("Рубрика %s: модель пропустила выпуск — %s",
+                         rubric, str(probe.get("skip_reason") or "")[:200])
+                return None
             payload = parse_response(raw)
         except LLMError as exc:
             last_error = str(exc)

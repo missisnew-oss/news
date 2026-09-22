@@ -26,6 +26,21 @@ from .textutil import canonical_url, strip_html
 log = logging.getLogger("pipeline.factcheck")
 
 # Forbidden investment wording — see docs/LEGAL.md for the full "нельзя → можно" table.
+# The model likes to end with «PDF-гид — заберите в боте» or «в карточках выше»:
+# there is no PDF, no cards, no button. The only real call to action is to
+# message the owner.
+PHANTOM_OFFER_PATTERNS = (
+    r"\bpdf\b",
+    r"по кнопке",
+    r"заберите",
+    r"забирайте",
+    r"в боте",
+    r"в карточк",
+    r"каталог",
+    r"чек-?лист",
+    r"гайд",
+)
+
 BANNED_PATTERNS = (
     r"гарантиров\w*\s+доходн",
     r"гарантиру\w*\s+(?:доход|прибыл|рост|перепродаж)",
@@ -141,6 +156,12 @@ def check(payload: dict[str, Any], items: list[NormalizedItem], *, max_chars: in
     for pattern in BANNED_PATTERNS:
         if re.search(pattern, lowered):
             errors.append(f"Запрещённая инвестиционная формулировка (шаблон: {pattern})")
+    for pattern in PHANTOM_OFFER_PATTERNS:
+        if re.search(pattern, lowered):
+            errors.append(
+                f"Обещание несуществующего материала или механики (шаблон: {pattern}); "
+                "единственный CTA — написать владелице"
+            )
 
     # 4. limits
     plain_len = len(strip_html(body))

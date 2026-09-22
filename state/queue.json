@@ -271,6 +271,241 @@
       "rewrite_count": 0,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMGarEn6ztqVVTgG2BAQAy2f79zBy4AAhMjaxt1TYhJf2dlA8ama1YBAAMCAAN5AAM9BA"
+    },
+    {
+      "post_id": "area_guide-c227c1ce2f9a",
+      "rubric": "area_guide",
+      "title": "Dubai Marina: район, где всё рядом, кроме выезда",
+      "body": "<b>DUBAI MARINA</b>\nКто живёт: экспаты-арендаторы, которым важно жить между залом, офисом и водой. Собственники — чаще инвесторы.\n\nЧто работает:\n— пешеходная набережная, всё в шаговой доступности\n— Marina Mall рядом: туда ходят даже за завтраком после зала\n— стабильный спрос на аренду круглый год\n\nЧто не работает:\n— въезд и выезд в часы пик, это не лечится\n— шум: катера, рестораны, стройка соседних участков\n— разное качество управляющих компаний в старых башнях\n\nПодходит тем, кто сдаёт короткими сроками и живёт без машины. Не подходит тем, кто ищет тишину и парковку без квеста.\n\nPDF-гид по району — заберите в боте.",
+      "hashtags": [
+        "#дубай",
+        "#недвижимость",
+        "#dubaimarina"
+      ],
+      "cta": "PDF-гид по району — заберите в боте.",
+      "image": {
+        "mode": "stock",
+        "headline": "Dubai Marina: всё рядом, кроме выезда",
+        "accent": "",
+        "stock_query": "Dubai Marina skyline waterfront towers"
+      },
+      "sources": [
+        {
+          "source_id": "whatson_ae_feed",
+          "title": "6 of the best spots for a post-workout breakfast in Dubai",
+          "url": "https://whatson.ae/2026/09/6-of-the-best-spots-for-a-post-workout-breakfast-in-dubai/"
+        }
+      ],
+      "facts": [],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 622,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-22T03:11:24.967376+00:00",
+      "slot_at": "2026-09-22T15:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/card-40186bbad55a.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Dubai Marina: всё рядом, кроме выезда",
+        "accent": ""
+      },
+      "item_ids": [
+        "76cd2ae7fd1b30c9235233ac669913e6edd1a48d",
+        "9124a25c154c24fe510c659c7b46873f72bce4e9",
+        "da28ea060218f65dd7a26e094f1f9f3d220121d3",
+        "7d46c1380990319b92b02eeea67cf58758312b2b"
+      ],
+      "source_items": [
+        {
+          "item_id": "76cd2ae7fd1b30c9235233ac669913e6edd1a48d",
+          "source_id": "dld_open_data_portal",
+          "category": "official_data",
+          "title": "Dubai Land Department Annual Report 2024",
+          "summary": "",
+          "url": "https://dubailand.gov.ae/en/about-dubai-land-department/annual-report-2024/",
+          "canonical_url": "https://dubailand.gov.ae/en/about-dubai-land-department/annual-report-2024",
+          "published_at": null,
+          "collected_at": "2026-09-22T03:10:06.248704+00:00",
+          "lang": "en"
+        },
+        {
+          "item_id": "9124a25c154c24fe510c659c7b46873f72bce4e9",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "6 of the best spots for a post-workout breakfast in Dubai",
+          "summary": "Whether you’ve just finished a morning gym session, a run or a Pilates class, a good breakfast is the perfect way to refuel From protein-packed omelettes and pancakes to shakes and wholesome breakfast bowls, these Dubai spots make it easy to get your post-workout fix without sacrificing flavour. tashas Marina Mall View this post […] The post 6 of the best spots for a post-workout breakfast in Dubai appeared first on What's On .",
+          "url": "https://whatson.ae/2026/09/6-of-the-best-spots-for-a-post-workout-breakfast-in-dubai/",
+          "canonical_url": "https://whatson.ae/2026/09/6-of-the-best-spots-for-a-post-workout-breakfast-in-dubai",
+          "published_at": "2026-09-21T13:53:42+00:00",
+          "collected_at": "2026-09-22T03:10:06.253089+00:00",
+          "lang": "en"
+        },
+        {
+          "item_id": "da28ea060218f65dd7a26e094f1f9f3d220121d3",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "Dubai Police warns Global Village visitors against fake VIP packs",
+          "summary": "Beware of scams; Dubai Police issues alerts for residents ahead of Global Village’s reopening Global Village – the one thing we’ve been waiting for all year long is due to make its return soon, but along with it comes a warning on fraudulent sites, issued by the Dubai Police themselves. While the masses are most […] The post Dubai Police warns Global Village visitors against fake VIP packs appeared first on What's On .",
+          "url": "https://whatson.ae/2026/09/dubai-police-warns-global-village-visitors-against-fake-vip-packs/",
+          "canonical_url": "https://whatson.ae/2026/09/dubai-police-warns-global-village-visitors-against-fake-vip-packs",
+          "published_at": "2026-09-21T13:09:28+00:00",
+          "collected_at": "2026-09-22T03:10:06.253184+00:00",
+          "lang": "en"
+        },
+        {
+          "item_id": "7d46c1380990319b92b02eeea67cf58758312b2b",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "Croissant-lovers: bkry to open its first outlet in Abu Dhabi this October",
+          "summary": "The flaky crusts of bkry is coming to Abu Dhabi very soon Croissant-lovers, you’re in for a treat; bkry is coming to the capital this October. The new location will introduce an extensive selection of dishes created exclusively for The Arcades, alongside a dedicated Grab & Go concept for guests seeking something quick without compromising […] The post Croissant-lovers: bkry to open its first outlet in Abu Dhabi this October appeared first on What's On .",
+          "url": "https://whatson.ae/2026/09/croissant-lovers-bkry-to-open-its-first-outlet-in-abu-dhabi-this-october/",
+          "canonical_url": "https://whatson.ae/2026/09/croissant-lovers-bkry-to-open-its-first-outlet-in-abu-dhabi-this-october",
+          "published_at": "2026-09-21T12:45:37+00:00",
+          "collected_at": "2026-09-22T03:10:06.253272+00:00",
+          "lang": "en"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 0,
+        "sources_cited": 1
+      },
+      "approval": {
+        "sent_at": "2026-09-22T03:12:09.083758+00:00",
+        "preview_message_id": 15
+      },
+      "rewrite_count": 0,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMParHyCIHpW9mvR-dX0ZviDq26VEIAAikjaxvmpJFJC8r9pzF_vugBAAMCAAN5AAM9BA"
+    },
+    {
+      "post_id": "new_launch-7d50eeea679c",
+      "rubric": "new_launch",
+      "title": "Новый лонч: off-plan в Dubai Hills Estate от Emaar",
+      "body": "ЛОНЧ\nEmaar открыл страницу новых off-plan объектов (строящихся) в Dubai Hills Estate. Ни цен, ни плана оплаты, ни срока сдачи — пока только район и сам факт.\n\nКому подойдёт: тем, кто давно смотрит Dubai Hills и готов заходить на старте.\nКому не подойдёт: тем, кому нужен доход сразу — off-plan аренду до ключей не платит.\n\nПорядок подачи интереса влияет на то, какие планировки вам вообще покажут.\n\nЗаявка-интерес — по кнопке, пришлю материалы, как только застройщик раскроет цифры.\n\n<a href=\"https://www.emaar.com/en/new-off-plan-properties-in-dubai-hills-estate\">Анонс Emaar</a>",
+      "hashtags": [
+        "#дубай",
+        "#недвижимость",
+        "#дубайхиллс",
+        "#лонч"
+      ],
+      "cta": "Заявка-интерес — по кнопке, пришлю материалы, как только застройщик раскроет цифры.",
+      "image": {
+        "mode": "press",
+        "headline": "Off-plan в Dubai Hills Estate, Emaar",
+        "accent": "",
+        "stock_query": "dubai hills estate residential development construction"
+      },
+      "sources": [
+        {
+          "source_id": "emaar_press_releases",
+          "title": "NEW OFF-PLAN PROPERTIES IN DUBAI HILLS ESTATE",
+          "url": "https://www.emaar.com/en/new-off-plan-properties-in-dubai-hills-estate"
+        }
+      ],
+      "facts": [],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 580,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-22T03:12:07.169533+00:00",
+      "slot_at": "2026-09-23T05:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/card-cdf99a71c0a0.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Off-plan в Dubai Hills Estate, Emaar",
+        "accent": ""
+      },
+      "item_ids": [
+        "31b6e6177b39c492bb4b19ca5edd5011ec3130ba",
+        "d11f4c93b8329f698c31cacc50c72f3c51628f1d",
+        "b894fe4ab4377e79a382035bde599d9593ab6dec",
+        "3545e512b05bd5f87954c9041e7029b1e4778f9e"
+      ],
+      "source_items": [
+        {
+          "item_id": "31b6e6177b39c492bb4b19ca5edd5011ec3130ba",
+          "source_id": "emaar_press_releases",
+          "category": "developers",
+          "title": "NEW OFF-PLAN PROPERTIES IN DUBAI HILLS ESTATE",
+          "summary": "",
+          "url": "https://www.emaar.com/en/new-off-plan-properties-in-dubai-hills-estate",
+          "canonical_url": "https://www.emaar.com/en/new-off-plan-properties-in-dubai-hills-estate",
+          "published_at": null,
+          "collected_at": "2026-09-22T03:10:06.249159+00:00",
+          "lang": "en"
+        },
+        {
+          "item_id": "d11f4c93b8329f698c31cacc50c72f3c51628f1d",
+          "source_id": "nakheel_media_centre",
+          "category": "developers",
+          "title": "Meraas and Nakheel enhance customer experience with dedicated Golden Visa facilitation 29th June 2026",
+          "summary": "",
+          "url": "https://www.nakheel.com/media-centre/press-release/news-detail/2026/06/29/meraas-and-nakheel-enhance-customer-experience-with-dedicated-golden-visa-facilitation",
+          "canonical_url": "https://www.nakheel.com/media-centre/press-release/news-detail/2026/06/29/meraas-and-nakheel-enhance-customer-experience-with-dedicated-golden-visa-facilitation",
+          "published_at": null,
+          "collected_at": "2026-09-22T03:10:06.249538+00:00",
+          "lang": "en"
+        },
+        {
+          "item_id": "b894fe4ab4377e79a382035bde599d9593ab6dec",
+          "source_id": "nakheel_media_centre",
+          "category": "developers",
+          "title": "Nakheel begins handover of 892 homes at Jebel Ali Village 17th August 2026",
+          "summary": "",
+          "url": "https://www.nakheel.com/media-centre/press-release/news-detail/2026/08/17/nakheel-begins-handover-of-892-homes-at-jebel-ali-village",
+          "canonical_url": "https://www.nakheel.com/media-centre/press-release/news-detail/2026/08/17/nakheel-begins-handover-of-892-homes-at-jebel-ali-village",
+          "published_at": null,
+          "collected_at": "2026-09-22T03:10:06.249500+00:00",
+          "lang": "en"
+        },
+        {
+          "item_id": "3545e512b05bd5f87954c9041e7029b1e4778f9e",
+          "source_id": "emaar_press_releases",
+          "category": "developers",
+          "title": "Dubai vs. New York: Which Market Offers Better Returns for Property Investors?",
+          "summary": "",
+          "url": "https://www.emaar.com/en/blog/dubai-vs-new-york-real-estate-investment",
+          "canonical_url": "https://www.emaar.com/en/blog/dubai-vs-new-york-real-estate-investment",
+          "published_at": null,
+          "collected_at": "2026-09-22T03:10:06.248912+00:00",
+          "lang": "en"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 0,
+        "sources_cited": 1
+      },
+      "approval": {
+        "sent_at": "2026-09-22T03:12:09.707487+00:00",
+        "preview_message_id": 16
+      },
+      "rewrite_count": 0,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMQarHyCY9q28SNVXE0kSucXzq54EoAAiojaxvmpJFJp8I9mAfE0lIBAAMCAAN5AAM9BA"
     }
   ]
 }

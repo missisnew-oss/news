@@ -135,3 +135,72 @@ def test_text_with_nested_divs_and_no_footer_is_still_extracted():
     items = parse_preview(block, SOURCE)
     assert len(items) == 1
     assert items[0]["summary"] == "Цитата ниже: Внутренний блок с 15 словами о рынке и хвост текста"
+
+
+# --------------------------------------------------------------------------
+# Paging: a busy channel is read back 36 hours, not just its last 20 posts
+# --------------------------------------------------------------------------
+
+def _page(username: str, ids: list[int], when: str) -> bytes:
+    blocks = []
+    for i in ids:
+        blocks.append(
+            f'<div class="tgme_widget_message_wrap"><div data-post="{username}/{i}">'
+            f'<div class="tgme_widget_message_text js-message_text">Новость номер {i} про Дубай, длинная строка</div>'
+            f'<time datetime="{when}"></time></div></div>'
+        )
+    return ("<html>" + "".join(blocks) + "</html>").encode()
+
+
+def test_fetch_telegram_pages_back_until_the_lookback(monkeypatch):
+    from datetime import datetime, timedelta, timezone
+
+    from pipeline import collect
+
+    now = datetime.now(timezone.utc)
+    recent = (now - timedelta(hours=2)).isoformat()
+    old = (now - timedelta(hours=60)).isoformat()
+    calls: list[str] = []
+
+    def fake_get(url, *, timeout, user_agent):
+        calls.append(url)
+        if "before=" not in url:
+            return 200, _page("busy", list(range(81, 101)), recent), "text/html"
+        if url.endswith("before=81"):
+            return 200, _page("busy", list(range(61, 81)), recent), "text/html"
+        return 200, _page("busy", list(range(41, 61)), old), "text/html"
+
+    src = {"id": "tg_busy", "type": "telegram", "url": "https://t.me/s/busy", "category": "city_gov", "lang": "ru"}
+    items = collect.fetch_telegram(src, timeout=5, user_agent="t", lookback_hours=36, max_pages=5,
+                                   max_items=80, http_get=fake_get)
+    assert calls == ["https://t.me/s/busy", "https://t.me/s/busy?before=81", "https://t.me/s/busy?before=61"]
+    assert len(items) == 60 and items[0]["url"].endswith("/100") and items[-1]["url"].endswith("/41")
+
+
+def test_fetch_telegram_stops_at_max_pages_and_max_items(monkeypatch):
+    from datetime import datetime, timedelta, timezone
+
+    from pipeline import collect
+
+    recent = (datetime.now(timezone.utc) - timedelta(hours=1)).isoformat()
+
+    def fake_get(url, *, timeout, user_agent):
+        start = 200 if "before=" not in url else int(url.rsplit("=", 1)[1]) - 20
+        return 200, _page("busy", list(range(start, start + 20)), recent), "text/html"
+
+    src = {"id": "tg_busy", "type": "telegram", "url": "https://t.me/s/busy", "category": "city_gov", "lang": "ru"}
+    items = collect.fetch_telegram(src, timeout=5, user_agent="t", lookback_hours=36, max_pages=2,
+                                   max_items=80, http_get=fake_get)
+    assert len(items) == 40
+    items = collect.fetch_telegram(src, timeout=5, user_agent="t", lookback_hours=36, max_pages=10,
+                                   max_items=30, http_get=fake_get)
+    assert len(items) == 30
+
+
+def test_fetch_telegram_first_page_failure_is_empty_not_fatal():
+    from pipeline import collect
+
+    src = {"id": "tg_busy", "type": "telegram", "url": "https://t.me/s/busy", "category": "city_gov", "lang": "ru"}
+    items = collect.fetch_telegram(src, timeout=5, user_agent="t", lookback_hours=36, max_pages=3,
+                                   max_items=80, http_get=lambda url, **kw: (404, b"", "text/html"))
+    assert items == []

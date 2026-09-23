@@ -8,12 +8,18 @@ meta:
   # Этот файл руками не переписывается ни роботом, ни владельцем ради включения.
   # Блоки verification ниже — заметки исследователя на момент составления
   # (собирался без доступа в интернет); живой статус — в state/sources_health.json.
-  # Чтобы навсегда выключить источник — поставьте ему enabled: true.
+  # Чтобы навсегда выключить источник — поставьте ему enabled: false.
   verification_environment: "no_network_egress_at_authoring"
 defaults:
   timeout_sec: 20
   user_agent: "DubaiNewsBot/1.0 (+https://github.com/missisnew-oss/news)"
   max_items_per_source: 20
+  # Telegram-каналы: превью t.me/s показывает только последние ~20 постов, а
+  # активный канал пишет больше между двумя сборами. Робот листает страницы
+  # ?before=<id>, пока посты не станут старше telegram_lookback_hours.
+  telegram_lookback_hours: 36
+  telegram_max_pages: 4
+  telegram_max_items: 80
 categories:
   realty_news:   {title: "Новости недвижимости ОАЭ",        weight: 1.0}
   official_data: {title: "Официальные данные и регуляторы", weight: 1.2}

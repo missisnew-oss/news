@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import json
 import logging
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from typing import Any
 
 from .config import CONFIG_DIR, Settings, enabled_sources, load_sources
@@ -179,6 +179,60 @@ PARSERS = {
 }
 
 
+def _msg_id(item: dict[str, Any]) -> int | None:
+    tail = str(item.get("url") or "").rstrip("/").rsplit("/", 1)[-1]
+    return int(tail) if tail.isdigit() else None
+
+
+def _published(item: dict[str, Any]) -> datetime | None:
+    raw = item.get("published_at")
+    if not raw:
+        return None
+    try:
+        parsed = datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    return parsed if parsed.tzinfo else parsed.replace(tzinfo=timezone.utc)
+
+
+def fetch_telegram(source: dict[str, Any], *, timeout: int, user_agent: str,
+                   lookback_hours: int, max_pages: int, max_items: int,
+                   http_get=None) -> list[dict[str, Any]]:
+    """All posts of a channel from the last ``lookback_hours``, newest first.
+
+    The preview page shows only the last ~20 posts. A busy channel writes
+    more than that between two collection runs, so a story published in the
+    morning was gone from the page by the evening run and never reached the
+    pipeline (the owner: «на других каналах есть новость про Dubizzle, а у
+    меня нет»). Older posts are on ``?before=<message_id>`` pages; they are
+    read until the posts get older than the lookback or ``max_pages`` is hit.
+    """
+    http_get = http_get or _http_get
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=lookback_hours)
+    items: list[dict[str, Any]] = []
+    seen_ids: set[int] = set()
+    url = source["url"]
+    for page in range(max(1, max_pages)):
+        status, payload, _ = http_get(url, timeout=timeout, user_agent=user_agent)
+        if status != 200 or not payload:
+            if page == 0:
+                log.warning("Источник %s вернул HTTP %s", source["id"], status)
+            break
+        batch = parse_preview(payload, source, limit=10_000)
+        fresh = [i for i in batch if (_msg_id(i) or 0) not in seen_ids]
+        if not fresh:
+            break
+        seen_ids.update(m for m in (_msg_id(i) for i in fresh) if m)
+        items.extend(fresh)
+        oldest = min((_published(i) for i in fresh if _published(i)), default=None)
+        oldest_id = min((m for m in (_msg_id(i) for i in fresh) if m), default=None)
+        if oldest is None or oldest_id is None or oldest < cutoff or len(items) >= max_items:
+            break
+        url = f"{source['url'].split('?', 1)[0]}?before={oldest_id}"
+    items.sort(key=lambda i: _msg_id(i) or 0, reverse=True)
+    return items[:max_items]
+
+
 def load_sample_items() -> list[dict[str, Any]]:
     """Offline fixture used by DRY_RUN so the pipeline is reproducible."""
     if not SAMPLE_ITEMS_FILE.exists():
@@ -200,12 +254,27 @@ def collect(settings: Settings, sources_doc: dict[str, Any] | None = None) -> li
         log.info("DRY_RUN: сеть не используется, загружено %d демо-элементов", len(items))
         return items
 
+    tg_lookback = int(defaults.get("telegram_lookback_hours", 36))
+    tg_pages = int(defaults.get("telegram_max_pages", 4))
+    tg_max_items = int(defaults.get("telegram_max_items", 80))
+
     raw: list[dict[str, Any]] = []
     active = enabled_sources(doc)
     # Private channels are read through a user session, not over HTTP.
     raw.extend(fetch_private(active, settings, limit=limit))
     for source in active:
         if source["type"] == "telegram_private":
+            continue
+        if source["type"] == "telegram":
+            try:
+                items = fetch_telegram(source, timeout=timeout, user_agent=user_agent,
+                                       lookback_hours=tg_lookback, max_pages=tg_pages,
+                                       max_items=tg_max_items)
+            except Exception as exc:
+                log.warning("Источник %s недоступен: %s", source["id"], exc)
+                continue
+            log.info("Источник %-28s → %d элементов", source["id"], len(items))
+            raw.extend(items)
             continue
         parser = PARSERS.get(source["type"])
         if parser is None:

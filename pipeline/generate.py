@@ -10,7 +10,7 @@ from . import factcheck, prompts
 from .config import RUBRICS, SELLING_RUBRICS, Settings
 from .llm import extract_json, LLMError, get_provider, parse_response
 from .models import NormalizedItem, PostDraft
-from .score import lead_story_for_rubric, select_for_rubric
+from .score import lead_story_for_rubric, select_for_rubric, stories_used
 from .stories import cluster
 from .textutil import sanitize_telegram_html, sha1, truncate
 
@@ -168,7 +168,7 @@ def generate(
             items, rubric, limit=ITEMS_PER_POST, stories=stories, exclude_story_ids=used_story_ids,
         )
         if lead is not None and pool:
-            used_story_ids.add(lead.story_id)
+            used_story_ids |= stories_used(stories, rubric, pool)
             log.info(
                 "Рубрика %s: история «%s» (%d источн., %d материалов в промпте)",
                 rubric, lead.title[:70], lead.source_count, len(pool),

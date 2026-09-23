@@ -144,3 +144,99 @@ def test_plan_rubrics_prefers_the_rubric_with_the_multi_source_story():
     items = [LAUNCH_A, LAUNCH_B, LAUNCH_C, single]
     plan = score.plan_rubrics(items, max_posts=1, history=[])
     assert plan == ["market_pulse"]
+
+
+# --- QA round 2 -------------------------------------------------------------
+
+PARK_LANE = _item(
+    "pl", "tg_ruble",
+    "Emaar запустил Park Lane 2 в Dubai Hills Estate",
+    "Emaar открыл продажи Park Lane 2 в Dubai Hills Estate. Квартиры 1–3 спальни, "
+    "от 1,6 млн AED, план оплаты 80/20, сдача 2028.",
+    score_=5.0,
+)
+GOLF_GRAND = _item(
+    "gg", "tg_whitewill",
+    "Emaar запустил Golf Grand 3 в Dubai Hills Estate",
+    "Emaar открыл продажи Golf Grand 3 в Dubai Hills Estate. Квартиры 1–3 спальни, "
+    "от 1,9 млн AED, план оплаты 80/20, сдача 2029.",
+    score_=4.0,
+)
+PARK_LANE_EN = _item(
+    "ple", "gulf_news_rss",
+    "Emaar launches Park Lane 2 in Dubai Hills Estate",
+    "Emaar Properties has launched Park Lane 2 at Dubai Hills Estate with one- to "
+    "three-bedroom apartments starting at AED 1.6 million, 80/20 payment plan and "
+    "handover in 2028.",
+    score_=4.5,
+)
+
+
+def test_same_developer_same_district_different_projects_do_not_merge():
+    """Same channel template, same developer and district, but two launches.
+
+    Plain token similarity is 0.59 here — higher than between a Russian and an
+    English retelling of one launch — so only the proper names tell them apart.
+    """
+    assert similarity(tokenize(PARK_LANE.title + PARK_LANE.summary),
+                      tokenize(GOLF_GRAND.title + GOLF_GRAND.summary)) > 0.5
+    stories = cluster([PARK_LANE, GOLF_GRAND, PARK_LANE_EN])
+    by_item = {i.item_id: s.story_id for s in stories for i in s.items}
+    assert by_item["pl"] == by_item["ple"], "русский и английский пересказ одного лонча — одна история"
+    assert by_item["pl"] != by_item["gg"], "Park Lane 2 и Golf Grand 3 — разные лончи"
+
+
+def test_proper_names_skip_sentence_starts_and_common_words():
+    from pipeline.stories import names_conflict, proper_names
+
+    names = proper_names("Застройщик Emaar открыл продажи Park Lane 2 в Dubai Hills. Квартиры от 1,6 млн AED.")
+    assert "emaar" in names and "park" in names and "lane" in names and "hills" in names
+    assert "кварт" not in names and "застр" not in names, "слово в начале предложения — не имя"
+    assert "dubai" not in names, "«Dubai» есть везде"
+    assert not names_conflict({"emaar", "park", "lane"}, {"emaar", "park", "lane", "prope"})
+    assert names_conflict({"emaar", "park", "lane"}, {"emaar", "golf", "grand"})
+
+
+def _event(n: int, source: str, title: str, summary: str, score_: float) -> NormalizedItem:
+    return _item(f"ev{n}", source, title, summary, category="events", score_=score_)
+
+
+AFISHA = [
+    _event(1, "visitdubai_events_calendar", "Dubai Fitness Challenge стартует 1 ноября",
+           "30 дней бесплатных тренировок в парках города, открытие на Kite Beach.", 5.0),
+    _event(2, "visitdubai_events_calendar", "Концерт Coldplay на Etihad Arena",
+           "Выступление 12 октября, билеты от 350 AED, площадка на Yas Island.", 4.8),
+    _event(3, "platinumlist_arena_events", "Coldplay в Etihad Arena — билеты в продаже",
+           "12 октября, Etihad Arena, от 350 AED.", 4.6),
+    _event(4, "dubai_culture_events", "Ярмарка Global Village открывает сезон",
+           "Сезон 30 открывается 15 октября, вход 30 AED, парковка бесплатная.", 4.4),
+    _event(5, "visitdubai_events_calendar", "Выставка GITEX в DWTC",
+           "13–17 октября, Dubai World Trade Centre, регистрация онлайн.", 4.2),
+    _event(6, "dwtc_events", "Cityscape Global в DWTC: даты", "11–13 ноября, выставка недвижимости.", 4.0),
+]
+
+
+def test_digest_rubric_gets_one_item_per_event_from_several_stories():
+    """The events listing needs many different events, not the retellings of one."""
+    from pipeline.config import RUBRICS
+    from pipeline.generate import ITEMS_PER_POST
+
+    assert RUBRICS["events_afisha"].get("digest") is True
+    pool = score.select_for_rubric(AFISHA, "events_afisha", limit=ITEMS_PER_POST)
+    ids = [i.item_id for i in pool]
+    assert len(ids) >= 5, f"дайджест получил слишком мало событий: {ids}"
+    assert not ({"ev2", "ev3"} <= set(ids)), "два пересказа одного концерта — одно событие"
+    assert ids.count("ev1") == 1 and "ev4" in ids and "ev5" in ids
+
+
+def test_digest_marks_every_story_it_took_as_used():
+    stories = cluster(AFISHA)
+    pool = score.select_for_rubric(AFISHA, "events_afisha", limit=4, stories=stories)
+    used = score.stories_used(stories, "events_afisha", pool)
+    assert len(used) == len(pool)
+    lead = score.lead_story_for_rubric(stories, "market_pulse")
+    assert lead is None, "events не питают market_pulse"
+    # A normal rubric consumes only its leading story.
+    pool = score.select_for_rubric([LAUNCH_A, LAUNCH_B, LAUNCH_C, NAKHEEL_OTHER], "market_pulse", limit=4)
+    used = score.stories_used(cluster([LAUNCH_A, LAUNCH_B, LAUNCH_C, NAKHEEL_OTHER]), "market_pulse", pool)
+    assert len(used) == 1

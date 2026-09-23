@@ -17,7 +17,12 @@ dependency or LLM call:
 3. two items are "the same story" when the weighted Jaccard similarity of
    their token sets reaches ``threshold`` and they were published within
    ``window_hours`` of each other;
-4. items are merged greedily in a deterministic order (single linkage:
+4. two items whose *proper names* contradict each other are never merged,
+   however similar the rest of the text: «Emaar запустил Park Lane 2 в
+   Dubai Hills» and «Emaar запустил Golf Grand 3 в Dubai Hills» share the
+   developer, the district, the template and the payment plan, but each
+   carries two names the other lacks — that is two launches, not one;
+5. items are merged greedily in a deterministic order (single linkage:
    an item joins the story containing its most similar member).
 
 A story's score is the best item score with a bonus for independent sources:
@@ -73,6 +78,12 @@ COMMON_ENTITIES = frozenset(
 _WORD_RE = re.compile(r"[^\W_]+", re.UNICODE)
 _NUMBER_RE = re.compile(r"\d+(?:[.,]\d+)?")
 _LATIN_RE = re.compile(r"^[A-Za-z][A-Za-z&'-]*$")
+# A capitalised word that does not open a sentence: the start of a new
+# sentence is capitalised in any language and says nothing about names.
+_SENTENCE_START_RE = re.compile(r"(?:^|[.!?…:;\n]\s*|[«\"(]\s*)$")
+# How many names each side must hold that the other side lacks before the
+# pair is treated as two different stories.
+CONFLICT_MIN_EXCLUSIVE = 2
 
 
 @dataclass
@@ -133,8 +144,36 @@ def tokenize(text: str) -> dict[str, float]:
     return bag
 
 
+def proper_names(text: str) -> set[str]:
+    """Stemmed proper names: capitalised words that do not open a sentence
+    and are not one of the everywhere-words (Dubai, UAE, …). Multi-word
+    names («Park Lane», «Palm Jebel Ali») yield one token per word."""
+    text = unicodedata.normalize("NFKC", text or "")
+    names: set[str] = set()
+    for match in _WORD_RE.finditer(text):
+        raw = match.group(0)
+        if len(raw) < 3 or not raw[0].isupper() or raw.isdigit():
+            continue
+        lowered = raw.lower()
+        if lowered in STOP_WORDS or lowered in COMMON_ENTITIES:
+            continue
+        if _SENTENCE_START_RE.search(text[: match.start()]):
+            continue
+        names.add(_stem(lowered))
+    return names
+
+
+def names_conflict(a: set[str], b: set[str], *, minimum: int = CONFLICT_MIN_EXCLUSIVE) -> bool:
+    """True when both sides name at least ``minimum`` things the other does not."""
+    return len(a - b) >= minimum and len(b - a) >= minimum
+
+
 def item_tokens(item: NormalizedItem) -> dict[str, float]:
     return tokenize(f"{item.title}. {item.summary}")
+
+
+def item_names(item: NormalizedItem) -> set[str]:
+    return proper_names(f"{item.title}. {item.summary}")
 
 
 def similarity(a: dict[str, float], b: dict[str, float]) -> float:
@@ -195,6 +234,7 @@ def cluster(
     """
     ordered = sorted(items, key=_sort_key)
     bags = {i.item_id: item_tokens(i) for i in ordered}
+    names = {i.item_id: item_names(i) for i in ordered}
     groups: list[list[NormalizedItem]] = []
 
     for item in ordered:
@@ -205,8 +245,11 @@ def cluster(
                 if not _within_window(item, member, window_hours):
                     continue
                 sim = similarity(bag, bags[member.item_id])
-                if sim >= threshold and sim > best_sim:
-                    best_group, best_sim = group, sim
+                if sim < threshold or sim <= best_sim:
+                    continue
+                if names_conflict(names[item.item_id], names[member.item_id]):
+                    continue
+                best_group, best_sim = group, sim
         if best_group is None:
             groups.append([item])
         else:

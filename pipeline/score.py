@@ -107,6 +107,10 @@ def score_items(
 # and how many single items from other stories may be added as context.
 MAX_STORY_ITEMS = 6
 EXTRA_STORY_ITEMS = 2
+# A digest rubric (``RUBRICS[r]["digest"]``, e.g. the events listing) needs
+# many different things, not many accounts of one thing: one item per story,
+# this many stories at most.
+DIGEST_STORIES = 6
 
 
 def stories_for_rubric(stories: list[Story], rubric: str) -> list[Story]:
@@ -133,11 +137,17 @@ def select_for_rubric(
     into one complete post. If ``limit`` leaves room, up to
     ``EXTRA_STORY_ITEMS`` best items from other stories are added as context.
 
+    A digest rubric (``RUBRICS[rubric]["digest"]``) inverts this: the post is
+    a list of different events, so it gets the best item of each of the top
+    stories (up to ``limit``, at least ``DIGEST_STORIES``) and never several
+    retellings of one event.
+
     ``stories`` lets the caller cluster once for several rubrics; when it is
     omitted the items are clustered here. ``exclude_story_ids`` keeps a story
     already used by another rubric in the same run from producing a twin post.
     """
-    if not RUBRICS.get(rubric, {}).get("categories"):
+    meta = RUBRICS.get(rubric, {})
+    if not meta.get("categories"):
         return []
     if stories is None:
         stories = cluster(items)
@@ -145,6 +155,12 @@ def select_for_rubric(
     pool = [s for s in stories_for_rubric(stories, rubric) if s.story_id not in excluded]
     if not pool:
         return []
+
+    if meta.get("digest"):
+        picked = []
+        for story in pool[: max(limit, DIGEST_STORIES)]:
+            picked.extend(pick_items(story, 1))
+        return picked
 
     lead, rest = pool[0], pool[1:]
     picked = pick_items(lead, MAX_STORY_ITEMS)
@@ -167,6 +183,18 @@ def lead_story_for_rubric(
         if story.story_id not in excluded:
             return story
     return None
+
+
+def stories_used(stories: list[Story], rubric: str, pool: list[NormalizedItem]) -> set[str]:
+    """Story ids a post of ``rubric`` consumes: the leading story, or — for a
+    digest — every story one of its items was taken from."""
+    if not pool:
+        return set()
+    if RUBRICS.get(rubric, {}).get("digest"):
+        ids = {i.item_id for i in pool}
+        return {s.story_id for s in stories if any(i.item_id in ids for i in s.items)}
+    lead_id = pool[0].item_id
+    return {s.story_id for s in stories if any(i.item_id == lead_id for i in s.items)}
 
 
 # Brief §4: selling content is capped at ~20-25% of the feed.

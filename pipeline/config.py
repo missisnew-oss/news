@@ -81,6 +81,10 @@ RUBRICS: dict[str, dict[str, Any]] = {
         "selling": False,
         "max_chars": 600,
         "per_4weeks": 8,
+        # A digest: the post lists 3-5 different events, so SCORE hands the
+        # model one item per story from several stories instead of every
+        # retelling of the single leading story (pipeline/score.py).
+        "digest": True,
     },
     "faq_answer": {
         "title": "Вопрос — ответ",

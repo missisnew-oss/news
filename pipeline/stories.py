@@ -43,7 +43,7 @@ from .textutil import sha1
 
 log = logging.getLogger("pipeline.stories")
 
-DEFAULT_THRESHOLD = 0.3
+DEFAULT_THRESHOLD = 0.18
 WINDOW_HOURS = 72
 STEM_LENGTH = 5
 ENTITY_WEIGHT = 3.0
@@ -233,7 +233,7 @@ def cluster(
     ``Story.score`` descending, members by item score descending.
     """
     ordered = sorted(items, key=_sort_key)
-    bags = {i.item_id: item_tokens(i) for i in ordered}
+    bags = _strip_boilerplate({i.item_id: item_tokens(i) for i in ordered}, ordered)
     names = {i.item_id: item_names(i) for i in ordered}
     groups: list[list[NormalizedItem]] = []
 
@@ -269,6 +269,35 @@ def cluster(
     stories.sort(key=lambda s: (-s.score, s.story_id))
     _log_summary(stories, len(items))
     return stories
+
+
+BOILERPLATE_SHARE = 0.4
+BOILERPLATE_MIN_ITEMS = 5
+
+
+def _strip_boilerplate(bags: dict[str, dict[str, float]], items: list[NormalizedItem]) -> dict[str, dict[str, float]]:
+    """Drop tokens that recur across most posts of one source.
+
+    Channel footers («подписаться», «наш бот», the channel's own name) appear
+    in every post of that channel and made twenty unrelated items of
+    @uaegeneralnews look like one story. A token present in ≥40% of a
+    source's items (5+ items) is treated as that source's boilerplate.
+    """
+    per_source: dict[str, list[str]] = {}
+    for item in items:
+        per_source.setdefault(item.source_id, []).append(item.item_id)
+    for source_id, ids in per_source.items():
+        if len(ids) < BOILERPLATE_MIN_ITEMS:
+            continue
+        counts: dict[str, int] = {}
+        for item_id in ids:
+            for token in bags[item_id]:
+                counts[token] = counts.get(token, 0) + 1
+        noise = {t for t, n in counts.items() if n / len(ids) >= BOILERPLATE_SHARE}
+        if noise:
+            for item_id in ids:
+                bags[item_id] = {t: w for t, w in bags[item_id].items() if t not in noise}
+    return bags
 
 
 def _keywords(members: list[NormalizedItem], bags: dict[str, dict[str, float]]) -> set[str]:

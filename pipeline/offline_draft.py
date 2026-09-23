@@ -52,11 +52,11 @@ def build_offline_draft(prompt: str) -> dict[str, Any]:
     confidence = (
         "confirmed" if primary.get("category") in {"official_data", "developers"} else "single_source"
     )
-    source_link = f"<a href=\"{primary.get('url', '')}\">{primary.get('source_id', 'источник')}</a>"
-    source_line = (
-        f"Источник: {source_link}" if confidence == "confirmed"
-        else f"По данным {source_link}; официального подтверждения пока нет."
-    )
+    # The owner wants plain statements: no «по данным …», no channel links in
+    # the text. A source link is shown only for official/developer sources.
+    is_channel = str(primary.get("url", "")).startswith("https://t.me/")
+    source_link = f"<a href=\"{primary.get('url', '')}\">источник</a>"
+    source_line = "" if is_channel else f"Источник: {source_link}"
 
     body_lines = [
         f"<b>{primary.get('title', '')[:90]}</b>",

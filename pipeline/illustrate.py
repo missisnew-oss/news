@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import base64
 import logging
+import re
 import random
 from pathlib import Path
 from typing import Any
@@ -655,6 +656,62 @@ def fetch_stock(settings: Settings, query: str, *, orientation: str = "landscape
     return None
 
 
+WIKIMEDIA_API = "https://commons.wikimedia.org/w/api.php"
+WIKIMEDIA_UA = "DubaiNewsBot/1.0 (+https://github.com/missisnew-oss/news)"
+
+
+def fetch_wikimedia(query: str, *, min_width: int = 1200) -> dict[str, Any] | None:
+    """Free-licensed photo from Wikimedia Commons — no API key needed.
+
+    Commons is the only large photo source that works without registration;
+    quality varies, so it sits after the paid/keyed providers and before the
+    synthetic backdrop. Author and licence are kept for the credit line.
+    """
+    import requests
+
+    query = (query or "Dubai skyline").strip()
+    if "dubai" not in query.lower() and "abu dhabi" not in query.lower():
+        query = f"{query} Dubai"
+    try:
+        response = requests.get(
+            WIKIMEDIA_API,
+            params={
+                "action": "query", "format": "json", "generator": "search",
+                "gsrsearch": f"{query} filetype:bitmap", "gsrnamespace": 6, "gsrlimit": 12,
+                "prop": "imageinfo", "iiprop": "url|size|extmetadata", "iiurlwidth": 1600,
+            },
+            headers={"User-Agent": WIKIMEDIA_UA}, timeout=20,
+        )
+        response.raise_for_status()
+        pages = (response.json().get("query") or {}).get("pages") or {}
+    except Exception as exc:
+        log.warning("Wikimedia Commons недоступен: %s", exc)
+        return None
+    candidates = []
+    for page in pages.values():
+        info = (page.get("imageinfo") or [{}])[0]
+        meta = info.get("extmetadata") or {}
+        licence = str((meta.get("LicenseShortName") or {}).get("value") or "")
+        width = int(info.get("width") or 0)
+        if width < min_width or not (licence.lower().startswith("cc") or "public domain" in licence.lower()):
+            continue
+        if "cc by-nc" in licence.lower() or "nd" in licence.lower().split():
+            continue
+        candidates.append((page.get("index", 99), info, meta, licence))
+    if not candidates:
+        return None
+    _, info, meta, licence = sorted(candidates, key=lambda c: c[0])[0]
+    author = re.sub(r"<[^>]+>", "", str((meta.get("Artist") or {}).get("value") or "")).strip()[:80]
+    url = info.get("thumburl") or info.get("url")
+    return _download(url, {
+        "provider": "wikimedia",
+        "license": licence,
+        "author": author or "Wikimedia Commons",
+        "source_url": info.get("descriptionurl") or "",
+        "remote_url": url,
+    })
+
+
 def _fetch_bounded(url: str, *, max_bytes: int, timeout: int) -> bytes | None:
     """GET ``url`` streaming, giving up as soon as more than ``max_bytes``
     arrive — whatever Content-Length claimed. None on any failure."""
@@ -913,6 +970,10 @@ def _photo_for_draft(settings: Settings, draft, brand: dict[str, Any], sources_d
     if stock:
         log.info("Картинка: сток %s (%s)", stock.get("provider"), stock.get("author"))
         return stock.pop("path"), stock
+    commons = fetch_wikimedia(spec.get("stock_query", ""))
+    if commons:
+        log.info("Картинка: Wikimedia Commons (%s, %s)", commons.get("author"), commons.get("license"))
+        return commons.pop("path"), commons
     return None, {}
 
 
@@ -931,7 +992,9 @@ def illustrate(settings: Settings, draft, sources_doc: dict[str, Any] | None = N
         log.warning("Поиск фото упал (%s), рисуем карточку без фото", exc)
         photo, meta = None, {}
 
-    if photo is None and settings.dry_run:
+    if photo is None:
+        # No photo from any provider (no keys, Commons down): the synthetic
+        # skyline still gives the photo-card layout instead of a flat gradient.
         photo = render_synthetic_photo(_card_size(brand), seed=headline)
         meta = _own_meta(headline, accent, place, tag, background="synthetic")
 
@@ -981,7 +1044,7 @@ def ensure_image(settings: Settings, post: dict[str, Any]) -> str | None:
     provider = meta.get("provider")
 
     photo = None
-    if provider in {"press", "unsplash", "pexels"} and not settings.dry_run:
+    if provider in {"press", "unsplash", "pexels", "wikimedia"} and not settings.dry_run:
         url = meta.get("remote_url") or meta.get("source_url")
         if url:
             photo = download_press_photo(url) if provider == "press" else (

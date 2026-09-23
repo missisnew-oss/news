@@ -462,7 +462,7 @@ def test_owners_first_hand_note_is_a_confirmed_source_but_a_forward_is_not():
     screenshot = _entry(42, "Скрин чужого поста: 4 AED в час", photo="P42")
     screenshot["extracted"] = {"kind": "screenshot", "text": "4 AED / hour", "description": "скрин", "method": "vision", "error": ""}
     verdict = _gate(screenshot, body)
-    assert not verdict["passed"] and any("одного источника" in e for e in verdict["errors"])
+    assert verdict["passed"], verdict["errors"]  # single_source is a plain statement now
 
     forward = _entry(43, "Парковка в Marina теперь 4 AED в час",
                      origin={"type": "channel", "chat_username": "dxb", "chat_title": "DXB", "message_id": 7})

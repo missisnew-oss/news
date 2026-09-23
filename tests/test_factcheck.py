@@ -140,7 +140,8 @@ def _fact(value: str, confidence: str, sources: list[str]) -> dict:
             "confidence": confidence, "sources": sources}
 
 
-def test_single_source_fact_without_a_hedge_is_rejected():
+def test_single_source_fact_passes_as_a_plain_statement():
+    """The owner does not want «по данным …» in the text; confidence stays in metadata."""
     items = [_tg_item("1", "tg_one", "Застройщик продал 357 вилл за день.")]
     payload = _payload(
         "Застройщик продал 357 вилл за день.",
@@ -148,20 +149,22 @@ def test_single_source_fact_without_a_hedge_is_rejected():
         facts=[_fact("357", "single_source", [items[0].url])],
     )
     verdict = check(payload, items, max_chars=900, source_index={})
-    assert not verdict["passed"]
-    assert any("маркера неуверенности" in e for e in verdict["errors"])
-
-
-def test_single_source_fact_with_a_hedge_passes():
-    items = [_tg_item("1", "tg_one", "Застройщик продал 357 вилл за день.")]
-    payload = _payload(
-        "По данным канала, застройщик продал 357 вилл за день. "
-        "Официального подтверждения пока нет.",
-        sources=[{"source_id": "tg_one", "title": "t", "url": items[0].url}],
-        facts=[_fact("357", "single_source", [items[0].url])],
-    )
-    verdict = check(payload, items, max_chars=900, source_index={})
     assert verdict["passed"], verdict["errors"]
+
+
+def test_other_telegram_channels_are_never_named_or_linked_in_the_text():
+    items = [_tg_item("1", "tg_one", "Застройщик продал 357 вилл за день.")]
+    src = [{"source_id": "tg_one", "title": "t", "url": items[0].url}]
+    facts = [_fact("357", "single_source", [items[0].url])]
+    for body in ("По данным @dubai_media, продано 357 вилл.",
+                 "Продано 357 вилл. Подробнее: https://t.me/dubai_media/15",
+                 "Telegram-канал сообщает о 357 виллах."):
+        verdict = check(_payload(body, sources=src, facts=facts), items, max_chars=900, source_index={})
+        assert not verdict["passed"], body
+        assert any("Telegram-канал" in e for e in verdict["errors"])
+    own = check(_payload("Продано 357 вилл. Подписывайтесь: @realnew_mary", sources=src, facts=facts),
+                items, max_chars=900, source_index={})
+    assert own["passed"], own["errors"]
 
 
 def test_confirmed_needs_two_independent_sources_or_an_official_one():
@@ -170,10 +173,11 @@ def test_confirmed_needs_two_independent_sources_or_an_official_one():
     body = "Застройщик продал 357 вилл за день."
     sources = [{"source_id": "tg_one", "title": "t", "url": a.url}]
 
-    # One channel only: downgraded to single_source, and the text has no hedge.
+    # One channel only: downgraded to single_source in the metadata (a warning,
+    # not a rejection — the text is allowed to stay a plain statement).
     lonely = _payload(body, sources=sources, facts=[_fact("357", "confirmed", [a.url])])
     verdict = check(lonely, [a, b], max_chars=900, source_index={})
-    assert not verdict["passed"]
+    assert verdict["passed"], verdict["errors"]
     assert lonely["facts"][0]["confidence"] == "single_source"
     assert any("понижен до single_source" in w for w in verdict["warnings"])
 
@@ -195,7 +199,9 @@ def test_confirmed_needs_two_independent_sources_or_an_official_one():
     # A made-up second URL does not count as a second source.
     padded = _payload(body, sources=sources,
                       facts=[_fact("357", "confirmed", [a.url, "https://invented.example/x"])])
-    assert not check(padded, [a, b], max_chars=900, source_index={})["passed"]
+    assert padded["facts"][0]["confidence"] == "confirmed"
+    check(padded, [a, b], max_chars=900, source_index={})
+    assert padded["facts"][0]["confidence"] == "single_source"
 
 
 def test_city_gov_counts_as_official_only_for_real_feeds_not_telegram_channels():
@@ -217,7 +223,8 @@ def test_city_gov_counts_as_official_only_for_real_feeds_not_telegram_channels()
     assert check(ok, [feed], max_chars=900, source_index=index)["passed"]
     bad = _payload(body, sources=[{"source_id": "tg_city", "title": "t", "url": channel.url}],
                    facts=[_fact("1500", "confirmed", [channel.url])])
-    assert not check(bad, [channel], max_chars=900, source_index=index)["passed"]
+    verdict = check(bad, [channel], max_chars=900, source_index=index)
+    assert verdict["passed"] and bad["facts"][0]["confidence"] == "single_source"
 
 
 def test_rumour_number_needs_a_rumour_marker_in_the_same_sentence():

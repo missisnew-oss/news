@@ -6,6 +6,11 @@ import socket
 from pathlib import Path
 
 import pytest
+
+
+@pytest.fixture(autouse=True)
+def _no_commons(monkeypatch):
+    monkeypatch.setattr(illustrate, "fetch_wikimedia", lambda *a, **k: None)
 from PIL import Image, ImageDraw
 
 from pipeline import illustrate
@@ -240,11 +245,26 @@ def test_stock_when_no_openai_key(monkeypatch, tmp_path):
     assert Path(path).exists() and path != str(photo)
 
 
-def test_own_card_when_nothing_else(monkeypatch):
+def test_synthetic_skyline_when_nothing_else(monkeypatch):
+    """No keys, Commons down: still a photo-card layout, not a flat gradient."""
     monkeypatch.setattr(illustrate, "generate_image", lambda *a, **k: None)
     monkeypatch.setattr(illustrate, "fetch_stock", lambda *a, **k: None)
     path, meta = illustrate.illustrate(_live_settings(), _draft(), sources_doc=_sources_doc())
-    assert meta["provider"] == "own_card" and meta["background"] == "gradient"
+    assert meta["provider"] == "own_card" and meta["background"] == "synthetic"
+    assert meta["card"] == "photo" and Path(path).exists()
+
+
+def test_wikimedia_is_tried_before_the_synthetic_fallback(monkeypatch, tmp_path):
+    monkeypatch.setattr(illustrate, "generate_image", lambda *a, **k: None)
+    monkeypatch.setattr(illustrate, "fetch_stock", lambda *a, **k: None)
+    photo = tmp_path / "commons.jpg"
+    illustrate.render_synthetic_photo((1400, 900), seed="c").save(photo)
+    monkeypatch.setattr(illustrate, "fetch_wikimedia", lambda *a, **k: {
+        "path": str(photo), "provider": "wikimedia", "license": "CC BY-SA 4.0",
+        "author": "Someone", "source_url": "https://commons.wikimedia.org/wiki/File:X.jpg",
+        "remote_url": "https://upload.wikimedia.org/x.jpg"})
+    path, meta = illustrate.illustrate(_live_settings(), _draft(), sources_doc=_sources_doc())
+    assert meta["provider"] == "wikimedia" and meta["author"] == "Someone"
     assert Path(path).exists()
 
 

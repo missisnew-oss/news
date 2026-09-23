@@ -101,6 +101,11 @@ BANNED_PATTERNS = (
 # пишут…».
 INSTAGRAM_LINK_PATTERNS = (r"instagram\.com", r"instagr\.am")
 INSTAGRAM_MENTION_PATTERNS = (r"\binstagram\b", r"\binsta\b", r"инстаграм", r"\bинст[аы]\b")
+# The owner does not want other Telegram channels credited or linked in the
+# post text: no @handles, no t.me links, no «канал X пишет». Sources stay in
+# the metadata for the audit trail.
+CHANNEL_MENTION_PATTERNS = (r"(?<![\w/])@[a-z0-9_]{4,}", r"t\.me/", r"telegram-канал", r"телеграм-канал", r"канал[аеу]?\s+@")
+OWN_CHANNEL = "realnew_mary"
 INSTAGRAM_MENTION_RUBRICS = {"from_owner"}
 
 # Numbers that carry no factual claim and never need a source.
@@ -211,7 +216,6 @@ def check_confidence(
     body = payload.get("body", "")
     plain_body = strip_html(body)
     sentences = _sentences(body)
-    hedged = bool(HEDGE_RE.search(plain_body))
 
     for fact in payload.get("facts") or []:
         level = fact.get("confidence")
@@ -234,11 +238,9 @@ def check_confidence(
                 )
                 level = fact["confidence"] = "single_source"
 
-        if level == "single_source" and not hedged:
-            errors.append(
-                f"Факт {label!r} из одного источника, а в тексте нет маркера неуверенности "
-                "(«по данным …», «официального подтверждения пока нет»)"
-            )
+        # single_source is fine as a plain statement: the owner does not want
+        # «по данным …» / «официального подтверждения нет» in the text; the
+        # confidence stays in the metadata for the audit trail.
 
         if level == "rumour":
             digits = _digits(str(fact.get("value", "")))
@@ -327,6 +329,15 @@ def check(
             errors.append(
                 f"Ссылка или упоминание Instagram (шаблон: {pattern}); чужой пост пересказываем "
                 "своими словами, платформу и аккаунт не называем (docs/LEGAL.md)"
+            )
+            break
+
+    for pattern in CHANNEL_MENTION_PATTERNS:
+        hits = [h for h in re.finditer(pattern, lowered) if OWN_CHANNEL not in h.group(0)]
+        if hits:
+            errors.append(
+                f"Упоминание или ссылка на другой Telegram-канал в тексте (шаблон: {pattern}); "
+                "каналы-источники в посте не называем"
             )
             break
 

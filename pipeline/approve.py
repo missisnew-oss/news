@@ -22,7 +22,7 @@ from . import illustrate, postqueue, state
 from .config import Settings
 from .generate import compose_text
 from .telegram import TelegramClient, approval_keyboard
-from .textutil import truncate_html
+from .textutil import sanitize_telegram_html, truncate_html
 
 log = logging.getLogger("pipeline.approve")
 
@@ -85,7 +85,19 @@ def preview_text(post: dict[str, Any]) -> str:
         lines.append("⚠️ " + "; ".join(warnings[:2]))
     lines.append("—" * 12)
     lines.append(truncate_html(compose_text(post), 2500))
+    lines.append("—" * 12)
+    lines.append(EDIT_HINT)
     return "\n".join(lines)
+
+
+# Shown under every preview. The buttons are read by a scheduled poll, not a
+# live bot, so the owner needs a way to hand over her own text as well.
+EDIT_HINT = ("✏️ Поправить: ответьте на это сообщение своим текстом — он заменит пост. "
+             "Или «переписать: короче, без цифр» — робот перепишет с учётом пожелания.")
+
+# A reply that starts with one of these is an instruction for the robot,
+# anything else the owner replies is her own final text.
+REWRITE_PREFIXES = ("переписать", "перепиши", "переделай", "переделать")
 
 
 def send_previews(settings: Settings, client: TelegramClient | None = None,
@@ -191,6 +203,9 @@ def _apply_update(settings: Settings, client: TelegramClient, queue: dict[str, A
         return None
     message = update.get("message")
     if message:
+        edited = _apply_preview_reply(client, queue, message, owner)
+        if edited:
+            return edited
         if not _store_owner_material(client, message, owner, persist=persist):
             _answer_id_request(client, message, owner)
         return None
@@ -247,8 +262,22 @@ def _apply_update(settings: Settings, client: TelegramClient, queue: dict[str, A
         )
         applied = status
 
-    _ack(client, settings, callback, f"Принято: {applied}")
+    _ack(client, settings, callback, f"Принято: {APPLIED_TEXT.get(applied, applied)}")
+    try:
+        client.send_message(settings.telegram_owner_id,
+                            f"«{truncate_html(post.get('title') or post_id, 60)}» — {APPLIED_TEXT.get(applied, applied)}")
+    except Exception as exc:
+        log.warning("Не удалось сообщить о решении: %s", exc)
     return {"post_id": post_id, "action": action, "status": applied}
+
+
+APPLIED_TEXT = {
+    "approved": "опубликую в свой слот",
+    "rejected": "отклонён",
+    "postponed": "отложен на следующий слот, превью придёт снова",
+    "rewrite": "перепишу, новое превью придёт в ближайшие полчаса. "
+               "Если хотите подсказать, как именно, — ответьте на превью «переписать: …»",
+}
 
 
 def _log_bot_identity(client: TelegramClient, settings: Settings) -> None:
@@ -375,17 +404,106 @@ def _answer_id_request(client: TelegramClient, message: dict[str, Any], owner: s
         log.warning("Не удалось ответить на %s: %s", text.split()[0], exc)
 
 
+def _post_for_reply(queue: dict[str, Any], message: dict[str, Any]) -> dict[str, Any] | None:
+    """The queued post whose preview the owner replied to, if any."""
+    replied = (message.get("reply_to_message") or {}).get("message_id")
+    if not replied:
+        return None
+    for post in queue.get("posts") or []:
+        if (post.get("approval") or {}).get("preview_message_id") == replied:
+            return post
+    return None
+
+
+def _apply_preview_reply(client: TelegramClient, queue: dict[str, Any], message: dict[str, Any],
+                         owner: str) -> dict[str, Any] | None:
+    """A reply to a preview edits that post.
+
+    Plain text replaces the body as the owner wrote it (she is the approver,
+    so the fact-check gate does not run on her words). Text starting with
+    «переписать» is a wish for the model: the post goes back through
+    ``run.regenerate_rewrites`` with that wish appended. Either way the
+    buttons are taken off the old preview and a fresh one goes out.
+    """
+    chat = message.get("chat") or {}
+    from_id = str(((message.get("from") or {}).get("id")) or "")
+    if chat.get("type") != "private" or from_id != owner:
+        return None
+    post = _post_for_reply(queue, message)
+    if post is None:
+        return None
+    text = (message.get("text") or message.get("caption") or "").strip()
+    if not text:
+        return None
+    post_id = post.get("post_id")
+    if post.get("status") in TERMINAL_STATUSES:
+        _reply(client, message, "Этот пост уже " + ("опубликован" if post["status"] == "published" else "отклонён")
+               + ", править нечего.")
+        return None
+    old_preview = (post.get("approval") or {}).get("preview_message_id")
+
+    lowered = text.lower()
+    if lowered.startswith(REWRITE_PREFIXES):
+        wish = text.split(":", 1)[1].strip() if ":" in text[:16] else text.split(None, 1)[1].strip() if " " in text else ""
+        postqueue.set_status(
+            queue, post_id, "rewrite",
+            approval={"sent_at": None, "action": "redo", "instruction": wish[:600],
+                      "requested_at": datetime.now(timezone.utc).isoformat()},
+        )
+        _take_buttons_off(client, str(chat.get("id") or owner), old_preview)
+        _reply(client, message, "Принято, перепишу" + (f" с учётом: «{wish[:200]}»" if wish else "")
+               + ". Новое превью придёт в ближайшие полчаса.")
+        log.info("Пост %s: владелица попросила переписать (%s)", post_id, wish[:80])
+        return {"post_id": post_id, "action": "redo", "status": "rewrite", "instruction": wish}
+
+    body = sanitize_telegram_html(text)
+    post["body"] = body
+    post["length_chars"] = len(body)
+    post["cta"] = ""  # her text is the whole post
+    if "#" in body:
+        post["hashtags"] = []
+    post["edited_by_owner_at"] = datetime.now(timezone.utc).isoformat()
+    post["gate"] = {**(post.get("gate") or {}), "warnings": [], "owner_edited": True}
+    post["status"] = "queued"
+    post["approval"] = {"action": "edit", "edited_at": post["edited_by_owner_at"]}
+    _take_buttons_off(client, str(chat.get("id") or owner), old_preview)
+    _reply(client, message, "Заменила текст поста вашим. Сейчас пришлю новое превью с кнопками.")
+    log.info("Пост %s: текст заменён владелицей (%d симв.)", post_id, len(body))
+    return {"post_id": post_id, "action": "edit", "status": "queued"}
+
+
+def _reply(client: TelegramClient, message: dict[str, Any], text: str) -> None:
+    chat = message.get("chat") or {}
+    try:
+        client.send_message(str(chat.get("id") or ""), text)
+    except Exception as exc:
+        log.warning("Не удалось ответить владелице: %s", exc)
+
+
+def _take_buttons_off(client: TelegramClient, chat_id: str, message_id: int | None) -> None:
+    if not message_id:
+        return
+    try:
+        client.edit_reply_markup(chat_id, message_id, {"inline_keyboard": []})
+    except Exception as exc:
+        log.warning("Кнопки с превью %s не сняты: %s", message_id, exc)
+
+
 def _ack(client: TelegramClient, settings: Settings, callback: dict[str, Any], text: str) -> None:
-    """Answer the callback and take the buttons off the preview message."""
+    """Answer the callback and take the buttons off the preview message.
+
+    The poll runs minutes after the tap, so the callback query is usually
+    already expired and answerCallbackQuery fails; the buttons still have to
+    come off, and the owner still needs to see that the tap was applied —
+    hence the separate try blocks and the explicit message.
+    """
     try:
         client.answer_callback(callback.get("id", ""), text)
-        message = callback.get("message") or {}
-        if message.get("message_id"):
-            client.edit_reply_markup(
-                settings.telegram_owner_id, message["message_id"], {"inline_keyboard": []}
-            )
     except Exception as exc:
-        log.warning("Не удалось подтвердить нажатие: %s", exc)
+        log.info("answerCallbackQuery не прошёл (обычно запрос уже истёк): %s", exc)
+    message = callback.get("message") or {}
+    if message.get("message_id"):
+        _take_buttons_off(client, settings.telegram_owner_id, message["message_id"])
 
 
 def run(settings: Settings, *, rounds: int = 1, poll_timeout: int = 25) -> list[dict[str, Any]]:
@@ -403,4 +521,8 @@ def run(settings: Settings, *, rounds: int = 1, poll_timeout: int = 25) -> list[
     for _ in range(max(1, rounds)):
         queue = postqueue.load_queue()
         decisions.extend(poll_once(settings, client=client, queue=queue, poll_timeout=poll_timeout))
+    if any(d.get("action") == "edit" for d in decisions):
+        # The owner replaced a text with her own: she sees the result now,
+        # not after the next poll.
+        send_previews(settings, client=client, queue=postqueue.load_queue(), persist=True)
     return decisions

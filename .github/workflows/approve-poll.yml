@@ -57,11 +57,12 @@ jobs:
           TELEGRAM_OWNER_ID: ${{ secrets.TELEGRAM_OWNER_ID }}
         run: python -m pipeline.run --stage approve --rounds 2 --poll-timeout 45
 
-      # Screenshots, PDFs and videos the owner forwarded during the poll
+      # «Переписать» (кнопка или ответ «переписать: …» на превью) и
+      # screenshots, PDFs and videos the owner forwarded during the poll
       # become drafts right here, so a preview arrives within ~30 minutes
       # instead of waiting for the next Collect & Generate run. Exits at once
-      # when the inbox has nothing new, so the minute budget is unaffected.
-      - name: Копилка владельца → черновики
+      # when there is nothing new, so the minute budget is unaffected.
+      - name: Переписать + копилка владельца → черновики
         env:
           DRY_RUN: "0"
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

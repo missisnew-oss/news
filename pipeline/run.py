@@ -89,9 +89,13 @@ def regenerate_rewrites(settings: Settings, provider: Any = None) -> list[PostDr
             post["status"] = "rejected"
             continue
         items = [NormalizedItem.from_dict(row) for row in snapshot]
+        instruction = REWRITE_INSTRUCTION
+        wish = str((post.get("approval") or {}).get("instruction") or "").strip()
+        if wish:
+            instruction += f"\nПОЖЕЛАНИЕ ВЛАДЕЛЬЦА К НОВОЙ ВЕРСИИ (выполнить обязательно): {wish}"
         draft = generate_for_rubric(
             settings, post.get("rubric", ""), items, provider=provider,
-            extra_instruction=REWRITE_INSTRUCTION,
+            extra_instruction=instruction,
         )
         if not draft or draft.status == "failed":
             log.warning("Переписать пост %s не удалось, остаётся в очереди", post_id)
@@ -119,27 +123,27 @@ def regenerate_rewrites(settings: Settings, provider: Any = None) -> list[PostDr
 
 
 def stage_inbox(settings: Settings, *, send_previews: bool = True) -> list[PostDraft]:
-    """The owner's inbox → drafts. Returns immediately when nothing is new.
+    """Rewrites and the owner's inbox → drafts. Returns at once when nothing is new.
 
-    Runs after every approve poll (so a forwarded screenshot becomes a preview
-    within about half an hour) and at the start of stage_generate. With
-    ``send_previews`` the fresh drafts go to the owner right away instead of
-    waiting for the next poll.
+    Runs after every approve poll (so a «Переписать» tap or a forwarded
+    screenshot becomes a preview within about half an hour) and at the start
+    of stage_generate. With ``send_previews`` the fresh drafts go to the owner
+    right away instead of waiting for the next poll.
     """
-    drafts = inbox_stage.drafts_from_inbox(settings)
-    if drafts:
-        log.info("Черновиков из копилки владельца: %d", len(drafts))
-        if send_previews:
-            approve_stage.send_previews(settings)
-    return drafts
-
-
-def stage_generate(settings: Settings, items: list[Any] | None = None, max_posts: int = 2) -> list[PostDraft]:
     rewritten = regenerate_rewrites(settings)
     if rewritten:
         log.info("Переписано по кнопке «Переписать»: %d", len(rewritten))
-    # What the owner sent comes before the planned rubrics; previews for it
-    # are sent by the approve step that follows in the workflow.
+    drafts = inbox_stage.drafts_from_inbox(settings)
+    if drafts:
+        log.info("Черновиков из копилки владельца: %d", len(drafts))
+    if (drafts or rewritten) and send_previews:
+        approve_stage.send_previews(settings)
+    return rewritten + drafts
+
+
+def stage_generate(settings: Settings, items: list[Any] | None = None, max_posts: int = 2) -> list[PostDraft]:
+    # Rewrites and what the owner sent come before the planned rubrics;
+    # previews for them are sent by the approve step that follows in the workflow.
     try:
         inbox_drafts = stage_inbox(settings, send_previews=False)
     except Exception as exc:

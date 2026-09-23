@@ -767,3 +767,110 @@ def test_phantom_offers_in_cta_are_rejected():
     assert ok["passed"]
     bad = factcheck.check({**base, "cta": "PDF-гид по району — заберите в боте"}, [item], max_chars=600)
     assert not bad["passed"] and any("несуществующего" in e for e in bad["errors"])
+
+
+# --------------------------------------------------------------------------
+# Editing a post by replying to its preview
+# --------------------------------------------------------------------------
+
+def _reply_update(update_id: int, text: str, *, reply_to: int = 22, from_id: str = "42"):
+    return {
+        "update_id": update_id,
+        "message": {
+            "message_id": 900 + update_id,
+            "chat": {"id": int(from_id), "type": "private"},
+            "from": {"id": int(from_id)},
+            "text": text,
+            "reply_to_message": {"message_id": reply_to},
+        },
+    }
+
+
+class _ChatClient(_FakeClient):
+    def send_message(self, chat_id, text, **kw):
+        self.calls.append(("text", text))
+        return {"ok": True, "result": {"message_id": 77}}
+
+    def send_photo(self, chat_id, photo_path=None, *, file_id=None, caption="", reply_markup=None):
+        self.calls.append(("photo", caption))
+        return {"ok": True, "result": {"message_id": 78}}
+
+
+def test_reply_to_preview_replaces_the_text_and_previews_again(settings, monkeypatch):
+    """Was: «Переписать» only asked the model for another version; the owner
+    had no way to hand over her own wording."""
+    from pipeline import approve, state
+
+    queue = _queue()
+    post = queue["posts"][0]
+    post["approval"] = {"sent_at": "2026-09-23T09:00:00+00:00", "preview_message_id": 22}
+    post["cta"] = "Напишите мне."
+    post["hashtags"] = ["#дубай"]
+    client = _ChatClient([_reply_update(1, "Мой текст поста.\n\n#дубай #новости")])
+    monkeypatch.setattr(state, "save", lambda *a, **k: None)
+    decisions = approve.poll_once(settings, client=client, queue=queue, persist=False)
+    assert decisions and decisions[0]["action"] == "edit"
+    assert post["body"] == "Мой текст поста.\n\n#дубай #новости"
+    assert post["cta"] == "" and post["hashtags"] == []
+    assert post["status"] == "queued" and not post["approval"].get("sent_at")
+    assert ("edit", 22) in client.calls  # old buttons gone
+    assert any(c[0] == "text" and "Заменила" in c[1] for c in client.calls)
+    # The inbox did not swallow the reply as material.
+    assert not any(c[0] == "text" and "Сохранила" in c[1] for c in client.calls)
+    # A fresh preview goes out and carries the new text.
+    approve.send_previews(settings, client=client, queue=queue, persist=False)
+    assert any(c[0] == "text" and "Мой текст поста." in c[1] for c in client.calls)
+
+
+def test_reply_with_rewrite_wish_sends_the_post_back_to_the_model(settings, monkeypatch):
+    from pipeline import approve, state
+
+    queue = _queue()
+    post = queue["posts"][0]
+    post["approval"] = {"sent_at": "2026-09-23T09:00:00+00:00", "preview_message_id": 22}
+    client = _ChatClient([_reply_update(1, "Переписать: короче и без цифр")])
+    monkeypatch.setattr(state, "save", lambda *a, **k: None)
+    decisions = approve.poll_once(settings, client=client, queue=queue, persist=False)
+    assert decisions[0]["action"] == "redo"
+    assert post["status"] == "rewrite"
+    assert post["approval"]["instruction"] == "короче и без цифр"
+    assert post["body"] == "Текст"  # untouched: the model rewrites it
+
+
+def test_reply_from_a_stranger_or_to_an_unknown_message_is_not_an_edit(settings, monkeypatch):
+    from pipeline import approve, state
+
+    queue = _queue()
+    post = queue["posts"][0]
+    post["approval"] = {"sent_at": "x", "preview_message_id": 22}
+    monkeypatch.setattr(state, "save", lambda *a, **k: None)
+    monkeypatch.setattr(state, "load", lambda name: {"items": []})
+    client = _ChatClient([_reply_update(1, "Чужой текст", from_id="999"),
+                          _reply_update(2, "Ответ не на превью", reply_to=5)])
+    approve.poll_once(settings, client=client, queue=queue, persist=False)
+    assert post["body"] == "Текст"
+
+
+def test_rewrite_wish_reaches_the_model_prompt(settings, monkeypatch, tmp_path):
+    from pipeline import run as run_stage, postqueue
+
+    queue = _queue(status="rewrite")
+    post = queue["posts"][0]
+    post["approval"] = {"instruction": "короче и без цифр"}
+    post["source_items"] = [{
+        "item_id": "i1", "source_id": "s", "category": "realty_news", "title": "Новость",
+        "summary": "Текст новости", "url": "https://example.com/n", "canonical_url": "https://example.com/n",
+        "published_at": None, "collected_at": "2026-09-23T00:00:00+00:00", "lang": "ru",
+    }]
+    monkeypatch.setattr(postqueue, "load_queue", lambda: queue)
+    monkeypatch.setattr(postqueue, "save_queue", lambda q: None)
+    monkeypatch.setattr(postqueue, "enqueue", lambda drafts, persist=True: None)
+    seen = {}
+
+    def fake_generate(settings, rubric, items, provider=None, *, extra_instruction=""):
+        seen["instruction"] = extra_instruction
+        return None
+
+    monkeypatch.setattr("pipeline.generate.generate_for_rubric", fake_generate)
+    run_stage.regenerate_rewrites(settings)
+    assert "короче и без цифр" in seen["instruction"]

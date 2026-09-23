@@ -39,6 +39,13 @@ def stage_collect(settings: Settings) -> list[Any]:
         json.dumps([i.to_dict() for i in items], ensure_ascii=False, indent=2), encoding="utf-8"
     )
     log.info("Собрано и отскорено %d материалов → out/items.json", len(items))
+    if not settings.dry_run:
+        # Compact one-line snapshot of the real corpus: lets the clustering
+        # threshold be tuned offline on what the channels actually publish.
+        compact = [{"id": i.item_id, "s": i.source_id, "c": i.category, "d": i.published_at,
+                    "t": i.title[:200], "x": (i.summary or "")[:300], "u": i.url}
+                   for i in items]
+        state.save("corpus_sample.json", {"version": 1, "items": compact}, compact_json=True)
     return items
 
 

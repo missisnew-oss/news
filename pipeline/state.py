@@ -49,13 +49,16 @@ def load(name: str) -> dict[str, Any]:
     return data
 
 
-def save(name: str, data: dict[str, Any]) -> Path:
+def save(name: str, data: dict[str, Any], *, compact_json: bool = False) -> Path:
     path = state_path(name)
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, tmp = tempfile.mkstemp(dir=str(path.parent), prefix=f".{name}.", suffix=".tmp")
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as fh:
-            json.dump(data, fh, ensure_ascii=False, indent=2, sort_keys=False)
+            # compact_json keeps big snapshots on one line so the state commit
+            # guard (diff-size limit) does not refuse them.
+            json.dump(data, fh, ensure_ascii=False, indent=None if compact_json else 2,
+                      sort_keys=False)
             fh.write("\n")
         # mkstemp creates 0600; state files are ordinary tracked files.
         os.chmod(tmp, 0o644)

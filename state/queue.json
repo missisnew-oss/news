@@ -2100,10 +2100,10 @@
       },
       "length_chars": 1551,
       "needs_separate_text": true,
-      "status": "approved",
+      "status": "published",
       "created_at": "2026-09-23T13:00:40.601584+00:00",
       "slot_at": "2026-09-23T13:17:04+00:00",
-      "image_path": "",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-30965d2f5dd3.png",
       "image_meta": {
         "provider": "own_card",
         "license": "собственная графика канала",
@@ -2206,7 +2206,7 @@
         "action": "ok"
       },
       "rewrite_count": 3,
-      "publish_key": "",
+      "publish_key": "8386fc399bd4347d63b34641619c7696abc917ac",
       "edited_by_owner_at": "2026-09-23T13:17:04.858016+00:00"
     },
     {

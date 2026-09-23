@@ -1,5 +1,27 @@
 {
   "version": 1,
-  "posts": [],
+  "posts": [
+    {
+      "post_id": "dubai_life-417a053a2005",
+      "message_id": 3,
+      "published_at": "2026-09-23T13:17:31.797582+00:00",
+      "rubric": "dubai_life",
+      "source_ids": [
+        "tg_dubaimap",
+        "owner_inbox",
+        "owner_inbox"
+      ],
+      "length_chars": 1551,
+      "has_cta": false,
+      "has_photo": true,
+      "metrics": {
+        "views": null,
+        "reactions": null,
+        "forwards": null,
+        "collected_at": null,
+        "manual": true
+      }
+    }
+  ],
   "weekly": []
 }

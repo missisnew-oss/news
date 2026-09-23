@@ -2204,10 +2204,7 @@
         "numbers_checked": 1,
         "sources_cited": 3
       },
-      "approval": {
-        "sent_at": "2026-09-23T13:00:41.186907+00:00",
-        "preview_message_id": 48
-      },
+      "approval": {},
       "rewrite_count": 3,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMjarOyO_6bGz80_2gZONY7k3JSYfMAAsIjaxvmpKFJJ9Y1MSWxEQkBAAMCAAN5AAM9BA"

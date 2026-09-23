@@ -944,3 +944,26 @@ def test_reply_with_dopolni_merges_the_material_into_the_post(settings, monkeypa
     assert post["source_items"][-1]["source_id"] == "owner_inbox"
     assert "DTCM" in post["source_items"][-1]["summary"]
     assert post["body"] == "Текст"  # the model rewrites it, the reply is not the new text
+
+
+def test_long_preview_is_not_cut_by_the_caption_limit(settings, tmp_path, monkeypatch):
+    """Was: a 1500-character preview was truncated to 1024 in the photo caption
+    and the owner read the post as unfinished («Пост не дописан»)."""
+    from pipeline import approve, illustrate
+
+    monkeypatch.setattr(illustrate, "GENERATED_DIR", tmp_path, raising=False)
+    queue = _queue()
+    post = queue["posts"][0]
+    post["body"] = "Абзац про рынок. " * 70  # ~1200 chars
+    post["image_meta"] = {"provider": "own_card", "headline": "Заголовок", "accent": ""}
+    client = _ChatClient([])
+    assert approve.send_previews(settings, client=client, queue=queue, persist=False) == 1
+    kinds = [c[0] for c in client.calls]
+    assert kinds == ["photo", "text"]
+    caption, text = client.calls[0][1], client.calls[1][1]
+    assert len(caption) <= 1024 and "Полный текст" in caption
+    assert post["body"].strip() in text and "Поправить" in text
+    assert post["approval"]["preview_message_id"] == 77 and post["approval"]["preview_photo_message_id"] == 78
+    # a reply to either message edits this post
+    assert approve._post_for_reply(queue, {"reply_to_message": {"message_id": 78}}) is post
+    assert approve._post_for_reply(queue, {"reply_to_message": {"message_id": 77}}) is post

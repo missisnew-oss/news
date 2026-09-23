@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 from typing import Any
 
 from . import illustrate, postqueue, state
-from .config import Settings
+from .config import TG_MESSAGE_LIMIT, Settings
 from .generate import compose_text
 from .telegram import TelegramClient, approval_keyboard
 from .textutil import sanitize_telegram_html, truncate_html
@@ -131,7 +131,7 @@ def status_report(queue: dict[str, Any], *, now: datetime | None = None) -> str:
     return "\n".join(lines)
 
 
-def preview_text(post: dict[str, Any]) -> str:
+def preview_header(post: dict[str, Any]) -> str:
     gate = post.get("gate") or {}
     warnings = gate.get("warnings") or []
     sources = post.get("sources") or []
@@ -146,11 +146,21 @@ def preview_text(post: dict[str, Any]) -> str:
                      "Прежние нажатия не считаются: чтобы он вышел, нажмите «Опубликовать» здесь.")
     if warnings:
         lines.append("⚠️ " + "; ".join(warnings[:2]))
-    lines.append("—" * 12)
-    lines.append(truncate_html(compose_text(post), 2500))
-    lines.append("—" * 12)
-    lines.append(EDIT_HINT)
     return "\n".join(lines)
+
+
+def preview_body(post: dict[str, Any]) -> str:
+    return "\n".join([truncate_html(compose_text(post), 3500), "—" * 12, EDIT_HINT])
+
+
+def preview_text(post: dict[str, Any]) -> str:
+    return "\n".join([preview_header(post), "—" * 12, preview_body(post)])
+
+
+# Telegram caps a photo caption at 1024 characters. A preview above that used
+# to be cut mid-sentence and the owner read it as «пост не дописан»: now the
+# photo carries the header only and the full text follows as a message.
+PREVIEW_CAPTION_LIMIT = 1024
 
 
 # Shown under every preview. The buttons are read by a scheduled poll, not a
@@ -181,27 +191,41 @@ def send_previews(settings: Settings, client: TelegramClient | None = None,
         keyboard = approval_keyboard(post["post_id"])
         file_id = post.get("telegram_file_id")
         image_path = None if file_id else illustrate.ensure_image(settings, post)
+        photo_message_id = None
         try:
-            if file_id or image_path:
+            full = preview_text(post)
+            if (file_id or image_path) and len(full) <= PREVIEW_CAPTION_LIMIT:
                 response = client.send_photo(
-                    settings.telegram_owner_id,
-                    image_path,
-                    file_id=file_id,
-                    caption=truncate_html(preview_text(post), 1024),
-                    reply_markup=keyboard,
+                    settings.telegram_owner_id, image_path, file_id=file_id,
+                    caption=full, reply_markup=keyboard,
                 )
                 uploaded = TelegramClient.photo_file_id(response)
                 if uploaded:
                     post["telegram_file_id"] = uploaded
+            elif file_id or image_path:
+                photo = client.send_photo(
+                    settings.telegram_owner_id, image_path, file_id=file_id,
+                    caption=truncate_html(preview_header(post) + "\n⬇️ Полный текст поста — следующим сообщением",
+                                          PREVIEW_CAPTION_LIMIT),
+                )
+                uploaded = TelegramClient.photo_file_id(photo)
+                if uploaded:
+                    post["telegram_file_id"] = uploaded
+                photo_message_id = (photo.get("result") or {}).get("message_id")
+                response = client.send_message(
+                    settings.telegram_owner_id, truncate_html(preview_body(post), TG_MESSAGE_LIMIT),
+                    reply_markup=keyboard,
+                )
             else:
                 response = client.send_message(
-                    settings.telegram_owner_id, preview_text(post), reply_markup=keyboard
+                    settings.telegram_owner_id, truncate_html(full, TG_MESSAGE_LIMIT), reply_markup=keyboard
                 )
         except Exception as exc:
             log.error("Не удалось отправить превью %s: %s", post["post_id"], exc)
             continue
         post.setdefault("approval", {})["sent_at"] = datetime.now(timezone.utc).isoformat()
         post["approval"]["preview_message_id"] = (response.get("result") or {}).get("message_id")
+        post["approval"]["preview_photo_message_id"] = photo_message_id
         sent += 1
     if persist:
         postqueue.save_queue(queue)
@@ -486,7 +510,8 @@ def _post_for_reply(queue: dict[str, Any], message: dict[str, Any]) -> dict[str,
     if not replied:
         return None
     for post in queue.get("posts") or []:
-        if (post.get("approval") or {}).get("preview_message_id") == replied:
+        approval = post.get("approval") or {}
+        if replied in (approval.get("preview_message_id"), approval.get("preview_photo_message_id")):
             return post
     return None
 

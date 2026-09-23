@@ -68,6 +68,31 @@
       "document": null,
       "processed_at": "2026-09-23T08:50:54.109438+00:00",
       "skipped_reason": "образец голоса владельца, не материал для поста"
+    },
+    {
+      "message_id": 28,
+      "received_at": "2026-09-23T10:07:38.412377+00:00",
+      "kind": "note",
+      "origin": {
+        "type": null,
+        "chat_username": null,
+        "chat_title": null,
+        "message_id": null
+      },
+      "text": "Убери последнее предложение",
+      "photo_file_id": null,
+      "document": null,
+      "extracted": {
+        "text": "",
+        "description": "",
+        "kind": "text",
+        "transcript": "",
+        "method": "text",
+        "error": ""
+      },
+      "processed_at": "2026-09-23T10:07:53.660759+00:00",
+      "draft_attempts": 1,
+      "skipped_reason": "Это техническая правка боту («Убери последнее предложение»), а не материал с темой и фактами."
     }
   ]
 }

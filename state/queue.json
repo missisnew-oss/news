@@ -1466,19 +1466,19 @@
     {
       "post_id": "dubai_life-793f928bd9b9",
       "rubric": "dubai_life",
-      "title": "В Рас-Аль-Хайме будут тестировать летающие автомобили",
-      "body": "Две новости недели про жизнь в ОАЭ — обе про то, что скоро появится рядом.\n\n— Рас-Аль-Хайма подписала соглашение с китайской компанией о тестировании летающих автомобилей в эмирате.\n— Музей Гуггенхайма в Абу-Даби проведёт 3 мероприятия до официального открытия в декабре.\n\nЧто это значит: до поездок по воздуху ещё далеко, это стадия испытаний. А вот в Абу-Даби можно попасть в музей раньше открытия.\n\nЕсли были на превью — напишите в комментариях, дополню.",
+      "title": "Три новости недели: летающие машины, музей и фестиваль",
+      "body": "Коротко о том, что происходит в стране на этой неделе.\n\n— Рас-эль-Хайма подписала соглашение с китайской компанией: там будут тестировать летающие автомобили.\n— Музей Гуггенхайма в Абу-Даби проведёт три мероприятия до официального открытия в декабре.\n— В Дубае впервые пройдёт фестиваль для обладателей вьющихся волос.\n\nДаты и площадки пока не объявлены. Я бы следила за анонсами музея — попасть до открытия интереснее, чем в первую неделю толпы.\n\nЕсли планируете сходить — напишите в комментариях. 🙂",
       "hashtags": [
         "#дубай",
-        "#оаэ",
-        "#жизньвдубае"
+        "#жизньвоаэ",
+        "#события"
       ],
-      "cta": "Если были на превью — напишите в комментариях, дополню.",
+      "cta": "Если планируете сходить — напишите в комментариях.",
       "image": {
         "mode": "stock",
-        "headline": "Летающие такси и музей до открытия",
+        "headline": "Что происходит в ОАЭ на этой неделе",
         "accent": "",
-        "stock_query": "flying car uae futuristic city skyline"
+        "stock_query": "abu dhabi museum architecture evening"
       },
       "sources": [
         {
@@ -1490,12 +1490,17 @@
           "source_id": "tg_uaegeneralnews",
           "title": "Новый столичный музей анонсировал программу мероприятий",
           "url": "https://t.me/uaegeneralnews/17766"
+        },
+        {
+          "source_id": "tg_uaegeneralnews",
+          "title": "В Дубае пройдет первый фестиваль для кудрявых людей",
+          "url": "https://t.me/uaegeneralnews/17765"
         }
       ],
       "facts": [
         {
-          "claim": "Рас-Аль-Хайма подписала соглашение с китайской компанией о тестировании летающих автомобилей",
-          "value": "соглашение о тестировании",
+          "claim": "Рас-эль-Хайма подписала соглашение с китайской компанией о тестировании летающих автомобилей",
+          "value": "1 соглашение",
           "source_url": "https://whatson.ae/2026/09/flying-car-future-of-the-uae-ras-al-khaimah/",
           "confidence": "single_source",
           "sources": [
@@ -1503,12 +1508,21 @@
           ]
         },
         {
-          "claim": "Музей Гуггенхайма в Абу-Даби проведёт мероприятия перед открытием в декабре",
+          "claim": "Музей Гуггенхайма в Абу-Даби проведёт мероприятия до официального открытия",
           "value": "3 мероприятия, открытие в декабре",
           "source_url": "https://t.me/uaegeneralnews/17766",
           "confidence": "single_source",
           "sources": [
             "https://t.me/uaegeneralnews/17766"
+          ]
+        },
+        {
+          "claim": "В Дубае впервые пройдёт фестиваль для людей с вьющимися волосами",
+          "value": "первый",
+          "source_url": "https://t.me/uaegeneralnews/17765",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/uaegeneralnews/17765"
           ]
         }
       ],
@@ -1519,24 +1533,24 @@
         "no_verbatim_copy": true,
         "fits_telegram_limit": true
       },
-      "length_chars": 457,
+      "length_chars": 500,
       "needs_separate_text": false,
       "status": "queued",
-      "created_at": "2026-09-23T10:06:24.994426+00:00",
+      "created_at": "2026-09-23T10:07:53.513768+00:00",
       "slot_at": "2026-09-24T05:30:00+00:00",
-      "image_path": "/home/runner/work/news/news/assets/generated/light-bbc21b684a8f.png",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-e210b5337e76.png",
       "image_meta": {
         "provider": "own_card",
         "license": "собственная графика канала",
         "author": "канал",
         "source_url": "",
-        "headline": "Летающие такси и музей до открытия",
+        "headline": "Что происходит в ОАЭ на этой неделе",
         "accent": "",
         "tag_left": "АБУ-ДАБИ",
         "tag_right": "#ЖИЗНЬВДУБАЕ",
         "background": "light",
         "card": "light",
-        "card_path": "/home/runner/work/news/news/assets/generated/light-bbc21b684a8f.png"
+        "card_path": "/home/runner/work/news/news/assets/generated/light-e210b5337e76.png"
       },
       "item_ids": [
         "93120327b26f8474609b40fe8b0b487fa698db68",
@@ -1589,13 +1603,13 @@
         "errors": [],
         "warnings": [],
         "numbers_checked": 0,
-        "sources_cited": 2
+        "sources_cited": 3
       },
       "approval": {
-        "sent_at": "2026-09-23T10:06:26.988275+00:00",
-        "preview_message_id": 26
+        "sent_at": "2026-09-23T10:07:57.193781+00:00",
+        "preview_message_id": 31
       },
-      "rewrite_count": 0,
+      "rewrite_count": 1,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMaarOkonkOLFZo8g1gameN-AXO-IgAAk4jaxvmpKFJTR5Euoy0OaEBAAMCAAN5AAM9BA"
     }

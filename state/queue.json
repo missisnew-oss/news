@@ -1321,19 +1321,19 @@
     {
       "post_id": "dubai_life-4d3b4af50554",
       "rubric": "dubai_life",
-      "title": "Билеты на поезд Дубай — Абу-Даби поступили в продажу",
-      "body": "В ОАЭ открыли продажу билетов на железнодорожный рейс из Дубая в Абу-Даби. Это касается всех, кто регулярно ездит между городами на машине.\n\nЦены и расписание в сообщении не приводятся. Как появятся официальные данные — разберу отдельно.\n\nЕщё одна новость по соседству: в Кальбе (Шарджа) утвердили озеро Al Freish с водопадами и прогулочными зонами, площадь 51 200 кв. м. Дату открытия пока не называли.\n\nСохраните — пригодится, если ездите в Абу-Даби.",
+      "title": "Поезд Дубай — Абу-Даби: билеты уже продают",
+      "body": "Две городские новости, которые стоит держать в голове.\n\n— Продажа билетов на железнодорожный рейс между Дубаем и Абу-Даби открыта.\n— В Кальбе на восточном побережье Шарджи одобрили новое озеро Al Freish с водопадами и прогулочными зонами, площадь — 51 200 кв. м. Дату открытия пока не называли.\n\nПоезд — это про повседневность: поездки в Абу-Даби перестанут быть событием на полдня. Озеро — вариант для выходных, но ждать придётся.\n\nЕсли уже брали билет — напишите в комментариях, как впечатления.",
       "hashtags": [
         "#дубай",
-        "#жизньвоаэ",
-        "#транспорт"
+        "#оаэ",
+        "#жизньвдубае"
       ],
-      "cta": "Сохраните — пригодится, если ездите в Абу-Даби.",
+      "cta": "Если уже брали билет — напишите в комментариях, как впечатления.",
       "image": {
         "mode": "stock",
-        "headline": "Поезд Дубай — Абу-Даби: билеты в продаже",
+        "headline": "Поезд Дубай — Абу-Даби и новое озеро в Кальбе",
         "accent": "",
-        "stock_query": "modern train station uae desert railway"
+        "stock_query": "uae train station modern railway desert"
       },
       "sources": [
         {
@@ -1349,16 +1349,7 @@
       ],
       "facts": [
         {
-          "claim": "Открыта продажа билетов на железнодорожный рейс Дубай — Абу-Даби",
-          "value": "билеты в продаже",
-          "source_url": "https://t.me/uaegeneralnews/17767",
-          "confidence": "single_source",
-          "sources": [
-            "https://t.me/uaegeneralnews/17767"
-          ]
-        },
-        {
-          "claim": "Площадь утверждённого озера Al Freish в Кальбе",
+          "claim": "Площадь нового озера Al Freish в Кальбе",
           "value": "51 200 кв. м",
           "source_url": "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah/",
           "confidence": "single_source",
@@ -1367,7 +1358,16 @@
           ]
         },
         {
-          "claim": "Дата открытия озера Al Freish не объявлена",
+          "claim": "Открыта продажа билетов на поезд Дубай — Абу-Даби",
+          "value": "продажа открыта",
+          "source_url": "https://t.me/uaegeneralnews/17767",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/uaegeneralnews/17767"
+          ]
+        },
+        {
+          "claim": "Дата открытия озера не объявлена",
           "value": "нет даты",
           "source_url": "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah/",
           "confidence": "single_source",
@@ -1383,24 +1383,24 @@
         "no_verbatim_copy": true,
         "fits_telegram_limit": true
       },
-      "length_chars": 452,
+      "length_chars": 497,
       "needs_separate_text": false,
-      "status": "rewrite",
-      "created_at": "2026-09-23T09:52:15.601941+00:00",
+      "status": "queued",
+      "created_at": "2026-09-23T10:05:34.992957+00:00",
       "slot_at": "2026-09-23T15:30:00+00:00",
-      "image_path": "/home/runner/work/news/news/assets/generated/light-f98bab1f1fe2.png",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-feea89f02eaf.png",
       "image_meta": {
         "provider": "own_card",
         "license": "собственная графика канала",
         "author": "канал",
         "source_url": "",
-        "headline": "Поезд Дубай — Абу-Даби: билеты в продаже",
+        "headline": "Поезд Дубай — Абу-Даби и новое озеро в Кальбе",
         "accent": "",
         "tag_left": "АБУ-ДАБИ",
         "tag_right": "#ЖИЗНЬВДУБАЕ",
         "background": "light",
         "card": "light",
-        "card_path": "/home/runner/work/news/news/assets/generated/light-f98bab1f1fe2.png"
+        "card_path": "/home/runner/work/news/news/assets/generated/light-feea89f02eaf.png"
       },
       "item_ids": [
         "c3ea3345038666cf7159e1733e9b872cd49100e2",
@@ -1456,13 +1456,148 @@
         "sources_cited": 2
       },
       "approval": {
-        "sent_at": null,
-        "action": "redo",
-        "requested_at": "2026-09-23T09:54:08.315466+00:00"
+        "sent_at": "2026-09-23T10:06:26.283472+00:00",
+        "preview_message_id": 25
+      },
+      "rewrite_count": 1,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMXarOhUQnJHd60MdQsNyluuSil0aUAAjYjaxvmpKFJoExe1rw4iUIBAAMCAAN5AAM9BA"
+    },
+    {
+      "post_id": "dubai_life-793f928bd9b9",
+      "rubric": "dubai_life",
+      "title": "В Рас-Аль-Хайме будут тестировать летающие автомобили",
+      "body": "Две новости недели про жизнь в ОАЭ — обе про то, что скоро появится рядом.\n\n— Рас-Аль-Хайма подписала соглашение с китайской компанией о тестировании летающих автомобилей в эмирате.\n— Музей Гуггенхайма в Абу-Даби проведёт 3 мероприятия до официального открытия в декабре.\n\nЧто это значит: до поездок по воздуху ещё далеко, это стадия испытаний. А вот в Абу-Даби можно попасть в музей раньше открытия.\n\nЕсли были на превью — напишите в комментариях, дополню.",
+      "hashtags": [
+        "#дубай",
+        "#оаэ",
+        "#жизньвдубае"
+      ],
+      "cta": "Если были на превью — напишите в комментариях, дополню.",
+      "image": {
+        "mode": "stock",
+        "headline": "Летающие такси и музей до открытия",
+        "accent": "",
+        "stock_query": "flying car uae futuristic city skyline"
+      },
+      "sources": [
+        {
+          "source_id": "whatson_ae_feed",
+          "title": "Flying cars are coming to Ras Al Khaimah",
+          "url": "https://whatson.ae/2026/09/flying-car-future-of-the-uae-ras-al-khaimah/"
+        },
+        {
+          "source_id": "tg_uaegeneralnews",
+          "title": "Новый столичный музей анонсировал программу мероприятий",
+          "url": "https://t.me/uaegeneralnews/17766"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Рас-Аль-Хайма подписала соглашение с китайской компанией о тестировании летающих автомобилей",
+          "value": "соглашение о тестировании",
+          "source_url": "https://whatson.ae/2026/09/flying-car-future-of-the-uae-ras-al-khaimah/",
+          "confidence": "single_source",
+          "sources": [
+            "https://whatson.ae/2026/09/flying-car-future-of-the-uae-ras-al-khaimah/"
+          ]
+        },
+        {
+          "claim": "Музей Гуггенхайма в Абу-Даби проведёт мероприятия перед открытием в декабре",
+          "value": "3 мероприятия, открытие в декабре",
+          "source_url": "https://t.me/uaegeneralnews/17766",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/uaegeneralnews/17766"
+          ]
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 457,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-23T10:06:24.994426+00:00",
+      "slot_at": "2026-09-24T05:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-bbc21b684a8f.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Летающие такси и музей до открытия",
+        "accent": "",
+        "tag_left": "АБУ-ДАБИ",
+        "tag_right": "#ЖИЗНЬВДУБАЕ",
+        "background": "light",
+        "card": "light",
+        "card_path": "/home/runner/work/news/news/assets/generated/light-bbc21b684a8f.png"
+      },
+      "item_ids": [
+        "93120327b26f8474609b40fe8b0b487fa698db68",
+        "f0f14392387729c893477ed1e87cc1bb234ab76d",
+        "a3e4b99b119fb2762417c79f38543285f552de28"
+      ],
+      "source_items": [
+        {
+          "item_id": "93120327b26f8474609b40fe8b0b487fa698db68",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "Flying cars are coming to Ras Al Khaimah",
+          "summary": "Ras Al Khaimah signs a deal with a Chinese company to test out flying cars in the region In the UAE, the future isn’t a distant ambition. Here, planning and execution come to life in the matter of mere months. Gone are the days where we sit in traffic and hope to see flying cars, […] The post Flying cars are coming to Ras Al Khaimah appeared first on What's On .",
+          "url": "https://whatson.ae/2026/09/flying-car-future-of-the-uae-ras-al-khaimah/",
+          "canonical_url": "https://whatson.ae/2026/09/flying-car-future-of-the-uae-ras-al-khaimah",
+          "published_at": "2026-09-23T09:55:49+00:00",
+          "collected_at": "2026-09-23T10:06:04.732080+00:00",
+          "lang": "en",
+          "image_url": null
+        },
+        {
+          "item_id": "f0f14392387729c893477ed1e87cc1bb234ab76d",
+          "source_id": "tg_uaegeneralnews",
+          "category": "city_gov",
+          "title": "​Новый столичный музей анонсировал программу мероприятий",
+          "summary": "​Новый столичный музей анонсировал программу мероприятий Музей Гуггенхайма в Абу-Даби проведет три мероприятия перед официальным открытием в декабре. https://russianemirates.com/N046051/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/uaegeneralnews/17766",
+          "canonical_url": "https://t.me/uaegeneralnews/17766",
+          "published_at": "2026-09-23T04:05:03+00:00",
+          "collected_at": "2026-09-23T10:06:04.733542+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/WkzUh4GpcvQ0j2YwnNqCxyfCU0daVZUc-gxyfRi10cskmTGnY-3hy_SOhv8wDVt7w6kggexuamVeOIOc0YIToqo035NTHRCeloKDPCMojEh_-DdPESIxDj7thmdPz6XGM3uOukYNrnSMWNBkJAK5bwQFFP0pQ5qpBsk5vLx90k58oPOAwxwneAWCiArIlttKmGCcPNIE4kntNX6VEs5murpyH1V2TMw9kJ8o1kOhhcbiz9gCXVysq9jYTWx4AzHMX0J0-Wi75lgkdxJkpsRqxRO_ZAYIXxMe8XFJgSdmIBQi7bvfjj7kojv3eJPtYkh838X3l6cz48vuTrRyFHgIng.jpg"
+        },
+        {
+          "item_id": "a3e4b99b119fb2762417c79f38543285f552de28",
+          "source_id": "tg_uaegeneralnews",
+          "category": "city_gov",
+          "title": "​В Дубае пройдет первый фестиваль для кудрявых людей",
+          "summary": "​В Дубае пройдет первый фестиваль для кудрявых людей Фестиваль для обладателей вьющихся волос впервые пройдет в Дубае. https://russianemirates.com/N046050/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/uaegeneralnews/17765",
+          "canonical_url": "https://t.me/uaegeneralnews/17765",
+          "published_at": "2026-09-23T03:55:02+00:00",
+          "collected_at": "2026-09-23T10:06:04.733601+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/X5U_SqZ9K6OcPjUUjZIjNZ3laEEIdgNH-0vS-8tzvtMU5lMmq8TxWbmwr1ilSvYvy6SwmV4VeLYdrSBaKYBRi9dooUjp7ePxiEkKSL062FOtXNHUiXHTxVDMhAqa5zv18k3lqFrJMZO3fgyyPJb0SNZZPjMpOtxaGQiSyIm-sMbEd_QfozU2MjhjW5uhAgs_r4KI6CjoCPM6eXZVcEV3s6uvvXHNtGVwh_tPTu69hyIQVNF1YwYjpSTkxBxDjmRKxB-06LPfg6MtjQEwGzIu2Q5huu15AFFmPODyYN5aIfSJ7HrWGv_Yyg-qh-KSXGPIR8Ook2MOmVSokOswGPf9GQ.jpg"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 0,
+        "sources_cited": 2
+      },
+      "approval": {
+        "sent_at": "2026-09-23T10:06:26.988275+00:00",
+        "preview_message_id": 26
       },
       "rewrite_count": 0,
       "publish_key": "",
-      "telegram_file_id": "AgACAgIAAxkDAAMXarOhUQnJHd60MdQsNyluuSil0aUAAjYjaxvmpKFJoExe1rw4iUIBAAMCAAN5AAM9BA"
+      "telegram_file_id": "AgACAgIAAxkDAAMaarOkonkOLFZo8g1gameN-AXO-IgAAk4jaxvmpKFJTR5Euoy0OaEBAAMCAAN5AAM9BA"
     }
   ]
 }

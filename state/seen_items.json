@@ -2634,14 +2634,16 @@
       "source_id": "tg_uaegeneralnews",
       "title_key": "новый столичный музей анонсировал программу мероприятий",
       "url": "https://t.me/uaegeneralnews/17766",
-      "item_id": "f0f14392387729c893477ed1e87cc1bb234ab76d"
+      "item_id": "f0f14392387729c893477ed1e87cc1bb234ab76d",
+      "used_at": "2026-09-23T10:06:24.995948+00:00"
     },
     "57d65a3d90cd6718a294e7beda0dd53ff14c9341": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
       "source_id": "tg_uaegeneralnews",
       "title_key": "в дубае пройдет первый фестиваль для кудрявых людей",
       "url": "https://t.me/uaegeneralnews/17765",
-      "item_id": "a3e4b99b119fb2762417c79f38543285f552de28"
+      "item_id": "a3e4b99b119fb2762417c79f38543285f552de28",
+      "used_at": "2026-09-23T10:06:24.995948+00:00"
     },
     "2f2e995b10f9948690386fbd466dff7dbcaf281f": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
@@ -3476,6 +3478,49 @@
       "title_key": "в дубае на покупку квартиры площадью около 60 м2 рядом с центром потребуется примерно 5 лет среднего дохода",
       "url": "https://t.me/dubaimap/14506",
       "item_id": "733bd22134acb58f807da94cdd668381c40e313a"
+    },
+    "2bbc818da8f52e332e94f873092032123c79876a": {
+      "first_seen_at": "2026-09-23T10:06:04.753916+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "aji group launches new facilities management arm aji fm in saudi arabia to drive the operational",
+      "url": "https://www.zawya.com/en/press-release/companies-news/aji-group-launches-new-facilities-management-arm-aji-fm-in-saudi-arabia-to-drive-the-operational-efficiency-of-assets-1021729",
+      "item_id": "9c13e479e94031151aea64610246facd942da3f3"
+    },
+    "bb7bf2c4d8ae79c9739f436f2994b37910f9c269": {
+      "first_seen_at": "2026-09-23T10:06:04.753916+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "abdullah joins trump meeting with arab leaders at un meeting discussed current regional developments and the situation in the middle east just now 2 m read",
+      "url": "https://gulfnews.com/uae/government/abdullah-bin-zayed-joins-trump-meeting-with-arab-islamic-leaders-on-sidelines-of-un-general-assembly-1.500684960",
+      "item_id": "18ee2a51a430b18310ccc1f04c82305db581e92b"
+    },
+    "69934a70d198900937f66185d3c1a491b24d50ed": {
+      "first_seen_at": "2026-09-23T10:06:04.753916+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sheikh abdullah meets foreign ministers in new york 52m ago 2 m read",
+      "url": "https://gulfnews.com/uae/government/sheikh-abdullah-meets-foreign-ministers-senior-officials-in-new-york-1.500684901",
+      "item_id": "840ff01018b26d5518be734d9c957d73a70ed77b"
+    },
+    "34225ef7c52424d53e10f1f319e71f0899c65197": {
+      "first_seen_at": "2026-09-23T10:06:04.753916+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "what uae taught this 15 year old about sustainability 54m ago 5 m read",
+      "url": "https://gulfnews.com/uae/people/what-being-born-and-raised-in-the-uae-taught-this-15-year-old-about-education-and-sustainability-1.500684859",
+      "item_id": "dff0df627db0fb76affb56b3de73cb408c3d31d8"
+    },
+    "08a5fa7a0a972f451f25bf214215d60ba6e7f8b4": {
+      "first_seen_at": "2026-09-23T10:06:04.753916+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai s etihad rail station takes shape ahead of launch 1h ago 4 m read",
+      "url": "https://gulfnews.com/living-in-uae/transport/etihad-rail-dubai-abu-dhabi-al-yalayis-station-1.500684826",
+      "item_id": "afe651e23f8cf8cdcdf5ffc46866922a160edbc3"
+    },
+    "393c557f8e3f2bf136a9a7a22365445ec0cb77a6": {
+      "first_seen_at": "2026-09-23T10:06:04.753916+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "flying cars are coming to ras al khaimah",
+      "url": "https://whatson.ae/2026/09/flying-car-future-of-the-uae-ras-al-khaimah",
+      "item_id": "93120327b26f8474609b40fe8b0b487fa698db68",
+      "used_at": "2026-09-23T10:06:24.995948+00:00"
     }
   }
 }

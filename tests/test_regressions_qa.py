@@ -904,9 +904,12 @@ def test_approval_confirmation_names_the_dubai_slot(settings, monkeypatch):
     monkeypatch.setattr(state, "save", lambda *a, **k: None)
     client = _ChatClient([_callback_update(1, "ok", "market_pulse-abc123", from_id="42")])
     approve.poll_once(settings, client=client, queue=queue, persist=False)
-    assert queue["posts"][0]["status"] == "approved"
+    post = queue["posts"][0]
+    assert post["status"] == "approved"
+    # the slot may have moved to the earliest free one; the message names it
+    when = approve.dubai_time(post["slot_at"])
     texts = [c[1] for c in client.calls if c[0] == "text"]
-    assert any("24.09 в 09:30" in t and "одобрен" in t for t in texts)
+    assert any(when in t and "одобрен" in t for t in texts), texts
 
 
 def test_rewrite_after_approval_is_explained_and_preview_says_to_approve_again(settings, monkeypatch):

@@ -967,3 +967,23 @@ def test_long_preview_is_not_cut_by_the_caption_limit(settings, tmp_path, monkey
     # a reply to either message edits this post
     assert approve._post_for_reply(queue, {"reply_to_message": {"message_id": 78}}) is post
     assert approve._post_for_reply(queue, {"reply_to_message": {"message_id": 77}}) is post
+
+
+def test_approval_moves_the_post_to_the_earliest_free_slot(settings, monkeypatch):
+    """Was: approved on the 23rd, slot on the 25th, tonight's slot empty."""
+    from pipeline import approve, state
+
+    queue = _queue()
+    post = queue["posts"][0]
+    post["slot_at"] = "2030-01-10T15:30:00+00:00"
+    other = {**post, "post_id": "x-2", "status": "approved", "slot_at": None, "approval": {}}
+    queue["posts"].append(other)
+    monkeypatch.setattr(state, "save", lambda *a, **k: None)
+    client = _ChatClient([_callback_update(1, "ok", "market_pulse-abc123", from_id="42")])
+    approve.poll_once(settings, client=client, queue=queue, persist=False)
+    assert post["status"] == "approved"
+    assert post["slot_at"] < "2030-01-10", post["slot_at"]
+    # the next approval must not land on the same slot
+    other["slot_at"] = post["slot_at"]
+    from pipeline import postqueue
+    assert postqueue.earliest_free_slot(queue, exclude_post_id="none") > post["slot_at"]

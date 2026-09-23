@@ -26,6 +26,9 @@ DUBAI = ZoneInfo(TIMEZONE)
 SLOTS = ("09:30", "19:30")
 
 ACTIVE_STATUSES = {"draft", "queued", "approved", "postponed"}
+# Statuses whose slot is really booked: a queued draft only proposes a slot,
+# an approved post owns it.
+BOOKED_STATUSES = {"approved", "postponed"}
 
 
 def next_slots(count: int, *, now: datetime | None = None) -> list[datetime]:
@@ -52,6 +55,23 @@ def load_queue() -> dict[str, Any]:
 
 def save_queue(queue: dict[str, Any]) -> None:
     state.save("queue.json", queue)
+
+
+def earliest_free_slot(queue: dict[str, Any], *, exclude_post_id: str | None = None,
+                       now: datetime | None = None) -> str:
+    """ISO of the first upcoming slot no approved post already owns.
+
+    An approved post goes out at the next opportunity, not at the slot the
+    draft was parked on days ago: the Dubizzle booking news was approved on
+    the 23rd with a slot on the 25th while tonight's slot stood empty.
+    """
+    taken = {p.get("slot_at") for p in queue.get("posts") or []
+             if p.get("status") in BOOKED_STATUSES and p.get("post_id") != exclude_post_id}
+    for slot in next_slots(30, now=now):
+        iso = slot.isoformat()
+        if iso not in taken:
+            return iso
+    return next_slots(1, now=now)[0].isoformat()
 
 
 def enqueue(drafts: list[PostDraft], *, persist: bool = True, now: datetime | None = None) -> dict[str, Any]:

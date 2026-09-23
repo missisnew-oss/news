@@ -355,6 +355,11 @@ def _apply_update(settings: Settings, client: TelegramClient, queue: dict[str, A
             },
         )
         applied = status
+        if status == "approved":
+            # Out at the next free slot, not at the one the draft was parked on.
+            earliest = postqueue.earliest_free_slot(queue, exclude_post_id=post_id)
+            if not post.get("slot_at") or str(post.get("slot_at")) > earliest:
+                post["slot_at"] = earliest
 
     _ack(client, settings, callback, f"Принято: {APPLIED_TEXT.get(applied, applied)}")
     note = APPLIED_TEXT.get(applied, applied)

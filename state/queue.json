@@ -1190,8 +1190,8 @@
     {
       "post_id": "dubai_life-6c38c99632cf",
       "rubric": "dubai_life",
-      "title": "В ОАЭ наказывают за поддельные дипломы",
-      "body": "Если вы подтверждаете образование для работы или визы, эта новость вас касается.\n\nСуд в ОАЭ назначил наказание за подделку дипломов: до 3 лет заключения и штраф до 30 тысяч дирхамов.\n\nЧто это значит для вас: при найме и оформлении документов диплом проверяют по официальным каналам. Копию с ошибками или «ускоренное» подтверждение через посредника лучше не использовать.\n\nСохраните — пригодится при переезде.",
+      "title": "За поддельный диплом в ОАЭ — до 3 лет и штраф до 30 тысяч дирхамов",
+      "body": "Суд в ОАЭ обозначил цену красивой строчки в резюме: до трёх лет заключения и штраф до 30 тысяч AED.\n\nКасается это не только тех, кто «рисует» диплом. Документ об образовании нужен для рабочей визы, для оформления многих специальностей, для школ и лицензий. Проверяют его при аттестации, и делают это внимательно.\n\nНапомню, что подлинный диплом всё равно проходит легализацию — дольше, зато без суда.\n\nМоя ставка: проверок будет только больше. Если бумаги в порядке, вас это не коснётся.\n\nСохраните — пригодится при переезде.",
       "hashtags": [
         "#дубай",
         "#оаэ",
@@ -1200,9 +1200,9 @@
       "cta": "Сохраните — пригодится при переезде.",
       "image": {
         "mode": "stock",
-        "headline": "Проверка диплома в ОАЭ: чем рискуете",
+        "headline": "Поддельный диплом в ОАЭ: чем это грозит",
         "accent": "30 000 AED",
-        "stock_query": "university diploma documents desk office"
+        "stock_query": "university diploma documents desk stamp"
       },
       "sources": [
         {
@@ -1213,8 +1213,8 @@
       ],
       "facts": [
         {
-          "claim": "Наказание за подделку дипломов в ОАЭ — срок заключения",
-          "value": "до 3 лет",
+          "claim": "Наказание за подделку дипломов в ОАЭ",
+          "value": "до 3 лет заключения",
           "source_url": "https://t.me/russianemiratesnews/28143",
           "confidence": "single_source",
           "sources": [
@@ -1222,8 +1222,8 @@
           ]
         },
         {
-          "claim": "Наказание за подделку дипломов в ОАЭ — штраф",
-          "value": "до 30 000 дирхамов",
+          "claim": "Штраф за подделку дипломов",
+          "value": "до 30 000 AED",
           "source_url": "https://t.me/russianemiratesnews/28143",
           "confidence": "single_source",
           "sources": [
@@ -1238,24 +1238,24 @@
         "no_verbatim_copy": true,
         "fits_telegram_limit": true
       },
-      "length_chars": 408,
+      "length_chars": 524,
       "needs_separate_text": false,
-      "status": "rewrite",
-      "created_at": "2026-09-23T09:25:19.331062+00:00",
+      "status": "queued",
+      "created_at": "2026-09-23T11:14:37.764706+00:00",
       "slot_at": "2026-09-26T05:30:00+00:00",
-      "image_path": "/home/runner/work/news/news/assets/generated/light-be9e95841a65.png",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-722fc4efdf6a.png",
       "image_meta": {
         "provider": "own_card",
         "license": "собственная графика канала",
         "author": "канал",
         "source_url": "",
-        "headline": "Проверка диплома в ОАЭ: чем рискуете",
+        "headline": "Поддельный диплом в ОАЭ: чем это грозит",
         "accent": "30 000 AED",
         "tag_left": "ДУБАЙ",
         "tag_right": "#ЖИЗНЬВДУБАЕ",
         "background": "light",
         "card": "light",
-        "card_path": "/home/runner/work/news/news/assets/generated/photo-3218d72f3bf2.png"
+        "card_path": "/home/runner/work/news/news/assets/generated/light-722fc4efdf6a.png"
       },
       "item_ids": [
         "d97067289007eb6d49a9a2576760d135910b81e8",
@@ -1307,74 +1307,50 @@
         "passed": true,
         "errors": [],
         "warnings": [],
-        "numbers_checked": 1,
+        "numbers_checked": 2,
         "sources_cited": 1
       },
       "approval": {
-        "sent_at": null,
-        "action": "redo",
-        "requested_at": "2026-09-23T11:12:55.419040+00:00",
-        "instruction": "Новый голос канала (версия 4, prompts/system_tone.md): контекст «напомню, что…», своё мнение «моя ставка», одна сухая ирония про рынок; просто и коротко."
+        "sent_at": "2026-09-23T11:16:15.802168+00:00",
+        "preview_message_id": 38
       },
-      "rewrite_count": 0,
+      "rewrite_count": 1,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMYarOhvjDrwXpxU-Z_cQIMI_AyGMcAAjojaxvmpKFJy7mQpp7uBMQBAAMCAAN5AAM9BA"
     },
     {
       "post_id": "dubai_life-4d3b4af50554",
       "rubric": "dubai_life",
-      "title": "Поезд Дубай — Абу-Даби: билеты уже продают",
-      "body": "Две городские новости, которые стоит держать в голове.\n\n— Продажа билетов на железнодорожный рейс между Дубаем и Абу-Даби открыта.\n— В Кальбе на восточном побережье Шарджи одобрили новое озеро Al Freish с водопадами и прогулочными зонами, площадь — 51 200 кв. м. Дату открытия пока не называли.\n\nПоезд — это про повседневность: поездки в Абу-Даби перестанут быть событием на полдня. Озеро — вариант для выходных, но ждать придётся.\n\nЕсли уже брали билет — напишите в комментариях, как впечатления.",
+      "title": "Билеты на поезд Дубай — Абу-Даби уже продают",
+      "body": "В ОАЭ открыли продажу билетов на железнодорожный рейс между Дубаем и Абу-Даби.\n\nНапомню, что до сих пор выбор между двумя эмиратами был простой: своя машина или автобус. Теперь появился третий вариант, и он не зависит от пробок на трассе.\n\nЧто это значит для вас: если вы регулярно мотаетесь в Абу-Даби по работе или к семье, есть смысл сразу посмотреть расписание и попробовать первые рейсы.\n\nМоя ставка: на маршрут поедут не только те, кому надо, но и все, кому просто любопытно. Первые недели вагоны будут полными.\n\nЕсли уже взяли билет — напишите в комментариях, как впечатления.",
       "hashtags": [
         "#дубай",
         "#оаэ",
-        "#жизньвдубае"
+        "#жизньвдубае",
+        "#транспорт"
       ],
-      "cta": "Если уже брали билет — напишите в комментариях, как впечатления.",
+      "cta": "Если уже взяли билет — напишите в комментариях, как впечатления.",
       "image": {
         "mode": "stock",
-        "headline": "Поезд Дубай — Абу-Даби и новое озеро в Кальбе",
+        "headline": "Поезд Дубай — Абу-Даби: билеты в продаже",
         "accent": "",
-        "stock_query": "uae train station modern railway desert"
+        "stock_query": "modern passenger train station uae desert"
       },
       "sources": [
         {
           "source_id": "tg_uaegeneralnews",
           "title": "Билеты на ЖД-рейс из Дубая в Абу-Даби поступили в продажу",
           "url": "https://t.me/uaegeneralnews/17767"
-        },
-        {
-          "source_id": "whatson_ae_feed",
-          "title": "Al Freish Lake: everything we know about Kalba's new waterfall lake in Sharjah",
-          "url": "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah/"
         }
       ],
       "facts": [
         {
-          "claim": "Площадь нового озера Al Freish в Кальбе",
-          "value": "51 200 кв. м",
-          "source_url": "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah/",
-          "confidence": "single_source",
-          "sources": [
-            "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah/"
-          ]
-        },
-        {
-          "claim": "Открыта продажа билетов на поезд Дубай — Абу-Даби",
+          "claim": "Открыта продажа билетов на железнодорожный рейс Дубай — Абу-Даби",
           "value": "продажа открыта",
           "source_url": "https://t.me/uaegeneralnews/17767",
           "confidence": "single_source",
           "sources": [
             "https://t.me/uaegeneralnews/17767"
-          ]
-        },
-        {
-          "claim": "Дата открытия озера не объявлена",
-          "value": "нет даты",
-          "source_url": "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah/",
-          "confidence": "single_source",
-          "sources": [
-            "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah/"
           ]
         }
       ],
@@ -1385,24 +1361,24 @@
         "no_verbatim_copy": true,
         "fits_telegram_limit": true
       },
-      "length_chars": 497,
+      "length_chars": 583,
       "needs_separate_text": false,
-      "status": "rewrite",
-      "created_at": "2026-09-23T10:05:34.992957+00:00",
+      "status": "queued",
+      "created_at": "2026-09-23T11:14:51.591940+00:00",
       "slot_at": "2026-09-23T15:30:00+00:00",
-      "image_path": "/home/runner/work/news/news/assets/generated/light-feea89f02eaf.png",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-f98bab1f1fe2.png",
       "image_meta": {
         "provider": "own_card",
         "license": "собственная графика канала",
         "author": "канал",
         "source_url": "",
-        "headline": "Поезд Дубай — Абу-Даби и новое озеро в Кальбе",
+        "headline": "Поезд Дубай — Абу-Даби: билеты в продаже",
         "accent": "",
         "tag_left": "АБУ-ДАБИ",
         "tag_right": "#ЖИЗНЬВДУБАЕ",
         "background": "light",
         "card": "light",
-        "card_path": "/home/runner/work/news/news/assets/generated/light-feea89f02eaf.png"
+        "card_path": "/home/runner/work/news/news/assets/generated/light-f98bab1f1fe2.png"
       },
       "item_ids": [
         "c3ea3345038666cf7159e1733e9b872cd49100e2",
@@ -1454,16 +1430,14 @@
         "passed": true,
         "errors": [],
         "warnings": [],
-        "numbers_checked": 1,
-        "sources_cited": 2
+        "numbers_checked": 0,
+        "sources_cited": 1
       },
       "approval": {
-        "sent_at": null,
-        "action": "redo",
-        "requested_at": "2026-09-23T11:12:55.419074+00:00",
-        "instruction": "Новый голос канала (версия 4, prompts/system_tone.md): контекст «напомню, что…», своё мнение «моя ставка», одна сухая ирония про рынок; просто и коротко."
+        "sent_at": "2026-09-23T11:16:16.130670+00:00",
+        "preview_message_id": 39
       },
-      "rewrite_count": 1,
+      "rewrite_count": 2,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMXarOhUQnJHd60MdQsNyluuSil0aUAAjYjaxvmpKFJoExe1rw4iUIBAAMCAAN5AAM9BA"
     },
@@ -1622,35 +1596,54 @@
     {
       "post_id": "meme-79c5efe5c1fb",
       "rubric": "meme",
-      "title": "Астрономическое лето в Дубае закончилось 23 сентября",
-      "body": "Лето в ОАЭ официально закончилось: наступило осеннее равноденствие. Прохлада, правда, придёт не сразу.\n\nОжидание: лето закончилось, выключаю кондиционер\nРеальность: кондиционер и счёт за DEWA об этом не знают\n\nУ меня так каждый сентябрь.\n\n#дубай #мем #жизньвдубае",
+      "title": "Астрономическое лето в Дубае заканчивается 23 сентября в 4:05 утра",
+      "body": "Лето в Дубае официально закончилось сегодня в 4:05 утра. Напомню, что прохлада приходит позже: в сентябре днём температура только опускается ниже +39°C.\n\nОжидание: осень наступила в 4:05 утра\nРеальность: кондиционер об этом не знает\n\nМоя ставка: окна откроем в ноябре.",
       "hashtags": [
         "#дубай",
         "#мем",
-        "#жизньвдубае"
+        "#погода"
       ],
-      "cta": "",
+      "cta": "Напишите, если у вас так же",
       "image": {
         "mode": "meme",
         "meme": {
           "format": "expectation",
           "lines": [
-            "Лето закончилось, выключаю кондиционер",
-            "Кондиционер и счёт за DEWA об этом не знают"
+            "Осень наступила в 4:05 утра",
+            "Кондиционер об этом не знает"
           ]
         },
-        "headline": "Лето в Дубае официально закончилось 23 сентября",
+        "headline": "Лето в Дубае закончилось 23 сентября в 4:05 утра",
         "accent": "",
-        "stock_query": "dubai apartment air conditioner window"
+        "stock_query": "dubai skyline autumn morning sun"
       },
       "sources": [
         {
           "source_id": "tg_dubaihighlights",
-          "title": "Лето в Дубае официально закончится 23 сентября",
+          "title": "Лето в Дубае официально закончится 23 сентября в 4:05 утра",
           "url": "https://t.me/dubaihighlights/6196"
         }
       ],
-      "facts": [],
+      "facts": [
+        {
+          "claim": "Осеннее равноденствие и конец астрономического лета",
+          "value": "23 сентября, 4:05 утра",
+          "source_url": "https://t.me/dubaihighlights/6196",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubaihighlights/6196"
+          ]
+        },
+        {
+          "claim": "Дневная температура в сентябре постепенно опустится",
+          "value": "ниже +39°C",
+          "source_url": "https://t.me/dubaihighlights/6196",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubaihighlights/6196"
+          ]
+        }
+      ],
       "self_check": {
         "all_numbers_have_source": true,
         "no_guaranteed_returns": true,
@@ -1658,29 +1651,29 @@
         "no_verbatim_copy": true,
         "fits_telegram_limit": true
       },
-      "length_chars": 263,
+      "length_chars": 268,
       "needs_separate_text": false,
-      "status": "rewrite",
-      "created_at": "2026-09-23T10:16:56.254979+00:00",
+      "status": "queued",
+      "created_at": "2026-09-23T11:15:03.816577+00:00",
       "slot_at": "2026-09-24T05:30:00+00:00",
-      "image_path": "/home/runner/work/news/news/assets/generated/meme-7ddf86a4fe68.png",
+      "image_path": "/home/runner/work/news/news/assets/generated/meme-89d4604e78bd.png",
       "image_meta": {
         "provider": "own_card",
         "license": "собственная графика канала",
         "author": "канал",
         "source_url": "",
-        "headline": "Лето в Дубае официально закончилось 23 сентября",
+        "headline": "Лето в Дубае закончилось 23 сентября в 4:05 утра",
         "accent": "",
         "tag_left": "ДУБАЙ",
         "tag_right": "#МЕМ",
         "background": "meme",
         "card": "meme",
-        "card_path": "/home/runner/work/news/news/assets/generated/meme-7ddf86a4fe68.png",
+        "card_path": "/home/runner/work/news/news/assets/generated/meme-89d4604e78bd.png",
         "meme": {
           "format": "expectation",
           "lines": [
-            "Лето закончилось, выключаю кондиционер",
-            "Кондиционер и счёт за DEWA об этом не знают"
+            "Осень наступила в 4:05 утра",
+            "Кондиционер об этом не знает"
           ]
         }
       },
@@ -1734,34 +1727,32 @@
         "passed": true,
         "errors": [],
         "warnings": [],
-        "numbers_checked": 1,
+        "numbers_checked": 5,
         "sources_cited": 1
       },
       "approval": {
-        "sent_at": null,
-        "action": "redo",
-        "requested_at": "2026-09-23T11:12:55.419077+00:00",
-        "instruction": "Новый голос канала (версия 4, prompts/system_tone.md): контекст «напомню, что…», своё мнение «моя ставка», одна сухая ирония про рынок; просто и коротко."
+        "sent_at": "2026-09-23T11:16:16.450007+00:00",
+        "preview_message_id": 40
       },
-      "rewrite_count": 0,
+      "rewrite_count": 1,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMgarOnGSi4ni7Az8ZRUj8I8jqdaMgAAmcjaxvmpKFJVqCpF7OcRkcBAAMCAAN5AAM9BA"
     },
     {
       "post_id": "rules_and_laws-bd375773cd20",
       "rubric": "rules_and_laws",
-      "title": "В ОАЭ проверяют компании на фиктивную эмиратизацию",
-      "body": "В ОАЭ проверяют компании на фиктивную эмиратизацию. За первое полугодие 2026 года — 377 случаев в 266 компаниях.\n\nСхема: гражданина оформляют ради квоты, но он не работает. Проверяют через ИИ и анализ данных.\n\nЧто делать владельцам компаний:\n— проверить, что сотрудники по квоте реально работают\n— хранить договоры и ведомости по зарплате\n\nШтрафы доходят до 500 000 AED, возможен возврат выплат Nafis.\n\nСохраните пост — правила меняются.",
+      "title": "377 случаев фиктивной эмиратизации: что проверяют",
+      "body": "377 случаев фиктивной эмиратизации за первое полугодие 2026 — в 266 частных компаниях.\n\nСхема простая: гражданина ОАЭ держат в штате ради квоты, а работает он только на бумаге. Теперь такое ищут через ИИ и цифровой мониторинг.\n\nКасается владельцев компаний с квотой по эмиратизации. Штраф — до 500 000 AED, плюс риск потерять поддержку Nafis и вернуть выплаты.\n\nМоя ставка: проверок будет больше.\n\nСохраните пост — правила меняются, а порядок шагов обычно остаётся.",
       "hashtags": [
         "#дубай",
         "#оаэ",
         "#правила",
         "#бизнес"
       ],
-      "cta": "Сохраните пост — правила меняются.",
+      "cta": "Сохраните пост — правила меняются, а порядок шагов обычно остаётся.",
       "image": {
         "mode": "card",
-        "headline": "Проверки по эмиратизации в ОАЭ",
+        "headline": "Проверки фиктивной эмиратизации",
         "accent": "377 случаев",
         "stock_query": "dubai government documents passport visa desk"
       },
@@ -1779,8 +1770,18 @@
       ],
       "facts": [
         {
-          "claim": "Выявленные случаи фиктивной эмиратизации за первое полугодие 2026 года",
-          "value": "377 случаев в 266 частных компаниях",
+          "claim": "Выявлено случаев фиктивной эмиратизации за первое полугодие 2026",
+          "value": "377",
+          "source_url": "https://t.me/dubai_media/5461",
+          "confidence": "confirmed",
+          "sources": [
+            "https://t.me/dubai_media/5461",
+            "https://t.me/dubaihighlights/6197"
+          ]
+        },
+        {
+          "claim": "Число частных компаний с нарушениями",
+          "value": "266",
           "source_url": "https://t.me/dubai_media/5461",
           "confidence": "confirmed",
           "sources": [
@@ -1796,15 +1797,6 @@
           "sources": [
             "https://t.me/dubaihighlights/6197"
           ]
-        },
-        {
-          "claim": "Риск потери поддержки Nafis и возврата ранее полученных выплат",
-          "value": "возврат выплат",
-          "source_url": "https://t.me/dubaihighlights/6197",
-          "confidence": "single_source",
-          "sources": [
-            "https://t.me/dubaihighlights/6197"
-          ]
         }
       ],
       "self_check": {
@@ -1814,24 +1806,24 @@
         "no_verbatim_copy": true,
         "fits_telegram_limit": true
       },
-      "length_chars": 437,
+      "length_chars": 465,
       "needs_separate_text": false,
-      "status": "rewrite",
-      "created_at": "2026-09-23T10:46:10.635862+00:00",
+      "status": "queued",
+      "created_at": "2026-09-23T11:15:23.400665+00:00",
       "slot_at": "2026-09-24T15:30:00+00:00",
-      "image_path": "/home/runner/work/news/news/assets/generated/light-6a1270d90d16.png",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-a69a8c661d61.png",
       "image_meta": {
         "provider": "own_card",
         "license": "собственная графика канала",
         "author": "канал",
         "source_url": "",
-        "headline": "Проверки по эмиратизации в ОАЭ",
+        "headline": "Проверки фиктивной эмиратизации",
         "accent": "377 случаев",
         "tag_left": "ДУБАЙ",
         "tag_right": "#ПРАВИЛА",
         "background": "light",
         "card": "light",
-        "card_path": "/home/runner/work/news/news/assets/generated/light-6a1270d90d16.png"
+        "card_path": "/home/runner/work/news/news/assets/generated/light-a69a8c661d61.png"
       },
       "item_ids": [
         "bdfef3f6d6eec287c7da0293fdd74f4d8e0cd31b",
@@ -1897,47 +1889,45 @@
         "passed": true,
         "errors": [],
         "warnings": [],
-        "numbers_checked": 4,
+        "numbers_checked": 5,
         "sources_cited": 2
       },
       "approval": {
-        "sent_at": null,
-        "action": "redo",
-        "requested_at": "2026-09-23T11:12:55.419079+00:00",
-        "instruction": "Новый голос канала (версия 4, prompts/system_tone.md): контекст «напомню, что…», своё мнение «моя ставка», одна сухая ирония про рынок; просто и коротко."
+        "sent_at": "2026-09-23T11:16:16.775706+00:00",
+        "preview_message_id": 41
       },
-      "rewrite_count": 0,
+      "rewrite_count": 1,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMharOuBLsyQe9WFeJYPCCXwKXCbkEAApIjaxvmpKFJOgaaAhNF5AcBAAMCAAN5AAM9BA"
     },
     {
       "post_id": "dubai_life-323c679c05b5",
       "rubric": "dubai_life",
-      "title": "Квартира в Дубае — около 5 лет среднего дохода",
-      "body": "Сравнение доступности жилья по городам. Для Дубая цифра выглядит спокойно.\n\nКвартира примерно 60 м² недалеко от центра:\n— Дубай — около 5 лет среднего дохода квалифицированного специалиста\n— Лондон — 11 лет\n— Гонконг — 15 лет\n\nЧто это значит: при сопоставимой зарплате порог входа в собственное жильё здесь ниже, чем в других крупных центрах. Это не про рост цен, а про то, за сколько лет доход покрывает покупку.\n\nСохраните — пригодится при переезде.",
+      "title": "Квартира в Дубае — примерно 5 лет среднего дохода",
+      "body": "Сравнение доступности жилья снова не в пользу Лондона.\n\nНа квартиру около 60 м² недалеко от центра квалифицированному специалисту в Дубае нужно примерно 5 лет среднего дохода. В Лондоне — 11 лет, в Гонконге — 15.\n\nНапомню, что считается это грубо: доход до налогов, без ипотеки и без учёта сервисных сборов. Но порядок цифр честный.\n\nМоя ставка: этот разрыв и держит поток переезжающих. Правда, «недалеко от центра» в Дубае каждый год трактуется всё шире.\n\nСохраните — пригодится при разговоре с родными о переезде.",
       "hashtags": [
         "#дубай",
-        "#недвижимость",
-        "#жизньвоаэ"
+        "#жизньвдубае",
+        "#недвижимость"
       ],
-      "cta": "Сохраните — пригодится при переезде.",
+      "cta": "Сохраните — пригодится при разговоре с родными о переезде.",
       "image": {
         "mode": "stock",
         "headline": "Сколько лет дохода стоит квартира в Дубае",
         "accent": "5 лет",
-        "stock_query": "dubai skyline apartment buildings daytime"
+        "stock_query": "dubai skyline apartments residential downtown"
       },
       "sources": [
         {
           "source_id": "tg_dubaimap",
-          "title": "В Дубае на покупку квартиры около 60 м² рядом с центром потребуется примерно 5 лет среднего дохода",
+          "title": "В Дубае на покупку квартиры около 60 м² рядом с центром нужно около 5 лет дохода",
           "url": "https://t.me/dubaimap/14506"
         }
       ],
       "facts": [
         {
-          "claim": "Срок накопления на квартиру около 60 м² рядом с центром Дубая",
-          "value": "примерно 5 лет среднего дохода квалифицированного специалиста",
+          "claim": "Срок накопления на квартиру ~60 м² рядом с центром в Дубае",
+          "value": "около 5 лет среднего дохода",
           "source_url": "https://t.me/dubaimap/14506",
           "confidence": "single_source",
           "sources": [
@@ -1945,7 +1935,7 @@
           ]
         },
         {
-          "claim": "Тот же показатель для Лондона",
+          "claim": "То же сравнение по Лондону",
           "value": "11 лет",
           "source_url": "https://t.me/dubaimap/14506",
           "confidence": "single_source",
@@ -1954,7 +1944,7 @@
           ]
         },
         {
-          "claim": "Тот же показатель для Гонконга",
+          "claim": "То же сравнение по Гонконгу",
           "value": "15 лет",
           "source_url": "https://t.me/dubaimap/14506",
           "confidence": "single_source",
@@ -1970,10 +1960,10 @@
         "no_verbatim_copy": true,
         "fits_telegram_limit": true
       },
-      "length_chars": 451,
+      "length_chars": 515,
       "needs_separate_text": false,
-      "status": "rewrite",
-      "created_at": "2026-09-23T10:46:26.483200+00:00",
+      "status": "queued",
+      "created_at": "2026-09-23T11:15:38.940242+00:00",
       "slot_at": "2026-09-25T05:30:00+00:00",
       "image_path": "/home/runner/work/news/news/assets/generated/light-ec5fc4b36a31.png",
       "image_meta": {
@@ -2043,31 +2033,29 @@
         "sources_cited": 1
       },
       "approval": {
-        "sent_at": null,
-        "action": "redo",
-        "requested_at": "2026-09-23T11:12:55.419081+00:00",
-        "instruction": "Новый голос канала (версия 4, prompts/system_tone.md): контекст «напомню, что…», своё мнение «моя ставка», одна сухая ирония про рынок; просто и коротко."
+        "sent_at": "2026-09-23T11:16:17.097392+00:00",
+        "preview_message_id": 42
       },
-      "rewrite_count": 0,
+      "rewrite_count": 1,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMiarOuBasoochv2XdxGUOCLDZtIxsAApMjaxvmpKFJGcTNKLoJuFUBAAMCAAN5AAM9BA"
     },
     {
       "post_id": "dubai_life-417a053a2005",
       "rubric": "dubai_life",
-      "title": "Dubizzle добавил бронирование посуточного жилья",
-      "body": "Теперь квартиру, дом или виллу на короткий срок можно забронировать прямо на Dubizzle.\n\nЧто изменилось:\n— раньше площадка работала как доска объявлений: вы находили жильё и отдельно договаривались с агентом или владельцем;\n— теперь выбор и бронирование проходят внутри платформы.\n\nЧто это значит для вас: меньше переписок и меньше шансов нарваться на несуществующий объект. Я бы всё равно сверяла условия оплаты и правила отмены до подтверждения.\n\nСохраните — пригодится при переезде.",
+      "title": "Dubizzle теперь бронирует посуточное жильё напрямую",
+      "body": "На Dubizzle появилось прямое бронирование посуточного жилья: квартиру, дом или виллу можно забронировать прямо на площадке.\n\nНапомню, что раньше это была доска объявлений: вы находили вариант, потом отдельно списывались с агентом или владельцем и договаривались вручную.\n\nЧто меняется для вас: меньше переписок и меньше шансов, что «уже сдано» всплывёт после трёх дней переговоров.\n\nМоя ставка: краткосрочная аренда в городе окончательно уходит в пару приложений, а владельцы квартир будут считать комиссию площадок внимательнее, чем свой ипотечный платёж.\n\nЕсли у вас уже был опыт брони там — напишите в комментариях, дополню.",
       "hashtags": [
         "#дубай",
-        "#жизньвдубае",
-        "#аренда"
+        "#аренда",
+        "#жизньвдубае"
       ],
-      "cta": "Сохраните — пригодится при переезде.",
+      "cta": "Если у вас уже был опыт брони там — напишите в комментариях, дополню.",
       "image": {
         "mode": "stock",
-        "headline": "Посуточная аренда теперь бронируется онлайн",
+        "headline": "Посуточная аренда: бронь без переписок",
         "accent": "",
-        "stock_query": "dubai apartment booking online short stay"
+        "stock_query": "dubai apartment booking phone short term rental"
       },
       "sources": [
         {
@@ -2079,7 +2067,16 @@
       "facts": [
         {
           "claim": "Dubizzle запустил прямое бронирование посуточного жилья на платформе",
-          "value": "без цифр",
+          "value": "квартиры, дома, виллы",
+          "source_url": "https://t.me/dubaimap/14507",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubaimap/14507"
+          ]
+        },
+        {
+          "claim": "Ранее сервис работал как площадка объявлений с отдельной связью с агентом или владельцем",
+          "value": "было раньше",
           "source_url": "https://t.me/dubaimap/14507",
           "confidence": "single_source",
           "sources": [
@@ -2094,24 +2091,24 @@
         "no_verbatim_copy": true,
         "fits_telegram_limit": true
       },
-      "length_chars": 484,
+      "length_chars": 627,
       "needs_separate_text": false,
-      "status": "rewrite",
-      "created_at": "2026-09-23T11:04:13.159069+00:00",
+      "status": "queued",
+      "created_at": "2026-09-23T11:15:53.032254+00:00",
       "slot_at": "2026-09-25T15:30:00+00:00",
-      "image_path": "/home/runner/work/news/news/assets/generated/light-6342ef70a6a6.png",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-d7e37b8aa3e9.png",
       "image_meta": {
         "provider": "own_card",
         "license": "собственная графика канала",
         "author": "канал",
         "source_url": "",
-        "headline": "Посуточная аренда теперь бронируется онлайн",
+        "headline": "Посуточная аренда: бронь без переписок",
         "accent": "",
         "tag_left": "ДУБАЙ",
         "tag_right": "#ЖИЗНЬВДУБАЕ",
         "background": "light",
         "card": "light",
-        "card_path": "/home/runner/work/news/news/assets/generated/light-6342ef70a6a6.png"
+        "card_path": "/home/runner/work/news/news/assets/generated/light-d7e37b8aa3e9.png"
       },
       "item_ids": [
         "fc718609f5db3d833d81a5b6ec41b48a29e2f993",
@@ -2162,19 +2159,131 @@
       "gate": {
         "passed": true,
         "errors": [],
+        "warnings": [
+          "Пост заметно длиннее целевых 450 символов (623)"
+        ],
+        "numbers_checked": 0,
+        "sources_cited": 1
+      },
+      "approval": {
+        "sent_at": "2026-09-23T11:16:17.412778+00:00",
+        "preview_message_id": 43
+      },
+      "rewrite_count": 1,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMjarOyO_6bGz80_2gZONY7k3JSYfMAAsIjaxvmpKFJJ9Y1MSWxEQkBAAMCAAN5AAM9BA"
+    },
+    {
+      "post_id": "from_owner-539973a5d6a1",
+      "rubric": "from_owner",
+      "title": "Как не попасть впросак при краткосрочной аренде в Дубае",
+      "body": "Снимаете квартиру на короткий срок — проверьте четыре вещи.\n\n— Хозяин предлагает оплатить напрямую, мимо платформы. Соглашаться не стоит: вне платформы вы теряете защиту и поддержку при споре.\n— Спросите про разрешение DTCM на краткосрочную аренду. Без него вас могут попросить съехать в любой момент.\n— Прочитайте условия отмены. Часто бронь по умолчанию невозвратная.\n— Смотрите на отзывы и даты. Старые фото и накрученный рейтинг — обычное дело.\n\nЯ бы не экономила на этих минутах: скидка за оплату мимо платформы почти всегда дороже выходит.\n\nКак вам такой вариант?",
+      "hashtags": [
+        "#дубай",
+        "#аренда",
+        "#жизньвдубае"
+      ],
+      "cta": "Как вам такой вариант?",
+      "image": {
+        "mode": "card",
+        "headline": "Краткосрочная аренда: что проверить до оплаты",
+        "accent": "",
+        "stock_query": "dubai apartment keys rental booking"
+      },
+      "sources": [
+        {
+          "source_id": "owner_inbox",
+          "title": "материал владельца",
+          "url": "https://t.me/c/inbox/36"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Для краткосрочной аренды объекту нужно разрешение DTCM, иначе арендатора могут выселить",
+          "value": "разрешение DTCM",
+          "source_url": "https://t.me/c/inbox/36",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/c/inbox/36"
+          ]
+        },
+        {
+          "claim": "Оплата мимо платформы лишает защиты и поддержки при споре",
+          "value": "без защиты платформы",
+          "source_url": "https://t.me/c/inbox/36",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/c/inbox/36"
+          ]
+        },
+        {
+          "claim": "Бронирование часто по умолчанию без возврата",
+          "value": "невозвратная бронь",
+          "source_url": "https://t.me/c/inbox/36",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/c/inbox/36"
+          ]
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 569,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-23T11:16:15.240107+00:00",
+      "slot_at": "2026-09-26T15:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-51db893c95a2.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Краткосрочная аренда: что проверить до оплаты",
+        "accent": "",
+        "tag_left": "ДУБАЙ",
+        "tag_right": "#ОТПЕРВОГОЛИЦА",
+        "background": "light",
+        "card": "light",
+        "card_path": "/home/runner/work/news/news/assets/generated/light-51db893c95a2.png"
+      },
+      "item_ids": [
+        "owner-36"
+      ],
+      "source_items": [
+        {
+          "item_id": "owner-36",
+          "source_id": "owner_inbox",
+          "category": "lifestyle",
+          "title": "📍 Если хозяин предлагает оплатить «напрямую, без комиссии» — не соглашайтесь. Как только б",
+          "summary": "Заметка владелицы, написанная боту напрямую.\n\nСообщение владелицы (подпись):\n📍 Если хозяин предлагает оплатить «напрямую, без комиссии» — не соглашайтесь. Как только бронь уходит с платформы, вы теряете всю защиту и поддержку при споре.\n\n📍 Уточните, есть ли у объекта разрешение DTCM на краткосрочную аренду — без него вас могут выселить в любой момент.\n\n📍 Проверьте условия отмены: часто бронирование без возврата по умолчанию.\n\n📍 Смотрите на реальные отзывы и дату публикации — старые фото и накрученный рейтинг встречаются часто.\n\nПять минут проверки — и вы точно не попадёте в неприятную историю.",
+          "url": "https://t.me/c/inbox/36",
+          "canonical_url": "https://t.me/c/inbox/36",
+          "published_at": "2026-09-23T11:13:37.054571+00:00",
+          "collected_at": "2026-09-23T11:15:53.168852+00:00",
+          "lang": "ru",
+          "image_url": null
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
         "warnings": [],
         "numbers_checked": 0,
         "sources_cited": 1
       },
       "approval": {
-        "sent_at": null,
-        "action": "redo",
-        "requested_at": "2026-09-23T11:12:55.419082+00:00",
-        "instruction": "Новый голос канала (версия 4, prompts/system_tone.md): контекст «напомню, что…», своё мнение «моя ставка», одна сухая ирония про рынок; просто и коротко."
+        "sent_at": "2026-09-23T11:16:23.023871+00:00",
+        "preview_message_id": 44
       },
       "rewrite_count": 0,
       "publish_key": "",
-      "telegram_file_id": "AgACAgIAAxkDAAMjarOyO_6bGz80_2gZONY7k3JSYfMAAsIjaxvmpKFJJ9Y1MSWxEQkBAAMCAAN5AAM9BA"
+      "telegram_file_id": "AgACAgIAAxkDAAMsarO1BmclTVg1UrmgTeKqBGiLdQsAAt4jaxvmpKFJLFigIOg1HYkBAAMCAAN5AAM9BA"
     }
   ]
 }

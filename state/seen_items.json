@@ -3756,7 +3756,8 @@
       "source_id": "whatson_ae_feed",
       "title_key": "5 new peak adventure rak attractions coming soon",
       "url": "https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah",
-      "item_id": "4fdc758e116af4620f017dbb91d9f39d97a9dbfc"
+      "item_id": "4fdc758e116af4620f017dbb91d9f39d97a9dbfc",
+      "used_at": "2026-09-23T13:07:25.183115+00:00"
     },
     "071bc8c9baace4925a74813b22888317f5e4b7fd": {
       "first_seen_at": "2026-09-23T12:10:32.684896+00:00",
@@ -3771,6 +3772,90 @@
       "title_key": "оаэ опередили другие страны региона по совокупности показателей цифровой инфраструктуры госуслуг инноваций",
       "url": "https://t.me/dubaimap/14508",
       "item_id": "0426c2d4cf5db326a25412b683c771348f7ef906"
+    },
+    "e5330905b27b5aead7a114577c3578126b9baff1": {
+      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "aji group launches new facilities management arm aji fm in saudi arabia to drive the operational efficiency of assets",
+      "url": "https://www.zawya.com/en/press-release/companies-news/aji-group-launches-new-facilities-management-arm-aji-fm-in-saudi-arabia-to-drive-the-operational-efficiency-of-assets-1021729",
+      "item_id": "9c13e479e94031151aea64610246facd942da3f3"
+    },
+    "117cae232e010ede3f84972b4b609cf461ca6180": {
+      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "more to try dubai midweek dining deals this week from burj khalifa views to homely breakfasts deals for every craving just now 6 m read",
+      "url": "https://gulfnews.com/lifestyle/dubai-midweek-dining-deals-from-sky-high-business-lunches-to-dh10-breakfasts-1.500666943",
+      "item_id": "c977e82e53af88b07d440ac5754d0233b19e508d"
+    },
+    "95f13da22346ad3f24dd5de50472df0887043791": {
+      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "indian storekeeper businessman each win 1m ddf draws 14m ago 3 m read",
+      "url": "https://gulfnews.com/uae/indian-expat-storekeeper-in-abu-dhabi-businessman-in-dubai-win-1m-each-in-dubai-duty-free-draws-1.500685235",
+      "item_id": "9cab905d9132481b37b08bafe3b7224b81244e37"
+    },
+    "e244b58e696a3468b09d34952d7dc30e13892f44": {
+      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "levelup spotlights the next step in career growth 45m ago 4 m read",
+      "url": "https://gulfnews.com/uae/education/gulf-news-levelup-spotlights-the-next-step-in-career-growth-1.500683885",
+      "item_id": "56a2a44f2252a36482bc140ceceeeff1ba38807e"
+    },
+    "c8851f7bc99af716d937fe2e14632e33140618d1": {
+      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "abu dhabi to showcase 100 government ai uses 1h ago 6 m read",
+      "url": "https://gulfnews.com/uae/government/abu-dhabi-to-showcase-100-live-government-ai-uses-at-global-summit-1.500685135",
+      "item_id": "30d70c94cfdd3add4dbbb8cf9a10e8bd0b7fa093"
+    },
+    "9579af71f6e75d1a963521efd5e498ff655f0479": {
+      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sharjah ruler settles dh17 86m debts in 82 cases 2h ago 1 m read",
+      "url": "https://gulfnews.com/uae/government/sharjah-ruler-settles-debts-for-82-cases-totalling-over-dh178-million-1.500684978",
+      "item_id": "788a8dc1327b5fd00779085ec210efbe7f0b8d3e"
+    },
+    "6d178c8323197c76c248fd9589e4f94ed1947dc3": {
+      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "legoland dubai s new season starts on october 7 2h ago 2 m read",
+      "url": "https://gulfnews.com/lifestyle/a-new-miniland-show-and-halloween-legoland-dubais-season-starts-october-7-1.500684990",
+      "item_id": "01793444b2d64489bf5a06ed388ec9ae8ff344e7"
+    },
+    "232b421f8ce0265f3d9c55652c2829f7fb2e8da0": {
+      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "abdullah joins trump meeting with arab leaders at un 2 m read",
+      "url": "https://gulfnews.com/uae/government/abdullah-bin-zayed-joins-trump-meeting-with-arab-islamic-leaders-on-sidelines-of-un-general-assembly-1.500684960",
+      "item_id": "18ee2a51a430b18310ccc1f04c82305db581e92b"
+    },
+    "68ea801827de7706b8323da528c95491310a24f5": {
+      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sheikh abdullah meets foreign ministers in new york 2 m read",
+      "url": "https://gulfnews.com/uae/government/sheikh-abdullah-meets-foreign-ministers-senior-officials-in-new-york-1.500684901",
+      "item_id": "840ff01018b26d5518be734d9c957d73a70ed77b"
+    },
+    "3cb90ad1139d9e0278df68400d35c042c093c3d6": {
+      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "what uae taught this 15 year old about sustainability 5 m read",
+      "url": "https://gulfnews.com/uae/people/what-being-born-and-raised-in-the-uae-taught-this-15-year-old-about-education-and-sustainability-1.500684859",
+      "item_id": "dff0df627db0fb76affb56b3de73cb408c3d31d8"
+    },
+    "27aa574069c5c1db80bbc918ada53f1b512c06a9": {
+      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "inside abu dhabi falcon hospital meet the desert wings of the uae",
+      "url": "https://whatson.ae/2026/09/inside-abu-dhabi-falcon-hospital-meet-the-desert-wings-of-the-uae",
+      "item_id": "707822eb2c477566c98e9f20dc906332ecbac822"
+    },
+    "4461e796c3e4ba0a281b6c582187ddba7696ec14": {
+      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "саудовская аравия представила свой первый электромобиль ceer",
+      "url": "https://t.me/dubaimap/14509",
+      "item_id": "04b6d61df082dc21e9db68da05a95c6c05e7c738"
     }
   }
 }

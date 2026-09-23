@@ -2326,6 +2326,127 @@
       "rewrite_count": 0,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMsarO1BmclTVg1UrmgTeKqBGiLdQsAAt4jaxvmpKFJLFigIOg1HYkBAAMCAAN5AAM9BA"
+    },
+    {
+      "post_id": "dubai_life-65e344dc8edf",
+      "rubric": "dubai_life",
+      "title": "На Джебель Джайс строят 80-километровый маршрут и 20 км виа-ферраты",
+      "body": "🏔 Рас-эль-Хайма расширяет горную инфраструктуру на Джебель Джайс — самой высокой горе ОАЭ. Для тех, кто ездит туда на выходные из Дубая, это заметное обновление.\n\nПланы объявила компания Marjan Lifestyle. Сейчас на горе уже есть Jais Flight (самый длинный зиплайн в мире), спуск Jais Sledder и лагерь Bear Grylls Explorers Camp.\n\nЧто добавят:\n— The Grand Loop — маршрут на 80 км, многодневный, его собирают из уже существующих участков троп;\n— расширенная via ferrata («железная тропа» с тросами и металлическими скобами) — до 20 км, полный проход рассчитан примерно на 5 дней;\n— горные приюты вдоль маршрута, без них такой поход не пройти;\n— новые точки входа и навигация в Wadi Khammed, его называют скрытым оазисом;\n— новые скалолазные маршруты по всей горе.\n\n💡 Сроков открытия в анонсе нет, так что планировать поход на этот сезон рано. Но однодневные тропы и так работают, а к зиме туда ехать комфортнее всего.\n\nЕсли уже ходили по Джайсу — напишите в комментариях, как впечатления.",
+      "hashtags": [
+        "#дубай",
+        "#оаэ",
+        "#жизньвдубае"
+      ],
+      "cta": "Если уже ходили по Джайсу — напишите в комментариях, как впечатления.",
+      "image": {
+        "mode": "stock",
+        "headline": "Джебель Джайс: 80 км троп и новая via ferrata",
+        "accent": "80 км",
+        "stock_query": "Jebel Jais mountain hiking trail UAE"
+      },
+      "sources": [
+        {
+          "source_id": "whatson_ae_feed",
+          "title": "5 new peak adventure RAK attractions coming soon",
+          "url": "https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah/"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Длина маршрута The Grand Loop",
+          "value": "80 км",
+          "source_url": "https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah/",
+          "confidence": "single_source",
+          "sources": [
+            "https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah/"
+          ]
+        },
+        {
+          "claim": "Протяжённость расширенной via ferrata",
+          "value": "до 20 км",
+          "source_url": "https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah/",
+          "confidence": "single_source",
+          "sources": [
+            "https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah/"
+          ]
+        },
+        {
+          "claim": "Ожидаемая длительность полного прохождения via ferrata",
+          "value": "5 дней",
+          "source_url": "https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah/",
+          "confidence": "single_source",
+          "sources": [
+            "https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah/"
+          ]
+        },
+        {
+          "claim": "Jais Flight — самый длинный зиплайн в мире, Джебель Джайс — высочайшая гора ОАЭ",
+          "value": "существующие объекты",
+          "source_url": "https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah/",
+          "confidence": "single_source",
+          "sources": [
+            "https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah/"
+          ]
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 986,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-23T13:07:25.181405+00:00",
+      "slot_at": "2026-09-26T15:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-b56afc6d3102.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Джебель Джайс: 80 км троп и новая via ferrata",
+        "accent": "80 км",
+        "tag_left": "РАС-ЭЛЬ-ХАЙМА",
+        "tag_right": "#ЖИЗНЬВДУБАЕ",
+        "background": "light",
+        "card": "light",
+        "card_path": "/home/runner/work/news/news/assets/generated/light-b56afc6d3102.png"
+      },
+      "item_ids": [
+        "4fdc758e116af4620f017dbb91d9f39d97a9dbfc"
+      ],
+      "source_items": [
+        {
+          "item_id": "4fdc758e116af4620f017dbb91d9f39d97a9dbfc",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "5 new peak adventure RAK attractions coming soon",
+          "summary": "Including an 80km-long hike, a hidden oasis, iron path cliff climbing and mountain shelters… Ras Al Khaimah (RAK) has already established itself as the emirate of choice for adrenaline spiking and dangling off the side of mountains. But as with all great pioneers, there will always be new peaks to summit. The latest news to […] The post 5 new peak adventure RAK attractions coming soon appeared first on What's On .\n\nСтатья по ссылке (https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah/):\n5 new peak adventure RAK attractions coming soon\nIncluding an 80km-long hike, a hidden oasis, iron path cliff climbing and mountain shelters…\nRas Al Khaimah (RAK) has already established itself as the emirate of choice for adrenaline spiking and dangling off the side of mountains. But as with all great pioneers, there will always be new peaks to summit.\nThe latest news to come out of RAK, providing a wholesome counterbalance to headlines of Casino mega resorts and flying cars , is that its adventure portfolio is about to receive another big hike. Literally.\nAnnounced by Marjan Lifestyle, Jebel Jais – which happens to be the UAE’s highest mountain – will soon be home to a number of impressive, outdoorsy, leisure upgrades. These will sit alongside existing attractions that include Jais Flight (the world’s longest zipline), Jais Sledder – a thrilling toboggan ride that rips right down the rocky Hajar crags, and the Bear Grylls Explorers Camp.\nThese fresh adventure credentials are spearheaded by The Grand Loop , an 80km-long multi-day safari through the jagged hinterlands of the UAE. The project will primarily take the form of bridging existing hike segments to create one consolidated trip that is a true bootlace bucketlist tick for intrepid trekkers.\nNot sufficiently intolerant of gravity for you? The existing Via Ferrata (‘iron path’ in Italian) will also receive an upgrade. This is a method of mountain traversing that involves a series of ropes and permanent metal rungs, and is absolutely not recommended for even the partially acrophobic. This expanded version – inspired by the Via Delle Bocchette in the Brenta Dolomites – will extend for up to 20km and incorporate multiple mountain shelters . Which are essential because the full course is expected to take five days.\nTrail rehabilitation efforts will see areas such as Wadi Khammed (the Hidden Oasis) made more accessible with new entry points and wayfinding signage.\nFinally, new climbing routes are also being established across Jebel Jais, providing fresh challenges for those who enjoy the sensation of sweaty palms and carabena clip hoisting.\nAll of this is being carried out with a commitment to protecting the area’s wildlife and better assessment of its biodiversity. Talking about the new developments, Donald Bremner, CEO of Marjan Lifestyle, said:\n“The opportunity on Jebel Jais is to make the mountain itself the destination … this starts with how the trails are built, how people navig",
+          "url": "https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah/",
+          "canonical_url": "https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah",
+          "published_at": "2026-09-23T11:22:46+00:00",
+          "collected_at": "2026-09-23T13:06:55.692751+00:00",
+          "lang": "en",
+          "image_url": null
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 4,
+        "sources_cited": 1
+      },
+      "approval": {
+        "sent_at": "2026-09-23T13:07:27.756753+00:00",
+        "preview_message_id": 50
+      },
+      "rewrite_count": 0,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMyarPPD0Z1yyCGZ5wIBSlgmv32j6QAAnImaxsbJ6FJWmg4S3IQzPMBAAMCAAN5AAM9BA"
     }
   ]
 }

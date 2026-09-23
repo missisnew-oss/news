@@ -2500,6 +2500,853 @@
       "title_key": "открыта запись в лист ожидания на самый громкий старт абу даби",
       "url": "https://t.me/NeginskiUAE/8486",
       "item_id": "4798e092ccdff0741eb13e354873fbdf5fb55ed1"
+    },
+    "1231243b5a206623288ad660511d1c82e4d85674": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "what uae taught this 15 year old about sustainability growing up in the uae s multicultural environment taught her to turn knowledge to action just now 5 m read",
+      "url": "https://gulfnews.com/uae/people/what-being-born-and-raised-in-the-uae-taught-this-15-year-old-about-education-and-sustainability-1.500684859",
+      "item_id": "dff0df627db0fb76affb56b3de73cb408c3d31d8"
+    },
+    "e87b071424e2d5b2be38d81aac7b373217559b43": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai s etihad rail station takes shape ahead of launch 23m ago 4 m read",
+      "url": "https://gulfnews.com/living-in-uae/transport/etihad-rail-dubai-abu-dhabi-al-yalayis-station-1.500684826",
+      "item_id": "afe651e23f8cf8cdcdf5ffc46866922a160edbc3"
+    },
+    "d7c5ff1fd1e46512ee136fcc7569e2a7b22c2b8a": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "7 uae events to add to your autumn calendar 1h ago 3 m read",
+      "url": "https://gulfnews.com/lifestyle/from-concerts-to-culture-7-standout-uae-events-to-plan-for-this-autumn-1.500680951",
+      "item_id": "b64c932461af79efa5ea637c870764ff5e559ea2"
+    },
+    "b4a665f9da542103040d70a6e5b5daf005bd424e": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "photos uae rulers offer condolences to sheikh mohammed 1h ago 2 m read",
+      "url": "https://gulfnews.com/uae/government/uae-rulers-and-crown-princes-offer-condolences-to-sheikh-mohammed-on-passing-of-sheikh-ahmed-bin-rashid-1.500684717",
+      "item_id": "970218f294e456e1430cb8750240b6c23ce4dc3e"
+    },
+    "075a315adbb09dc1fa31d09ffcd91e01c1ece41b": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "marcos extends sympathies to sheikh mohammed 1h ago 1 m read",
+      "url": "https://gulfnews.com/uae/philippine-president-extends-sympathies-to-sheikh-mohammed-on-passing-of-sheikh-ahmed-bin-rashid-1.500684734",
+      "item_id": "124777a23b18114314619f630e4edf889e3be397"
+    },
+    "82cc06e1d7ec986c271c27ce0f2329942b3cf6d0": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "hamdan forms board of hamdan bin rashid foundation 2h ago 1 m read",
+      "url": "https://gulfnews.com/uae/government/sheikh-hamdan-forms-the-board-of-trustees-of-the-hamdan-bin-rashid-al-maktoum-foundation-for-medical-and-educational-sciences-1.500684684",
+      "item_id": "e8ae405e22e9c1db6545710570b8fbdc55a2fc25"
+    },
+    "bb629619a7221402774b4f9b30e0915cf1f655b3": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae marks autumn equinox so why is it still 45 c 3 m read",
+      "url": "https://gulfnews.com/uae/weather/uae-weather-its-officially-autumn-equinox-today-so-why-still-45c-1.500684604",
+      "item_id": "7ad765f0eef4f1a9fe09e59bb878001c04d689f3"
+    },
+    "18ac05bce7eec2002af4515bfdf8e17818ab6d2a": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae at unga 2026 from diplomacy to practical solutions 9 m read",
+      "url": "https://gulfnews.com/uae/government/uae-at-the-un-general-assembly-from-diplomacy-and-dialogue-to-solutions-and-implementation-1.500684606",
+      "item_id": "d6b43f5a671e0cd151c344df7750d0ba08b8d977"
+    },
+    "2696c26612b760aa0d2c7720b387c53be599563e": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "us iran conflict what uae residents need to know today 4 m read",
+      "url": "https://gulfnews.com/uae/us-iran-conflict-what-uae-residents-need-to-know-today-sept-23-2026-1.500684552",
+      "item_id": "fa0ef6b219599fc71604bba49f08eab01544eca8"
+    },
+    "07c239a714d3459787ac1d694e69961e95aa3b36": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "heavy traffic on sheikh zayed road e311 in dubai 1 m read",
+      "url": "https://gulfnews.com/uae/transport/dubai-sharjah-traffic-heavy-congestion-on-sheikh-zayed-road-e11-e311-and-al-ittihad-street-this-morning-1.500684560",
+      "item_id": "e64b3b6ba0fa924be42c3c28c7bff0b5b342fe7b"
+    },
+    "919b2071ddc959ccf2643530a0c684b16414fc42": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai rent hike dispute what tenants can do next 5 m read",
+      "url": "https://gulfnews.com/living-in-uae/housing/dubai-rent-increase-dispute-how-tenants-can-use-offer-and-deposit-with-the-rdc-1.500684090",
+      "item_id": "a2d248651ea41d0c46bd3b950fdd717a53c0cb53"
+    },
+    "4bcc722c9f9e6184ad9e288d5742d38eca7f5b74": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "how a 74 year old kunafa maker helped shape abu dhabi 5 m read",
+      "url": "https://gulfnews.com/uae/abu-dhabi/half-a-century-of-sweetness-how-a-74-year-old-kunafa-maker-helped-shape-abu-dhabis-story-1.500684524",
+      "item_id": "a9b95e451360ffd27416f753d46a595091ba6854"
+    },
+    "c927df7bb0ded17b92aab9230888773e9def8233": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "omar el gamal interactive comedy show in dubai",
+      "url": "https://dubai.platinumlist.net/event-tickets/108043/omar-el-gamal-interactive-comedy-show-in-dubai",
+      "item_id": "018cf0c0051997eeed22353b375de3a830661989"
+    },
+    "39e5acc90a6817ee564b3c8d2d0dee3b0209e94b": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "kalba s new lake will feature waterfalls greenery and a family park",
+      "url": "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah",
+      "item_id": "c3ea3345038666cf7159e1733e9b872cd49100e2"
+    },
+    "134697f9c928a348780f1d039343b9b049669c3d": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "dubai_edited_rss_hub",
+      "title_key": "chef saradhi dakara brings the mediterranean to the table with new viva orilla brunch",
+      "url": "https://dubaiedited.ae/chef-saradhi-dakara-brings-the-mediterranean-to-the-table-with-new-viva-orilla-brunch",
+      "item_id": "d866519415983b0d72133928db25ceb9ab0bc487"
+    },
+    "c526b4f14f49d43d6f023869fabbcd6f04d050bf": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "dubai_edited_rss_hub",
+      "title_key": "lucky voice gives birthday groups more reason to sing",
+      "url": "https://dubaiedited.ae/lucky-voice-gives-birthday-groups-more-reason-to-sing",
+      "item_id": "046288d984555a2a20f1c91bc5355701fe1c79e7"
+    },
+    "06fcabe4f67385454b58aef0e5b4eebc43609fd5": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "личные вещи знаменитостей выставят на аукцион в абу даби",
+      "url": "https://t.me/uaegeneralnews/17768",
+      "item_id": "63cadadb39a1b1528b0718c1b4c6aa473aa6cac0"
+    },
+    "5a956aa2b0bef98d87e8535d80880e0418a6def3": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "билеты на жд рейс из дубая в абу даби поступили в продажу",
+      "url": "https://t.me/uaegeneralnews/17767",
+      "item_id": "8c72fdf4311c6fae4da9194f538c024ca29ddb91"
+    },
+    "4c9dd39f9d7323887d83cd6f69b88cea785debb4": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "новый столичный музей анонсировал программу мероприятий",
+      "url": "https://t.me/uaegeneralnews/17766",
+      "item_id": "f0f14392387729c893477ed1e87cc1bb234ab76d"
+    },
+    "57d65a3d90cd6718a294e7beda0dd53ff14c9341": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в дубае пройдет первый фестиваль для кудрявых людей",
+      "url": "https://t.me/uaegeneralnews/17765",
+      "item_id": "a3e4b99b119fb2762417c79f38543285f552de28"
+    },
+    "2f2e995b10f9948690386fbd466dff7dbcaf281f": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "вырастет число рейсов из столицы оаэ в сочи",
+      "url": "https://t.me/uaegeneralnews/17764",
+      "item_id": "0b13029e9a69fa0e5be06dea3c63e14e7de0a834"
+    },
+    "284916e979b08b2864e4c97a45edaa98b3abd78f": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "хамзат чимаев возглавит борцовский турнир в столице оаэ",
+      "url": "https://t.me/uaegeneralnews/17763",
+      "item_id": "64cd1764cf54b033f1385945b9f46a4212489973"
+    },
+    "86114748298cef53cee944cced11f85f29222c07": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в дубае объявили о расширении знаменитого курорта",
+      "url": "https://t.me/uaegeneralnews/17762",
+      "item_id": "d2761b05e44d86f2b79cb44306addf6a68abfd84"
+    },
+    "21f2afc7d6062633e70b3656b2a9b479b3f755d4": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "три вуза оаэ вошли в мировой топ 160 программ mba",
+      "url": "https://t.me/russianemiratesnews/28146",
+      "item_id": "9b6839b4595cdca2b0c5c5e7d15c6f92d82d5b4b"
+    },
+    "5db94d524a5467fa1f9fd09eafa0882d67d46145": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "логистический коридор оаэ оман демонстрирует уверенный рост",
+      "url": "https://t.me/russianemiratesnews/28145",
+      "item_id": "d97067289007eb6d49a9a2576760d135910b81e8"
+    },
+    "dfc0c90b487feb53dbe84284e0183a091c9814ee": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "в оаэ предупредили о наказании за подделку дипломов",
+      "url": "https://t.me/russianemiratesnews/28143",
+      "item_id": "804f257e7deed1580dd6f1bb38b343de497aa27f"
+    },
+    "c1f4967522e17b6e42a517cbd72a4a6457b60649": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "в оаэ приближается крайний срок по корпоративному налогу",
+      "url": "https://t.me/russianemiratesnews/28142",
+      "item_id": "ca1678cf2c45c800de2b6846c6463dc36569a403"
+    },
+    "5ecba5b7ad74fb784df889a1ff90225e2755ca6a": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "власти оаэ озвучили свою повестку на генассамблее оон",
+      "url": "https://t.me/russianemiratesnews/28136",
+      "item_id": "857084fb5ec9e7153c5c29ac840e946d79b0ee8d"
+    },
+    "4e3e1ec0b018a2791e396fdbe15631d13d04aeb5": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_neginskiuae",
+      "title_key": "семейное сообщество вилл в 20 минутах от будущего диснейленда",
+      "url": "https://t.me/NeginskiUAE/8493",
+      "item_id": "d53e9ddb3d7352516fc09cd00c83a6f8d614e8c3"
+    },
+    "55c978d4d2e044fc1cb3207e24230f8fd877fd83": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_ruble_uae",
+      "title_key": "ранний доступ к новому проекту на острове саадият",
+      "url": "https://t.me/ruble_uae/943",
+      "item_id": "525c9b7a2d2d7fbd42773a084e412ca0eaa5722d"
+    },
+    "b39550250410218062e9b6e90a23a103652116b3": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "дубай вошёл в топ самых доступных городов мира для покупки жилья квартиру здесь можно купить за 5 лет",
+      "url": "https://t.me/kstati_dubai/2751",
+      "item_id": "6e7de62bd7352193b442238e73f4e07ce119238d"
+    },
+    "0ce3f0389e4f321bfd1d76dd3306682ee6adf1c5": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "шоу фонтанов у бурдж халифы отменили до 30 сентября",
+      "url": "https://t.me/kstati_dubai/2750",
+      "item_id": "a6d6f369031e7d6e6fdfe2251005d1a70ecc6171"
+    },
+    "70cade3128efd64209a280b6890ebc7441e5eb3a": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "мама я в театр",
+      "url": "https://t.me/kstati_dubai/2747",
+      "item_id": "b4d70713f1b6c86f4c7a5f1a4655bfaedb90c2b6"
+    },
+    "02171a5b50d0bdce31b4c33c46c3dae3efdc07fc": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "сафари парк шарджи открылся сегодня после летнего перерыва",
+      "url": "https://t.me/kstati_dubai/2746",
+      "item_id": "c341778676238b0b12bb0060d177e403c3c04cbd"
+    },
+    "d1db87c4e99577ef0a268c7a97c850ad636158c0": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "скончался брат правителя дубая в эмирате объявили 10 дневный траур",
+      "url": "https://t.me/kstati_dubai/2745",
+      "item_id": "969211f0fbf1a2666425012328a22441ce0879aa"
+    },
+    "4e307f0e3ea672d1bcb3361e80f998c5f5c4ffb5": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "в дубае появился первый в регионе робот хирург нового поколения",
+      "url": "https://t.me/kstati_dubai/2742",
+      "item_id": "95cce428cff1c76b1b1e99ac650acce1773e06fa"
+    },
+    "3ed4c529f7de39c675bad9ccf7f9f2fa6f9fd344": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "в школах оаэ начали запрещать худи чипсы и необычные причёски",
+      "url": "https://t.me/kstati_dubai/2741",
+      "item_id": "9e2295a1f9d9aac3d3d3fa6ed7a854ad32a15cd2"
+    },
+    "330a657078157195be43a17fddccae1d474e0cf4": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "в абу даби появится новый город без машин на yas island",
+      "url": "https://t.me/kstati_dubai/2739",
+      "item_id": "80fb664ec670b25c8a3818e2713ba027da02b604"
+    },
+    "a601c84d6fc720c82ad496f01512055d76aaf669": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "в дубае масштабно обновят знаменитый курорт atlantis",
+      "url": "https://t.me/kstati_dubai/2737",
+      "item_id": "843070afdf5b661a3e90b66462a1df65347f2163"
+    },
+    "dee2b9ab85d5dc6b16dd238401e3cfca935b9d52": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "билеты в музей гуггенхайма в абу даби уже появились в продаже музей откроют 11 декабря",
+      "url": "https://t.me/kstati_dubai/2736",
+      "item_id": "a5831baacee92f32d82f7cc0f39c5a83d9420a0d"
+    },
+    "0d2577fd5181f32e1c3ec96132afe945d19d5e6c": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "etihad будет бесплатно селить туристов в отелях оаэ",
+      "url": "https://t.me/kstati_dubai/2735",
+      "item_id": "e229ec3b94510d04b530a2d231010fbd577e6703"
+    },
+    "9c960177fe3e2382f8d816b0a50e30edfd09ac52": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "flydubai установит бесплатный starlink wi fi на всех самолетах",
+      "url": "https://t.me/kstati_dubai/2733",
+      "item_id": "c4b04cc09cf779f3bafeb84a9f9a949bacbbd91a"
+    },
+    "45998a4b4329b8e4eac2ce50b2a8699287576f62": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "в оаэ построят скоростную 12 полосную автомагистраль длиной 80км она свяжет абу даби с шарджей и пройдёт через",
+      "url": "https://t.me/kstati_dubai/2732",
+      "item_id": "b05f150506c4ab5102a20023320a0ba79eb213e8"
+    },
+    "2338ea0ebb79816fc1b67a02d0671cf2f560a4ca": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_probrokerae",
+      "title_key": "друзья всем привет",
+      "url": "https://t.me/probrokerae/935",
+      "item_id": "422d6fbc5b812221c0b6bf6acf2922e6118f6326"
+    },
+    "3bc0f73351bde067e2092b88f20167b8dae68b33": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_probrokerae",
+      "title_key": "друзья есть запрос на покупку студии в saadiyat grove до 1 5 млн аед и в пенинсуле",
+      "url": "https://t.me/probrokerae/933",
+      "item_id": "98b6f6df78faef5f5bba147de66c3db2f7899ef8"
+    },
+    "e62113a7a0aedd23e943f9a57283b28dc461e2b1": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_probrokerae",
+      "title_key": "всем привет",
+      "url": "https://t.me/probrokerae/928",
+      "item_id": "a2d108254fa7ca21e503a19e824db08a5f91f1b1"
+    },
+    "e7bc610955c8db5c3fbbb7b138132d3ebe86cd17": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_probrokerae",
+      "title_key": "друзья у нашего товарища и партнера антона наумова сооснователя агентства sg capital есть острая потребность в",
+      "url": "https://t.me/probrokerae/926",
+      "item_id": "29bd65381e19be82cd0a67eef4de6c015aac9b18"
+    },
+    "7bdbb045da1ecb55ea1e626241def1733dfc2828": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_probrokerae",
+      "title_key": "всем доброго утра",
+      "url": "https://t.me/probrokerae/919",
+      "item_id": "e349a67977cdface530d5b2bcdd9dbb808ccf3f4"
+    },
+    "7fc634a34b2644cf21ee05ac608f2c78842a1f93": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_probrokerae",
+      "title_key": "друзья добрый вечер",
+      "url": "https://t.me/probrokerae/918",
+      "item_id": "c50964a6bdeb1a09d772bade1eacb877c90e3dc6"
+    },
+    "491e69a7e28b70fe7c4f4471b448463f8dc27415": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_probrokerae",
+      "title_key": "https youtu be poqjom_5wqi",
+      "url": "https://t.me/probrokerae/917",
+      "item_id": "cdd9b313de76a6ca920fc61f297cbe4d2e63e97d"
+    },
+    "b376af5e6be3c0c358a19db656fdb04a67bfd0aa": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_probrokerae",
+      "title_key": "коллеги брокеры сейчас ищется готовая 2br в районе крика",
+      "url": "https://t.me/probrokerae/916",
+      "item_id": "f7abbb343fd2e7e091fc01dd9ed93ed3677e2b2b"
+    },
+    "6b335590d97ea1ea4f6e41b24013b1c2f505da06": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "осень пришла в 4 05 а вы заметили",
+      "url": "https://t.me/dubai_zdorovo/6791",
+      "item_id": "d268a6ae6e2f02adbdaf0d122b07eee77ffbe33d"
+    },
+    "d053b5fd7a7ea41e58f89bd5e69a7fa2673b42a7": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "капибары здорового человека возвращаются",
+      "url": "https://t.me/dubai_zdorovo/6790",
+      "item_id": "21cc524626ecef19cc2f4f0d8699d5327e422996"
+    },
+    "1590f382d39a6e7c172bb2d38203a44686154cd6": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "это случится уже в следующую среду 30 сентября",
+      "url": "https://t.me/dubai_zdorovo/6789",
+      "item_id": "93f90b1c138af8cb38f71220b90b5a6584766a27"
+    },
+    "8107c97e92d90cb331d24deda8b7f951c0756374": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "а что если выбирать школу по её ученикам",
+      "url": "https://t.me/dubai_zdorovo/6783",
+      "item_id": "476752ff8b1d065bc10847305753fb63c2fa8608"
+    },
+    "87043442a315cbe9484c23507af1dd421e129c7c": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "лайфхак недели международные права за 5 минут прямо в аэропорту дубая",
+      "url": "https://t.me/dubai_zdorovo/6782",
+      "item_id": "0a47ba8ad25811751d4e30325030d17fb8a19649"
+    },
+    "67d546c12e23beda4eca787ee504e3071fc09250": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "дубайское долголетие как проводят время в клубе пенсионеров эмирата",
+      "url": "https://t.me/dubai_zdorovo/6780",
+      "item_id": "70f74c0967fa4e6610dc5ee585f09c4f29b3a5bc"
+    },
+    "1ea43ab172094845b02ca390070d397f7f69a031": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "посольство сша в оаэ выпустило новое предупреждение",
+      "url": "https://t.me/dubai_zdorovo/6779",
+      "item_id": "4685d87258cb6858f09035d2294bd542cdd9716a"
+    },
+    "737682572bdc00d8e15f52b19ea8e4cd565fe293": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "symphony spread шоколадная паста без сахара но с шафраном",
+      "url": "https://t.me/dubai_zdorovo/6778",
+      "item_id": "674138703705ec483399d4a9a13941a9f5108d87"
+    },
+    "7203ec7ec2fddce050072d43863528756697d206": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "дубай город небоскрёбов и дорогих вилл и одновременно город сотен тысяч рабочих строителей и обслуживающего",
+      "url": "https://t.me/dubai_zdorovo/6777",
+      "item_id": "ed8c4acf95221fdeaf48781ed066730c77858928"
+    },
+    "4411974fcbc45a53533c7a1cf80403fac36fb269": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "продолжаем пробовать мясо в дубае на этот раз тестируем свежую индейку",
+      "url": "https://t.me/dubai_zdorovo/6773",
+      "item_id": "242d236612da467b52d31be7b4c2e7a92c702148"
+    },
+    "90d4bd12bd1213ab0ed6bd85a62f6400427f6260": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "ищу хозяина кошелька новая схема скама в чатах telegram",
+      "url": "https://t.me/dubai_zdorovo/6771",
+      "item_id": "30dd34d317ceb22d78b5b9bb1b76e1aa4d21284a"
+    },
+    "9a887ea39479a0fb1568fd6e3ec06170326d48d0": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "а потом просто наслаждаешься происходящим",
+      "url": "https://t.me/dome_dubai/1349",
+      "item_id": "23b0aa0032f2bf0ce3c0d411a087fdf2e7243558"
+    },
+    "65d8d17e060b2e78ca129b5946ee456c78b034d0": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "какое же это удивительное сочетание",
+      "url": "https://t.me/dome_dubai/1343",
+      "item_id": "f6811ef700851330e322f968b4a58b887d4d1ec5"
+    },
+    "7af089a301e8dcb6b6334b017087e14e3247c879": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "на днях дубай показал мне ещё одну свою сторону",
+      "url": "https://t.me/dome_dubai/1339",
+      "item_id": "b11c21a7dcff9e984a46eddd9b980dddcffe2b91"
+    },
+    "cca609ad8002ff68dc771cb329b7826fca343f53": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "dóme культурный дубай pinned a photo",
+      "url": "https://t.me/dome_dubai/1338",
+      "item_id": "fe3db4f5f2ac9a9ad0fe0722d1c0b5b3b59fca75"
+    },
+    "1ec1b0519fa2d90cbd80b02690b922659c44bb2f": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "1 в эмиратах объявлен 10 дневний траур в связи с кончиной шейха ахмеда бин рашида брата правителя дубая",
+      "url": "https://t.me/dome_dubai/1337",
+      "item_id": "adfe1e7fb2e1bf024a64a04cb2db485e6999e668"
+    },
+    "42b7347a44c1a3013d181c4718d291efb6cdd084": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "открытие нового сезона в октябре",
+      "url": "https://t.me/dome_dubai/1333",
+      "item_id": "16ca315267c23dd168dc9ee0ddcdc7a0acbe90b9"
+    },
+    "6261116d42015d411d7641daaea57c839ce4d6b6": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "самостоятельные программы the dóme это когда",
+      "url": "https://t.me/dome_dubai/1332",
+      "item_id": "732355ba983fc75be16a5bcb8591e2c9b8686b33"
+    },
+    "5a23b2ff98575fd9f9b75448fa7e35f2e0a0f35d": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "частные культурные события",
+      "url": "https://t.me/dome_dubai/1331",
+      "item_id": "50beaae30cbdf271033fc9ccd96b9395a45d05ed"
+    },
+    "160f9eae4bb4355a38b1505cadb91c759a6fa8cb": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "у нас готово расписание групповых событий на русском языке с начала октября до конца января 2027 года",
+      "url": "https://t.me/dome_dubai/1330",
+      "item_id": "06432d701e6dffdc0990a63ca6d4d9b26bec3714"
+    },
+    "052755f0f582d7024cd3ef1dcc0447615ada1709": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "вышла из дома в 7 утра на короткую прогулку вернулась спустя 6 часов",
+      "url": "https://t.me/dome_dubai/1329",
+      "item_id": "4c94d6bb107c84261d900fdecefc8f9672315e64"
+    },
+    "40f4d807192d569b0b5c169c11272f1452fbcedd": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "м не ни к чему одические рати",
+      "url": "https://t.me/dome_dubai/1326",
+      "item_id": "f406c63d2faf6f030b36f04ab87a11d09b6fa217"
+    },
+    "2a7c88d7d7fc98b42d9d08d4fa3d7ac4088b0964": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "на этой неделе улицы дубая превратились в галерею",
+      "url": "https://t.me/dome_dubai/1325",
+      "item_id": "5a00d7d6ffee9eb2ef514f70847205cf78d88475"
+    },
+    "c9e2e62035365bac097244167e1e27a674002d06": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "именно этим мы и занимаемся в культурной студии the dóme",
+      "url": "https://t.me/dome_dubai/1322",
+      "item_id": "b714b965e6a516463f1d7b277ee6f76c1a3dc16f"
+    },
+    "40e8adf7923d5763c4a99f7fb38eae5a3bbd77fd": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "даже религиозные пространства сегодня начинают работать по логике современных культурных институций",
+      "url": "https://t.me/dome_dubai/1321",
+      "item_id": "155ea5c4a0ddb419d0529ccd093880f4290e2e81"
+    },
+    "fae1225808afd19c3d3a7630a6bb0d181132a97e": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "в оаэ выявили 377 случаев фиктивной эмиратизации за первое полугодие нарушения нашли в 266 частных компаниях",
+      "url": "https://t.me/dubai_media/5472",
+      "item_id": "5326348fffb0ed961e439be2464cc6cc627e5b8e"
+    },
+    "81ddaa08a758952384debc5002ffc6eab2142559": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "в шардже появится огромное озеро с водопадами зелеными горами и парком",
+      "url": "https://t.me/dubai_media/5471",
+      "item_id": "8aca2b740c43f4901415b0948aa09ee05357bb65"
+    },
+    "69917a203dcc7b145fb7f15763e0a6ec89491e4d": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "в оаэ сегодня началась астрономическая осень жара начинает отступать",
+      "url": "https://t.me/dubai_media/5470",
+      "item_id": "a9449f47b2f34bcc02144d66c6063d7b187b19b3"
+    },
+    "7a91d3021c529b07dd9ed73ac8c4b72b9a5b10a5": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "роботы начнут регистрировать пассажиров и принимать багаж в аэропортах дубая",
+      "url": "https://t.me/dubai_media/5468",
+      "item_id": "5b93571b2eef3c90c4e5781103d0b10b0781c2dd"
+    },
+    "67d702d68a5e0b30de7634478d12ef981edb0782": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "в салале появится новый премиальный курортный район mira ocean estates",
+      "url": "https://t.me/dubai_media/5462",
+      "item_id": "520a4cabcd1fbb0a0a9ccfab63326b5017317f22"
+    },
+    "a2bf8e0f47d93bdc4c97caee25dc1066b54b95c5": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "в оаэ выявили 377 случаев фиктивной эмиратизации",
+      "url": "https://t.me/dubai_media/5461",
+      "item_id": "6ab4b4899dd55d9830a1b63bf46309d9807d2d31"
+    },
+    "518deeb7b2f7f5aefece7631b89cb9d3a281296e": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "билеты на поезда etihad rail дубай абу даби уже появились в продаже",
+      "url": "https://t.me/dubai_media/5459",
+      "item_id": "3565e878bd062cc1bd7579019ff10a267431ee74"
+    },
+    "9f72f28034f3a52bb0885b19db4cc081e1f5ebf9": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "в школах оаэ начался рост заболеваемости гриппом",
+      "url": "https://t.me/dubai_media/5458",
+      "item_id": "9d213b75254ce7f7821454313df5c33e3c57ff8a"
+    },
+    "88d081c3530053721f18bb3d141d126cd39195a1": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "dubai miracle garden откроется 8 октября",
+      "url": "https://t.me/dubai_media/5457",
+      "item_id": "6f2a83a6034b18d128a8e464a576ce18167ad391"
+    },
+    "0eff78d5346fa9e6638b51c7a0b17ec9b82fb640": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "илон маск построит в оаэ более 150 км тоннелей",
+      "url": "https://t.me/dubai_media/5456",
+      "item_id": "123adf655bcf4f8eede2e95fe584003b16685aa1"
+    },
+    "ab05465f930910e68a27b9d0b571ab30e8c12079": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "россиян обворовывают во время сна на рейсах в дубай один пассажир потерял 850 тысяч рублей во время полёта flydubai",
+      "url": "https://t.me/dubai_media/5455",
+      "item_id": "a36ad1f1d89f7388df59c6be3dfea665482236b1"
+    },
+    "7b9f424980c0d1afd5761360d0d185736c1c105a": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "тем временем лето в дубае официально закончится 23 сентября в 4 05 утра в этот момент наступит осеннее равноденствие",
+      "url": "https://t.me/dubaihighlights/6196",
+      "item_id": "3d3bf83f55426131915d939f2b648b7cbfba92f5"
+    },
+    "4aea80927359a8b548311e30003110da65545955": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "две легенды один мужчина и поединок без победителей",
+      "url": "https://t.me/dubaihighlights/6195",
+      "item_id": "582229945d73d45bcfc9b57eb4bc3ced43ede4ed"
+    },
+    "634dd33e48189962c32ad3598bc85429481be2bb": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "emirates дарит три развлечения тем кто летит в дубай этой осенью",
+      "url": "https://t.me/dubaihighlights/6194",
+      "item_id": "3d468465e2818d7c514ca81db3eace82fe88a60d"
+    },
+    "6e10e93097d945d3a28ce8df606f60e1a250ebdd": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "фонтаны у dubai mall временно приостановили шоу",
+      "url": "https://t.me/dubaihighlights/6193",
+      "item_id": "082fabddf1d34d9e9d7b64a8f07326b04320f3c7"
+    },
+    "6c642e00288ada413c31e588859419b207877a25": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "ваши волосы могут выглядеть именно так как вы всегда мечтали",
+      "url": "https://t.me/dubaihighlights/6192",
+      "item_id": "d20fbca98d35c52211f42967868dc50c1bb3164c"
+    },
+    "daf231472fbf92c61d964ad0cdea9ea2f84460a2": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "в дубае объявлен 10 дневный траур",
+      "url": "https://t.me/dubaihighlights/6190",
+      "item_id": "6eefa460eeb22da22959f8a6d1588ac6bd9a1933"
+    },
+    "ddab13f49734d5243d10119f6810db87073c4ae9": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "atlantis dubai запустил новое предложение для гостей emirates",
+      "url": "https://t.me/dubaihighlights/6187",
+      "item_id": "fe32067e8e02f09dfbbc3358cab1f5acc5b3b44b"
+    },
+    "64f33c2ad5f50f180f9840f872f39702feed8f89": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "завтра открывается sharjah safari после летнего перерыва",
+      "url": "https://t.me/dubaihighlights/6186",
+      "item_id": "a2dddca81c7eb5d30a92c4934a5b85168bef4933"
+    },
+    "1a42f6671cab57ece44d4e861efa8e3b55675ecb": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "rta завершила развитие oud metha road и al asayel street",
+      "url": "https://t.me/dubaihighlights/6185",
+      "item_id": "1568897f60004d86f1257428b81f53721c9b3b5a"
+    },
+    "18065e3225c779186db5cc5af2f157dd2172ccf1": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "в абу даби пройдёт неделя редких экспонатов звёзд мировой культуры",
+      "url": "https://t.me/dubaihighlights/6182",
+      "item_id": "0462d410f8926354ce7602557fb6e84d3da8104d"
+    },
+    "055aed62ff563115714b74419115911ce90ea7f1": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "на yas island появится новый район the wadi стоимостью около 6 млрд дирхамов",
+      "url": "https://t.me/dubaihighlights/6181",
+      "item_id": "c9569b089a418acc10d773718fbc4bbd45978700"
+    },
+    "ee368a50ca072bc20b6e2f4b775870f0b74499db": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "оаэ признаны самой налогово дружественной страной в мире",
+      "url": "https://t.me/dubaihighlights/6180",
+      "item_id": "0124106a9fe9bbc75c5aca081afb175b6d551666"
+    },
+    "e497a024204a2588c5e6fce57a2a2667633e0d6b": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "интересный факт о лете в оаэ",
+      "url": "https://t.me/dubaihighlights/6179",
+      "item_id": "fd3cff4c619516c4a685c3025b6d7d637684e163"
+    },
+    "498bf885b8c574921f0f4a1c06a84872730d73cf": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "оаэ продолжают развивать воздушную мобильность будущего",
+      "url": "https://t.me/dubaihighlights/6178",
+      "item_id": "645505fddb56e1b63b40e4fedf1e67313efc1165"
+    },
+    "2f722dfa8848ada1288ba03d75d7d7390e2bf1ff": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "в абу даби открывается guggenheim билеты уже в продаже",
+      "url": "https://t.me/dubaihighlights/6177",
+      "item_id": "98525afbe7b4df7d202ef7261df75f1f0289ffb9"
+    },
+    "60319415f5f37c9c8482b3d6eaedb251778a2f4a": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_metropolitan_dubai",
+      "title_key": "день которым мы гордимся",
+      "url": "https://t.me/metropolitan_dubai/4506",
+      "item_id": "ca44c596dd1e1ac61149d47607e665d1a777bdd7"
+    },
+    "fb84da981eaf7f601b8a21e5f9baa2e7f7fca0ba": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_metropolitan_dubai",
+      "title_key": "перешлите тем кто живет или хочет жить в дубае",
+      "url": "https://t.me/metropolitan_dubai/4503",
+      "item_id": "ba5542b628226d38112c130d9dc7d0da36fbfbe0"
+    },
+    "fcdcd761af8c2e508ca70b8a7e0a9b4d7ed9c72a": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_metropolitan_dubai",
+      "title_key": "земельный департамент дубая запустил flexirent летом 2026 года и это заметный сдвиг для рынка раньше аренду в дубае",
+      "url": "https://t.me/metropolitan_dubai/4496",
+      "item_id": "ddbbef896d5d16cc3dd20dea195b561feecea773"
+    },
+    "6e9aa1020104a805a5b15d4d814d643ef6730599": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_metropolitan_dubai",
+      "title_key": "поздравляем лучших сотрудников августа 2026",
+      "url": "https://t.me/metropolitan_dubai/4495",
+      "item_id": "8f536c62c3793fcb52f0f71a2ff5597b6af35f89"
+    },
+    "1948383c1d1680fc1f70977986f4f9012b072c20": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_metropolitan_dubai",
+      "title_key": "хотите получить визу за несколько объектов недвижимости есть одно правило о котором многие инвесторы узнают слишком",
+      "url": "https://t.me/metropolitan_dubai/4493",
+      "item_id": "762798f08c55bb8fd47b26aa6d301d423e8b7d80"
+    },
+    "0011f181d37cc65fc4bca8b826cc48b8fd23c491": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_metropolitan_dubai",
+      "title_key": "если вы выбираете где покупать недвижимость в оаэ к абу даби стоит присмотреться спокойный ритм растущий рынок и",
+      "url": "https://t.me/metropolitan_dubai/4489",
+      "item_id": "d28819d168211a032096e717934aff3ea98c60a8"
+    },
+    "5d8b7b9e7e1bc19e4d5a8036d5a7c22ea44c5ccd": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_metropolitan_dubai",
+      "title_key": "пляж прямо у дома серьёзно",
+      "url": "https://t.me/metropolitan_dubai/4487",
+      "item_id": "67e1326e9e7b6b85f1483edf76f48412de25f705"
+    },
+    "bd4d450210aa47cb44ce5452c63b1ccc4ea11cc2": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_metropolitan_dubai",
+      "title_key": "ваш emirates id нужен далеко не только для того чтобы подтвердить резидентство",
+      "url": "https://t.me/metropolitan_dubai/4482",
+      "item_id": "3da52e3004590e593b95d8c83f1971bba39f0b31"
+    },
+    "8ac5919b06887ffeec32aa8a871578611b3c7a41": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_pike",
+      "title_key": "fltr открывается в абу даби завтра новая точка заработает в creators hq в al qana",
+      "url": "https://t.me/dubai_pike/9045",
+      "item_id": "74da630d0678003876a16dfd74da77c0eef8835e"
+    },
+    "e5fc2ba69e791c570f5e8dbc7581204bf422744a": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_pike",
+      "title_key": "напоминаем про проверенный на себе сервис готовых рационов chef pecan сами им пользуемся и уже рассказывали вам о",
+      "url": "https://t.me/dubai_pike/9039",
+      "item_id": "4c1bba55d90cee06fdde9112afadc110395e5188"
+    },
+    "fd1ffdf9c0f82db1c8b4fae94678fd0763724dd4": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_pike",
+      "title_key": "билеты на etihad rail между дубаем и абу даби поступили в продажу",
+      "url": "https://t.me/dubai_pike/9038",
+      "item_id": "6fe85a682cada34b7e280cb3618c435c72f91516"
+    },
+    "41c088583bd1eb08670c7cf69fda041dfad3e059": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_pike",
+      "title_key": "в дубае объявили 10 дневный траур в связи со смертью шейха ахмеда ибн рашида аль мактума на этот период в эмирате",
+      "url": "https://t.me/dubai_pike/9036",
+      "item_id": "8b293617be7a6ad0ff46ed63b0331308ed226785"
+    },
+    "5f9b1ddcad89699ae09ea64989860a25dcc8fd90": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_pike",
+      "title_key": "the ordinary поселились в paus club до 1 октября и устроили там свою o energy lab",
+      "url": "https://t.me/dubai_pike/9030",
+      "item_id": "1a44f6ad30eb79a8ba2a904dcdb372404dabfdcf"
+    },
+    "05a346915937d1599344ec4dc08824e2a7c44426": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_pike",
+      "title_key": "есть среди вас кто уже стоит в очереди в dubai mall за новым айфоном",
+      "url": "https://t.me/dubai_pike/9029",
+      "item_id": "78b07d565ded1c4b0d7d026b7103cfbc40cb8731"
+    },
+    "93bef6a503b3812d8d49a7f4b2f9491d3fdfead9": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_dubai_pike",
+      "title_key": "18 20 сентября подборка мероприятий на выходные",
+      "url": "https://t.me/dubai_pike/9019",
+      "item_id": "562ac97a3ec9702263406e0d2c070d54b02065ba"
+    },
+    "56fcc3d2a778115b01decac745bc84734c9723e6": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_whitewilldubai",
+      "title_key": "внж в дубае не только про налоги",
+      "url": "https://t.me/whitewilldubai/9315",
+      "item_id": "8049d8babcfa6faaa263f8ef515d79a2bbde04f3"
+    },
+    "10e5c7dee2602ab6ddead328af279fe76819628b": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_whitewilldubai",
+      "title_key": "налоговые бонусы россия эмираты",
+      "url": "https://t.me/whitewilldubai/9314",
+      "item_id": "0957cb0c686d81ab8d1419dfec9a976ad8dbb91b"
+    },
+    "89e4cd392b197a52d0bbe2961107f6e9d9cae389": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_whitewilldubai",
+      "title_key": "вилла дженифер лопес в беверли хиллз за 60m",
+      "url": "https://t.me/whitewilldubai/9304",
+      "item_id": "20a0a5da23222b66d408d2af6402a7aee4afe6f1"
+    },
+    "379ad7d7c105c142701f90b8af2678da54371947": {
+      "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
+      "source_id": "tg_whitewilldubai",
+      "title_key": "дженнифер лопес приватная деревня посреди лос анджелеса",
+      "url": "https://t.me/whitewilldubai/9294",
+      "item_id": "02bf6bde43932cf1a78ca957dca8af18f9f11131"
     }
   }
 }

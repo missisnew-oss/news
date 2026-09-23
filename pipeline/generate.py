@@ -6,7 +6,7 @@ import logging
 from datetime import datetime, timezone
 from typing import Any
 
-from . import factcheck, prompts
+from . import enrich, factcheck, prompts
 from .config import RUBRICS, SELLING_RUBRICS, Settings
 from .llm import extract_json, LLMError, get_provider, parse_response
 from .models import NormalizedItem, PostDraft
@@ -68,7 +68,9 @@ def snapshot_items(items: list[NormalizedItem]) -> list[dict[str, Any]]:
     for item in items:
         data = item.to_dict()
         row = {key: data.get(key) for key in _SNAPSHOT_FIELDS}
-        row["summary"] = (row.get("summary") or "")[:600]
+        # Long enough to keep the linked article (pipeline/enrich.py) for a
+        # rewrite; raw_text stays out of the snapshot.
+        row["summary"] = (row.get("summary") or "")[:3000]
         out.append(row)
     return out
 
@@ -173,6 +175,11 @@ def generate(
                 "Рубрика %s: история «%s» (%d источн., %d материалов в промпте)",
                 rubric, lead.title[:70], lead.source_count, len(pool),
             )
+        if pool:
+            # The article behind the channel post: scale, names, numbers the
+            # retelling dropped. Without it the model has two sentences to
+            # write from and the post reads like the retelling.
+            enrich.enrich_items(pool, settings)
         draft = generate_for_rubric(settings, rubric, pool, provider=provider)
         if draft and draft.status != "failed":
             drafts.append(draft)

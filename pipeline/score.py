@@ -110,7 +110,10 @@ def score_items(
 # How many items of the leading story go into one prompt (one per source),
 # and how many single items from other stories may be added as context.
 MAX_STORY_ITEMS = 6
-EXTRA_STORY_ITEMS = 2
+# Items of *other* stories used to be added "for context"; in practice the
+# Dubizzle post got a wrestling tournament and a blogger's interview next
+# to it. Noise, not context — the pool is the lead story only.
+EXTRA_STORY_ITEMS = 0
 # A digest rubric (``RUBRICS[r]["digest"]``, e.g. the events listing) needs
 # many different things, not many accounts of one thing: one item per story,
 # this many stories at most.

@@ -97,6 +97,9 @@ def regenerate_rewrites(settings: Settings, provider: Any = None) -> list[PostDr
             post["status"] = "rejected"
             continue
         items = [NormalizedItem.from_dict(row) for row in snapshot]
+        from .enrich import enrich_items
+
+        enrich_items(items, settings)
         approval = post.get("approval") or {}
         instruction = MERGE_INSTRUCTION if approval.get("merge") else REWRITE_INSTRUCTION
         wish = str(approval.get("instruction") or "").strip()

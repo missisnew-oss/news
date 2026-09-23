@@ -120,12 +120,13 @@ def test_pick_items_takes_one_item_per_source():
     assert picked[0].item_id == "a1", "из одного канала берётся лучший по score"
 
 
-def test_select_for_rubric_sends_the_whole_story_plus_context():
+def test_select_for_rubric_sends_the_whole_story_and_nothing_else():
+    """Items of other stories used to be added «for context»; the Dubizzle
+    post got a wrestling tournament next to it. The pool is the lead story."""
     items = [LAUNCH_A, LAUNCH_B, LAUNCH_C, NAKHEEL_OTHER, VISA]
     pool = score.select_for_rubric(items, "market_pulse", limit=4)
     ids = [i.item_id for i in pool]
-    assert ids[:3] == ["a1", "c1", "b1"], "сначала все материалы ведущей истории"
-    assert ids[3:] == ["d1"], "затем контекст из другой истории в пределах лимита"
+    assert ids == ["a1", "c1", "b1"], "все материалы ведущей истории и только они"
     assert "e1" not in ids, "city_gov не питает market_pulse"
 
 

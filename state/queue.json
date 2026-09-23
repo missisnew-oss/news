@@ -41,7 +41,7 @@
       },
       "length_chars": 851,
       "needs_separate_text": false,
-      "status": "queued",
+      "status": "rejected",
       "created_at": "2026-09-21T11:49:50.100181+00:00",
       "slot_at": "2026-09-21T15:30:00+00:00",
       "image_path": "/home/runner/work/news/news/assets/generated/card-13b9568e13d0.png",
@@ -118,7 +118,10 @@
       },
       "approval": {
         "sent_at": "2026-09-21T12:49:47.338251+00:00",
-        "preview_message_id": 5
+        "preview_message_id": 5,
+        "decision": "rejected",
+        "decided_at": "2026-09-23T09:25:58.285624+00:00",
+        "by": "orchestrator: устаревший голос/формат"
       },
       "rewrite_count": 0,
       "publish_key": "",
@@ -189,7 +192,7 @@
       },
       "length_chars": 1111,
       "needs_separate_text": true,
-      "status": "queued",
+      "status": "rejected",
       "created_at": "2026-09-21T12:11:45.093187+00:00",
       "slot_at": "2026-09-22T05:30:00+00:00",
       "image_path": "/home/runner/work/news/news/assets/generated/card-eecef3e1f5a3.png",
@@ -266,7 +269,10 @@
       },
       "approval": {
         "sent_at": "2026-09-21T12:49:48.134083+00:00",
-        "preview_message_id": 6
+        "preview_message_id": 6,
+        "decision": "rejected",
+        "decided_at": "2026-09-23T09:25:58.285624+00:00",
+        "by": "orchestrator: устаревший голос/формат"
       },
       "rewrite_count": 0,
       "publish_key": "",
@@ -306,7 +312,7 @@
       },
       "length_chars": 622,
       "needs_separate_text": false,
-      "status": "queued",
+      "status": "rejected",
       "created_at": "2026-09-22T03:11:24.967376+00:00",
       "slot_at": "2026-09-22T15:30:00+00:00",
       "image_path": "/home/runner/work/news/news/assets/generated/card-40186bbad55a.png",
@@ -383,7 +389,10 @@
       },
       "approval": {
         "sent_at": "2026-09-22T03:12:09.083758+00:00",
-        "preview_message_id": 15
+        "preview_message_id": 15,
+        "decision": "rejected",
+        "decided_at": "2026-09-23T09:25:58.285624+00:00",
+        "by": "orchestrator: устаревший голос/формат"
       },
       "rewrite_count": 0,
       "publish_key": "",
@@ -424,7 +433,7 @@
       },
       "length_chars": 580,
       "needs_separate_text": false,
-      "status": "queued",
+      "status": "rejected",
       "created_at": "2026-09-22T03:12:07.169533+00:00",
       "slot_at": "2026-09-23T05:30:00+00:00",
       "image_path": "/home/runner/work/news/news/assets/generated/card-cdf99a71c0a0.png",
@@ -501,7 +510,10 @@
       },
       "approval": {
         "sent_at": "2026-09-22T03:12:09.707487+00:00",
-        "preview_message_id": 16
+        "preview_message_id": 16,
+        "decision": "rejected",
+        "decided_at": "2026-09-23T09:25:58.285624+00:00",
+        "by": "orchestrator: устаревший голос/формат"
       },
       "rewrite_count": 0,
       "publish_key": "",
@@ -557,7 +569,7 @@
       },
       "length_chars": 563,
       "needs_separate_text": false,
-      "status": "queued",
+      "status": "rejected",
       "created_at": "2026-09-22T07:58:10.500865+00:00",
       "slot_at": "2026-09-23T15:30:00+00:00",
       "image_path": "/home/runner/work/news/news/assets/generated/card-dc55051a8380.png",
@@ -634,7 +646,10 @@
       },
       "approval": {
         "sent_at": "2026-09-22T07:59:11.199913+00:00",
-        "preview_message_id": 17
+        "preview_message_id": 17,
+        "decision": "rejected",
+        "decided_at": "2026-09-23T09:25:58.285624+00:00",
+        "by": "orchestrator: устаревший голос/формат"
       },
       "rewrite_count": 0,
       "publish_key": "",
@@ -680,7 +695,7 @@
       },
       "length_chars": 711,
       "needs_separate_text": false,
-      "status": "queued",
+      "status": "rejected",
       "created_at": "2026-09-22T07:59:09.246563+00:00",
       "slot_at": "2026-09-24T05:30:00+00:00",
       "image_path": "/home/runner/work/news/news/assets/generated/card-e6849f3bf851.png",
@@ -757,7 +772,10 @@
       },
       "approval": {
         "sent_at": "2026-09-22T07:59:11.856009+00:00",
-        "preview_message_id": 18
+        "preview_message_id": 18,
+        "decision": "rejected",
+        "decided_at": "2026-09-23T09:25:58.285624+00:00",
+        "by": "orchestrator: устаревший голос/формат"
       },
       "rewrite_count": 0,
       "publish_key": "",
@@ -828,7 +846,7 @@
       },
       "length_chars": 602,
       "needs_separate_text": false,
-      "status": "queued",
+      "status": "rejected",
       "created_at": "2026-09-23T03:10:33.829453+00:00",
       "slot_at": "2026-09-24T15:30:00+00:00",
       "image_path": "/home/runner/work/news/news/assets/generated/card-db2d7413e1b2.png",
@@ -905,7 +923,10 @@
       },
       "approval": {
         "sent_at": "2026-09-23T03:10:38.374008+00:00",
-        "preview_message_id": 19
+        "preview_message_id": 19,
+        "decision": "rejected",
+        "decided_at": "2026-09-23T09:25:58.285624+00:00",
+        "by": "orchestrator: устаревший голос/формат"
       },
       "rewrite_count": 0,
       "publish_key": "",
@@ -964,7 +985,7 @@
       },
       "length_chars": 700,
       "needs_separate_text": false,
-      "status": "queued",
+      "status": "rejected",
       "created_at": "2026-09-23T09:15:57.561647+00:00",
       "slot_at": "2026-09-25T05:30:00+00:00",
       "image_path": "/home/runner/work/news/news/assets/generated/card-a5b7c967e136.png",
@@ -1034,7 +1055,10 @@
       },
       "approval": {
         "sent_at": "2026-09-23T09:16:14.972638+00:00",
-        "preview_message_id": 20
+        "preview_message_id": 20,
+        "decision": "rejected",
+        "decided_at": "2026-09-23T09:25:58.285624+00:00",
+        "by": "orchestrator: устаревший голос/формат"
       },
       "rewrite_count": 0,
       "publish_key": "",
@@ -1084,7 +1108,7 @@
       },
       "length_chars": 575,
       "needs_separate_text": false,
-      "status": "queued",
+      "status": "rejected",
       "created_at": "2026-09-23T09:16:05.206118+00:00",
       "slot_at": "2026-09-25T15:30:00+00:00",
       "image_path": "/home/runner/work/news/news/assets/generated/card-ea39549dbc0d.png",
@@ -1154,7 +1178,10 @@
       },
       "approval": {
         "sent_at": "2026-09-23T09:16:16.045029+00:00",
-        "preview_message_id": 21
+        "preview_message_id": 21,
+        "decision": "rejected",
+        "decided_at": "2026-09-23T09:25:58.285624+00:00",
+        "by": "orchestrator: устаревший голос/формат"
       },
       "rewrite_count": 0,
       "publish_key": "",

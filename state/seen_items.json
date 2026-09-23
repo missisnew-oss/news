@@ -2658,7 +2658,8 @@
       "source_id": "tg_uaegeneralnews",
       "title_key": "хамзат чимаев возглавит борцовский турнир в столице оаэ",
       "url": "https://t.me/uaegeneralnews/17763",
-      "item_id": "64cd1764cf54b033f1385945b9f46a4212489973"
+      "item_id": "64cd1764cf54b033f1385945b9f46a4212489973",
+      "used_at": "2026-09-23T11:04:13.160655+00:00"
     },
     "86114748298cef53cee944cced11f85f29222c07": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
@@ -3597,7 +3598,8 @@
       "source_id": "tg_dome_dubai",
       "title_key": "готовимся к началу сезону плодотворно новая неделя и новое интервью",
       "url": "https://t.me/dome_dubai/1351",
-      "item_id": "6bcff624f5829fb06c6532a0a82b34b291531cfa"
+      "item_id": "6bcff624f5829fb06c6532a0a82b34b291531cfa",
+      "used_at": "2026-09-23T11:04:13.160655+00:00"
     },
     "93f8808e5cbc916812b693099f3fdccd39267573": {
       "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
@@ -3614,6 +3616,84 @@
       "url": "https://t.me/dubaihighlights/6197",
       "item_id": "bdfef3f6d6eec287c7da0293fdd74f4d8e0cd31b",
       "used_at": "2026-09-23T10:46:26.484869+00:00"
+    },
+    "e3fe5bc802dbd1f2dcd251680c35878ab20a0514": {
+      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "sharjah islamic bank launches 500mln 5 year wakala sukuk ipts out",
+      "url": "https://www.zawya.com/en/economy/sharjah-islamic-bank-launches-500mln-5-year-wakala-sukuk-ipts-out-1068428",
+      "item_id": "003f7edd5a0f5037be7ff99a356ce4cd2875cffa"
+    },
+    "656f708e77cf81718bd676a4bbba5d8dccee2c0c": {
+      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sharjah ruler settles dh17 86m debts in 82 cases sharjah s ruler has issued directives to support citizens and ease family burdens 16m ago 1 m read",
+      "url": "https://gulfnews.com/uae/government/sharjah-ruler-settles-debts-for-82-cases-totalling-over-dh178-million-1.500684978",
+      "item_id": "788a8dc1327b5fd00779085ec210efbe7f0b8d3e"
+    },
+    "2fde8a37fd26a31c13d2489ffe9cf20e941b9012": {
+      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "legoland dubai s new season starts on october 7 39m ago 2 m read",
+      "url": "https://gulfnews.com/lifestyle/a-new-miniland-show-and-halloween-legoland-dubais-season-starts-october-7-1.500684990",
+      "item_id": "01793444b2d64489bf5a06ed388ec9ae8ff344e7"
+    },
+    "5654bfccb20fa8ae046a61fb3ce32bafea39bb40": {
+      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "abdullah joins trump meeting with arab leaders at un 56m ago 2 m read",
+      "url": "https://gulfnews.com/uae/government/abdullah-bin-zayed-joins-trump-meeting-with-arab-islamic-leaders-on-sidelines-of-un-general-assembly-1.500684960",
+      "item_id": "18ee2a51a430b18310ccc1f04c82305db581e92b"
+    },
+    "1fd5517e8f9e5d10564b0551ac697ac331f98e3a": {
+      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai s etihad rail station takes shape ahead of launch 2h ago 4 m read",
+      "url": "https://gulfnews.com/living-in-uae/transport/etihad-rail-dubai-abu-dhabi-al-yalayis-station-1.500684826",
+      "item_id": "afe651e23f8cf8cdcdf5ffc46866922a160edbc3"
+    },
+    "278a637c4b711a5ee5507f80065789d01b14b500": {
+      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "музей гуггенхайма в абу даби открыл продажу билетов",
+      "url": "https://t.me/russianemiratesnews/28113",
+      "item_id": "a10c1d62d2c529f590941465ffe56375da9954a6"
+    },
+    "ea31ed99a4c4f08f983295257d8c30f33b30de7e": {
+      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "в дубай вернется международный кинофестиваль",
+      "url": "https://t.me/russianemiratesnews/28110",
+      "item_id": "f36e4c11c7eec9504e240de911ca037ae9c5101d"
+    },
+    "c7a9e0445cb81c99eeb45f6ffb332d3327652ecc": {
+      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "в дубае построят ж д станцию в районе мейдан",
+      "url": "https://t.me/russianemiratesnews/28109",
+      "item_id": "06186fb4e62cb960df0089124aa64d9bf3a7064f"
+    },
+    "46caf5508a5494a8d55a614e0d42b521277ee76d": {
+      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "в дубае предупредили об аферах с билетами на global village",
+      "url": "https://t.me/russianemiratesnews/28107",
+      "item_id": "21fe716193604205acd407833773a8937f48290f"
+    },
+    "fe76c1a35f142676b642dc88a871673aa7316895": {
+      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "dubizzle запустил прямое бронирование жилья для посуточной аренды теперь квартиру дом или виллу можно выбрать и",
+      "url": "https://t.me/dubaimap/14507",
+      "item_id": "fc718609f5db3d833d81a5b6ec41b48a29e2f993",
+      "used_at": "2026-09-23T11:04:13.160655+00:00"
+    },
+    "70f954f0dc6be40a65ef556a7c48d61bc230ca64": {
+      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "сеть address откроет 2 новых отеля в оаэ",
+      "url": "https://t.me/kstati_dubai/2734",
+      "item_id": "d11d7c6ead5e83baae4bad045fb0aadac549bc1c"
     }
   }
 }

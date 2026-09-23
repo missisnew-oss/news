@@ -31,7 +31,8 @@ KEYWORDS_STRONG = (
 )
 KEYWORDS_SOFT = (
     "dubai", "abu dhabi", "uae", "sharjah", "ras al khaimah", "property",
-    "real estate", "visa", "festival", "concert", "expo", "metro", "tariff",
+    "real estate", "visa", "expo", "metro", "tariff", "architecture", "tower",
+    "masterplan", "law", "закон", "недвиж", "архитект", "застройщ", "район",
 )
 NEGATIVE = ("sponsored", "advertorial", "promoted content", "press release distribution")
 

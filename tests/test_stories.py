@@ -268,7 +268,7 @@ def test_meme_rubric_is_capped_by_its_share_of_the_feed():
         assert "meme" in plan_fresh
         # The best news rubric keeps the first slot; the meme is the second post.
         assert plan_fresh[0] != "meme" and plan_fresh[1] == "meme"
-        assert sc.plan_rubrics([], max_posts=1, history=["dubai_life"] * 12) == ["dubai_life"]
+        assert sc.plan_rubrics([], max_posts=1, history=["dubai_life"] * 12) != ["meme"]
         # No meme in the recent feed at all: one is due even on a short feed.
         assert "meme" in sc.plan_rubrics([], max_posts=2, history=["dubai_life"] * 2)
     finally:

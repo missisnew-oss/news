@@ -31,6 +31,7 @@ publish runs do not depend on the local file.
 from __future__ import annotations
 
 import logging
+import re
 import shutil
 import subprocess
 from datetime import datetime, timezone
@@ -119,8 +120,18 @@ def _trim(text: Any, limit: int) -> str:
 # Files
 # ---------------------------------------------------------------------------
 
+# The cache file name is a hash of the file_id plus an extension; the
+# extension comes from Telegram's ``file_path`` / the document name and is
+# kept only when it looks like one — nothing from the outside may add a
+# path component.
+_SUFFIX_RE = re.compile(r"^\.[A-Za-z0-9]{1,8}$")
+
+
 def cache_path(file_id: str, suffix: str = "") -> Path:
-    return CACHE_DIR / f"{sha1(file_id)[:16]}{suffix.lower()}"
+    suffix = suffix.lower()
+    if not _SUFFIX_RE.match(suffix):
+        suffix = ""
+    return CACHE_DIR / f"{sha1(file_id)[:16]}{suffix}"
 
 
 def download_file(client: TelegramClient, file_id: str, *, name: str = "") -> Path:
@@ -139,7 +150,13 @@ def download_file(client: TelegramClient, file_id: str, *, name: str = "") -> Pa
     dest = cache_path(file_id, suffix)
     if dest.exists() and dest.stat().st_size > 0:
         return dest
-    client.download_file(file_path, dest)
+    try:
+        # The client streams with its own 20 MB cap (TelegramClient.MAX_DOWNLOAD_BYTES).
+        client.download_file(file_path, dest)
+    except TelegramError as exc:
+        if "лимита" in str(exc):
+            raise FileTooLarge(str(exc)) from exc
+        raise
     log.info("Скачан файл из копилки: %s (%d байт)", dest.name, dest.stat().st_size)
     return dest
 
@@ -168,14 +185,47 @@ def _classify(entry: dict[str, Any]) -> tuple[str, str | None, str, str]:
 # Understanding: image / pdf / video
 # ---------------------------------------------------------------------------
 
+def sniff_media_type(data: bytes) -> str:
+    """Image media type from the magic bytes, '' when it is not an image we
+    know. The extension Telegram reports is not trusted: a PNG saved as
+    «.jpg» sent with ``image/jpeg`` is rejected by the vision API."""
+    head = data[:16]
+    if head.startswith(b"\xff\xd8\xff"):
+        return "image/jpeg"
+    if head.startswith(b"\x89PNG\r\n\x1a\n"):
+        return "image/png"
+    if head.startswith((b"GIF87a", b"GIF89a")):
+        return "image/gif"
+    if head[:4] == b"RIFF" and head[8:12] == b"WEBP":
+        return "image/webp"
+    return ""
+
+
 def _prepare_image(data: bytes, media_type: str) -> tuple[bytes, str]:
-    """Keep the bytes as they are when the API accepts them; otherwise
-    re-encode to a bounded JPEG (oversized photo, unsupported format)."""
-    if len(data) <= IMAGE_MAX_BYTES and media_type in IMAGE_MEDIA_TYPES.values():
+    """Bytes and media type the vision API will accept.
+
+    The type comes from the content, not the extension. The bytes are kept
+    as they are when they are a known format, under the size cap and no
+    longer than ``IMAGE_MAX_SIDE`` on the long edge (the API rejects images
+    over 8000 px and downsizes to ~1600 anyway); otherwise the image is
+    re-encoded to a bounded JPEG.
+    """
+    import io
+
+    sniffed = sniff_media_type(data)
+    media_type = sniffed or media_type
+    needs_reencode = len(data) > IMAGE_MAX_BYTES or not sniffed
+    if not needs_reencode:
+        try:
+            from PIL import Image
+
+            with Image.open(io.BytesIO(data)) as image:
+                needs_reencode = max(image.size) > IMAGE_MAX_SIDE
+        except Exception:
+            needs_reencode = True
+    if not needs_reencode:
         return data, media_type
     try:
-        import io
-
         from PIL import Image
 
         with Image.open(io.BytesIO(data)) as image:
@@ -588,7 +638,6 @@ def drafts_from_inbox(settings: Settings, provider: Any = None,
         drafts.append(draft)
         log.info("Материал %s → черновик %s", entry.get("message_id"), draft.post_id)
 
-    state.save(STATE_FILE, inbox)
     if drafts:
         queue = postqueue.enqueue(drafts, persist=False)
         by_id = {p.get("post_id"): p for p in (queue.get("posts") or [])}
@@ -600,4 +649,11 @@ def drafts_from_inbox(settings: Settings, provider: Any = None,
                 # no dependency on assets/cache/ surviving between runs.
                 post["telegram_file_id"] = file_id
         postqueue.save_queue(queue)
+    # The queue is saved first, the inbox state second. A crash in between
+    # leaves the entry without ``drafted_at``, so the next run generates the
+    # post again — and ``post_id`` is derived from the message id, so
+    # ``enqueue`` updates the same queue entry instead of adding a twin. The
+    # other order (inbox first) would mark the material drafted while no
+    # post exists, and it would be lost for good.
+    state.save(STATE_FILE, inbox)
     return drafts

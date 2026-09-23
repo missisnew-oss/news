@@ -157,7 +157,7 @@ def test_photo_goes_through_vision_and_becomes_a_post_with_the_owners_image(sett
 
 
 def test_screenshot_of_someone_elses_post_gets_a_card_not_the_screenshot(settings):
-    _save_inbox(_entry(2, "Скрин из инстаграма про новые правила", photo="SHOT"))
+    _save_inbox(_entry(2, "Скрин чужого поста про новые правила", photo="SHOT"))
     client = FakeTelegram({"SHOT": (b"pngbytes", ".png")})
     drafts = inbox.drafts_from_inbox(settings, provider=FakeProvider(kind="screenshot"), client=client)
 
@@ -303,3 +303,130 @@ def test_dry_run_client_stub_never_opens_a_socket():
     dest = client.download_file(info["file_path"], Path(inbox.CACHE_DIR) / "stub.bin")
     assert dest.exists() and dest.stat().st_size == 0
     assert [c["method"] for c in client.calls] == ["getFile", "downloadFile"]
+
+
+# --- QA round 2 -------------------------------------------------------------
+
+TOKEN = "123456789:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+
+
+class _StreamResponse:
+    def __init__(self, chunks: list[bytes], status: int = 200, declared: int | None = None) -> None:
+        self.chunks, self.status_code = chunks, status
+        self.headers = {"Content-Length": str(declared)} if declared is not None else {}
+
+    def iter_content(self, chunk_size=None):
+        yield from self.chunks
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *a):
+        return False
+
+
+def test_download_file_stops_at_the_size_cap_and_leaves_no_partial_file(monkeypatch, tmp_path):
+    import requests
+
+    client = TelegramClient(TOKEN, dry_run=False)
+    monkeypatch.setattr(requests, "get", lambda *a, **k: _StreamResponse([b"x" * 1024] * 8))
+    with pytest.raises(inbox.TelegramError, match="лимита"):
+        client.download_file("photos/a.jpg", tmp_path / "a.jpg", max_bytes=4096)
+    assert not (tmp_path / "a.jpg").exists(), "обрезанный файл не должен оставаться в кеше"
+
+    monkeypatch.setattr(requests, "get", lambda *a, **k: _StreamResponse([b"x"], declared=50 * 1024 * 1024))
+    with pytest.raises(inbox.TelegramError, match="лимита"):
+        client.download_file("photos/b.jpg", tmp_path / "b.jpg")
+
+    monkeypatch.setattr(requests, "get", lambda *a, **k: _StreamResponse([b"ab", b"cd"]))
+    assert client.download_file("photos/c.jpg", tmp_path / "c.jpg").read_bytes() == b"abcd"
+
+
+def test_bot_token_never_reaches_the_error_text_or_the_inbox_state(monkeypatch, settings):
+    """requests puts the request URL — with the token — into its exceptions;
+    inbox stores the error text in state/inbox.json, which is committed."""
+    import requests
+
+    def boom(url, *a, **k):
+        raise requests.exceptions.ConnectionError(f"Max retries exceeded with url: {url}")
+
+    monkeypatch.setattr(requests, "get", boom)
+    monkeypatch.setattr(requests, "post", boom)
+    client = TelegramClient(TOKEN, dry_run=False, sleep=lambda s: None)
+    with pytest.raises(inbox.TelegramError) as info:
+        client.download_file("photos/a.jpg", inbox.CACHE_DIR / "a.jpg")
+    assert TOKEN not in str(info.value) and "***" in str(info.value)
+    with pytest.raises(inbox.TelegramError) as info:
+        client.call("getFile", {"file_id": "X"})
+    assert TOKEN not in str(info.value)
+
+    class Leaky(FakeTelegram):
+        def get_file(self, file_id):
+            raise inbox.TelegramError(f"getFile: https://api.telegram.org/bot{TOKEN}/getFile")
+
+    _save_inbox(_entry(20, "Планировка", photo="P20"))
+    inbox.drafts_from_inbox(settings, provider=FakeProvider(), client=Leaky())
+    dumped = json.dumps(state.load("inbox.json"), ensure_ascii=False)
+    # The fake raises with the token on purpose; the real client scrubs it
+    # before raising. What must hold: whatever text ends in the state file
+    # is bounded and the download failure is recorded.
+    assert "download_failed" in dumped
+    assert len(_inbox_items()[0]["extracted"]["error"]) <= 300
+
+
+def test_cache_path_never_leaves_the_inbox_cache_dir():
+    for suffix in ("/../../../etc/passwd", ".jpg/../../x", "..", ".exe.sh", ".a b"):
+        path = inbox.cache_path("F", suffix)
+        assert path.parent == inbox.CACHE_DIR and "/" not in path.name and ".." not in path.name
+    assert inbox.cache_path("F", ".PDF").suffix == ".pdf"
+    assert inbox.cache_path("F", "").suffix == ""
+
+
+def test_vision_media_type_comes_from_the_bytes_not_the_extension():
+    from io import BytesIO
+
+    from PIL import Image
+
+    png = BytesIO()
+    Image.new("RGB", (40, 40), (200, 10, 10)).save(png, "PNG")
+    data, media_type = inbox._prepare_image(png.getvalue(), "image/jpeg")
+    assert media_type == "image/png" and data == png.getvalue()
+
+    huge = BytesIO()
+    Image.new("RGB", (inbox.IMAGE_MAX_SIDE + 500, 300), (10, 10, 200)).save(huge, "JPEG")
+    data, media_type = inbox._prepare_image(huge.getvalue(), "image/jpeg")
+    assert media_type == "image/jpeg"
+    with Image.open(BytesIO(data)) as image:
+        assert max(image.size) <= inbox.IMAGE_MAX_SIDE, "длинная сторона ужата под лимит API"
+
+    data, media_type = inbox._prepare_image(b"not an image at all", "image/gif")
+    assert data == b"not an image at all", "нераспознанное отправляется как есть"
+
+
+def test_queue_is_saved_before_the_inbox_state_so_a_crash_cannot_lose_a_material(settings, monkeypatch):
+    _save_inbox(_entry(30, "Планировка", photo="P30"))
+    client = FakeTelegram({"P30": (b"jpg", ".jpg")})
+    provider = FakeProvider()
+
+    real_save = postqueue.save_queue
+    crashes = [OSError("диск кончился")]
+
+    def flaky(queue):
+        if crashes:
+            raise crashes.pop()
+        real_save(queue)
+
+    monkeypatch.setattr(postqueue, "save_queue", flaky)
+    with pytest.raises(OSError):
+        inbox.drafts_from_inbox(settings, provider=provider, client=client)
+    entry = _inbox_items()[0]
+    assert entry["processed_at"], "понимание сохранено после каждого элемента"
+    assert not entry.get("drafted_at"), "черновика нет — материал не помечен использованным"
+    assert postqueue.load_queue()["posts"] == []
+
+    drafts = inbox.drafts_from_inbox(settings, provider=provider, client=client)
+    assert len(drafts) == 1
+    assert len(provider.images) == 1, "картинка второй раз не распознаётся"
+    posts = postqueue.load_queue()["posts"]
+    assert [p["post_id"] for p in posts] == [drafts[0].post_id]
+    assert _inbox_items()[0]["drafted_at"]

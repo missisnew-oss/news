@@ -43,6 +43,18 @@ class TelegramClient:
     def _url(self, method: str) -> str:
         return f"{API_ROOT}/bot{self.token}/{method}"
 
+    def _scrub(self, text: object) -> str:
+        """Error text with the bot token removed.
+
+        ``requests`` puts the full request URL — ``/bot<TOKEN>/…`` — into its
+        exception messages. The log redactor catches those in the log, but
+        a ``TelegramError`` built from such a message also travels into
+        ``state/inbox.json`` (``extracted.error``), which is committed to the
+        repository. So the token is stripped at the source.
+        """
+        value = str(text)
+        return value.replace(self.token, "***") if self.token else value
+
     def _dry(self, method: str, payload: dict[str, Any]) -> dict[str, Any]:
         self.calls.append({"method": method, "payload": payload})
         log.info("DRY_RUN telegram.%s payload_keys=%s", method, sorted(payload))
@@ -68,7 +80,7 @@ class TelegramClient:
                     self._url(method), data=payload, files=files, timeout=timeout
                 )
             except Exception as exc:
-                last_error = str(exc)
+                last_error = self._scrub(exc)
                 delay = BASE_BACKOFF ** attempt
                 log.warning("telegram.%s сетевая ошибка (%s), пауза %.1fs", method, exc, delay)
                 self._sleep(delay)
@@ -191,11 +203,18 @@ class TelegramClient:
         data = self.call("getFile", {"file_id": file_id})
         return data.get("result") or {}
 
-    def download_file(self, file_path: str, dest: str | Path, timeout: int = 120) -> Path:
+    # Bot API never serves more than this through getFile; the cap is enforced
+    # here too so a wrong Content-Length or an endless stream cannot fill the disk.
+    MAX_DOWNLOAD_BYTES = 20 * 1024 * 1024
+
+    def download_file(self, file_path: str, dest: str | Path, timeout: int = 120,
+                      *, max_bytes: int = MAX_DOWNLOAD_BYTES) -> Path:
         """Fetch ``file_path`` from ``getFile`` into ``dest`` (streamed to disk).
 
-        In DRY_RUN nothing is fetched: an empty file is written so the rest of
-        the inbox stage can run its "unreadable file" branches offline.
+        Stops — and removes the partial file — as soon as more than
+        ``max_bytes`` arrive, whatever the headers said. In DRY_RUN nothing is
+        fetched: an empty file is written so the rest of the inbox stage can
+        run its "unreadable file" branches offline.
         """
         dest = Path(dest)
         dest.parent.mkdir(parents=True, exist_ok=True)
@@ -208,13 +227,28 @@ class TelegramClient:
         import requests
 
         url = f"{API_ROOT}/file/bot{self.token}/{file_path}"
-        with requests.get(url, stream=True, timeout=timeout) as response:
-            if response.status_code != 200:
-                raise TelegramError(f"downloadFile: HTTP {response.status_code}")
-            with open(dest, "wb") as fh:
-                for chunk in response.iter_content(chunk_size=1 << 16):
-                    if chunk:
+        try:
+            with requests.get(url, stream=True, timeout=timeout) as response:
+                if response.status_code != 200:
+                    raise TelegramError(f"downloadFile: HTTP {response.status_code}")
+                declared = int(response.headers.get("Content-Length") or 0)
+                if declared > max_bytes:
+                    raise TelegramError(f"downloadFile: файл {declared} байт больше лимита {max_bytes}")
+                total = 0
+                with open(dest, "wb") as fh:
+                    for chunk in response.iter_content(chunk_size=1 << 16):
+                        if not chunk:
+                            continue
+                        total += len(chunk)
+                        if total > max_bytes:
+                            raise TelegramError(f"downloadFile: поток больше лимита {max_bytes} байт")
                         fh.write(chunk)
+        except TelegramError:
+            dest.unlink(missing_ok=True)
+            raise
+        except Exception as exc:
+            dest.unlink(missing_ok=True)
+            raise TelegramError(f"downloadFile: {self._scrub(exc)}") from None
         return dest
 
 

@@ -16,7 +16,7 @@ import math
 from datetime import datetime, timezone
 from typing import Any
 
-from . import state
+from . import state, topics
 from .config import RUBRICS, SELLING_RUBRICS
 from .models import NormalizedItem
 from .stories import Story, cluster, pick_items
@@ -64,7 +64,10 @@ def penalty(item: NormalizedItem) -> float:
     haystack = f"{item.title} {item.summary}".lower()
     hits = sum(1 for kw in NEGATIVE if kw in haystack)
     short = 0.3 if len(item.summary) < 40 else 0.0
-    return min(1.0, hits * 0.5 + short)
+    # Filler (contests, horoscopes, gossip, listicles — pipeline/topics.py) is
+    # not banned, but it must lose to any real news for the same rubric.
+    junk = 0.8 if topics.junk_reason(item) else 0.0
+    return min(1.0, hits * 0.5 + short + junk)
 
 
 def score_items(

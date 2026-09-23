@@ -28,9 +28,10 @@ TIMEZONE = "Asia/Dubai"
 
 # Fixed rubric registry. These ids are a contract shared by:
 #   ``per_4weeks`` is the planned number of posts per 4-week cycle. The plan is
-#   53 posts / 28 days (~1.9 per day, within the brief's 1-2) of which 9 are
-#   selling (new_launch + investor_math + case_story) = 17%, under the 25% cap.
-#   Topic focus since 23.09.2026: real estate, architecture, laws (owner).
+#   55 posts / 28 days (~1.96 per day, within the brief's 1-2) of which 9 are
+#   selling (new_launch + investor_math + case_story) = 16%, under the 25% cap.
+#   Since 23.09.2026 every story must pass the «Кому это важно» significance
+#   test (prompts/system_tone.md); filler is penalised, topics are not banned.
 #   docs/RUBRICS.md, prompts/<rubric_id>.md and this module.
 # tests/test_prompts_rubrics.py enforces that the three stay in sync.
 RUBRICS: dict[str, dict[str, Any]] = {
@@ -70,10 +71,9 @@ RUBRICS: dict[str, dict[str, Any]] = {
         "per_4weeks": 5,
     },
     "dubai_life": {
-        # Since 23.09.2026: the city as a place to live — infrastructure,
-        # architecture, transport, services. No lifestyle (beauty, food,
-        # celebrities): pipeline/topics.py drops that before scoring.
-        "title": "Город и архитектура",
+        # Any side of city life, as long as it passes the «Кому это важно»
+        # test of prompts/system_tone.md; filler is penalised in score.py.
+        "title": "Жизнь в Дубае",
         "categories": ["lifestyle", "city_gov"],
         "selling": False,
         "max_chars": 450,
@@ -84,7 +84,7 @@ RUBRICS: dict[str, dict[str, Any]] = {
         "categories": ["events", "lifestyle"],
         "selling": False,
         "max_chars": 450,
-        "per_4weeks": 2,
+        "per_4weeks": 4,
         # A digest: the post lists 3-5 different events, so SCORE hands the
         # model one item per story from several stories instead of every
         # retelling of the single leading story (pipeline/score.py).

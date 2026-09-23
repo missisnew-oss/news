@@ -17,7 +17,6 @@ from . import approve as approve_stage
 from . import collect as collect_stage
 from . import illustrate as illustrate_stage
 from . import inbox as inbox_stage
-from . import topics
 from . import normalize as normalize_stage
 from . import postqueue, publish as publish_stage, score as score_stage, state
 from .config import OUT_DIR, Settings, load_settings, load_sources
@@ -34,9 +33,6 @@ def stage_collect(settings: Settings) -> list[Any]:
     sources_doc = load_sources()
     raw = collect_stage.collect(settings, sources_doc)
     items = normalize_stage.normalize_and_dedupe(raw, sources_doc, persist=not settings.dry_run)
-    # Real estate, architecture and the law only (pipeline/topics.py):
-    # beauty, food, celebrities and sport never reach a prompt.
-    items = topics.keep_on_topic(items)
     items = score_stage.score_items(items, sources_doc)
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     (OUT_DIR / "items.json").write_text(

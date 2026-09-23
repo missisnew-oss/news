@@ -576,7 +576,7 @@ def test_ensure_image_redraws_light_card(no_network, tmp_path):
     path = illustrate.ensure_image(Settings(dry_run=True), post)
     assert path and Path(path).exists()
     assert post["image_meta"]["background"] == "light"
-    assert post["image_meta"]["tag_right"] == "#ГОРОД"
+    assert post["image_meta"]["tag_right"] == "#ЖИЗНЬВДУБАЕ"
 
 
 # --------------------------------------------------------------------------

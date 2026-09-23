@@ -1,14 +1,14 @@
-"""TOPICS: only real estate, architecture and the law reach the prompts."""
+"""TOPICS: filler is recognised and sinks in the ranking; nothing is banned."""
 
 from __future__ import annotations
 
 import pytest
 
-from pipeline import topics
+from pipeline import score, topics
 from pipeline.models import NormalizedItem
 
 
-def _item(title: str, summary: str = "") -> NormalizedItem:
+def _item(title: str, summary: str = "Подробности в материале источника.") -> NormalizedItem:
     return NormalizedItem(item_id="i", source_id="s", category="lifestyle", title=title, summary=summary,
                           url="https://example.com/x", canonical_url="https://example.com/x",
                           published_at=None, collected_at="", lang="ru")
@@ -16,31 +16,28 @@ def _item(title: str, summary: str = "") -> NormalizedItem:
 
 @pytest.mark.parametrize("title", [
     "В Дубае пройдет первый фестиваль для кудрявых людей",
-    "Chef Saradhi brings the Mediterranean to the table",
-    "Valery Meladze Concert at The Agenda in Dubai",
+    "Конкурс: выиграйте ужин на двоих",
+    "Гороскоп на неделю для жителей Эмиратов",
+    "Топ-10 лучших кафе Дубая для завтрака",
     "Капибары здорового человека: вечеринка в субботу",
-    "Dubai Summer Sale: скидки до 70% в моллах",
 ])
-def test_beauty_food_show_business_and_shopping_are_dropped(title):
-    assert topics.off_topic_reason(_item(title))
+def test_filler_is_recognised(title):
+    assert topics.junk_reason(_item(title))
 
 
 @pytest.mark.parametrize("title", [
-    "Properties for Sale in Dubai Marina",              # sale, but property
-    "Etihad Rail открыли продажу билетов со скидкой",     # скидка, but train
-    "Новый закон о салонах красоты: штрафы до 50 000 AED",  # beauty, but law
-    "Chairman of Emaar unveils the new tower masterplan",  # 'hair' inside chairman
-    "В Дубае обновят курорт Atlantis: реконструкция и рестораны",
     "Сделки с недвижимостью в Дубае выросли на 12%",
-    "В ОАЭ объявлен трёхдневный траур, госучреждения закрыты",
+    "Новый закон о салонах красоты: штрафы до 50 000 AED",
+    "Chairman of Emaar unveils the new tower masterplan",   # 'hair' inside chairman
+    "Etihad Rail открыли продажу билетов Дубай — Абу-Даби",
+    "Coldplay сыграют на стадионе Zayed Sports City",        # a city-scale event is not filler
+    "В Дубае откроют новый ресторанный квартал у канала",  # a topic is not a ban
 ])
-def test_real_estate_architecture_law_and_transport_stay(title):
-    assert topics.off_topic_reason(_item(title)) is None
+def test_real_news_is_not_filler(title):
+    assert topics.junk_reason(_item(title)) is None
 
 
-def test_keep_on_topic_filters_and_logs(caplog):
-    items = [_item("Сделки в Дубае выросли"), _item("Маникюр недели: тренды осени")]
-    with caplog.at_level("INFO"):
-        kept = topics.keep_on_topic(items)
-    assert [i.title for i in kept] == ["Сделки в Дубае выросли"]
-    assert "отброшено 1" in caplog.text
+def test_filler_loses_to_real_news_in_the_score():
+    filler = _item("В Дубае пройдет первый фестиваль для кудрявых людей")
+    news = _item("В Дубае открыли новую станцию метро")
+    assert score.penalty(filler) > score.penalty(news) + 0.5

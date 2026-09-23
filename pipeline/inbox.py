@@ -575,9 +575,79 @@ def _notify_skip(settings: Settings, client: TelegramClient, entry: dict[str, An
         log.warning("Не удалось сообщить владельцу о пропуске: %s", exc)
 
 
+# Words that say nothing about the subject; without this list «если»,
+# «только», «есть» made every post look related to every note.
+_STOP_STEMS = {
+    "если", "тольк", "есть", "могут", "может", "любой", "будет", "быть", "этот", "этого",
+    "того", "чтобы", "когда", "после", "перед", "очень", "тоже", "также", "ещё", "еще",
+    "уже", "сейча", "тепер", "напиш", "комме", "дубай", "дубае", "оаэ", "котор", "всего",
+    "просто", "можно", "нужно", "стоит", "сразу", "минут", "прямо", "самый", "самое",
+    "часто", "всегд", "почти", "между", "через", "более", "менее", "здесь", "новый",
+}
+MERGE_MIN_COMMON = 4
+MERGE_MIN_RATIO = 0.10
+MERGEABLE_STATUSES = {"queued", "rewrite", "postponed", "approved"}
+
+
+def _stems(text: str) -> set[str]:
+    return {w[:5] for w in re.findall(r"[а-яёa-z]{4,}", (text or "").lower())} - _STOP_STEMS
+
+
+def related_post(queue: dict[str, Any], text: str) -> dict[str, Any] | None:
+    """The queued post the owner's note is about, if any.
+
+    The owner sent four tips on short-term rentals right after the Dubizzle
+    booking post and expected them inside that post, not as a second one
+    («они взаимосвязаны»). Subject overlap is measured on word stems with
+    the noise words removed; the best candidate wins when it shares at least
+    ``MERGE_MIN_COMMON`` stems and ``MERGE_MIN_RATIO`` of the shorter text.
+    """
+    note = _stems(text)
+    if not note:
+        return None
+    best, best_score = None, (0, 0.0)
+    for post in queue.get("posts") or []:
+        if post.get("status") not in MERGEABLE_STATUSES:
+            continue
+        stems = _stems(f"{post.get('title', '')} {post.get('body', '')}")
+        common = len(note & stems)
+        ratio = common / max(1, min(len(note), len(stems)))
+        if common >= MERGE_MIN_COMMON and ratio >= MERGE_MIN_RATIO and (common, ratio) > best_score:
+            best, best_score = post, (common, ratio)
+    return best
+
+
+def merge_into_post(post: dict[str, Any], item: NormalizedItem, *, note: str) -> None:
+    """Attach the owner's material to ``post`` and send it back to the model.
+
+    The post keeps its id, slot and rubric; ``run.regenerate_rewrites``
+    rebuilds it from ``source_items`` (now including the material) with the
+    merge instruction, and a fresh preview goes to the owner.
+    """
+    from .generate import snapshot_items
+
+    items = post.setdefault("source_items", [])
+    if not any(row.get("item_id") == item.item_id for row in items):
+        items.extend(snapshot_items([item]))
+    ids = post.setdefault("item_ids", [])
+    if item.item_id not in ids:
+        ids.append(item.item_id)
+    post["status"] = "rewrite"
+    post["approval"] = {
+        "sent_at": None, "action": "merge", "merge": True,
+        "requested_at": _now(),
+        "instruction": _trim("Владелица прислала дополнение к этому посту, его нужно вплести в текст, "
+                             "а не пересказать отдельно:\n" + note, 900),
+    }
+
+
 def drafts_from_inbox(settings: Settings, provider: Any = None,
                       client: TelegramClient | None = None) -> list[PostDraft]:
-    """Understand new materials, draft posts from them, queue the drafts."""
+    """Understand new materials, draft posts from them, queue the drafts.
+
+    Material about a post that is already in the queue is merged into that
+    post (``related_post``) instead of becoming a second one.
+    """
     inbox = state.load(STATE_FILE)
     to_understand, to_draft = pending_entries(inbox)
     if not to_understand and not to_draft:
@@ -593,8 +663,26 @@ def drafts_from_inbox(settings: Settings, provider: Any = None,
     log.info("Копилка владельца: понято %d, к черновикам %d", understood, len(to_draft))
 
     drafts: list[PostDraft] = []
+    queue = postqueue.load_queue()
+    merged = 0
     for entry in to_draft:
         item = as_item(entry)
+        target = related_post(queue, str(entry.get("text") or "") + " " + (item.summary or ""))
+        if target is not None:
+            merge_into_post(target, item, note=str(entry.get("text") or item.summary))
+            entry["drafted_at"] = _now()
+            entry["post_id"] = target.get("post_id")
+            entry["merged_into"] = target.get("post_id")
+            merged += 1
+            log.info("Материал %s вплетён в пост %s", entry.get("message_id"), target.get("post_id"))
+            try:
+                client.send_message(
+                    str(settings.telegram_owner_id),
+                    f"Дополнение вошло в пост «{_trim(target.get('title') or '', 60)}» — "
+                    "перепишу его одним текстом и пришлю превью заново.")
+            except Exception as exc:
+                log.warning("Не удалось сообщить о слиянии: %s", exc)
+            continue
         draft = generate_for_rubric(settings, RUBRIC, [item], provider=provider)
         attempts = int(entry.get("draft_attempts") or 0) + 1
         entry["draft_attempts"] = attempts
@@ -642,6 +730,9 @@ def drafts_from_inbox(settings: Settings, provider: Any = None,
         drafts.append(draft)
         log.info("Материал %s → черновик %s", entry.get("message_id"), draft.post_id)
 
+    if merged:
+        # Saved before enqueue(), which loads its own copy of the queue.
+        postqueue.save_queue(queue)
     if drafts:
         queue = postqueue.enqueue(drafts, persist=False)
         by_id = {p.get("post_id"): p for p in (queue.get("posts") or [])}

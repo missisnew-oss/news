@@ -928,3 +928,19 @@ def test_dubai_time_formatting():
 
     assert approve.dubai_time("2026-09-23T15:30:00+00:00") == "23.09 в 19:30"
     assert approve.dubai_time(None) == "ближайший свободный слот"
+
+
+def test_reply_with_dopolni_merges_the_material_into_the_post(settings, monkeypatch):
+    from pipeline import approve, state
+
+    queue = _queue()
+    post = queue["posts"][0]
+    post["approval"] = {"sent_at": "x", "preview_message_id": 22}
+    monkeypatch.setattr(state, "save", lambda *a, **k: None)
+    client = _ChatClient([_reply_update(1, "дополни: проверьте разрешение DTCM и условия отмены")])
+    decisions = approve.poll_once(settings, client=client, queue=queue, persist=False)
+    assert decisions[0]["action"] == "merge" and post["status"] == "rewrite"
+    assert post["approval"]["merge"] is True
+    assert post["source_items"][-1]["source_id"] == "owner_inbox"
+    assert "DTCM" in post["source_items"][-1]["summary"]
+    assert post["body"] == "Текст"  # the model rewrites it, the reply is not the new text

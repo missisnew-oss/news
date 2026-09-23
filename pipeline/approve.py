@@ -156,11 +156,15 @@ def preview_text(post: dict[str, Any]) -> str:
 # Shown under every preview. The buttons are read by a scheduled poll, not a
 # live bot, so the owner needs a way to hand over her own text as well.
 EDIT_HINT = ("✏️ Поправить: ответьте на это сообщение своим текстом — он заменит пост. "
-             "Или «переписать: короче, без цифр» — робот перепишет с учётом пожелания.")
+             "«дополни: …» — вплету дополнение в этот пост. "
+             "«переписать: короче, без цифр» — перепишу с учётом пожелания.")
 
 # A reply that starts with one of these is an instruction for the robot,
 # anything else the owner replies is her own final text.
 REWRITE_PREFIXES = ("переписать", "перепиши", "переделай", "переделать")
+# …and one of these means «add this to the post»: the material is merged in
+# and the post is rewritten as one text.
+MERGE_PREFIXES = ("дополни", "дополнить", "добавь", "добавить", "к посту", "+")
 
 
 def send_previews(settings: Settings, client: TelegramClient | None = None,
@@ -515,6 +519,23 @@ def _apply_preview_reply(client: TelegramClient, queue: dict[str, Any], message:
     old_preview = (post.get("approval") or {}).get("preview_message_id")
 
     lowered = text.lower()
+    if lowered.startswith(MERGE_PREFIXES):
+        from .inbox import as_item, merge_into_post
+
+        material = text.split(":", 1)[1].strip() if ":" in text[:14] else text.lstrip("+ ").strip()
+        if lowered.startswith(("дополни", "добав", "к посту")) and ":" not in text[:14]:
+            material = text.split(None, 1)[1].strip() if " " in text else ""
+        if not material:
+            _reply(client, message, "После «дополни:» нужен сам текст дополнения.")
+            return None
+        entry = {"message_id": message.get("message_id"), "kind": "note", "text": material,
+                 "received_at": datetime.now(timezone.utc).isoformat(), "origin": {}}
+        merge_into_post(post, as_item(entry), note=material)
+        _take_buttons_off(client, str(chat.get("id") or owner), old_preview)
+        _reply(client, message, "Дополнение вошло в пост, перепишу его одним текстом. "
+                                "Новое превью придёт в ближайшие полчаса.")
+        log.info("Пост %s: владелица дополнила материалом (%d симв.)", post_id, len(material))
+        return {"post_id": post_id, "action": "merge", "status": "rewrite"}
     if lowered.startswith(REWRITE_PREFIXES):
         wish = text.split(":", 1)[1].strip() if ":" in text[:16] else text.split(None, 1)[1].strip() if " " in text else ""
         postqueue.set_status(

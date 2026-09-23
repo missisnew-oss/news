@@ -51,6 +51,14 @@ def stage_collect(settings: Settings) -> list[Any]:
 
 MAX_REWRITES = 3
 
+MERGE_INSTRUCTION = (
+    "ЭТО ОБЪЕДИНЕНИЕ. Владелец канала прислал дополнение к этому посту — оно лежит во "
+    "входных данных как материал источника owner_inbox. Напиши ОДИН пост, в котором новость "
+    "и дополнение владельца связаны в единый текст: новость, затем что это значит для "
+    "читателя, затем практические пункты из дополнения. Ничего из дополнения не терять, "
+    "отдельным постом не выделять, факты и цифры не менять."
+)
+
 REWRITE_INSTRUCTION = (
     "ЭТО ПЕРЕПИСЫВАНИЕ. Владелец канала отклонил предыдущую версию поста "
     "кнопкой «Переписать». Напиши по тем же входным данным ДРУГОЙ текст: "
@@ -89,8 +97,9 @@ def regenerate_rewrites(settings: Settings, provider: Any = None) -> list[PostDr
             post["status"] = "rejected"
             continue
         items = [NormalizedItem.from_dict(row) for row in snapshot]
-        instruction = REWRITE_INSTRUCTION
-        wish = str((post.get("approval") or {}).get("instruction") or "").strip()
+        approval = post.get("approval") or {}
+        instruction = MERGE_INSTRUCTION if approval.get("merge") else REWRITE_INSTRUCTION
+        wish = str(approval.get("instruction") or "").strip()
         if wish:
             instruction += f"\nПОЖЕЛАНИЕ ВЛАДЕЛЬЦА К НОВОЙ ВЕРСИИ (выполнить обязательно): {wish}"
         draft = generate_for_rubric(

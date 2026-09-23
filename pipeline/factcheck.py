@@ -16,7 +16,10 @@ Checks performed:
                 sources or one official/developer source, a ``single_source``
                 fact needs a hedge («по данным …, официального подтверждения
                 пока нет»), a ``rumour`` may not put its numbers in the text
-                as plain fact.
+                as plain fact;
+  7. instagram — no link to Instagram anywhere; no mention of the platform
+                in a post built from the owner's forwarded screenshot
+                (docs/LEGAL.md: retold, never attributed to a platform).
 """
 
 from __future__ import annotations
@@ -83,6 +86,16 @@ BANNED_PATTERNS = (
     r"лучшая\s+инвестиция",
     r"налогов\s+в\s+дубае\s+нет\s+вообще",
 )
+
+# docs/LEGAL.md and prompts/from_owner.md: a screenshot of somebody else's
+# Instagram post is retold in our own words, never linked and never
+# attributed to the platform. A link is forbidden in every rubric; naming
+# the platform at all is forbidden in the owner's-material rubric, where
+# the model sees a transcribed screenshot and likes to write «в Instagram
+# пишут…».
+INSTAGRAM_LINK_PATTERNS = (r"instagram\.com", r"instagr\.am")
+INSTAGRAM_MENTION_PATTERNS = (r"\binstagram\b", r"\binsta\b", r"инстаграм", r"\bинст[аы]\b")
+INSTAGRAM_MENTION_RUBRICS = {"from_owner"}
 
 # Numbers that carry no factual claim and never need a source.
 _NOISE_NUMBERS = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "0", "100"}
@@ -296,6 +309,17 @@ def check(
                 f"Обещание несуществующего материала или механики (шаблон: {pattern}); "
                 "единственный CTA — написать владелице"
             )
+
+    mention_patterns = INSTAGRAM_LINK_PATTERNS + (
+        INSTAGRAM_MENTION_PATTERNS if payload.get("rubric") in INSTAGRAM_MENTION_RUBRICS else ()
+    )
+    for pattern in mention_patterns:
+        if re.search(pattern, lowered):
+            errors.append(
+                f"Ссылка или упоминание Instagram (шаблон: {pattern}); чужой пост пересказываем "
+                "своими словами, платформу и аккаунт не называем (docs/LEGAL.md)"
+            )
+            break
 
     # 4. limits
     plain_len = len(strip_html(body))

@@ -249,3 +249,24 @@ def test_fact_without_confidence_only_warns():
     verdict = check(payload, items, max_chars=900, source_index={})
     assert verdict["passed"], verdict["errors"]
     assert any("не указан confidence" in w for w in verdict["warnings"])
+
+
+# --- QA round 2 -------------------------------------------------------------
+
+def test_instagram_link_is_rejected_in_any_rubric():
+    items = [_item("Total registered transactions: 43000 in the quarter.")]
+    payload = _payload('За квартал 43000 сделок, подробнее на <a href="https://instagram.com/x">странице</a>.')
+    verdict = check(payload, items, max_chars=900)
+    assert not verdict["passed"]
+    assert any("Instagram" in e for e in verdict["errors"])
+
+
+def test_instagram_mention_is_rejected_only_for_owner_material():
+    items = [_item("Total registered transactions: 43000 in the quarter.")]
+    body = "В Инстаграме пишут: за квартал 43000 сделок."
+    assert check(_payload(body), items, max_chars=900)["passed"], "в новостной рубрике слово само по себе допустимо"
+    payload = _payload(body)
+    payload["rubric"] = "from_owner"
+    verdict = check(payload, items, max_chars=900)
+    assert not verdict["passed"]
+    assert any("Instagram" in e for e in verdict["errors"])

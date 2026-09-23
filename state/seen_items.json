@@ -2650,7 +2650,8 @@
       "source_id": "tg_uaegeneralnews",
       "title_key": "вырастет число рейсов из столицы оаэ в сочи",
       "url": "https://t.me/uaegeneralnews/17764",
-      "item_id": "0b13029e9a69fa0e5be06dea3c63e14e7de0a834"
+      "item_id": "0b13029e9a69fa0e5be06dea3c63e14e7de0a834",
+      "used_at": "2026-09-23T10:46:26.484869+00:00"
     },
     "284916e979b08b2864e4c97a45edaa98b3abd78f": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
@@ -3085,7 +3086,8 @@
       "source_id": "tg_dubai_media",
       "title_key": "в оаэ выявили 377 случаев фиктивной эмиратизации",
       "url": "https://t.me/dubai_media/5461",
-      "item_id": "6ab4b4899dd55d9830a1b63bf46309d9807d2d31"
+      "item_id": "6ab4b4899dd55d9830a1b63bf46309d9807d2d31",
+      "used_at": "2026-09-23T10:46:26.484869+00:00"
     },
     "518deeb7b2f7f5aefece7631b89cb9d3a281296e": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
@@ -3480,7 +3482,8 @@
       "source_id": "tg_dubaimap",
       "title_key": "в дубае на покупку квартиры площадью около 60 м2 рядом с центром потребуется примерно 5 лет среднего дохода",
       "url": "https://t.me/dubaimap/14506",
-      "item_id": "733bd22134acb58f807da94cdd668381c40e313a"
+      "item_id": "733bd22134acb58f807da94cdd668381c40e313a",
+      "used_at": "2026-09-23T10:46:26.484869+00:00"
     },
     "2bbc818da8f52e332e94f873092032123c79876a": {
       "first_seen_at": "2026-09-23T10:06:04.753916+00:00",
@@ -3524,6 +3527,93 @@
       "url": "https://whatson.ae/2026/09/flying-car-future-of-the-uae-ras-al-khaimah",
       "item_id": "93120327b26f8474609b40fe8b0b487fa698db68",
       "used_at": "2026-09-23T10:06:24.995948+00:00"
+    },
+    "64128d7ea6d5d13a9cbcf6baeb1efb8829811ea9": {
+      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "legoland dubai s new season starts on october 7 the season opens with a miniland sound and light show and halloween until november 2 22m ago 2 m read",
+      "url": "https://gulfnews.com/lifestyle/a-new-miniland-show-and-halloween-legoland-dubais-season-starts-october-7-1.500684990",
+      "item_id": "01793444b2d64489bf5a06ed388ec9ae8ff344e7"
+    },
+    "89aa1d0aa2e3356cf8ac91ab8aa4e582d57311ac": {
+      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "abdullah joins trump meeting with arab leaders at un 39m ago 2 m read",
+      "url": "https://gulfnews.com/uae/government/abdullah-bin-zayed-joins-trump-meeting-with-arab-islamic-leaders-on-sidelines-of-un-general-assembly-1.500684960",
+      "item_id": "18ee2a51a430b18310ccc1f04c82305db581e92b"
+    },
+    "42f9844ed57ad17e1f521cbf3c44524c60146250": {
+      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sheikh abdullah meets foreign ministers in new york 1h ago 2 m read",
+      "url": "https://gulfnews.com/uae/government/sheikh-abdullah-meets-foreign-ministers-senior-officials-in-new-york-1.500684901",
+      "item_id": "840ff01018b26d5518be734d9c957d73a70ed77b"
+    },
+    "a86601a02a044995b14f42fd0d53cb510df8db47": {
+      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "what uae taught this 15 year old about sustainability 1h ago 5 m read",
+      "url": "https://gulfnews.com/uae/people/what-being-born-and-raised-in-the-uae-taught-this-15-year-old-about-education-and-sustainability-1.500684859",
+      "item_id": "dff0df627db0fb76affb56b3de73cb408c3d31d8"
+    },
+    "729b72c5ac8518f132ea7928e6ed7f22dc591e8b": {
+      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "7 uae events to add to your autumn calendar 3 m read",
+      "url": "https://gulfnews.com/lifestyle/from-concerts-to-culture-7-standout-uae-events-to-plan-for-this-autumn-1.500680951",
+      "item_id": "b64c932461af79efa5ea637c870764ff5e559ea2"
+    },
+    "c5b290416970bdb3171b8cd7c352520e3584c9ac": {
+      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "photos uae rulers offer condolences to sheikh mohammed 2 m read",
+      "url": "https://gulfnews.com/uae/government/uae-rulers-and-crown-princes-offer-condolences-to-sheikh-mohammed-on-passing-of-sheikh-ahmed-bin-rashid-1.500684717",
+      "item_id": "970218f294e456e1430cb8750240b6c23ce4dc3e"
+    },
+    "f3349105e8fbd573be12fe6d1d8c31f2b664c451": {
+      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "marcos extends sympathies to sheikh mohammed 1 m read",
+      "url": "https://gulfnews.com/uae/philippine-president-extends-sympathies-to-sheikh-mohammed-on-passing-of-sheikh-ahmed-bin-rashid-1.500684734",
+      "item_id": "124777a23b18114314619f630e4edf889e3be397"
+    },
+    "889ac74eb44be97103d72905ce2c35e6e4e0a197": {
+      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "30 of the best business lunches in dubai by neighbourhood",
+      "url": "https://whatson.ae/2026/09/30-of-the-best-business-lunches-in-dubai-by-neighbourhood",
+      "item_id": "56e8eac7ed7208e346673994469aee4e509f773d"
+    },
+    "741b4f943c7b795d31a05b51a68ee3271544c2c0": {
+      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "ras al khaimah signs deal to test flying cars with abu dhabi route planned",
+      "url": "https://whatson.ae/2026/09/flying-car-future-of-the-uae-ras-al-khaimah",
+      "item_id": "93120327b26f8474609b40fe8b0b487fa698db68",
+      "used_at": "2026-09-23T10:46:26.484869+00:00"
+    },
+    "c27e5835469505078093ccee0e3916b59cb21885": {
+      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "готовимся к началу сезону плодотворно новая неделя и новое интервью",
+      "url": "https://t.me/dome_dubai/1351",
+      "item_id": "6bcff624f5829fb06c6532a0a82b34b291531cfa"
+    },
+    "93f8808e5cbc916812b693099f3fdccd39267573": {
+      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "символ дирхама скоро появится на клавиатурах телефонов",
+      "url": "https://t.me/dubai_media/5473",
+      "item_id": "980eeb4a26e86aee7479680181be73e03b13d935",
+      "used_at": "2026-09-23T10:46:26.484869+00:00"
+    },
+    "524056a2d5a7f0b48b9aa9b96039bed994c6041e": {
+      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "в оаэ усилили борьбу с фиктивной эмиратизацией",
+      "url": "https://t.me/dubaihighlights/6197",
+      "item_id": "bdfef3f6d6eec287c7da0293fdd74f4d8e0cd31b",
+      "used_at": "2026-09-23T10:46:26.484869+00:00"
     }
   }
 }

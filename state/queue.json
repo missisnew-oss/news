@@ -1740,6 +1740,307 @@
       "rewrite_count": 0,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMgarOnGSi4ni7Az8ZRUj8I8jqdaMgAAmcjaxvmpKFJVqCpF7OcRkcBAAMCAAN5AAM9BA"
+    },
+    {
+      "post_id": "rules_and_laws-bd375773cd20",
+      "rubric": "rules_and_laws",
+      "title": "В ОАЭ проверяют компании на фиктивную эмиратизацию",
+      "body": "В ОАЭ проверяют компании на фиктивную эмиратизацию. За первое полугодие 2026 года — 377 случаев в 266 компаниях.\n\nСхема: гражданина оформляют ради квоты, но он не работает. Проверяют через ИИ и анализ данных.\n\nЧто делать владельцам компаний:\n— проверить, что сотрудники по квоте реально работают\n— хранить договоры и ведомости по зарплате\n\nШтрафы доходят до 500 000 AED, возможен возврат выплат Nafis.\n\nСохраните пост — правила меняются.",
+      "hashtags": [
+        "#дубай",
+        "#оаэ",
+        "#правила",
+        "#бизнес"
+      ],
+      "cta": "Сохраните пост — правила меняются.",
+      "image": {
+        "mode": "card",
+        "headline": "Проверки по эмиратизации в ОАЭ",
+        "accent": "377 случаев",
+        "stock_query": "dubai government documents passport visa desk"
+      },
+      "sources": [
+        {
+          "source_id": "tg_dubai_media",
+          "title": "В ОАЭ выявили 377 случаев фиктивной эмиратизации",
+          "url": "https://t.me/dubai_media/5461"
+        },
+        {
+          "source_id": "tg_dubaihighlights",
+          "title": "В ОАЭ усилили борьбу с фиктивной эмиратизацией",
+          "url": "https://t.me/dubaihighlights/6197"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Выявленные случаи фиктивной эмиратизации за первое полугодие 2026 года",
+          "value": "377 случаев в 266 частных компаниях",
+          "source_url": "https://t.me/dubai_media/5461",
+          "confidence": "confirmed",
+          "sources": [
+            "https://t.me/dubai_media/5461",
+            "https://t.me/dubaihighlights/6197"
+          ]
+        },
+        {
+          "claim": "Максимальный размер штрафа",
+          "value": "до 500 000 AED",
+          "source_url": "https://t.me/dubaihighlights/6197",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubaihighlights/6197"
+          ]
+        },
+        {
+          "claim": "Риск потери поддержки Nafis и возврата ранее полученных выплат",
+          "value": "возврат выплат",
+          "source_url": "https://t.me/dubaihighlights/6197",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubaihighlights/6197"
+          ]
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 437,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-23T10:46:10.635862+00:00",
+      "slot_at": "2026-09-24T15:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-6a1270d90d16.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Проверки по эмиратизации в ОАЭ",
+        "accent": "377 случаев",
+        "tag_left": "ДУБАЙ",
+        "tag_right": "#ПРАВИЛА",
+        "background": "light",
+        "card": "light",
+        "card_path": "/home/runner/work/news/news/assets/generated/light-6a1270d90d16.png"
+      },
+      "item_ids": [
+        "bdfef3f6d6eec287c7da0293fdd74f4d8e0cd31b",
+        "6ab4b4899dd55d9830a1b63bf46309d9807d2d31",
+        "980eeb4a26e86aee7479680181be73e03b13d935",
+        "0b13029e9a69fa0e5be06dea3c63e14e7de0a834"
+      ],
+      "source_items": [
+        {
+          "item_id": "bdfef3f6d6eec287c7da0293fdd74f4d8e0cd31b",
+          "source_id": "tg_dubaihighlights",
+          "category": "events",
+          "title": "В ОАЭ усилили борьбу с фиктивной эмиратизацией.",
+          "summary": "В ОАЭ усилили борьбу с фиктивной эмиратизацией. За первое полугодие 2026 года выявили 377 случаев в 266 частных компаниях. Для проверок используют ИИ, анализ данных и цифровой мониторинг. Штрафы могут доходить до 500 000 AED. Также компании рискуют потерять поддержку Nafis и вернуть ранее полученные выплаты. #DH_news",
+          "url": "https://t.me/dubaihighlights/6197",
+          "canonical_url": "https://t.me/dubaihighlights/6197",
+          "published_at": "2026-09-23T10:22:06+00:00",
+          "collected_at": "2026-09-23T10:45:36.835907+00:00",
+          "lang": "ru",
+          "image_url": null
+        },
+        {
+          "item_id": "6ab4b4899dd55d9830a1b63bf46309d9807d2d31",
+          "source_id": "tg_dubai_media",
+          "category": "city_gov",
+          "title": "😳 В ОАЭ выявили 377 случаев фиктивной эмиратизации",
+          "summary": "😳 В ОАЭ выявили 377 случаев фиктивной эмиратизации За первое полугодие нарушения нашли в 266 частных компаниях. Работодатели оформляли граждан ОАЭ формально, чтобы выполнить обязательные квоты по эмиратизации, но фактически люди там не работали. Нарушителей привлекли к юридической ответственности. @dubai_media",
+          "url": "https://t.me/dubai_media/5461",
+          "canonical_url": "https://t.me/dubai_media/5461",
+          "published_at": "2026-09-22T11:00:12+00:00",
+          "collected_at": "2026-09-23T10:45:36.835305+00:00",
+          "lang": "ru",
+          "image_url": null
+        },
+        {
+          "item_id": "980eeb4a26e86aee7479680181be73e03b13d935",
+          "source_id": "tg_dubai_media",
+          "category": "city_gov",
+          "title": "🇦🇪 Символ дирхама скоро появится на клавиатурах телефонов",
+          "summary": "🇦🇪 Символ дирхама скоро появится на клавиатурах телефонов Знак валюты ОАЭ уже добавили в стандарт Unicode и присвоили код — теперь его смогут внедрять в клавиатуры iPhone и Android. @dubai_media",
+          "url": "https://t.me/dubai_media/5473",
+          "canonical_url": "https://t.me/dubai_media/5473",
+          "published_at": "2026-09-23T10:40:07+00:00",
+          "collected_at": "2026-09-23T10:45:36.834666+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/Y2W7iBK4VzkwPBeXWU1d0olh4DpOxkUYoQS5fehVW8de0OEBabA4VV9R-ZBGXUmYWAOJXhx2121-UHW2LedSwAaKvkgLvcl9IpRR0W5izn9ZC8cLFvHZunpyZ4B9POC5zzGgzkWOfZImZdfe0XwQ8gg-5tFzsZ42HxzoGMGQnnbfcIZA0rzYKWmCjW7IDeGhb27QMAugSMDHOb2oml6yrE9BzQWwFFqdvi3qyN97zovBhOyI7vqc2AkSdrpjPh2i41TlZAainIytXNrOBbq3n1JLTUosK3FHqAOOlXh0-MDyEKUVojb8xhBVeBJDJ0hSQm-W5hW8kyoWHrxOOHK81g.jpg"
+        },
+        {
+          "item_id": "0b13029e9a69fa0e5be06dea3c63e14e7de0a834",
+          "source_id": "tg_uaegeneralnews",
+          "category": "city_gov",
+          "title": "​Вырастет число рейсов из столицы ОАЭ в Сочи",
+          "summary": "​Вырастет число рейсов из столицы ОАЭ в Сочи Etihad увеличит число рейсов из Абу-Даби в Сочи до пяти в неделю. https://russianemirates.com/N046049/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/uaegeneralnews/17764",
+          "canonical_url": "https://t.me/uaegeneralnews/17764",
+          "published_at": "2026-09-23T03:45:03+00:00",
+          "collected_at": "2026-09-23T10:45:36.820503+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/LbIhvRjxVhlnK3WDAvnzkIgosJKJaRf7Osscjx8-g_qter8-TsV_PWAwfPQAu0AySrSoTLWmmez2KDA3sNPCC-Lz1g31CFFLqGNNBiEfVB0kbDoXBeKkmYNpfF6bzp1Zn6MUgDfs8K-c23ZAS1DJPrc2u5WLRoVp1QncBD-AI1D__862S_IaFIBFmkK-lXKi9oYLzvVokq4zvRY5YwM6hS0LRvtadq_b-QIqAakkIJy-qA86EBsWMFwL7-aWzRryYn0xJJfChdy7kRbYtU2inAQW0lYmiuNOdduKshKqSp7vI3xPYCwZOX6Xb5E7RTRkEVnYk4dlwYtaS8RYEx0EAw.jpg"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 4,
+        "sources_cited": 2
+      },
+      "approval": {
+        "sent_at": "2026-09-23T10:46:28.782068+00:00",
+        "preview_message_id": 33
+      },
+      "rewrite_count": 0,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMharOuBLsyQe9WFeJYPCCXwKXCbkEAApIjaxvmpKFJOgaaAhNF5AcBAAMCAAN5AAM9BA"
+    },
+    {
+      "post_id": "dubai_life-323c679c05b5",
+      "rubric": "dubai_life",
+      "title": "Квартира в Дубае — около 5 лет среднего дохода",
+      "body": "Сравнение доступности жилья по городам. Для Дубая цифра выглядит спокойно.\n\nКвартира примерно 60 м² недалеко от центра:\n— Дубай — около 5 лет среднего дохода квалифицированного специалиста\n— Лондон — 11 лет\n— Гонконг — 15 лет\n\nЧто это значит: при сопоставимой зарплате порог входа в собственное жильё здесь ниже, чем в других крупных центрах. Это не про рост цен, а про то, за сколько лет доход покрывает покупку.\n\nСохраните — пригодится при переезде.",
+      "hashtags": [
+        "#дубай",
+        "#недвижимость",
+        "#жизньвоаэ"
+      ],
+      "cta": "Сохраните — пригодится при переезде.",
+      "image": {
+        "mode": "stock",
+        "headline": "Сколько лет дохода стоит квартира в Дубае",
+        "accent": "5 лет",
+        "stock_query": "dubai skyline apartment buildings daytime"
+      },
+      "sources": [
+        {
+          "source_id": "tg_dubaimap",
+          "title": "В Дубае на покупку квартиры около 60 м² рядом с центром потребуется примерно 5 лет среднего дохода",
+          "url": "https://t.me/dubaimap/14506"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Срок накопления на квартиру около 60 м² рядом с центром Дубая",
+          "value": "примерно 5 лет среднего дохода квалифицированного специалиста",
+          "source_url": "https://t.me/dubaimap/14506",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubaimap/14506"
+          ]
+        },
+        {
+          "claim": "Тот же показатель для Лондона",
+          "value": "11 лет",
+          "source_url": "https://t.me/dubaimap/14506",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubaimap/14506"
+          ]
+        },
+        {
+          "claim": "Тот же показатель для Гонконга",
+          "value": "15 лет",
+          "source_url": "https://t.me/dubaimap/14506",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubaimap/14506"
+          ]
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 451,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-23T10:46:26.483200+00:00",
+      "slot_at": "2026-09-25T05:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-ec5fc4b36a31.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Сколько лет дохода стоит квартира в Дубае",
+        "accent": "5 лет",
+        "tag_left": "ДУБАЙ",
+        "tag_right": "#ЖИЗНЬВДУБАЕ",
+        "background": "light",
+        "card": "light",
+        "card_path": "/home/runner/work/news/news/assets/generated/light-ec5fc4b36a31.png"
+      },
+      "item_ids": [
+        "93120327b26f8474609b40fe8b0b487fa698db68",
+        "980eeb4a26e86aee7479680181be73e03b13d935",
+        "733bd22134acb58f807da94cdd668381c40e313a"
+      ],
+      "source_items": [
+        {
+          "item_id": "93120327b26f8474609b40fe8b0b487fa698db68",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "Ras Al Khaimah signs deal to test flying cars, with Abu Dhabi route planned",
+          "summary": "Ras Al Khaimah has signed a deal with Chinese flying-car maker Aridge (formerly XPeng AeroHT) to test privately owned flying cars under GCAA oversight, with a demonstration route between Abu Dhabi and Ras Al Khaimah also being planned In the UAE, the future isn’t a distant ambition. Here, planning and execution come to life in […] The post Ras Al Khaimah signs deal to test flying cars, with Abu Dhabi route planned appeared first on What's On .",
+          "url": "https://whatson.ae/2026/09/flying-car-future-of-the-uae-ras-al-khaimah/",
+          "canonical_url": "https://whatson.ae/2026/09/flying-car-future-of-the-uae-ras-al-khaimah",
+          "published_at": "2026-09-23T09:55:49+00:00",
+          "collected_at": "2026-09-23T10:45:36.818989+00:00",
+          "lang": "en",
+          "image_url": null
+        },
+        {
+          "item_id": "980eeb4a26e86aee7479680181be73e03b13d935",
+          "source_id": "tg_dubai_media",
+          "category": "city_gov",
+          "title": "🇦🇪 Символ дирхама скоро появится на клавиатурах телефонов",
+          "summary": "🇦🇪 Символ дирхама скоро появится на клавиатурах телефонов Знак валюты ОАЭ уже добавили в стандарт Unicode и присвоили код — теперь его смогут внедрять в клавиатуры iPhone и Android. @dubai_media",
+          "url": "https://t.me/dubai_media/5473",
+          "canonical_url": "https://t.me/dubai_media/5473",
+          "published_at": "2026-09-23T10:40:07+00:00",
+          "collected_at": "2026-09-23T10:45:36.834666+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/Y2W7iBK4VzkwPBeXWU1d0olh4DpOxkUYoQS5fehVW8de0OEBabA4VV9R-ZBGXUmYWAOJXhx2121-UHW2LedSwAaKvkgLvcl9IpRR0W5izn9ZC8cLFvHZunpyZ4B9POC5zzGgzkWOfZImZdfe0XwQ8gg-5tFzsZ42HxzoGMGQnnbfcIZA0rzYKWmCjW7IDeGhb27QMAugSMDHOb2oml6yrE9BzQWwFFqdvi3qyN97zovBhOyI7vqc2AkSdrpjPh2i41TlZAainIytXNrOBbq3n1JLTUosK3FHqAOOlXh0-MDyEKUVojb8xhBVeBJDJ0hSQm-W5hW8kyoWHrxOOHK81g.jpg"
+        },
+        {
+          "item_id": "733bd22134acb58f807da94cdd668381c40e313a",
+          "source_id": "tg_dubaimap",
+          "category": "lifestyle",
+          "title": "🏠 В Дубае на покупку квартиры площадью около 60 м² рядом с центром потребуется примерно 5 лет среднего дохода…",
+          "summary": "🏠 В Дубае на покупку квартиры площадью около 60 м² рядом с центром потребуется примерно 5 лет среднего дохода квалифицированного специалиста, тогда как в Лондоне на такое жильё придется работать 11 лет, а в Гонконге - 15",
+          "url": "https://t.me/dubaimap/14506",
+          "canonical_url": "https://t.me/dubaimap/14506",
+          "published_at": "2026-09-23T09:29:42+00:00",
+          "collected_at": "2026-09-23T10:45:36.822871+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/WvD6nzZWrPTCNBq-6m8iJq7vwDmqfa-nbp23UqIwnqbvOuio2KeyxhoxMyEE1W2_fCc7Kzy4AWFzbuUtvY8BPphbbmEagUZBuclekvr4WXU_GZL_DzLt-vMjMeowsEicnFyceoqHt4sYE_LcsRLqKe6WuRTjTZ63Uri467pJdi3dUd3Kf5cgv8PjZSN8NquCbv92ywwtr8aBSGf-HN-TgKOUEqyLWoj8j9HHRh_POOzPB5Yx1JJ64dvlIwZel384Yoh4ixq410r9-Z_CSdMJjK2ZJKcx7l2MXnFA7CP-p8qUH9AH3DvDxbIEuwv__6tDh78DLWqS_Rp-ESDkIjYsSQ.jpg"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 3,
+        "sources_cited": 1
+      },
+      "approval": {
+        "sent_at": "2026-09-23T10:46:29.674155+00:00",
+        "preview_message_id": 34
+      },
+      "rewrite_count": 0,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMiarOuBasoochv2XdxGUOCLDZtIxsAApMjaxvmpKFJGcTNKLoJuFUBAAMCAAN5AAM9BA"
     }
   ]
 }

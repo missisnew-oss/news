@@ -581,6 +581,104 @@ def render_photo_card(
     return out_path
 
 
+LIGHT_SIZE = (1200, 630)
+
+
+def _light_brand(brand: dict[str, Any]) -> dict[str, Any]:
+    """Brand dict re-coloured for the light card (pills and text go dark)."""
+    light = brand.get("light") or {}
+    merged = dict(brand)
+    merged.update({
+        "text": light.get("text", "#10233F"),
+        "muted": light.get("muted", "#6B7280"),
+        "pill_bg": light.get("pill_bg", "#EAE6DD"),
+        "pill_alpha": 255,
+        "accent": light.get("accent", brand.get("accent", "#D9A441")),
+    })
+    dark_logo = str(light.get("logo_path") or "")
+    if dark_logo and (ROOT / dark_logo).exists():
+        merged["logo_path"] = dark_logo
+    else:
+        # The main logo is meant for dark photo cards (white drawing): it would
+        # vanish on cream, so the light card always falls back to the wordmark.
+        merged["logo_path"] = ""
+    return merged
+
+
+def render_light_card(headline: str, accent: str = "", *, subtitle: str = "", tag_left: str = "",
+                      tag_right: str = "", brand: dict[str, Any] | None = None,
+                      size: tuple[int, int] = LIGHT_SIZE, out_path: Path | None = None) -> Path:
+    """Compact light card: cream background, dark headline, one golden accent.
+
+    No photograph and no dark blocks — the owner asked for something light and
+    compact that does not dominate the feed. 1200×630 shows as a wide preview
+    in Telegram and takes a third of the height of a 4:5 card. Costs nothing:
+    pure Pillow, no stock or AI provider.
+    """
+    from PIL import Image, ImageDraw
+
+    brand = brand or load_brand()
+    lb = _light_brand(brand)
+    light = brand.get("light") or {}
+    W, H = size
+    scale = W / 1080
+    bg = _hex_to_rgb(light.get("bg", "#F7F4EE"))
+    image = Image.new("RGBA", size, bg + (255,))
+    draw = ImageDraw.Draw(image, "RGBA")
+
+    # Two soft washes so the card is not a flat sheet: pale blue top-right,
+    # pale gold bottom-left. Alpha keeps them barely there.
+    wash_blue = _hex_to_rgb(light.get("wash_blue", "#DCE7F2")) + (150,)
+    wash_gold = _hex_to_rgb(light.get("wash_gold", "#F3E4C4")) + (120,)
+    draw.ellipse([W * 0.62, -H * 0.55, W * 1.25, H * 0.55], fill=wash_blue)
+    draw.ellipse([-W * 0.18, H * 0.68, W * 0.30, H * 1.35], fill=wash_gold)
+
+    margin = int((brand.get("card") or {}).get("margin", 64) * scale)
+    text_rgb = _hex_to_rgb(lb["text"])
+    muted_rgb = _hex_to_rgb(lb["muted"])
+    accent_rgb = _hex_to_rgb(lb["accent"])
+
+    # Top row: place + rubric pills on the left, wordmark on the right.
+    pill_h = _draw_pills(draw, [tag_left, tag_right], x=margin, y=margin - int(6 * scale), brand=lb, scale=scale)
+    _, logo_h = _draw_logo(image, draw, lb, margin=margin, scale=scale * 0.85, centered=False)
+    top_min = margin + max(pill_h, logo_h) + int(36 * scale)
+    bottom = H - margin
+
+    # Headline: bold, dark, left; up to 3 lines. The size shrinks until the
+    # headline, the golden rule and the accent line all fit above the margin.
+    box_w = W - 2 * margin
+    all_sizes = tuple(int(v * scale) for v in (72, 64, 58, 52, 46, 40, 36))
+    accent_h = int(56 * scale) if accent else (int(34 * scale) if subtitle else 0)
+    rule_h = int(34 * scale)
+    font, lines, line_h = None, [], 0
+    for i in range(len(all_sizes)):
+        font, lines = _fit_headline(draw, headline, box_w, all_sizes[i:], max_lines=3, brand=brand, kind="bold")
+        line_h = int(font.size * 1.12)
+        if line_h * len(lines) + rule_h + accent_h <= bottom - top_min:
+            break
+    block_h = line_h * len(lines) + rule_h + accent_h
+    y = max(top_min, top_min + (bottom - top_min - block_h) // 2)
+    for line in lines:
+        draw.text((margin, y), line, font=font, fill=text_rgb)
+        y += line_h
+    # Thin golden rule under the headline.
+    draw.rectangle([margin, y + int(14 * scale), margin + int(120 * scale), y + int(18 * scale)], fill=accent_rgb)
+    y += rule_h
+    if accent:
+        af = _load_font(int(44 * scale), kind="bold", brand=brand)
+        draw.text((margin, y), accent, font=af, fill=accent_rgb)
+    elif subtitle:
+        sf = _load_font(int(24 * scale), kind="regular", brand=brand)
+        sub = _wrap(draw, subtitle, sf, box_w)[:1]
+        if sub:
+            draw.text((margin, y), sub[0], font=sf, fill=muted_rgb)
+
+    out_path = out_path or GENERATED_DIR / f"light-{sha1(headline + accent + tag_left + tag_right)[:12]}.png"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    image.convert("RGB").save(out_path, "PNG", optimize=True)
+    return out_path
+
+
 def render_card(headline: str, accent: str = "", *, subtitle: str = "", out_path: Path | None = None,
                 tag_left: str = "", tag_right: str = "") -> Path:
     """Fallback card without a photograph: the same layout over a brand gradient."""
@@ -986,6 +1084,16 @@ def illustrate(settings: Settings, draft, sources_doc: dict[str, Any] | None = N
     subtitle = (draft.sources[0].get("title", "") if draft.sources else "")[:80]
     place, tag = card_tags(draft, brand)
 
+    if (brand.get("card") or {}).get("style") == "light":
+        try:
+            path = render_light_card(headline, accent, tag_left=place, tag_right=tag, brand=brand)
+            log.info("Картинка: светлая карточка")
+            meta = _own_meta(headline, accent, place, tag, background="light")
+            meta.update({"card": "light", "card_path": str(path)})
+            return str(path), meta
+        except Exception as exc:
+            log.warning("Светлая карточка не отрисовалась (%s), пробуем фото-карточку", exc)
+
     try:
         photo, meta = _photo_for_draft(settings, draft, brand, sources_doc)
     except Exception as exc:  # a provider bug must never kill the run
@@ -1042,6 +1150,17 @@ def ensure_image(settings: Settings, post: dict[str, Any]) -> str | None:
     place = meta.get("tag_left") or brand.get("place_default", "")
     tag = meta.get("tag_right") or (brand.get("tags") or {}).get(post.get("rubric", ""), brand.get("tag_default", ""))
     provider = meta.get("provider")
+
+    if meta.get("background") == "light" or (brand.get("card") or {}).get("style") == "light":
+        try:
+            new_path = render_light_card(headline, accent, tag_left=place, tag_right=tag, brand=brand)
+        except Exception as exc:
+            log.warning("Светлую карточку для %s перерисовать не удалось: %s", post.get("post_id"), exc)
+            return None
+        post["image_path"] = str(new_path)
+        post["image_meta"] = {**meta, **_own_meta(headline, accent, place, tag, background="light")}
+        log.info("Картинка для %s перерисована (светлая): %s", post.get("post_id"), new_path)
+        return str(new_path)
 
     photo = None
     if provider in {"press", "unsplash", "pexels", "wikimedia"} and not settings.dry_run:

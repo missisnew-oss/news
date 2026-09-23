@@ -34,6 +34,19 @@ def isolated_dirs(tmp_path, monkeypatch):
 
 
 @pytest.fixture
+def photo_style(monkeypatch):
+    """brand.yml selects the light card; these tests cover the photo chain."""
+    real = illustrate.load_brand
+
+    def photo_brand():
+        brand = real()
+        brand["card"] = {**(brand.get("card") or {}), "style": "photo", "size": "4:5"}
+        return brand
+
+    monkeypatch.setattr(illustrate, "load_brand", photo_brand)
+
+
+@pytest.fixture
 def no_network(monkeypatch):
     def forbidden(*args, **kwargs):
         raise AssertionError("ILLUSTRATE попытался выйти в сеть")
@@ -75,6 +88,7 @@ def _fake_photo(path: Path, size=(1200, 1600), color=(30, 90, 140)) -> Path:
 # Rendering
 # --------------------------------------------------------------------------
 
+@pytest.mark.usefixtures("photo_style")
 def test_photo_card_renders_from_synthetic_photo(tmp_path):
     photo = illustrate.render_synthetic_photo(SIZE, seed="test")
     out = illustrate.render_photo_card(
@@ -152,6 +166,7 @@ def test_card_tags_pick_place_and_rubric_tag():
     assert (place, tag) == ("ДУБАЙ", "#СОБЫТИЯ")
 
 
+@pytest.mark.usefixtures("photo_style")
 def test_render_card_fallback_still_works(tmp_path):
     out = illustrate.render_card("Заголовок", "12%", subtitle="Источник", out_path=tmp_path / "c.png")
     assert out.exists()
@@ -165,6 +180,7 @@ def _live_settings(**kw) -> Settings:
     return Settings(dry_run=False, **kw)
 
 
+@pytest.mark.usefixtures("photo_style")
 def test_press_photo_is_preferred(monkeypatch, tmp_path):
     photo = _fake_photo(tmp_path / "press.jpg")
     calls = []
@@ -196,6 +212,7 @@ def test_foreign_channel_photos_are_never_used(monkeypatch, doc):
     assert meta["provider"] == "own_card"
 
 
+@pytest.mark.usefixtures("photo_style")
 def test_generated_when_no_press_photo(monkeypatch):
     png = Image.new("RGB", (1024, 1536), (200, 160, 90))
     import io
@@ -219,6 +236,7 @@ def test_generated_when_no_press_photo(monkeypatch):
     assert Path(path).exists()
 
 
+@pytest.mark.usefixtures("photo_style")
 def test_generation_skipped_for_concrete_project_rubrics(monkeypatch):
     monkeypatch.setattr(illustrate, "generate_image", lambda *a, **k: pytest.fail("ИИ для лонча запрещён"))
     monkeypatch.setattr(illustrate, "fetch_stock", lambda *a, **k: None)
@@ -227,6 +245,7 @@ def test_generation_skipped_for_concrete_project_rubrics(monkeypatch):
     assert meta["provider"] == "own_card"
 
 
+@pytest.mark.usefixtures("photo_style")
 def test_stock_when_no_openai_key(monkeypatch, tmp_path):
     photo = _fake_photo(tmp_path / "stock.jpg")
 
@@ -245,6 +264,7 @@ def test_stock_when_no_openai_key(monkeypatch, tmp_path):
     assert Path(path).exists() and path != str(photo)
 
 
+@pytest.mark.usefixtures("photo_style")
 def test_synthetic_skyline_when_nothing_else(monkeypatch):
     """No keys, Commons down: still a photo-card layout, not a flat gradient."""
     monkeypatch.setattr(illustrate, "generate_image", lambda *a, **k: None)
@@ -254,6 +274,7 @@ def test_synthetic_skyline_when_nothing_else(monkeypatch):
     assert meta["card"] == "photo" and Path(path).exists()
 
 
+@pytest.mark.usefixtures("photo_style")
 def test_wikimedia_is_tried_before_the_synthetic_fallback(monkeypatch, tmp_path):
     monkeypatch.setattr(illustrate, "generate_image", lambda *a, **k: None)
     monkeypatch.setattr(illustrate, "fetch_stock", lambda *a, **k: None)
@@ -299,6 +320,7 @@ def test_press_download_rejects_small_and_big_files(monkeypatch, tmp_path):
 # ensure_image between runs
 # --------------------------------------------------------------------------
 
+@pytest.mark.usefixtures("photo_style")
 def test_ensure_image_does_not_regenerate_ai_pictures(monkeypatch, tmp_path):
     monkeypatch.setattr(illustrate, "generate_image", lambda *a, **k: pytest.fail("повторная генерация — деньги"))
     post = {
@@ -313,6 +335,7 @@ def test_ensure_image_does_not_regenerate_ai_pictures(monkeypatch, tmp_path):
     assert "повторно не генерируем" in post["image_meta"]["note"]
 
 
+@pytest.mark.usefixtures("photo_style")
 def test_ensure_image_redownloads_stock_by_url(monkeypatch, tmp_path):
     photo = _fake_photo(tmp_path / "again.jpg")
     urls = []
@@ -335,6 +358,7 @@ def test_ensure_image_redownloads_stock_by_url(monkeypatch, tmp_path):
     assert post["image_meta"]["provider"] == "pexels"  # licence record kept
 
 
+@pytest.mark.usefixtures("photo_style")
 def test_ensure_image_redraws_synthetic_card_in_dry_run(no_network, tmp_path):
     post = {
         "post_id": "p3", "title": "Заголовок",
@@ -349,6 +373,7 @@ def test_ensure_image_redraws_synthetic_card_in_dry_run(no_network, tmp_path):
 # DRY_RUN: no sockets
 # --------------------------------------------------------------------------
 
+@pytest.mark.usefixtures("photo_style")
 def test_dry_run_draws_photo_card_without_network(no_network, monkeypatch):
     monkeypatch.setattr(illustrate, "download_press_photo", lambda url: pytest.fail("сеть в DRY_RUN"))
     draft = _draft(image_url="https://example.com/press.jpg")
@@ -361,6 +386,7 @@ def test_dry_run_draws_photo_card_without_network(no_network, monkeypatch):
         assert img.size == SIZE
 
 
+@pytest.mark.usefixtures("photo_style")
 def test_place_pill_has_accent_dot(tmp_path):
     """The gold dot before the place label (regression: it vanished once)."""
     black = Image.new("RGB", SIZE, (0, 0, 0))
@@ -426,6 +452,7 @@ def test_stock_download_is_bounded_and_checked(monkeypatch, tmp_path):
     assert meta and Path(meta["path"]).exists() and meta["remote_url"].endswith("real.jpg")
 
 
+@pytest.mark.usefixtures("photo_style")
 def test_generated_picture_is_reused_for_the_same_prompt(monkeypatch):
     """A rewrite in the same run (or a re-run on the same runner) must not
     pay OpenAI for the same prompt twice."""
@@ -448,6 +475,7 @@ def test_generated_picture_is_reused_for_the_same_prompt(monkeypatch):
     assert len(calls) == 1, "второй вызов gpt-image за тот же промпт"
 
 
+@pytest.mark.usefixtures("photo_style")
 def test_ensure_image_falls_back_to_the_card_when_the_photo_cannot_be_fetched(monkeypatch):
     """Clean runner, no network (or a 404): the post still gets an image."""
     monkeypatch.setattr(illustrate, "_fetch_bounded", lambda *a, **k: (_ for _ in ()).throw(OSError("нет сети")))
@@ -493,3 +521,59 @@ def test_card_renders_yo_quotes_and_dash_without_tofu(tmp_path):
     with Image.open(out) as img:
         gray = img.convert("L")
         assert gray.crop((1200 - 50, 0, 1200, 675)).getextrema()[1] < 60
+
+
+# --------------------------------------------------------------------------
+# Light compact card (the default since the owner asked for light, small, free)
+# --------------------------------------------------------------------------
+
+def _brightness(path) -> float:
+    with Image.open(path) as img:
+        small = img.convert("L").resize((60, 32))
+        data = list(small.getdata())
+    return sum(data) / len(data)
+
+
+def test_light_card_is_default_small_and_light(no_network):
+    """No network, no provider: illustrate() draws the 1200×630 cream card."""
+    settings = Settings(dry_run=False, openai_api_key="sk-test", unsplash_access_key="u", pexels_api_key="p")
+    path, meta = illustrate.illustrate(settings, _draft(), sources_doc=_sources_doc())
+    assert meta["provider"] == "own_card" and meta["background"] == "light" and meta["card"] == "light"
+    with Image.open(path) as img:
+        assert img.size == illustrate.LIGHT_SIZE
+    assert _brightness(path) > 200, "карточка должна быть светлой, без тёмных блоков"
+
+
+def test_light_card_fits_a_long_headline_and_accent(tmp_path):
+    out = illustrate.render_light_card(LONG_HEADLINE, "+12%", tag_left="ДУБАЙ", tag_right="#НОВОСТЬДНЯ",
+                                       out_path=tmp_path / "long.png")
+    with Image.open(out) as img:
+        W, H = img.size
+        margin = int(64 * W / 1080)
+        # Nothing drawn in the outer margin strip: no text ran off the frame.
+        strip = img.crop((0, H - margin // 2, W, H)).convert("L")
+        assert min(strip.getdata()) > 150
+        # The dark headline sits inside the text box.
+        body = img.crop((margin, margin, W - margin, H - margin)).convert("L")
+        assert min(body.getdata()) < 60
+
+
+def test_light_card_uses_the_wordmark_not_the_white_logo(tmp_path, monkeypatch):
+    logo = tmp_path / "logo.png"
+    Image.new("RGBA", (400, 100), (255, 255, 255, 255)).save(logo)
+    brand = illustrate.load_brand()
+    brand["logo_path"] = str(logo)
+    brand["light"] = {**(brand.get("light") or {}), "logo_path": ""}
+    assert illustrate._light_brand(brand)["logo_path"] == ""
+
+
+def test_ensure_image_redraws_light_card(no_network, tmp_path):
+    post = {
+        "post_id": "p9", "title": "Заголовок", "rubric": "dubai_life",
+        "image_path": str(tmp_path / "gone.png"),
+        "image_meta": {"provider": "own_card", "background": "light", "headline": "Заголовок", "accent": ""},
+    }
+    path = illustrate.ensure_image(Settings(dry_run=True), post)
+    assert path and Path(path).exists()
+    assert post["image_meta"]["background"] == "light"
+    assert post["image_meta"]["tag_right"] == "#ЖИЗНЬВДУБАЕ"

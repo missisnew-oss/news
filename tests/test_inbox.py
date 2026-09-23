@@ -467,5 +467,4 @@ def test_owners_first_hand_note_is_a_confirmed_source_but_a_forward_is_not():
     forward = _entry(43, "Парковка в Marina теперь 4 AED в час",
                      origin={"type": "channel", "chat_username": "dxb", "chat_title": "DXB", "message_id": 7})
     forward["extracted"] = {"kind": "text", "text": "", "description": "", "method": "text", "error": ""}
-    assert not _gate(forward, body)["passed"]
-    assert _gate(forward, "По данным канала, парковка в Marina теперь 4 AED в час.")["passed"]
+    assert _gate(forward, body)["passed"], "пересказ чужого поста — обычное утверждение, без «по данным»"

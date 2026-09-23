@@ -2236,7 +2236,8 @@
       "source_id": "whatson_ae_feed",
       "title_key": "these 9 uae outdoor attractions are back for the cooler months",
       "url": "https://whatson.ae/2026/09/these-9-uae-outdoor-attractions-are-back-for-the-cooler-months",
-      "item_id": "99e017ce609961ef6bb82d560eefb34b0e9c2081"
+      "item_id": "99e017ce609961ef6bb82d560eefb34b0e9c2081",
+      "used_at": "2026-09-23T03:10:36.816661+00:00"
     },
     "4212fe1196c3f6a75b14564184fc3eb9ac56b58e": {
       "first_seen_at": "2026-09-22T12:10:12.430825+00:00",
@@ -2299,7 +2300,8 @@
       "source_id": "tg_uaegeneralnews",
       "title_key": "в дубае приостановили шоу фонтанов",
       "url": "https://t.me/uaegeneralnews/17761",
-      "item_id": "4146c6ef3eb9b1f48e7da5e30976ce78209ad9d6"
+      "item_id": "4146c6ef3eb9b1f48e7da5e30976ce78209ad9d6",
+      "used_at": "2026-09-23T03:10:36.816661+00:00"
     },
     "e14c6f0a679860eb328891c9ff6b32b1ec010f8e": {
       "first_seen_at": "2026-09-22T12:10:12.430825+00:00",
@@ -2313,7 +2315,8 @@
       "source_id": "tg_dubaimap",
       "title_key": "почти половина сделок off plan в абу даби приходится на один район",
       "url": "https://t.me/dubaimap/14504",
-      "item_id": "3c8c685682eef6a69f74d62e60fe14383d661dc3"
+      "item_id": "3c8c685682eef6a69f74d62e60fe14383d661dc3",
+      "used_at": "2026-09-23T03:10:36.816661+00:00"
     },
     "32105caffd074e982fc7cac19a1145de6ca322b9": {
       "first_seen_at": "2026-09-22T12:10:12.430825+00:00",
@@ -2335,6 +2338,168 @@
       "title_key": "а вы знали что окна взрываются",
       "url": "https://t.me/eltsovairina_80/753",
       "item_id": "102efa761e744d1c6c299f2d3e357d23791c20fd"
+    },
+    "ce726fc12b1e1dda94892f3eb98d31afb1105cb9": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "qatar raises 3bln from dual tranche debt issuance books at 6 4bln",
+      "url": "https://www.zawya.com/en/capital-markets/qatar-raises-3bln-from-dual-tranche-debt-issuance-books-at-6.4bln-1038224",
+      "item_id": "26ce6be1453d0d466c4673bca091b6df8cb570fa"
+    },
+    "98bf20a4829a956c494d2b74a08de902c9033c17": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "iran war weighs on lending growth of top listed uae banks in q2 2026",
+      "url": "https://www.zawya.com/en/business/middle-east/iran-war-weighs-on-lending-growth-of-top-listed-uae-banks-in-q2-2026-1038183",
+      "item_id": "92568cf2e7e9b7e4b10d19d57068fbf91be569bd"
+    },
+    "ba5a7c561d5ca7dab7413c7a7c7c22b76e2d53c2": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "video testimonials from zawya s gcc capital markets forum",
+      "url": "https://www.zawya.com/en/multimedia/videos/video-testimonials-from-zawyas-gcc-capital-markets-forum-1103126",
+      "item_id": "16795d85d1980e473ada6da9335d6bd862492624"
+    },
+    "7656822086976c8addf97c1a8736b04e2613416d": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "visa appoints mario makary as vice president and country manager for the united arab emirates",
+      "url": "https://www.zawya.com/en/press-release/people-in-the-news/visa-appoints-mario-makary-as-vice-president-and-country-manager-for-the-united-arab-emirates-1080527",
+      "item_id": "3c41dd60fb189e2e398d74df1a9356378b9b95b7"
+    },
+    "e03ca512f07e7d7b443f782a2f6d86aa20e36112": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "fii institute announces bombardier as a strategic partner",
+      "url": "https://www.zawya.com/en/press-release/companies-news/fii-institute-announces-bombardier-as-a-strategic-partner-1021661",
+      "item_id": "045120f124384f16e0e82dce33fdb4f08b54f884"
+    },
+    "d84621c6165d919f677063697aae74a1bd358065": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "bmw group middle east appoints official importer for bmw and mini in syria marking a new chapter fo",
+      "url": "https://www.zawya.com/en/press-release/companies-news/bmw-group-middle-east-appoints-official-importer-for-bmw-and-mini-in-syria-marking-a-new-chapter-for-the-brands-in-the-market-1064702",
+      "item_id": "b11953f0ceff76d98b10c003eefcfccdbf93cd64"
+    },
+    "093dfac8ca2901ac380e2100e890b1d72799d857": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "opening a bank account in dubai a how to guide for residents and foreigners",
+      "url": "https://www.propertyfinder.ae/blog/open-bank-account-dubai",
+      "item_id": "e9d18d74296f55e36b5b6d89e294bc8b1725ca3a"
+    },
+    "f2bea21612cbd340ce614e57b62d7539f658cb2f": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "ras al khaimah police train officers in child safety police personnel trained for faster specialised response to child safety cases just now 2 m read",
+      "url": "https://gulfnews.com/uae/ras-al-khaimah-police-steps-up-child-protection-with-new-programme-1.500684317",
+      "item_id": "64e5e02ba66aa3d73c0fe4fd86cf8ddfbb9ac58e"
+    },
+    "6017e79b83cf8575155033456c476f63fca5b34f": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "how uae families of determination find inclusion just now 5 m read",
+      "url": "https://gulfnews.com/uae/people/how-uae-families-of-determination-navigate-everyday-life-1.500684475",
+      "item_id": "84f303112b72ac7b477286f97adf282e7fc7a26a"
+    },
+    "cfa04894727e2e1a45ec11f0f109f31192559501": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sharjah charity performs 34 heart surgeries in egypt 9m ago 3 m read",
+      "url": "https://gulfnews.com/uae/sharjah-charity-gives-34-children-life-saving-heart-surgery-in-egypt-1.500684331",
+      "item_id": "2ca5c9ee4a2f0daedf2feaac536aca9a666dd391"
+    },
+    "fc1d84ed2ab72b58237eea996974e6286890b037": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae weather brings fog mist as temps soar to 45 c 11m ago 2 m read",
+      "url": "https://gulfnews.com/uae/weather/uae-weather-forecast-temperatures-to-hit-45c-as-fog-mist-expected-through-sunday-1.500684472",
+      "item_id": "f7b3e22d81d33abf9e1cdc813d3c401740bd3007"
+    },
+    "e3f851c1fa1a479ef5f10895916b50ec97731871": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "how just one coffee can cost you dh6 500 a year 47m ago 10 m read",
+      "url": "https://gulfnews.com/lifestyle/how-your-daily-coffee-habit-can-cost-dh6500-a-year-in-dubai-1.500684200",
+      "item_id": "38da0b8dd9c05622b2a96cdf2de33b43f34d3f70"
+    },
+    "f2a938c38772d0801e51bb76eb3596d3a11aec5a": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "when should you renew your dubai driving licence 47m ago 4 m read",
+      "url": "https://gulfnews.com/living-in-uae/transport/dubai-driving-licence-renewal-process-fees-requirements-1.500683930",
+      "item_id": "a1ac816ca8a5c961558dc3f254ed16d1eb8301aa"
+    },
+    "0066bdb6729bef46db16d50d787f0690c10fe80e": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "will parents have to pay extra for gems ai avatars 1h ago 5 m read",
+      "url": "https://gulfnews.com/uae/will-uae-parents-have-to-pay-extra-for-gems-educations-ai-teacher-avatars-heres-the-answer-1.500684023",
+      "item_id": "3fa66f0ec5ef58123100ac05fd08bdeddac9f5cb"
+    },
+    "920c1c61b3841159132842e2968925113341aec7": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "experience emirati culture this week 3 places to go 1h ago 4 m read",
+      "url": "https://gulfnews.com/lifestyle/the-emirati-edit-breakfast-in-al-fahidi-al-sadu-weaving-and-rare-gulf-maps-1.500683541",
+      "item_id": "1179104dc85b428decb12b21e6c22ea84643721f"
+    },
+    "470693c07f09cd11d34d93da14a422791f85a341": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae moves to secure 24 7 satellite view of earth 1h ago 2 m read",
+      "url": "https://gulfnews.com/uae/abu-dhabi/uae-moves-to-secure-round-the-clock-satellite-view-of-earth-1.500684311",
+      "item_id": "1b79c20219b18d240baf6df5a645b07eb8157fb8"
+    },
+    "5a85f1eb26f4d09eb887ed81b7f1a8a6eae95dd6": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae sukuk what your dh1 000 dh10 000 will earn at 5 2h ago 3 m read",
+      "url": "https://gulfnews.com/business/banking/uaes-new-506-sukuk-what-your-dh1000-dh10000-could-earn-1.500684042",
+      "item_id": "5bc3d7df60c8f925033d7cce706e0fe95c62d0ce"
+    },
+    "23db02b378ea670de944410ee1090777ef71f60a": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "gems sri s next phase new principal sets priorities 2h ago 4 m read",
+      "url": "https://gulfnews.com/uae/education/gems-school-of-research-and-innovations-next-phase-new-principal-outlines-his-priorities-1.500684401",
+      "item_id": "1124391d5be508283eb1fdaec19201a582530584"
+    },
+    "e9cce0e6b4589223441fc14439c235215c685848": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "what uae founders are being judged on now 2h ago 4 m read",
+      "url": "https://gulfnews.com/business/markets/uae-startup-race-moves-beyond-raise-quicker-grow-faster-sheraa-says-1.500681982",
+      "item_id": "fb7525295169ec9e389bd0258e5e6dbcff5b2af7"
+    },
+    "fb4e8befa4127a8827c5f75dc618afd3aa989cab": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "platinumlist_dubai_calendar",
+      "title_key": "mdlbeast presents x in act black coffee in jeddah",
+      "url": "https://jeddah.platinumlist.net/event-tickets/108544/mdlbeast-presents-x-in-act-black-coffee",
+      "item_id": "0f599baa5e4dad8134353e42e2bbd0459d564069"
+    },
+    "8fda849b9bda9466332d9aba20804b70392d84a5": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "top 17 new cafes and restaurants joining dubai s culinary scene",
+      "url": "https://whatson.ae/2026/09/new-cafes-and-restaurants-opening-in-dubai-dining-september",
+      "item_id": "e4a618011f1a926f8971256c20473c077b597c67",
+      "used_at": "2026-09-23T03:10:36.816661+00:00"
+    },
+    "515ab298b729dac0d277a490b76a771210d743aa": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "скончался шейх ахмед бин рашид аль мактум брат правителя дубая в связи с его кончиной в дубае объявлен официальный",
+      "url": "https://t.me/dubaimap/14505",
+      "item_id": "9b9d65e84b844bc6ee362fa7c645500cee8afdc5"
+    },
+    "da192b22df432236bdc8a32d6849722224f863ed": {
+      "first_seen_at": "2026-09-23T03:10:10.842777+00:00",
+      "source_id": "tg_neginskiuae",
+      "title_key": "открыта запись в лист ожидания на самый громкий старт абу даби",
+      "url": "https://t.me/NeginskiUAE/8486",
+      "item_id": "4798e092ccdff0741eb13e354873fbdf5fb55ed1"
     }
   }
 }

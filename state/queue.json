@@ -762,6 +762,154 @@
       "rewrite_count": 0,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMSarI1T6m_wWNui7Oww1OSH1lkluYAArEkaxvmpJFJ5mCeCP_pWccBAAMCAAN5AAM9BA"
+    },
+    {
+      "post_id": "dubai_life-305d0e9fce69",
+      "rubric": "dubai_life",
+      "title": "Фонтаны у Dubai Mall не работают, уличные площадки открываются",
+      "body": "Если планируете вечер в городе на этой неделе — два момента.\n\nШоу фонтанов у Dubai Mall приостановлено на время траура. Дату возобновления не сообщают, так что поездку специально ради фонтанов лучше отложить.\n\nЗато начинается сезон на улице. Издание What's On собрало 9 уличных площадок ОАЭ, которые вернулись или откроются в ближайшее время. Dubai Crocodile Park уже работает после перерыва.\n\nПараллельно в городе открылись 17 новых кафе и ресторанов.\n\nЧто я делаю сама: перед выездом проверяю страницу площадки — расписания в начале сезона меняются.\n\nСохраните — пригодится при планировании выходных.",
+      "hashtags": [
+        "#дубай",
+        "#жизньвдубае",
+        "#оаэ"
+      ],
+      "cta": "Сохраните — пригодится при планировании выходных.",
+      "image": {
+        "mode": "stock",
+        "headline": "Что открыто в Дубае в начале сезона",
+        "accent": "",
+        "stock_query": "dubai outdoor park evening city walk"
+      },
+      "sources": [
+        {
+          "source_id": "tg_uaegeneralnews",
+          "title": "В Дубае приостановили шоу фонтанов",
+          "url": "https://t.me/uaegeneralnews/17761"
+        },
+        {
+          "source_id": "whatson_ae_feed",
+          "title": "These 9 UAE outdoor attractions are back for the cooler months",
+          "url": "https://whatson.ae/2026/09/these-9-uae-outdoor-attractions-are-back-for-the-cooler-months/"
+        },
+        {
+          "source_id": "whatson_ae_feed",
+          "title": "Top 17 new cafes and restaurants joining Dubai's culinary scene",
+          "url": "https://whatson.ae/2026/09/new-cafes-and-restaurants-opening-in-dubai-dining-september/"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Шоу фонтанов у Dubai Mall приостановлено на время траура",
+          "value": "приостановлено",
+          "source_url": "https://t.me/uaegeneralnews/17761"
+        },
+        {
+          "claim": "Уличных площадок ОАЭ возвращается к сезону",
+          "value": "9",
+          "source_url": "https://whatson.ae/2026/09/these-9-uae-outdoor-attractions-are-back-for-the-cooler-months/"
+        },
+        {
+          "claim": "Dubai Crocodile Park снова открыт с сентября",
+          "value": "сентябрь",
+          "source_url": "https://whatson.ae/2026/09/these-9-uae-outdoor-attractions-are-back-for-the-cooler-months/"
+        },
+        {
+          "claim": "Новых кафе и ресторанов в Дубае",
+          "value": "17",
+          "source_url": "https://whatson.ae/2026/09/new-cafes-and-restaurants-opening-in-dubai-dining-september/"
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 602,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-23T03:10:33.829453+00:00",
+      "slot_at": "2026-09-24T15:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/card-db2d7413e1b2.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Что открыто в Дубае в начале сезона",
+        "accent": ""
+      },
+      "item_ids": [
+        "4146c6ef3eb9b1f48e7da5e30976ce78209ad9d6",
+        "99e017ce609961ef6bb82d560eefb34b0e9c2081",
+        "e4a618011f1a926f8971256c20473c077b597c67",
+        "3c8c685682eef6a69f74d62e60fe14383d661dc3"
+      ],
+      "source_items": [
+        {
+          "item_id": "4146c6ef3eb9b1f48e7da5e30976ce78209ad9d6",
+          "source_id": "tg_uaegeneralnews",
+          "category": "city_gov",
+          "title": "​В Дубае приостановили шоу фонтанов",
+          "summary": "​В Дубае приостановили шоу фонтанов Шоу фонтанов у Dubai Mall в Дубае приостановили на время траура. https://russianemirates.com/N046047/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/uaegeneralnews/17761",
+          "canonical_url": "https://t.me/uaegeneralnews/17761",
+          "published_at": "2026-09-22T11:35:04+00:00",
+          "collected_at": "2026-09-23T03:10:10.835124+00:00",
+          "lang": "ru"
+        },
+        {
+          "item_id": "99e017ce609961ef6bb82d560eefb34b0e9c2081",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "These 9 UAE outdoor attractions are back for the cooler months",
+          "summary": "Summer may be winding down, which means some of the UAE’s biggest outdoor attractions are getting ready to welcome visitors back From colourful flower gardens and wildlife adventures to family-friendly theme parks and outdoor escapes, these UAE attractions are back or reopening soon, just in time for the cooler months. Dubai Crocodile Park Reopened: September […] The post These 9 UAE outdoor attractions are back for the cooler months appeared first on What's On .",
+          "url": "https://whatson.ae/2026/09/these-9-uae-outdoor-attractions-are-back-for-the-cooler-months/",
+          "canonical_url": "https://whatson.ae/2026/09/these-9-uae-outdoor-attractions-are-back-for-the-cooler-months",
+          "published_at": "2026-09-22T11:00:28+00:00",
+          "collected_at": "2026-09-23T03:10:10.834200+00:00",
+          "lang": "en"
+        },
+        {
+          "item_id": "e4a618011f1a926f8971256c20473c077b597c67",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "Top 17 new cafes and restaurants joining Dubai’s culinary scene",
+          "summary": "PSA: Dubai’s dining scene just got an upgrade with these new cafes and restaurants If you think Dubai’s dining scene is slowing down anytime soon – think again. Just in time for the cooler season, we are yet again being treated to some newbies joining the dining squad. From Melbourne-brewed coffee to London hailing cafes, […] The post Top 17 new cafes and restaurants joining Dubai’s culinary scene appeared first on What's On .",
+          "url": "https://whatson.ae/2026/09/new-cafes-and-restaurants-opening-in-dubai-dining-september/",
+          "canonical_url": "https://whatson.ae/2026/09/new-cafes-and-restaurants-opening-in-dubai-dining-september",
+          "published_at": "2026-09-22T12:33:41+00:00",
+          "collected_at": "2026-09-23T03:10:10.834129+00:00",
+          "lang": "en"
+        },
+        {
+          "item_id": "3c8c685682eef6a69f74d62e60fe14383d661dc3",
+          "source_id": "tg_dubaimap",
+          "category": "lifestyle",
+          "title": "🏡 Почти половина сделок off-plan в Абу-Даби приходится на один район",
+          "summary": "🏡 Почти половина сделок off-plan в Абу-Даби приходится на один район В центре спроса оказался Al Reem Island: по данным девелопера MERED, почти половина транзакций за два года прошли именно на острове, а объем проданных апартаментов вырос более чем в четыре раза. Спрос определяет расположение — первая береговая линия и готовая инфраструктура — плюс шедевры международных архитекторов вроде Riviera Residences от Herzog & de Meuron. Больше о трендах в недвижимости ОАЭ – в канале MERED.",
+          "url": "https://t.me/dubaimap/14504",
+          "canonical_url": "https://t.me/dubaimap/14504",
+          "published_at": "2026-09-22T10:07:38+00:00",
+          "collected_at": "2026-09-23T03:10:10.837252+00:00",
+          "lang": "ru"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 1,
+        "sources_cited": 3
+      },
+      "approval": {
+        "sent_at": "2026-09-23T03:10:38.374008+00:00",
+        "preview_message_id": 19
+      },
+      "rewrite_count": 0,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMTarNDLoukRbYTTxXIfVLNnzag1gADrCZrG-akmUnDSsi_MHzelwEAAwIAA3kAAz0E"
     }
   ]
 }

@@ -9,8 +9,11 @@ anthropic==1.7.0
 # Reading private Telegram channels through a user session (see docs/SETUP.md).
 telethon==1.45.0
 
-# Optional: enable the OpenAI provider (LLM_PROVIDER=openai) by installing this too.
-# openai==1.51.0
+# Text of the PDFs the owner forwards to the bot (pipeline/inbox.py).
+pypdf==5.1.0
+# Whisper transcription of the owner's videos (needs OPENAI_API_KEY) and the
+# optional OpenAI provider (LLM_PROVIDER=openai).
+openai==3.19.0
 
 # Dev / CI
 pytest==8.3.3

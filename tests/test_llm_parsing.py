@@ -111,3 +111,19 @@ def test_describe_unwraps_the_cause_chain():
     except ConnectionError as exc:
         text = describe(exc)
     assert "Connection error." in text and "Name or service not known" in text
+
+
+def test_fact_confidence_fields_are_optional_and_coerced():
+    payload = json.loads(json.dumps(VALID))
+    payload["facts"] = [
+        {"claim": "a", "value": "1", "source_url": "https://example.com/a"},
+        {"claim": "b", "value": "2", "source_url": "https://example.com/b",
+         "confidence": "CONFIRMED", "sources": ["https://example.com/c"]},
+        {"claim": "c", "value": "3", "source_url": "https://example.com/d", "confidence": "maybe"},
+    ]
+    facts = validate_payload(payload)["facts"]
+    assert "confidence" not in facts[0]
+    assert facts[0]["sources"] == ["https://example.com/a"]
+    assert facts[1]["confidence"] == "confirmed"
+    assert facts[1]["sources"] == ["https://example.com/c", "https://example.com/b"]
+    assert facts[2]["confidence"] == "single_source"

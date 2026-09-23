@@ -99,7 +99,15 @@ MAX_CHARS: {{max_chars}}
     "stock_query": "english keywords for Unsplash/Pexels fallback"
   },
   "sources": [{"source_id": "...", "title": "...", "url": "https://..."}],
-  "facts": [{"claim": "...", "value": "...", "source_url": "https://..."}],
+  "facts": [
+    {
+      "claim": "...",
+      "value": "...",
+      "source_url": "https://...",
+      "confidence": "confirmed | single_source | rumour",
+      "sources": ["https://...", "https://..."]
+    }
+  ],
   "self_check": {
     "all_numbers_have_source": true,
     "no_guaranteed_returns": true,
@@ -126,7 +134,10 @@ MAX_CHARS: {{max_chars}}
   `gulf_news_rss`, `dld_open_data_portal`). Не подставляй сюда название
   категории и не придумывай новых идентификаторов.
 - `sources[].url` — только из `<INPUT_ITEMS>`; конструировать ссылки запрещено.
-- `facts` — по одной записи на каждую цифру, встречающуюся в `body`.
+- `facts` — по одной записи на каждую цифру, встречающуюся в `body`;
+  `confidence` — `confirmed`, `single_source` или `rumour` по правилам раздела
+  «Проверка и маркировка» системного промпта; `sources` — все url из
+  `<INPUT_ITEMS>`, где этот факт встречается (первый дублируется в `source_url`).
 - `self_check` — честная самопроверка; `false` лучше, чем ложный `true`.
 - `length_chars` — фактическая длина `body` в символах.
 - `needs_separate_text` — `true`, если полный текст не помещается в

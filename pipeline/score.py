@@ -19,6 +19,7 @@ from typing import Any
 from . import state
 from .config import RUBRICS, SELLING_RUBRICS
 from .models import NormalizedItem
+from .stories import Story, cluster, pick_items
 
 log = logging.getLogger("pipeline.score")
 
@@ -102,13 +103,70 @@ def score_items(
     return items
 
 
-def select_for_rubric(items: list[NormalizedItem], rubric: str, limit: int = 4) -> list[NormalizedItem]:
-    """Top items whose source category feeds the given rubric."""
+# How many items of the leading story go into one prompt (one per source),
+# and how many single items from other stories may be added as context.
+MAX_STORY_ITEMS = 6
+EXTRA_STORY_ITEMS = 2
+
+
+def stories_for_rubric(stories: list[Story], rubric: str) -> list[Story]:
+    """Stories that touch at least one source category of the rubric."""
     allowed = set(RUBRICS.get(rubric, {}).get("categories") or [])
     if not allowed:
         return []
-    picked = [i for i in items if i.category in allowed]
-    return picked[:limit]
+    return [s for s in stories if s.categories & allowed]
+
+
+def select_for_rubric(
+    items: list[NormalizedItem],
+    rubric: str,
+    limit: int = 4,
+    *,
+    stories: list[Story] | None = None,
+    exclude_story_ids: set[str] | None = None,
+) -> list[NormalizedItem]:
+    """Material for one post: the leading story in full, plus a little context.
+
+    Selection is done over stories, not items. The best story of the rubric
+    contributes all its items (up to ``MAX_STORY_ITEMS``, best score first,
+    one per source), so the model sees every retelling and can merge them
+    into one complete post. If ``limit`` leaves room, up to
+    ``EXTRA_STORY_ITEMS`` best items from other stories are added as context.
+
+    ``stories`` lets the caller cluster once for several rubrics; when it is
+    omitted the items are clustered here. ``exclude_story_ids`` keeps a story
+    already used by another rubric in the same run from producing a twin post.
+    """
+    if not RUBRICS.get(rubric, {}).get("categories"):
+        return []
+    if stories is None:
+        stories = cluster(items)
+    excluded = exclude_story_ids or set()
+    pool = [s for s in stories_for_rubric(stories, rubric) if s.story_id not in excluded]
+    if not pool:
+        return []
+
+    lead, rest = pool[0], pool[1:]
+    picked = pick_items(lead, MAX_STORY_ITEMS)
+    room = min(EXTRA_STORY_ITEMS, limit - len(picked))
+    for story in rest:
+        if room <= 0:
+            break
+        extra = pick_items(story, 1)
+        if extra:
+            picked.extend(extra)
+            room -= 1
+    return picked
+
+
+def lead_story_for_rubric(
+    stories: list[Story], rubric: str, exclude_story_ids: set[str] | None = None
+) -> Story | None:
+    excluded = exclude_story_ids or set()
+    for story in stories_for_rubric(stories, rubric):
+        if story.story_id not in excluded:
+            return story
+    return None
 
 
 # Brief §4: selling content is capped at ~20-25% of the feed.
@@ -153,15 +211,19 @@ def plan_rubrics(
     runs that were 100% selling, against the brief's 20-25% ceiling.
 
     ``personal`` is excluded: those posts are written by the owner from a brief.
+
+    Rubrics are ranked by the score of their leading story, so an event that
+    five channels report outranks a single-source item of the same weight.
     """
+    stories = cluster(items)
     available: dict[str, float] = {}
     for rubric_id, meta in RUBRICS.items():
         if meta.get("manual"):
             continue
-        pool = select_for_rubric(items, rubric_id, limit=3)
-        if not pool:
+        lead = lead_story_for_rubric(stories, rubric_id)
+        if lead is None:
             continue
-        available[rubric_id] = sum(i.score for i in pool) / len(pool)
+        available[rubric_id] = lead.score
     ordered = sorted(available, key=lambda r: available[r], reverse=True)
 
     past = recent_rubrics() if history is None else list(history)

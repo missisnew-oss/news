@@ -79,6 +79,12 @@ class LLMProvider(Protocol):
     def complete(self, system: str, user: str, *, max_tokens: int = DEFAULT_MAX_TOKENS) -> str:
         ...
 
+    def describe_image(self, image_bytes: bytes, media_type: str, instruction: str,
+                       *, max_tokens: int = DEFAULT_MAX_TOKENS) -> dict[str, Any]:
+        """Vision call for the owner's inbox: returns the JSON object the
+        instruction asks for (``{"text", "description", "kind"}``)."""
+        ...
+
 
 class AnthropicProvider:
     name = "anthropic"
@@ -130,6 +136,53 @@ class AnthropicProvider:
                 time.sleep(delay)
         raise LLMError(f"Anthropic недоступен: {describe(last_error) if last_error else '?'}")
 
+    def describe_image(self, image_bytes: bytes, media_type: str, instruction: str,
+                       *, max_tokens: int = DEFAULT_MAX_TOKENS) -> dict[str, Any]:
+        """Send one image (base64) plus a text instruction; parse the JSON answer.
+
+        Used by pipeline/inbox.py for screenshots, floor plans and price lists
+        the owner forwards to the bot. Same retry policy as ``complete``.
+        """
+        import base64
+
+        data = base64.standard_b64encode(image_bytes).decode("ascii")
+        content = [
+            {"type": "image", "source": {"type": "base64", "media_type": media_type, "data": data}},
+            {"type": "text", "text": instruction},
+        ]
+        last_error: Exception | None = None
+        for attempt in range(MAX_LLM_ATTEMPTS):
+            try:
+                response = self._client.messages.create(
+                    model=self.model,
+                    max_tokens=max_tokens,
+                    # Transcribing an image is not a reasoning task.
+                    output_config={"effort": "low"},
+                    messages=[{"role": "user", "content": content}],
+                )
+                text = "".join(
+                    block.text for block in response.content if getattr(block, "type", "") == "text"
+                )
+                stop = getattr(response, "stop_reason", None)
+                if stop == "max_tokens":
+                    raise LLMError(f"описание изображения обрезано по max_tokens={max_tokens}")
+                if stop == "refusal":
+                    raise LLMError("модель отказалась описывать изображение (stop_reason=refusal)")
+                return extract_json(text)
+            except LLMError:
+                raise
+            except Exception as exc:
+                last_error = exc
+                if not is_retryable(exc):
+                    raise LLMError(f"Anthropic отказал без шанса на повтор: {exc}") from exc
+                if attempt == MAX_LLM_ATTEMPTS - 1:
+                    break
+                delay = _retry_sleep(attempt)
+                log.warning("Anthropic vision: попытка %d не удалась (%s), пауза %.1fs",
+                            attempt + 1, describe(exc), delay)
+                time.sleep(delay)
+        raise LLMError(f"Anthropic недоступен: {describe(last_error) if last_error else '?'}")
+
 
 class OpenAIProvider:
     name = "openai"
@@ -169,6 +222,13 @@ class OpenAIProvider:
                 time.sleep(delay)
         raise LLMError(f"OpenAI недоступен: {last_error}")
 
+    def describe_image(self, image_bytes: bytes, media_type: str, instruction: str,
+                       *, max_tokens: int = DEFAULT_MAX_TOKENS) -> dict[str, Any]:
+        raise NotImplementedError(
+            "Распознавание картинок из копилки реализовано только для провайдера "
+            "anthropic. Задайте LLM_PROVIDER=anthropic и ANTHROPIC_API_KEY."
+        )
+
 
 class OfflineProvider:
     """Deterministic stand-in used by DRY_RUN and by tests. Never touches the network."""
@@ -182,6 +242,16 @@ class OfflineProvider:
         from .offline_draft import build_offline_draft
 
         return json.dumps(build_offline_draft(user), ensure_ascii=False)
+
+    def describe_image(self, image_bytes: bytes, media_type: str, instruction: str,
+                       *, max_tokens: int = DEFAULT_MAX_TOKENS) -> dict[str, Any]:
+        """Deterministic stand-in: the image is not looked at."""
+        return {
+            "text": "",
+            "description": (f"Сухой прогон: изображение ({media_type}, {len(image_bytes)} байт) "
+                            "не распознавалось, офлайн-провайдер"),
+            "kind": "other",
+        }
 
 
 def get_provider(settings: Settings) -> LLMProvider:
@@ -259,6 +329,38 @@ def extract_json(text: str) -> dict[str, Any]:
     raise LLMError("JSON-объект в ответе модели не закрыт")
 
 
+FACT_CONFIDENCE_LEVELS = ("confirmed", "single_source", "rumour")
+
+
+def _coerce_fact(fact: dict[str, Any]) -> dict[str, Any]:
+    """Normalise the optional confidence fields of one ``facts[]`` entry.
+
+    Both fields are optional so that older prompts and the offline stub keep
+    working: a missing ``confidence`` stays missing (the gate only warns),
+    an unknown level is treated as ``single_source``, and ``sources`` is
+    always a list of URL strings that includes ``source_url``.
+    """
+    level = fact.get("confidence")
+    if level is not None:
+        level = str(level).strip().lower()
+        fact["confidence"] = level if level in FACT_CONFIDENCE_LEVELS else "single_source"
+    raw_sources = fact.get("sources")
+    if raw_sources is None:
+        raw_sources = []
+    elif isinstance(raw_sources, str):
+        raw_sources = [raw_sources]
+    elif not isinstance(raw_sources, list):
+        raw_sources = []
+    sources = [str(u).strip() for u in raw_sources if str(u).strip()]
+    primary = str(fact.get("source_url") or "").strip()
+    if primary and primary not in sources:
+        sources.append(primary)
+    if sources and not primary:
+        fact["source_url"] = sources[0]
+    fact["sources"] = sources
+    return fact
+
+
 def validate_payload(payload: dict[str, Any]) -> dict[str, Any]:
     """Check the LLM response against the agreed schema and coerce types."""
     if not isinstance(payload, dict):
@@ -285,7 +387,7 @@ def validate_payload(payload: dict[str, Any]) -> dict[str, Any]:
     payload["image"] = image
 
     payload["sources"] = [s for s in (payload.get("sources") or []) if isinstance(s, dict) and s.get("url")]
-    payload["facts"] = [f for f in (payload.get("facts") or []) if isinstance(f, dict)]
+    payload["facts"] = [_coerce_fact(f) for f in (payload.get("facts") or []) if isinstance(f, dict)]
 
     self_check = payload.get("self_check")
     if not isinstance(self_check, dict):

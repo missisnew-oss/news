@@ -10,12 +10,15 @@ from . import factcheck, prompts
 from .config import RUBRICS, SELLING_RUBRICS, Settings
 from .llm import extract_json, LLMError, get_provider, parse_response
 from .models import NormalizedItem, PostDraft
-from .score import select_for_rubric
+from .score import lead_story_for_rubric, select_for_rubric
+from .stories import cluster
 from .textutil import sanitize_telegram_html, sha1, truncate
 
 log = logging.getLogger("pipeline.generate")
 
 MAX_ATTEMPTS = 2
+# Budget of input items per post: the leading story in full plus context.
+ITEMS_PER_POST = 4
 
 
 def _post_id(rubric: str, items: list[NormalizedItem]) -> str:
@@ -56,7 +59,7 @@ def compose_text(payload: dict[str, Any]) -> str:
 # state/queue.json is committed to git on every run.
 _SNAPSHOT_FIELDS = (
     "item_id", "source_id", "category", "title", "summary", "url",
-    "canonical_url", "published_at", "collected_at", "lang",
+    "canonical_url", "published_at", "collected_at", "lang", "image_url",
 )
 
 
@@ -155,8 +158,21 @@ def generate(
 ) -> list[PostDraft]:
     provider = provider or get_provider(settings)
     drafts: list[PostDraft] = []
+    # Cluster once for the whole run: every rubric picks from the same
+    # stories, and a story that already became a post is not offered again.
+    stories = cluster(items)
+    used_story_ids: set[str] = set()
     for rubric in rubric_plan:
-        pool = select_for_rubric(items, rubric, limit=4)
+        lead = lead_story_for_rubric(stories, rubric, used_story_ids)
+        pool = select_for_rubric(
+            items, rubric, limit=ITEMS_PER_POST, stories=stories, exclude_story_ids=used_story_ids,
+        )
+        if lead is not None and pool:
+            used_story_ids.add(lead.story_id)
+            log.info(
+                "Рубрика %s: история «%s» (%d источн., %d материалов в промпте)",
+                rubric, lead.title[:70], lead.source_count, len(pool),
+            )
         draft = generate_for_rubric(settings, rubric, pool, provider=provider)
         if draft and draft.status != "failed":
             drafts.append(draft)

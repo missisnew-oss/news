@@ -16,6 +16,7 @@ from . import analytics as analytics_stage
 from . import approve as approve_stage
 from . import collect as collect_stage
 from . import illustrate as illustrate_stage
+from . import inbox as inbox_stage
 from . import normalize as normalize_stage
 from . import postqueue, publish as publish_stage, score as score_stage, state
 from .config import OUT_DIR, Settings, load_settings, load_sources
@@ -25,7 +26,7 @@ from .models import PostDraft
 
 log = logging.getLogger("pipeline.run")
 
-STAGES = ("collect", "generate", "approve", "publish", "analytics", "all")
+STAGES = ("collect", "inbox", "generate", "approve", "publish", "analytics", "all")
 
 
 def stage_collect(settings: Settings) -> list[Any]:
@@ -110,10 +111,33 @@ def regenerate_rewrites(settings: Settings, provider: Any = None) -> list[PostDr
     return drafts
 
 
+def stage_inbox(settings: Settings, *, send_previews: bool = True) -> list[PostDraft]:
+    """The owner's inbox → drafts. Returns immediately when nothing is new.
+
+    Runs after every approve poll (so a forwarded screenshot becomes a preview
+    within about half an hour) and at the start of stage_generate. With
+    ``send_previews`` the fresh drafts go to the owner right away instead of
+    waiting for the next poll.
+    """
+    drafts = inbox_stage.drafts_from_inbox(settings)
+    if drafts:
+        log.info("Черновиков из копилки владельца: %d", len(drafts))
+        if send_previews:
+            approve_stage.send_previews(settings)
+    return drafts
+
+
 def stage_generate(settings: Settings, items: list[Any] | None = None, max_posts: int = 2) -> list[PostDraft]:
     rewritten = regenerate_rewrites(settings)
     if rewritten:
         log.info("Переписано по кнопке «Переписать»: %d", len(rewritten))
+    # What the owner sent comes before the planned rubrics; previews for it
+    # are sent by the approve step that follows in the workflow.
+    try:
+        inbox_drafts = stage_inbox(settings, send_previews=False)
+    except Exception as exc:
+        log.error("Копилка владельца не обработана, плановые рубрики продолжаются: %s", exc)
+        inbox_drafts = []
     items = items if items is not None else stage_collect(settings)
     plan = score_stage.plan_rubrics(items, max_posts=max_posts)
     log.info("План рубрик на этот прогон: %s", ", ".join(plan) or "пусто")
@@ -128,6 +152,7 @@ def stage_generate(settings: Settings, items: list[Any] | None = None, max_posts
         draft.image_meta = image_meta
 
     postqueue.enqueue(drafts, persist=True)
+    drafts = inbox_drafts + drafts  # inbox drafts are already queued
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     (OUT_DIR / "drafts.json").write_text(
         json.dumps([d.to_dict() for d in drafts], ensure_ascii=False, indent=2), encoding="utf-8"
@@ -204,6 +229,9 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.stage == "collect":
         stage_collect(settings)
+    elif args.stage == "inbox":
+        drafts = stage_inbox(settings)
+        print(f"черновиков из копилки: {len(drafts)}")
     elif args.stage == "generate":
         stage_generate(settings, max_posts=args.max_posts)
     elif args.stage == "approve":

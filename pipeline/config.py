@@ -104,6 +104,17 @@ RUBRICS: dict[str, dict[str, Any]] = {
         "per_4weeks": 8,
         "manual": True,  # owner writes the text herself from a generated brief
     },
+    "from_owner": {
+        "title": "От владельца",
+        # Not planned and not fed by collected sources: pipeline/inbox.py
+        # makes one post per material the owner forwards to the bot.
+        # Empty categories keep it out of score.plan_rubrics.
+        "categories": [],
+        "selling": False,
+        "max_chars": 650,
+        "per_4weeks": 0,
+        "manual": False,
+    },
 }
 
 SELLING_RUBRICS = {rid for rid, meta in RUBRICS.items() if meta["selling"]}

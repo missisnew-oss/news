@@ -177,6 +177,46 @@ class TelegramClient:
         result = data.get("result")
         return int(result) if isinstance(result, int) else 0
 
+    # -- files the owner sends to the bot (pipeline/inbox.py) ----------------
+    def get_file(self, file_id: str) -> dict[str, Any]:
+        """``getFile`` result: ``{file_id, file_path, file_size}``.
+
+        Bot API refuses files over 20 MB here with "file is too big"; the
+        caller maps that to ``too_large``. The returned ``file_path`` is only
+        valid for about an hour, so download right away.
+        """
+        if self.dry_run:
+            self._dry("getFile", {"file_id": file_id})
+            return {"file_id": file_id, "file_path": f"dry-run/{file_id}", "file_size": 0}
+        data = self.call("getFile", {"file_id": file_id})
+        return data.get("result") or {}
+
+    def download_file(self, file_path: str, dest: str | Path, timeout: int = 120) -> Path:
+        """Fetch ``file_path`` from ``getFile`` into ``dest`` (streamed to disk).
+
+        In DRY_RUN nothing is fetched: an empty file is written so the rest of
+        the inbox stage can run its "unreadable file" branches offline.
+        """
+        dest = Path(dest)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        if self.dry_run:
+            self.calls.append({"method": "downloadFile", "payload": {"file_path": file_path}})
+            log.info("DRY_RUN telegram.downloadFile %s → %s", file_path, dest.name)
+            dest.write_bytes(b"")
+            return dest
+
+        import requests
+
+        url = f"{API_ROOT}/file/bot{self.token}/{file_path}"
+        with requests.get(url, stream=True, timeout=timeout) as response:
+            if response.status_code != 200:
+                raise TelegramError(f"downloadFile: HTTP {response.status_code}")
+            with open(dest, "wb") as fh:
+                for chunk in response.iter_content(chunk_size=1 << 16):
+                    if chunk:
+                        fh.write(chunk)
+        return dest
+
 
 def approval_keyboard(post_id: str) -> dict[str, Any]:
     """Inline keyboard shown to the owner in a private chat."""

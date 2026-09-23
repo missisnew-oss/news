@@ -21,7 +21,9 @@ concurrency:
 jobs:
   poll:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    # 6 minutes were enough for the poll alone; the inbox step below may
+    # additionally read a PDF or transcribe a video.
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
@@ -54,6 +56,24 @@ jobs:
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_OWNER_ID: ${{ secrets.TELEGRAM_OWNER_ID }}
         run: python -m pipeline.run --stage approve --rounds 2 --poll-timeout 45
+
+      # Screenshots, PDFs and videos the owner forwarded during the poll
+      # become drafts right here, so a preview arrives within ~30 minutes
+      # instead of waiting for the next Collect & Generate run. Exits at once
+      # when the inbox has nothing new, so the minute budget is unaffected.
+      - name: Копилка владельца → черновики
+        env:
+          DRY_RUN: "0"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+          TELEGRAM_OWNER_ID: ${{ secrets.TELEGRAM_OWNER_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # Only for video transcription (Whisper); without it videos are
+          # drafted from their caption alone.
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LLM_PROVIDER: ${{ vars.LLM_PROVIDER || 'anthropic' }}
+          LLM_MODEL: ${{ vars.LLM_MODEL || 'claude-opus-5' }}
+        run: python -m pipeline.run --stage inbox
 
       - name: Коммит состояния
         run: 'bash scripts/commit_state.sh "state: решения по апруву"'

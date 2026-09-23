@@ -605,19 +605,16 @@ def _light_brand(brand: dict[str, Any]) -> dict[str, Any]:
     return merged
 
 
-def render_light_card(headline: str, accent: str = "", *, subtitle: str = "", tag_left: str = "",
-                      tag_right: str = "", brand: dict[str, Any] | None = None,
-                      size: tuple[int, int] = LIGHT_SIZE, out_path: Path | None = None) -> Path:
-    """Compact light card: cream background, dark headline, one golden accent.
+def _light_base(brand: dict[str, Any], size: tuple[int, int], *, tag_left: str, tag_right: str):
+    """Cream sheet with the washes, the pills row and the wordmark.
 
-    No photograph and no dark blocks — the owner asked for something light and
-    compact that does not dominate the feed. 1200×630 shows as a wide preview
-    in Telegram and takes a third of the height of a 4:5 card. Costs nothing:
-    pure Pillow, no stock or AI provider.
+    Returns ``(image, draw, ctx)``; ``ctx`` carries the geometry and colours
+    the light layouts share: ``margin``, ``scale``, ``top`` (first free y
+    under the pills), ``bottom`` (last free y), ``text``, ``muted``,
+    ``accent`` (RGB), ``panel_blue`` / ``panel_gold`` (RGBA panel fills).
     """
     from PIL import Image, ImageDraw
 
-    brand = brand or load_brand()
     lb = _light_brand(brand)
     light = brand.get("light") or {}
     W, H = size
@@ -628,52 +625,182 @@ def render_light_card(headline: str, accent: str = "", *, subtitle: str = "", ta
 
     # Two soft washes so the card is not a flat sheet: pale blue top-right,
     # pale gold bottom-left. Alpha keeps them barely there.
-    wash_blue = _hex_to_rgb(light.get("wash_blue", "#DCE7F2")) + (150,)
-    wash_gold = _hex_to_rgb(light.get("wash_gold", "#F3E4C4")) + (120,)
-    draw.ellipse([W * 0.62, -H * 0.55, W * 1.25, H * 0.55], fill=wash_blue)
-    draw.ellipse([-W * 0.18, H * 0.68, W * 0.30, H * 1.35], fill=wash_gold)
+    blue = _hex_to_rgb(light.get("wash_blue", "#DCE7F2"))
+    gold = _hex_to_rgb(light.get("wash_gold", "#F3E4C4"))
+    draw.ellipse([W * 0.62, -H * 0.55, W * 1.25, H * 0.55], fill=blue + (150,))
+    draw.ellipse([-W * 0.18, H * 0.68, W * 0.30, H * 1.35], fill=gold + (120,))
 
     margin = int((brand.get("card") or {}).get("margin", 64) * scale)
-    text_rgb = _hex_to_rgb(lb["text"])
-    muted_rgb = _hex_to_rgb(lb["muted"])
-    accent_rgb = _hex_to_rgb(lb["accent"])
-
     # Top row: place + rubric pills on the left, wordmark on the right.
     pill_h = _draw_pills(draw, [tag_left, tag_right], x=margin, y=margin - int(6 * scale), brand=lb, scale=scale)
     _, logo_h = _draw_logo(image, draw, lb, margin=margin, scale=scale * 0.85, centered=False)
-    top_min = margin + max(pill_h, logo_h) + int(36 * scale)
-    bottom = H - margin
+    ctx = {
+        "margin": margin,
+        "scale": scale,
+        "top": margin + max(pill_h, logo_h) + int(36 * scale),
+        "bottom": H - margin,
+        "text": _hex_to_rgb(lb["text"]),
+        "muted": _hex_to_rgb(lb["muted"]),
+        "accent": _hex_to_rgb(lb["accent"]),
+        "panel_blue": blue + (210,),
+        "panel_gold": gold + (210,),
+        "radius": int((brand.get("card") or {}).get("pill_radius", 30) * scale * 0.8),
+    }
+    return image, draw, ctx
+
+
+def _fit_block(draw, text: str, box_w: int, box_h: int, sizes: tuple[int, ...], *, max_lines: int,
+               kind: str, brand: dict[str, Any], leading: float = 1.12):
+    """Largest size at which ``text`` fits ``box_w`` × ``box_h``.
+
+    Returns ``(font, lines, line_h)``; at the smallest size the text is cut
+    with an ellipsis rather than overflowing.
+    """
+    font, lines, line_h = None, [], 0
+    for i in range(len(sizes)):
+        font, lines = _fit_headline(draw, text, box_w, sizes[i:], max_lines=max_lines, brand=brand, kind=kind)
+        line_h = int(font.size * leading)
+        if line_h * len(lines) <= box_h:
+            break
+    return font, lines, line_h
+
+
+def render_light_card(headline: str, accent: str = "", *, subtitle: str = "", tag_left: str = "",
+                      tag_right: str = "", brand: dict[str, Any] | None = None,
+                      size: tuple[int, int] = LIGHT_SIZE, out_path: Path | None = None) -> Path:
+    """Compact light card: cream background, dark headline, one golden accent.
+
+    No photograph and no dark blocks — the owner asked for something light and
+    compact that does not dominate the feed. 1200×630 shows as a wide preview
+    in Telegram and takes a third of the height of a 4:5 card. Costs nothing:
+    pure Pillow, no stock or AI provider.
+    """
+    brand = brand or load_brand()
+    image, draw, ctx = _light_base(brand, size, tag_left=tag_left, tag_right=tag_right)
+    W, H = size
+    margin, scale = ctx["margin"], ctx["scale"]
+    top_min, bottom = ctx["top"], ctx["bottom"]
 
     # Headline: bold, dark, left; up to 3 lines. The size shrinks until the
     # headline, the golden rule and the accent line all fit above the margin.
     box_w = W - 2 * margin
-    all_sizes = tuple(int(v * scale) for v in (72, 64, 58, 52, 46, 40, 36))
+    sizes = tuple(int(v * scale) for v in (72, 64, 58, 52, 46, 40, 36))
     accent_h = int(56 * scale) if accent else (int(34 * scale) if subtitle else 0)
     rule_h = int(34 * scale)
-    font, lines, line_h = None, [], 0
-    for i in range(len(all_sizes)):
-        font, lines = _fit_headline(draw, headline, box_w, all_sizes[i:], max_lines=3, brand=brand, kind="bold")
-        line_h = int(font.size * 1.12)
-        if line_h * len(lines) + rule_h + accent_h <= bottom - top_min:
-            break
+    font, lines, line_h = _fit_block(
+        draw, headline, box_w, bottom - top_min - rule_h - accent_h, sizes, max_lines=3, kind="bold", brand=brand,
+    )
     block_h = line_h * len(lines) + rule_h + accent_h
     y = max(top_min, top_min + (bottom - top_min - block_h) // 2)
     for line in lines:
-        draw.text((margin, y), line, font=font, fill=text_rgb)
+        draw.text((margin, y), line, font=font, fill=ctx["text"])
         y += line_h
     # Thin golden rule under the headline.
-    draw.rectangle([margin, y + int(14 * scale), margin + int(120 * scale), y + int(18 * scale)], fill=accent_rgb)
+    draw.rectangle([margin, y + int(14 * scale), margin + int(120 * scale), y + int(18 * scale)], fill=ctx["accent"])
     y += rule_h
     if accent:
         af = _load_font(int(44 * scale), kind="bold", brand=brand)
-        draw.text((margin, y), accent, font=af, fill=accent_rgb)
+        draw.text((margin, y), accent, font=af, fill=ctx["accent"])
     elif subtitle:
         sf = _load_font(int(24 * scale), kind="regular", brand=brand)
         sub = _wrap(draw, subtitle, sf, box_w)[:1]
         if sub:
-            draw.text((margin, y), sub[0], font=sf, fill=muted_rgb)
+            draw.text((margin, y), sub[0], font=sf, fill=ctx["muted"])
 
     out_path = out_path or GENERATED_DIR / f"light-{sha1(headline + accent + tag_left + tag_right)[:12]}.png"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    image.convert("RGB").save(out_path, "PNG", optimize=True)
+    return out_path
+
+
+# Text-meme layouts the model may ask for in ``image.meme.format``
+# (prompts/meme.md). Each is drawn on the same light sheet, so the meme costs
+# nothing and stays in the channel's own style — no third-party templates.
+MEME_FORMATS = ("nobody", "expectation", "me_vs", "one_liner")
+MEME_LABELS = {
+    "expectation": ("ОЖИДАНИЕ", "РЕАЛЬНОСТЬ"),
+    "me_vs": ("Я:", "ТОЖЕ Я:"),
+}
+
+
+def _meme_lines(meme: dict[str, Any] | None) -> tuple[str, list[str]]:
+    meme = meme or {}
+    fmt = str(meme.get("format") or "").strip().lower()
+    raw = meme.get("lines")
+    if isinstance(raw, str):
+        raw = [raw]
+    lines = [" ".join(str(x).split()) for x in (raw or []) if str(x).strip()]
+    if fmt not in MEME_FORMATS:
+        fmt = "nobody" if len(lines) == 1 else "one_liner"
+    return fmt, lines
+
+
+def _panel(draw, box, ctx, fill, label: str, text: str, brand: dict[str, Any], *, max_lines: int = 5) -> None:
+    """Rounded panel with a small tracked label on top and fitted bold text."""
+    x0, y0, x1, y1 = box
+    scale = ctx["scale"]
+    _rounded(draw, box, ctx["radius"], fill)
+    pad = int(28 * scale)
+    lf = _load_font(int(20 * scale), kind="bold", brand=brand)
+    _draw_tracked(draw, (x0 + pad, y0 + pad), label, lf, ctx["muted"], 3 * scale)
+    ty = y0 + pad + int(36 * scale)
+    sizes = tuple(int(v * scale) for v in (46, 42, 38, 34, 30, 27, 24))
+    font, lines, line_h = _fit_block(
+        draw, text, x1 - x0 - 2 * pad, y1 - ty - pad, sizes, max_lines=max_lines, kind="bold", brand=brand,
+    )
+    for line in lines:
+        draw.text((x0 + pad, ty), line, font=font, fill=ctx["text"])
+        ty += line_h
+
+
+def render_meme_card(meme: dict[str, Any], *, tag_left: str = "", tag_right: str = "",
+                     brand: dict[str, Any] | None = None, size: tuple[int, int] = LIGHT_SIZE,
+                     out_path: Path | None = None) -> Path:
+    """Text meme on the light sheet: «Никто / Дубай», «Ожидание / Реальность»,
+    «Я / Тоже я» or a set-up + punchline. Free and in the channel's own style."""
+    brand = brand or load_brand()
+    fmt, lines = _meme_lines(meme)
+    if not lines:
+        raise ValueError("мем без текста")
+    image, draw, ctx = _light_base(brand, size, tag_left=tag_left, tag_right=tag_right)
+    W, H = size
+    margin, scale = ctx["margin"], ctx["scale"]
+    top, bottom = ctx["top"], ctx["bottom"]
+    box_w = W - 2 * margin
+
+    if fmt in MEME_LABELS and len(lines) >= 2:
+        gap = int(24 * scale)
+        half = (box_w - gap) // 2
+        left, right = MEME_LABELS[fmt]
+        _panel(draw, (margin, top, margin + half, bottom), ctx, ctx["panel_gold"], left, lines[0], brand)
+        _panel(draw, (margin + half + gap, top, margin + box_w, bottom), ctx, ctx["panel_blue"], right, lines[1], brand)
+    elif fmt == "one_liner" and len(lines) >= 2:
+        sf = _load_font(int(30 * scale), kind="regular", brand=brand)
+        setup = _wrap(draw, lines[0], sf, box_w)[:2]
+        y = top
+        for line in setup:
+            draw.text((margin, y), line, font=sf, fill=ctx["muted"])
+            y += int(sf.size * 1.25)
+        y += int(10 * scale)
+        draw.rectangle([margin, y, margin + int(120 * scale), y + int(4 * scale)], fill=ctx["accent"])
+        y += int(30 * scale)
+        sizes = tuple(int(v * scale) for v in (64, 56, 50, 44, 40, 36))
+        font, plines, line_h = _fit_block(draw, lines[1], box_w, bottom - y, sizes, max_lines=4, kind="bold", brand=brand)
+        for line in plines:
+            draw.text((margin, y), line, font=font, fill=ctx["text"])
+            y += line_h
+    else:
+        # «Никто: / Абсолютно никто: / Дубай: …» — the punchline sits in a panel.
+        lf = _load_font(int(30 * scale), kind="regular", brand=brand)
+        y = top
+        for label in ("Никто:", "Абсолютно никто:"):
+            draw.text((margin, y), label, font=lf, fill=ctx["muted"])
+            y += int(lf.size * 1.4)
+        y += int(14 * scale)
+        _panel(draw, (margin, y, margin + box_w, bottom), ctx, ctx["panel_blue"], "ДУБАЙ:", lines[0], brand, max_lines=3)
+
+    seed = fmt + "|" + "|".join(lines) + tag_left + tag_right
+    out_path = out_path or GENERATED_DIR / f"meme-{sha1(seed)[:12]}.png"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     image.convert("RGB").save(out_path, "PNG", optimize=True)
     return out_path
@@ -1084,6 +1211,16 @@ def illustrate(settings: Settings, draft, sources_doc: dict[str, Any] | None = N
     subtitle = (draft.sources[0].get("title", "") if draft.sources else "")[:80]
     place, tag = card_tags(draft, brand)
 
+    if spec.get("mode") == "meme" and spec.get("meme"):
+        try:
+            path = render_meme_card(spec["meme"], tag_left=place, tag_right=tag, brand=brand)
+            log.info("Картинка: мем-карточка (%s)", (spec["meme"] or {}).get("format"))
+            meta = _own_meta(headline, "", place, tag, background="meme")
+            meta.update({"card": "meme", "card_path": str(path), "meme": dict(spec["meme"])})
+            return str(path), meta
+        except Exception as exc:
+            log.warning("Мем-карточка не отрисовалась (%s), рисуем светлую карточку", exc)
+
     if (brand.get("card") or {}).get("style") == "light":
         try:
             path = render_light_card(headline, accent, tag_left=place, tag_right=tag, brand=brand)
@@ -1151,7 +1288,16 @@ def ensure_image(settings: Settings, post: dict[str, Any]) -> str | None:
     tag = meta.get("tag_right") or (brand.get("tags") or {}).get(post.get("rubric", ""), brand.get("tag_default", ""))
     provider = meta.get("provider")
 
-    if meta.get("background") == "light" or (brand.get("card") or {}).get("style") == "light":
+    if meta.get("background") == "meme" and meta.get("meme"):
+        try:
+            new_path = render_meme_card(meta["meme"], tag_left=place, tag_right=tag, brand=brand)
+            post["image_path"] = str(new_path)
+            log.info("Мем для %s перерисован: %s", post.get("post_id"), new_path)
+            return str(new_path)
+        except Exception as exc:
+            log.warning("Мем для %s перерисовать не удалось (%s), рисую светлую карточку", post.get("post_id"), exc)
+
+    if meta.get("background") in {"light", "meme"} or (brand.get("card") or {}).get("style") == "light":
         try:
             new_path = render_light_card(headline, accent, tag_left=place, tag_right=tag, brand=brand)
         except Exception as exc:

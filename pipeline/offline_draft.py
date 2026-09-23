@@ -81,18 +81,36 @@ def build_offline_draft(prompt: str) -> dict[str, Any]:
             "sources": [primary.get("url", "")],
         })
 
+    image: dict[str, Any] = {
+        "mode": "card",
+        "headline": truncate(str(primary.get("title", "Демо-пост")), 60, "…"),
+        "accent": "",
+        "stock_query": "dubai skyline real estate",
+    }
+    if rubric == "meme":
+        # The meme rubric returns a text meme instead of a headline card; the
+        # stub exercises the same rendering path as production.
+        topic = truncate(str(primary.get("title", "новость")), 70, "…")
+        image.update({
+            "mode": "meme",
+            "meme": {
+                "format": "nobody",
+                "lines": [f"«{topic}» — и все уже обсуждают это в чатах"],
+            },
+        })
+        body = (
+            "Никто:\nАбсолютно никто:\n"
+            f"Дубай: {topic}\n\n"
+            "Это сухой прогон: мем собран офлайн-заглушкой, без обращения к модели."
+        )
+
     return {
         "rubric": rubric,
         "title": truncate(str(primary.get("title", "Демо-пост")), 90, "…"),
         "body": body,
         "hashtags": ["#дубай", "#недвижимость"],
         "cta": "Напишите в личные сообщения, если хотите разобрать свой случай.",
-        "image": {
-            "mode": "card",
-            "headline": truncate(str(primary.get("title", "Демо-пост")), 60, "…"),
-            "accent": "",
-            "stock_query": "dubai skyline real estate",
-        },
+        "image": image,
         "sources": [
             {
                 "source_id": item.get("source_id", ""),

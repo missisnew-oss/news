@@ -240,3 +240,31 @@ def test_digest_marks_every_story_it_took_as_used():
     pool = score.select_for_rubric([LAUNCH_A, LAUNCH_B, LAUNCH_C, NAKHEEL_OTHER], "market_pulse", limit=4)
     used = score.stories_used(cluster([LAUNCH_A, LAUNCH_B, LAUNCH_C, NAKHEEL_OTHER]), "market_pulse", pool)
     assert len(used) == 1
+
+
+def test_meme_rubric_is_capped_by_its_share_of_the_feed():
+    """Fed by four categories the meme would win every run; max_share holds it
+    to roughly one post in eight."""
+    from pipeline import score
+    from pipeline.config import RUBRICS
+
+    assert RUBRICS["meme"]["max_share"] < 0.2
+    history = ["dubai_life"] * 3 + ["meme"] + ["rules_and_laws"] * 3
+    ranked = ["meme", "dubai_life", "market_pulse"]
+    assert score.plan_rubrics.__doc__  # sanity
+    # Same items for every rubric: only the cap can drop the meme.
+    import pipeline.score as sc
+    stories = []
+    original = sc.lead_story_for_rubric
+
+    class _Lead:
+        score = 5.0
+
+    sc.lead_story_for_rubric = lambda stories, rubric, excluded=None: _Lead() if rubric in ranked else None
+    try:
+        plan = sc.plan_rubrics([], max_posts=2, history=history)
+        assert "meme" not in plan and len(plan) == 2
+        plan_fresh = sc.plan_rubrics([], max_posts=3, history=["dubai_life"] * 12)
+        assert "meme" in plan_fresh
+    finally:
+        sc.lead_story_for_rubric = original

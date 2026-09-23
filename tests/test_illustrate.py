@@ -577,3 +577,45 @@ def test_ensure_image_redraws_light_card(no_network, tmp_path):
     assert path and Path(path).exists()
     assert post["image_meta"]["background"] == "light"
     assert post["image_meta"]["tag_right"] == "#ЖИЗНЬВДУБАЕ"
+
+
+# --------------------------------------------------------------------------
+# Meme cards
+# --------------------------------------------------------------------------
+
+@pytest.mark.parametrize("meme", [
+    {"format": "nobody", "lines": ["Открыли ещё одну дорогу. Пробка тоже открылась"]},
+    {"format": "expectation", "lines": ["Сдача в 4 квартале", "Ключи, когда ребёнок пойдёт в школу"]},
+    {"format": "me_vs", "lines": ["Коплю на взнос", "Бранч — это же не кофе"]},
+    {"format": "one_liner", "lines": ["Билеты на поезд в продаже", "Опоздать в Абу-Даби не из-за пробки"]},
+])
+def test_meme_card_renders_every_format_light_and_inside_the_frame(tmp_path, meme):
+    out = illustrate.render_meme_card(meme, tag_left="ДУБАЙ", tag_right="#МЕМ", out_path=tmp_path / "m.png")
+    with Image.open(out) as img:
+        assert img.size == illustrate.LIGHT_SIZE
+        W, H = img.size
+        margin = int(64 * W / 1080)
+        strip = img.crop((0, H - margin // 2, W, H)).convert("L")
+        assert min(strip.getdata()) > 150, "текст вылез за нижнее поле"
+    assert _brightness(out) > 190
+
+
+def test_meme_spec_from_the_model_is_drawn_and_kept_for_redraws(no_network):
+    draft = _draft(rubric="meme")
+    draft.image = {"mode": "meme", "headline": "Новость", "accent": "", "stock_query": "x",
+                   "meme": {"format": "nobody", "lines": ["Все обсуждают это в чатах"]}}
+    path, meta = illustrate.illustrate(Settings(dry_run=True), draft, sources_doc=_sources_doc())
+    assert meta["background"] == "meme" and meta["card"] == "meme"
+    assert meta["meme"]["lines"] == ["Все обсуждают это в чатах"]
+    assert meta["tag_right"] == "#МЕМ" and Path(path).exists()
+    post = {"post_id": "m1", "title": "Новость", "rubric": "meme", "image_path": "/nonexistent/m.png",
+            "image_meta": meta}
+    again = illustrate.ensure_image(Settings(dry_run=True), post)
+    assert again and Path(again).exists()
+
+
+def test_meme_without_lines_falls_back_to_the_light_card(no_network):
+    draft = _draft(rubric="meme")
+    draft.image = {"mode": "meme", "headline": "Новость", "accent": "", "stock_query": "x", "meme": {"lines": []}}
+    path, meta = illustrate.illustrate(Settings(dry_run=True), draft, sources_doc=_sources_doc())
+    assert meta["background"] == "light" and Path(path).exists()

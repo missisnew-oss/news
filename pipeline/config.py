@@ -108,6 +108,19 @@ RUBRICS: dict[str, dict[str, Any]] = {
         "per_4weeks": 8,
         "manual": True,  # owner writes the text herself from a generated brief
     },
+    "meme": {
+        "title": "Мем дня",
+        # Fed by the same city and market news as the other rubrics: the joke
+        # is about something that happened this week, otherwise it is not
+        # "актуальный". The picture is a text meme drawn by illustrate.py.
+        "categories": ["lifestyle", "city_gov", "realty_news", "events"],
+        "selling": False,
+        "max_chars": 450,
+        "per_4weeks": 6,
+        # Share of the recent feed this rubric may take (score.plan_rubrics):
+        # without it the meme, fed by four categories, would win every run.
+        "max_share": 0.12,
+    },
     "from_owner": {
         "title": "От владельца",
         # Not planned and not fed by collected sources: pipeline/inbox.py

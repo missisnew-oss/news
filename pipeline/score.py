@@ -263,17 +263,26 @@ def plan_rubrics(
     for rubric_id in ordered:
         if len(plan) >= max_posts:
             break
+        projected_total = total_so_far + len(plan) + 1
         if rubric_id in SELLING_RUBRICS:
-            projected_total = total_so_far + len(plan) + 1
             if (selling_so_far + 1) / projected_total > cap:
                 deferred.append(rubric_id)
                 continue
+        # A rubric with its own share cap (the meme) is fed by four categories
+        # and would otherwise outrank the news rubrics on every run.
+        max_share = RUBRICS[rubric_id].get("max_share")
+        if max_share is not None:
+            so_far = sum(1 for r in past + plan if r == rubric_id)
+            if (so_far + 1) / projected_total > max_share:
+                deferred.append(rubric_id)
+                continue
+        if rubric_id in SELLING_RUBRICS:
             selling_so_far += 1
         plan.append(rubric_id)
 
     if deferred:
         log.info(
-            "Продающие рубрики отложены ради потолка %.0f%%: %s",
+            "Рубрики отложены ради потолков (продающие %.0f%%, свои доли): %s",
             cap * 100, ", ".join(deferred),
         )
     if len(plan) < max_posts:

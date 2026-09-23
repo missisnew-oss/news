@@ -2618,7 +2618,8 @@
       "source_id": "tg_uaegeneralnews",
       "title_key": "личные вещи знаменитостей выставят на аукцион в абу даби",
       "url": "https://t.me/uaegeneralnews/17768",
-      "item_id": "63cadadb39a1b1528b0718c1b4c6aa473aa6cac0"
+      "item_id": "63cadadb39a1b1528b0718c1b4c6aa473aa6cac0",
+      "used_at": "2026-09-23T09:25:19.332662+00:00"
     },
     "5a956aa2b0bef98d87e8535d80880e0418a6def3": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
@@ -2675,14 +2676,16 @@
       "source_id": "tg_russianemiratesnews",
       "title_key": "логистический коридор оаэ оман демонстрирует уверенный рост",
       "url": "https://t.me/russianemiratesnews/28145",
-      "item_id": "d97067289007eb6d49a9a2576760d135910b81e8"
+      "item_id": "d97067289007eb6d49a9a2576760d135910b81e8",
+      "used_at": "2026-09-23T09:25:19.332662+00:00"
     },
     "dfc0c90b487feb53dbe84284e0183a091c9814ee": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
       "source_id": "tg_russianemiratesnews",
       "title_key": "в оаэ предупредили о наказании за подделку дипломов",
       "url": "https://t.me/russianemiratesnews/28143",
-      "item_id": "804f257e7deed1580dd6f1bb38b343de497aa27f"
+      "item_id": "804f257e7deed1580dd6f1bb38b343de497aa27f",
+      "used_at": "2026-09-23T09:25:19.332662+00:00"
     },
     "c1f4967522e17b6e42a517cbd72a4a6457b60649": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
@@ -3379,6 +3382,41 @@
       "title_key": "дубай одобрил строительство нового 80 километрового четвёртого коридора",
       "url": "https://t.me/whitewilldubai/9316",
       "item_id": "d90aabb348f6bf91b64b5df9d1452feedc898a23"
+    },
+    "dc5e30ebab71d991b06be5227e5ef39894f7ad82": {
+      "first_seen_at": "2026-09-23T09:25:01.314000+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae congratulates saudi leadership on 96th national day messages of goodwill underscore uae saudi brotherly ties on 96th national day just now 1 m read",
+      "url": "https://gulfnews.com/uae/government/c2e3ziz-uae-leaders-congratulate-saudi-king-crown-prince-1.500684702",
+      "item_id": "d00f1e84063b5111d90fd7e7655112e6bfeda577"
+    },
+    "dd4704464c76bea4c675c96a043435e1293bdb61": {
+      "first_seen_at": "2026-09-23T09:25:01.314000+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sheikh abdullah meets foreign ministers in new york 9m ago 2 m read",
+      "url": "https://gulfnews.com/uae/government/sheikh-abdullah-meets-foreign-ministers-senior-officials-in-new-york-1.500684901",
+      "item_id": "840ff01018b26d5518be734d9c957d73a70ed77b"
+    },
+    "39a5275092165181a9ca0f1ba08dc1bfdd2c4576": {
+      "first_seen_at": "2026-09-23T09:25:01.314000+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "what uae taught this 15 year old about sustainability 12m ago 5 m read",
+      "url": "https://gulfnews.com/uae/people/what-being-born-and-raised-in-the-uae-taught-this-15-year-old-about-education-and-sustainability-1.500684859",
+      "item_id": "dff0df627db0fb76affb56b3de73cb408c3d31d8"
+    },
+    "35bf3e00c31af878a5844598100105a50e134a28": {
+      "first_seen_at": "2026-09-23T09:25:01.314000+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai s etihad rail station takes shape ahead of launch 35m ago 4 m read",
+      "url": "https://gulfnews.com/living-in-uae/transport/etihad-rail-dubai-abu-dhabi-al-yalayis-station-1.500684826",
+      "item_id": "afe651e23f8cf8cdcdf5ffc46866922a160edbc3"
+    },
+    "6d503b6be13a574753bcc5bc4e1bf249e07c57fd": {
+      "first_seen_at": "2026-09-23T09:25:01.314000+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "marcos extends sympathies to sheikh mohammed 2h ago 1 m read",
+      "url": "https://gulfnews.com/uae/philippine-president-extends-sympathies-to-sheikh-mohammed-on-passing-of-sheikh-ahmed-bin-rashid-1.500684734",
+      "item_id": "124777a23b18114314619f630e4edf889e3be397"
     }
   }
 }

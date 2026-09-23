@@ -1159,6 +1159,137 @@
       "rewrite_count": 0,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMVarOY37u3zB8tU0js3Xe0x-zpvK8AAgMjaxvmpKFJMlg2sBpYCdUBAAMCAAN3AAM9BA"
+    },
+    {
+      "post_id": "dubai_life-6c38c99632cf",
+      "rubric": "dubai_life",
+      "title": "В ОАЭ наказывают за поддельные дипломы",
+      "body": "Если вы подтверждаете образование для работы или визы, эта новость вас касается.\n\nСуд в ОАЭ назначил наказание за подделку дипломов: до 3 лет заключения и штраф до 30 тысяч дирхамов.\n\nЧто это значит для вас: при найме и оформлении документов диплом проверяют по официальным каналам. Копию с ошибками или «ускоренное» подтверждение через посредника лучше не использовать.\n\nСохраните — пригодится при переезде.",
+      "hashtags": [
+        "#дубай",
+        "#оаэ",
+        "#жизньвдубае"
+      ],
+      "cta": "Сохраните — пригодится при переезде.",
+      "image": {
+        "mode": "stock",
+        "headline": "Проверка диплома в ОАЭ: чем рискуете",
+        "accent": "30 000 AED",
+        "stock_query": "university diploma documents desk office"
+      },
+      "sources": [
+        {
+          "source_id": "tg_russianemiratesnews",
+          "title": "В ОАЭ предупредили о наказании за подделку дипломов",
+          "url": "https://t.me/russianemiratesnews/28143"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Наказание за подделку дипломов в ОАЭ — срок заключения",
+          "value": "до 3 лет",
+          "source_url": "https://t.me/russianemiratesnews/28143",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/russianemiratesnews/28143"
+          ]
+        },
+        {
+          "claim": "Наказание за подделку дипломов в ОАЭ — штраф",
+          "value": "до 30 000 дирхамов",
+          "source_url": "https://t.me/russianemiratesnews/28143",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/russianemiratesnews/28143"
+          ]
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 408,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-23T09:25:19.331062+00:00",
+      "slot_at": "2026-09-26T05:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/photo-3218d72f3bf2.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Проверка диплома в ОАЭ: чем рискуете",
+        "accent": "30 000 AED",
+        "tag_left": "ДУБАЙ",
+        "tag_right": "#ЖИЗНЬВДУБАЕ",
+        "background": "synthetic",
+        "card": "photo",
+        "card_path": "/home/runner/work/news/news/assets/generated/photo-3218d72f3bf2.png"
+      },
+      "item_ids": [
+        "d97067289007eb6d49a9a2576760d135910b81e8",
+        "63cadadb39a1b1528b0718c1b4c6aa473aa6cac0",
+        "804f257e7deed1580dd6f1bb38b343de497aa27f"
+      ],
+      "source_items": [
+        {
+          "item_id": "d97067289007eb6d49a9a2576760d135910b81e8",
+          "source_id": "tg_russianemiratesnews",
+          "category": "city_gov",
+          "title": "Логистический коридор ОАЭ-Оман демонстрирует уверенный рост",
+          "summary": "Логистический коридор ОАЭ-Оман демонстрирует уверенный рост Новый логистический коридор между Шарджей и Оманом продемонстрировал уверенный рост за три месяца работы. https://businessemirates.ae/N046040/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/russianemiratesnews/28145",
+          "canonical_url": "https://t.me/russianemiratesnews/28145",
+          "published_at": "2026-09-23T04:55:05+00:00",
+          "collected_at": "2026-09-23T09:25:01.293559+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/ERGAi4mJOaSt54rBXLrt586lylsdQfvmhiFQnfJVPo_xVO7lRDqorDSSzOCFLhbh3QA4DNcy6QRSo6Zw1saSLnvz4SCh4Jt1MDAHI5SWsNQTTNjOWDdpQnj90N6M3-Cbbi6jHhVUoTa6ULxWHdvCMD0kF9iHKqTR5zm8SSZrxyAUHAeQbqiCf-JINfX9fC4DCvYS2cPClHbUW3Rx8xCFTOLs2L-z9DjoqjpIXs2-QRGVLotb3xq25SZOG7E42q_EReduwZu75mz16z24f-_UfC_s4vkt5r520_nS-MaRG4BTPBpelek8TE2IbeROIi0CpdHXLopnjOVvJi5FnLNO6Q.jpg"
+        },
+        {
+          "item_id": "63cadadb39a1b1528b0718c1b4c6aa473aa6cac0",
+          "source_id": "tg_uaegeneralnews",
+          "category": "city_gov",
+          "title": "Личные вещи знаменитостей выставят на аукцион в Абу-Даби",
+          "summary": "Личные вещи знаменитостей выставят на аукцион в Абу-Даби Перчатка Майкла Джексона и платье принцессы Дианы продадут с аукциона в столице ОАЭ. https://russianemirates.com/N046038/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/uaegeneralnews/17768",
+          "canonical_url": "https://t.me/uaegeneralnews/17768",
+          "published_at": "2026-09-23T04:45:02+00:00",
+          "collected_at": "2026-09-23T09:25:01.292146+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/IUUuirwkGGe3hAfs_azsWFF3Qr0dHGGFEus7EDsWV2w9vpxGMmTDOAZsJFPogEo-rKMEojBl2axcS-kAnhYbBFxOQEXergYt730ibWsitJ5fHsXvhBRWsfwNub7GgbRMSATEi9PaMHdNWlzd04v250rvC6wXVJSCVmqRckI-FkiQrEY5KisWv13GuFo37Pn27RB9ipu92Vf10TytaqWLMLCg2Ej8lmh-0E7Rdb7rpqkbnI3YmpAg_cF9sU8VOuPJ_FGiChfRk3LTV2KV3G0bhZmrMDE29I0qWVSBOc4vCJBzovaJ_9HNJjuGKUngdwJ2T4Z_JgIYrf7iWc7QQ86NUg.jpg"
+        },
+        {
+          "item_id": "804f257e7deed1580dd6f1bb38b343de497aa27f",
+          "source_id": "tg_russianemiratesnews",
+          "category": "city_gov",
+          "title": "В ОАЭ предупредили о наказании за подделку дипломов",
+          "summary": "В ОАЭ предупредили о наказании за подделку дипломов Суд ОАЭ назначил нарушителям до трех лет заключения и штрафы до 30 тысяч дирхамов. https://russianemirates.family/N046059/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/russianemiratesnews/28143",
+          "canonical_url": "https://t.me/russianemiratesnews/28143",
+          "published_at": "2026-09-23T04:35:05+00:00",
+          "collected_at": "2026-09-23T09:25:01.293679+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/KNIwCO9R3_k7gk74vMD_mHwfMslPLrqxhI27vsevwM50rzL5Ce4zKnbQEYVHFEa5JnSfuR4lBNjkmQX9LiKXgWM1iSY092YYu1CEvoofXoG3Vz7xgPtuVzF0LITxCveubZDpTk8euSLKUs-kYxpGMa_dlBptxC9tTgtvMBfFEREmzYUJqm0bAFDcsb9_KGiqmxyTOcdUXv7_SlfhmnGdndG7113nh2GKzPP8zChoypAsP8BAzBKluJfHTIBb9rMbFDY7G5OdOnfWF2D62hEiNHyrV--g8MyckUoskUYyuQ2FxutUUPhqvNrtDg52nTxeCY3e1I_zvSUVlzfVBX4GFA.jpg"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 1,
+        "sources_cited": 1
+      },
+      "approval": {
+        "sent_at": "2026-09-23T09:25:23.437685+00:00",
+        "preview_message_id": 22
+      },
+      "rewrite_count": 0,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMWarObA8_B2Dx67lxqZ2wCR5Gv_hsAAg0jaxvmpKFJKBAocwU9CikBAAMCAAN3AAM9BA"
     }
   ]
 }

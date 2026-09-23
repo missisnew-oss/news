@@ -253,6 +253,15 @@ def plan_rubrics(
             continue
         available[rubric_id] = lead.score
     ordered = sorted(available, key=lambda r: available[r], reverse=True)
+    # A share-capped rubric (the meme) is fed by the same stories as the news
+    # rubrics, so on score alone it only ever ties with them and, being last
+    # in the registry, never wins. It takes the second place instead: the
+    # best news rubric keeps the first slot of a run, the meme gets the next
+    # one whenever its share allows, and the cap below holds it to that share.
+    capped = [r for r in ordered if RUBRICS[r].get("max_share") is not None]
+    if capped:
+        rest = [r for r in ordered if r not in capped]
+        ordered = rest[:1] + capped + rest[1:]
 
     past = recent_rubrics() if history is None else list(history)
     selling_so_far = sum(1 for r in past if r in SELLING_RUBRICS)
@@ -273,7 +282,9 @@ def plan_rubrics(
         max_share = RUBRICS[rubric_id].get("max_share")
         if max_share is not None:
             so_far = sum(1 for r in past + plan if r == rubric_id)
-            if (so_far + 1) / projected_total > max_share:
+            # None in the recent feed means one is due, however short the
+            # feed still is; after that the share is enforced.
+            if so_far and (so_far + 1) / projected_total > max_share:
                 deferred.append(rubric_id)
                 continue
         if rubric_id in SELLING_RUBRICS:

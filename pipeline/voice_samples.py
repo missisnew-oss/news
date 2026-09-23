@@ -46,6 +46,29 @@ def fetch_samples(channel: str, *, limit: int = 40, timeout: int = 20) -> list[d
     return unique[:limit]
 
 
+def save_images(channel: str, items: list[dict], *, limit: int = 4, timeout: int = 20) -> list[Path]:
+    """Keep a few post images as a visual reference (what the owner likes)."""
+    import requests
+
+    out_dir = VOICE_DIR / "img"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    saved: list[Path] = []
+    for item in items:
+        url = item.get("image_url")
+        if not url or len(saved) >= limit:
+            continue
+        try:
+            response = requests.get(url, timeout=timeout)
+            response.raise_for_status()
+        except Exception as exc:
+            log.warning("@%s: картинка не скачалась: %s", channel, exc)
+            continue
+        path = out_dir / f"{channel}-{item['url'].rsplit('/', 1)[1]}.jpg"
+        path.write_bytes(response.content)
+        saved.append(path)
+    return saved
+
+
 def write_markdown(channel: str, items: list[dict]) -> Path:
     VOICE_DIR.mkdir(parents=True, exist_ok=True)
     path = VOICE_DIR / f"samples_{channel}.md"
@@ -82,8 +105,9 @@ def main(argv: list[str] | None = None) -> int:
             failures += 1
             continue
         path = write_markdown(channel, items)
+        images = save_images(channel, items)
         total = sum(len(i["raw_text"]) for i in items)
-        log.info("@%s: %d постов, %d символов → %s", channel, len(items), total, path)
+        log.info("@%s: %d постов, %d символов, %d картинок → %s", channel, len(items), total, len(images), path)
     return 1 if failures == len(channels) else 0
 
 

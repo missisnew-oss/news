@@ -1254,6 +1254,276 @@ sources:
       note: "Добавлен владельцем 21.09.2026. Живой статус — в state/sources_health.json после Verify Sources."
     extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
 
+  - id: tg_kstati_dubai
+    title: "Кстати, Дубай (@kstati_dubai)"
+    url: "https://t.me/s/kstati_dubai"
+    homepage: "https://t.me/kstati_dubai"
+    channel: "@kstati_dubai"
+    role: news
+    type: telegram
+    category: lifestyle
+    topics: [city_news, lifestyle, events]
+    lang: ru
+    update_freq: daily
+    reliability: 3
+    weight: 0.8
+    enabled: true
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Добавлен владельцем 23.09.2026. Живой статус — в state/sources_health.json после Verify Sources."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_probrokerae
+    title: "Pro Broker AE (@probrokerae)"
+    url: "https://t.me/s/probrokerae"
+    homepage: "https://t.me/probrokerae"
+    channel: "@probrokerae"
+    role: signal
+    type: telegram
+    category: realty_news
+    topics: [market, offplan, broker_view]
+    lang: ru
+    update_freq: daily
+    reliability: 2
+    weight: 0.6
+    enabled: true
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Добавлен владельцем 23.09.2026. Живой статус — в state/sources_health.json после Verify Sources."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_dubai_zdorovo
+    title: "Дубай здорово (@dubai_zdorovo)"
+    url: "https://t.me/s/dubai_zdorovo"
+    homepage: "https://t.me/dubai_zdorovo"
+    channel: "@dubai_zdorovo"
+    role: news
+    type: telegram
+    category: lifestyle
+    topics: [lifestyle, health, places]
+    lang: ru
+    update_freq: daily
+    reliability: 3
+    weight: 0.7
+    enabled: true
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Добавлен владельцем 23.09.2026. Живой статус — в state/sources_health.json после Verify Sources."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_dome_dubai
+    title: "Dome Dubai (@dome_dubai)"
+    url: "https://t.me/s/dome_dubai"
+    homepage: "https://t.me/dome_dubai"
+    channel: "@dome_dubai"
+    role: news
+    type: telegram
+    category: lifestyle
+    topics: [lifestyle, places, events]
+    lang: ru
+    update_freq: daily
+    reliability: 3
+    weight: 0.7
+    enabled: true
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Добавлен владельцем 23.09.2026. Живой статус — в state/sources_health.json после Verify Sources."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_dubai_media
+    title: "Dubai Media (@dubai_media)"
+    url: "https://t.me/s/dubai_media"
+    homepage: "https://t.me/dubai_media"
+    channel: "@dubai_media"
+    role: news
+    type: telegram
+    category: city_gov
+    topics: [city_news, laws, visas]
+    lang: ru
+    update_freq: daily
+    reliability: 3
+    weight: 0.9
+    enabled: true
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Добавлен владельцем 23.09.2026. Живой статус — в state/sources_health.json после Verify Sources."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_dybai_novosti
+    title: "Дубай новости (@Dybai_novosti)"
+    url: "https://t.me/s/Dybai_novosti"
+    homepage: "https://t.me/Dybai_novosti"
+    channel: "@Dybai_novosti"
+    role: news
+    type: telegram
+    category: city_gov
+    topics: [city_news, laws, transport]
+    lang: ru
+    update_freq: daily
+    reliability: 3
+    weight: 0.8
+    enabled: true
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Добавлен владельцем 23.09.2026. Живой статус — в state/sources_health.json после Verify Sources."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_dubaihighlights
+    title: "Dubai Highlights (@dubaihighlights)"
+    url: "https://t.me/s/dubaihighlights"
+    homepage: "https://t.me/dubaihighlights"
+    channel: "@dubaihighlights"
+    role: news
+    type: telegram
+    category: events
+    topics: [events, entertainment, places]
+    lang: ru
+    update_freq: daily
+    reliability: 3
+    weight: 0.8
+    enabled: true
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Добавлен владельцем 23.09.2026. Живой статус — в state/sources_health.json после Verify Sources."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_metropolitan_dubai
+    title: "Metropolitan (@metropolitan_dubai)"
+    url: "https://t.me/s/metropolitan_dubai"
+    homepage: "https://t.me/metropolitan_dubai"
+    channel: "@metropolitan_dubai"
+    role: signal
+    type: telegram
+    category: realty_news
+    topics: [launches, market, developers]
+    lang: ru
+    update_freq: daily
+    reliability: 2
+    weight: 0.6
+    enabled: true
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Добавлен владельцем 23.09.2026. Живой статус — в state/sources_health.json после Verify Sources."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_dubai_pike
+    title: "Dubai Pike (@dubai_pike)"
+    url: "https://t.me/s/dubai_pike"
+    homepage: "https://t.me/dubai_pike"
+    channel: "@dubai_pike"
+    role: news
+    type: telegram
+    category: lifestyle
+    topics: [lifestyle, city_news]
+    lang: ru
+    update_freq: daily
+    reliability: 3
+    weight: 0.7
+    enabled: true
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Добавлен владельцем 23.09.2026. Живой статус — в state/sources_health.json после Verify Sources."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
+  - id: tg_whitewilldubai
+    title: "Whitewill Dubai (@whitewilldubai)"
+    url: "https://t.me/s/whitewilldubai"
+    homepage: "https://t.me/whitewilldubai"
+    channel: "@whitewilldubai"
+    role: signal
+    type: telegram
+    category: realty_news
+    topics: [launches, offplan, developers]
+    lang: ru
+    update_freq: daily
+    reliability: 2
+    weight: 0.6
+    enabled: true
+    license:
+      reuse: summary_with_link
+      note: "Чужой канал: только пересказ своими словами + ссылка на исходный пост. Копирование текста и картинок запрещено."
+    verification:
+      status: unverified
+      http_code: null
+      content_type: null
+      items_found: null
+      latest_item_at: null
+      checked_at: null
+      note: "Добавлен владельцем 23.09.2026. Живой статус — в state/sources_health.json после Verify Sources."
+    extract: {items_path: null, title_path: null, url_path: null, date_path: null, summary_path: null}
+
   # ---------------- telegram_private: приватные каналы через аккаунт владельца ----------------
   # Читаются через пользовательскую сессию (Telethon), см. docs/SETUP.md «Приватные каналы».
   # Ссылки-приглашения (t.me/+…) в реестр НЕ записываются: по ним может вступить кто угодно.

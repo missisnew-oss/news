@@ -18,7 +18,7 @@ import logging
 from datetime import datetime, timezone
 from typing import Any
 
-from . import illustrate, postqueue, state
+from . import hosting, illustrate, postqueue, state
 from .config import TG_MESSAGE_LIMIT, Settings
 from .generate import compose_text
 from .telegram import TelegramClient, approval_keyboard
@@ -202,6 +202,14 @@ def send_previews(settings: Settings, client: TelegramClient | None = None,
                 uploaded = TelegramClient.photo_file_id(response)
                 if uploaded:
                     post["telegram_file_id"] = uploaded
+            elif (file_id or image_path) and (url := hosting.host_card(
+                    image_path or illustrate.ensure_image(settings, post), post["post_id"], settings)):
+                # One message: card as a large preview above the full text, buttons under it.
+                response = client.send_message(
+                    settings.telegram_owner_id,
+                    hosting.invisible_link(url) + truncate_html(full, TG_MESSAGE_LIMIT - 120),
+                    reply_markup=keyboard, preview_url=url,
+                )
             elif file_id or image_path:
                 photo = client.send_photo(
                     settings.telegram_owner_id, image_path, file_id=file_id,

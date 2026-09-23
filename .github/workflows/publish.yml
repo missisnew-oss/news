@@ -11,6 +11,11 @@ on:
     - cron: "25,35 5 * * *"
     - cron: "25,35 15 * * *"
   workflow_dispatch:
+    inputs:
+      republish:
+        description: "post_id: удалить из канала и выпустить заново одним сообщением"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -54,7 +59,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
           TELEGRAM_OWNER_ID: ${{ secrets.TELEGRAM_OWNER_ID }}
-        run: python -m pipeline.run --stage publish
+        run: python -m pipeline.run --stage publish --republish "${{ inputs.republish || '' }}"
 
       - name: Коммит состояния
         run: 'bash scripts/commit_state.sh "state: публикация"'

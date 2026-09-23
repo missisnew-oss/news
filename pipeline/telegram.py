@@ -114,18 +114,28 @@ class TelegramClient:
 
     # -- high level --------------------------------------------------------
     def send_message(self, chat_id: str, text: str, *, reply_markup: dict | None = None,
-                     disable_preview: bool = True) -> dict[str, Any]:
+                     disable_preview: bool = True, preview_url: str | None = None) -> dict[str, Any]:
+        """Plain text message; with ``preview_url`` — one message with a large
+        image preview shown above the text (Bot API link_preview_options)."""
+        import json as _json
+
         payload: dict[str, Any] = {
             "chat_id": chat_id,
             "text": text,
             "parse_mode": "HTML",
-            "disable_web_page_preview": disable_preview,
         }
+        if preview_url:
+            payload["link_preview_options"] = _json.dumps({
+                "url": preview_url, "prefer_large_media": True, "show_above_text": True,
+            })
+        else:
+            payload["link_preview_options"] = _json.dumps({"is_disabled": bool(disable_preview)})
         if reply_markup:
-            import json as _json
-
             payload["reply_markup"] = _json.dumps(reply_markup, ensure_ascii=False)
         return self.call("sendMessage", payload)
+
+    def delete_message(self, chat_id: str, message_id: int) -> dict[str, Any]:
+        return self.call("deleteMessage", {"chat_id": chat_id, "message_id": message_id})
 
     def send_photo(self, chat_id: str, photo_path: str | Path | None = None, *, caption: str = "",
                    reply_markup: dict | None = None, file_id: str | None = None) -> dict[str, Any]:

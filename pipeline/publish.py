@@ -14,11 +14,12 @@ import logging
 from datetime import datetime, timezone
 from typing import Any
 
-from . import illustrate
+from . import hosting, illustrate
 from . import postqueue, state
 from .config import Settings
 from .generate import compose_text
 from .telegram import TelegramClient
+from .config import TG_CAPTION_LIMIT, TG_MESSAGE_LIMIT
 from .textutil import plan_delivery, sha1
 
 log = logging.getLogger("pipeline.publish")
@@ -46,12 +47,24 @@ def publish_one(settings: Settings, post: dict[str, Any], client: TelegramClient
 
     text = compose_text(post)
     file_id = post.get("telegram_file_id")
-    image_path = None if file_id else illustrate.ensure_image(settings, post)
+    long_text = len(text) > TG_CAPTION_LIMIT
+    # A long post needs a local card to host (pipeline/hosting.py); a short one
+    # may reuse the Telegram file_id from the preview upload.
+    image_path = illustrate.ensure_image(settings, post) if (long_text or not file_id) else None
+    preview_url = None
+    if long_text and (image_path or file_id) and len(text) <= TG_MESSAGE_LIMIT - 80:
+        preview_url = hosting.host_card(image_path, post.get("post_id", "post"), settings)
     plan = plan_delivery(text, has_photo=bool(file_id or image_path))
+    if preview_url:
+        # One message: the card as a large preview above the whole text.
+        plan = {"mode": "text_with_preview", "caption": None, "texts": [hosting.invisible_link(preview_url) + text]}
     message_ids: list[int] = []
 
     try:
-        if plan["mode"] == "photo":
+        if plan["mode"] == "text_with_preview":
+            response = client.send_message(settings.telegram_channel_id, plan["texts"][0], preview_url=preview_url)
+            message_ids.append((response.get("result") or {}).get("message_id"))
+        elif plan["mode"] == "photo":
             response = client.send_photo(
                 settings.telegram_channel_id, image_path, file_id=file_id,
                 caption=plan["caption"] or "",
@@ -129,6 +142,44 @@ def publish_one(settings: Settings, post: dict[str, Any], client: TelegramClient
         state.save("published.json", published)
     log.info("Опубликован %s (%s), сообщений: %d", record["post_id"], plan["mode"], len(message_ids))
     return {"post_id": record["post_id"], "published": True, "record": record}
+
+
+def republish(settings: Settings, post_id: str, *, client: TelegramClient | None = None,
+              persist: bool = True) -> dict[str, Any]:
+    """Delete the post's messages from the channel and publish it again now.
+
+    For a post that went out in a shape the owner rejects (photo plus a
+    separate text): the old messages are removed, the publish key released,
+    and the post sent again with the current delivery rules.
+    """
+    client = client or TelegramClient(settings.telegram_bot_token, dry_run=settings.dry_run)
+    queue = postqueue.load_queue()
+    published = state.load("published.json")
+    post = next((p for p in (queue.get("posts") or []) if p.get("post_id") == post_id), None)
+    if post is None:
+        raise ValueError(f"пост {post_id} не найден в очереди")
+    records = [r for r in (published.get("posts") or []) if r.get("post_id") == post_id]
+    for record in records:
+        for message_id in record.get("message_ids") or []:
+            try:
+                client.delete_message(settings.telegram_channel_id, int(message_id))
+            except Exception as exc:
+                log.warning("Сообщение %s не удалено: %s", message_id, exc)
+        published["keys"] = [k for k in (published.get("keys") or []) if k != record.get("publish_key")]
+    published["posts"] = [r for r in (published.get("posts") or []) if r.get("post_id") != post_id]
+    post["status"] = "approved"
+    post["slot_at"] = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+    post.pop("telegram_file_id", None)
+    if persist:
+        state.save("published.json", published)
+    result = publish_one(settings, post, client, published, persist=persist)
+    if result.get("published"):
+        post["status"] = "published"
+        post["publish"] = result.get("record")
+    if persist:
+        postqueue.save_queue(queue)
+    log.info("Пост %s перевыпущен: удалено %d старых записей", post_id, len(records))
+    return result
 
 
 def run(settings: Settings, *, now: datetime | None = None, persist: bool = True) -> list[dict[str, Any]]:

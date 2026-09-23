@@ -223,6 +223,7 @@ def run_all(settings: Settings, max_posts: int = 2) -> dict[str, Any]:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="python -m pipeline.run", description="Контент-пайплайн канала")
     parser.add_argument("--stage", choices=STAGES, default="all")
+    parser.add_argument("--republish", default="", help="post_id: удалить из канала и выпустить заново одним сообщением")
     parser.add_argument("--dry-run", action="store_true", help="принудительно включить DRY_RUN")
     parser.add_argument("--max-posts", type=int, default=2, help="сколько постов генерировать за прогон")
     parser.add_argument("--rounds", type=int, default=1, help="сколько раундов long-poll в стадии approve")
@@ -260,7 +261,13 @@ def main(argv: list[str] | None = None) -> int:
     elif args.stage == "approve":
         stage_approve(settings, rounds=args.rounds, poll_timeout=args.poll_timeout)
     elif args.stage == "publish":
-        stage_publish(settings)
+        if args.republish:
+            from . import publish as publish_stage
+
+            result = publish_stage.republish(settings, args.republish)
+            print(f"перевыпуск {args.republish}: {'ок' if result.get('published') else result}")
+        else:
+            stage_publish(settings)
     elif args.stage == "analytics":
         result = stage_analytics(settings)
         print("\n" + result["report"])

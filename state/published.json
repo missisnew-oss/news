@@ -3,14 +3,13 @@
   "posts": [
     {
       "post_id": "dubai_life-417a053a2005",
-      "publish_key": "8386fc399bd4347d63b34641619c7696abc917ac",
+      "publish_key": "4bd6bdfcb8644acb321d498ccee426741309ab44",
       "rubric": "dubai_life",
       "message_ids": [
-        3,
-        4
+        5
       ],
-      "published_at": "2026-09-23T13:17:31.797582+00:00",
-      "mode": "photo_plus_text",
+      "published_at": "2026-09-23T13:22:58.173137+00:00",
+      "mode": "text_with_preview",
       "length_chars": 1551,
       "has_photo": true,
       "has_cta": false,
@@ -36,6 +35,6 @@
     }
   ],
   "keys": [
-    "8386fc399bd4347d63b34641619c7696abc917ac"
+    "4bd6bdfcb8644acb321d498ccee426741309ab44"
   ]
 }

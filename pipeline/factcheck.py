@@ -43,6 +43,12 @@ CONFIDENCE_LEVELS = ("confirmed", "single_source", "rumour")
 AUTHORITATIVE_CATEGORIES = {"official_data", "developers"}
 AUTHORITATIVE_IF_NOT_TELEGRAM = {"city_gov"}
 TELEGRAM_SOURCE_TYPES = {"telegram", "telegram_private"}
+# The owner's own material (pipeline/inbox.py): what she wrote or photographed
+# herself is her first-hand statement and she approves the post — a
+# «по данным …» hedge about her own words would be absurd. A forward or a
+# screenshot of somebody else's post stays a single source.
+OWNER_SOURCE_ID = "owner_inbox"
+OWNER_SECOND_HAND_KINDS = {"forward", "screenshot"}
 
 # Wording that marks a single-source claim as such.
 HEDGE_RE = re.compile(
@@ -163,6 +169,9 @@ def _authoritative(item: NormalizedItem, source_index: dict[str, dict[str, Any]]
     """True when this source alone is enough to call a fact confirmed."""
     if item.category in AUTHORITATIVE_CATEGORIES:
         return True
+    if item.source_id == OWNER_SOURCE_ID:
+        tags = set(item.tags or [])
+        return "note" in tags and not (tags & OWNER_SECOND_HAND_KINDS)
     if item.category in AUTHORITATIVE_IF_NOT_TELEGRAM:
         source = source_index.get(item.source_id) or {}
         return source.get("type", "") not in TELEGRAM_SOURCE_TYPES and not item.source_id.startswith("tg_")

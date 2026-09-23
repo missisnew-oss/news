@@ -465,7 +465,11 @@ def as_item(entry: dict[str, Any]) -> NormalizedItem:
         published_at=entry.get("received_at"),
         collected_at=_now(),
         lang="ru",
-        tags=["owner_inbox", str(extracted.get("kind") or "text")],
+        # "note" (written or sent by the owner herself) vs "forward" (somebody
+        # else's message), then what the attachment turned out to be. The
+        # fact-check gate reads these: her own first-hand note is a confirmed
+        # source, a forwarded or screenshotted post is a single one.
+        tags=["owner_inbox", str(entry.get("kind") or "note"), str(extracted.get("kind") or "text")],
         raw_text=material,
     )
 

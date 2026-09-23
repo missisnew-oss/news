@@ -430,3 +430,42 @@ def test_queue_is_saved_before_the_inbox_state_so_a_crash_cannot_lose_a_material
     posts = postqueue.load_queue()["posts"]
     assert [p["post_id"] for p in posts] == [drafts[0].post_id]
     assert _inbox_items()[0]["drafted_at"]
+
+
+def _gate(entry: dict, body: str, confidence: str = "confirmed") -> dict:
+    from pipeline import factcheck
+
+    item = inbox.as_item(entry)
+    payload = {
+        "rubric": "from_owner", "title": "Парковка в Marina", "body": body, "cta": "", "hashtags": [],
+        "sources": [{"source_id": "owner_inbox", "url": item.url}],
+        "facts": [{"claim": "парковка", "value": "4 AED", "source_url": item.url,
+                   "confidence": confidence, "sources": [item.url]}],
+        "self_check": {}, "needs_separate_text": False,
+    }
+    return factcheck.check(payload, [item], max_chars=650)
+
+
+def test_owners_first_hand_note_is_a_confirmed_source_but_a_forward_is_not():
+    """Without this the owner's own observation («проверила сама: 4 AED в час»)
+    was rejected twice for lacking «по данным …» and parked with a
+    «пост не сложился» message to her."""
+    note = _entry(40, "Парковка в Marina теперь 4 AED в час, проверила сегодня")
+    note["extracted"] = {"kind": "text", "text": "", "description": "", "method": "text", "error": ""}
+    body = "Парковка в Marina теперь стоит 4 AED в час. Проверила сама."
+    assert _gate(note, body)["passed"]
+
+    photo = _entry(41, "Сняла табличку у паркинга: 4 AED в час", photo="P41")
+    photo["extracted"] = {"kind": "photo", "text": "4 AED / hour", "description": "табличка", "method": "vision", "error": ""}
+    assert _gate(photo, body)["passed"]
+
+    screenshot = _entry(42, "Скрин чужого поста: 4 AED в час", photo="P42")
+    screenshot["extracted"] = {"kind": "screenshot", "text": "4 AED / hour", "description": "скрин", "method": "vision", "error": ""}
+    verdict = _gate(screenshot, body)
+    assert not verdict["passed"] and any("одного источника" in e for e in verdict["errors"])
+
+    forward = _entry(43, "Парковка в Marina теперь 4 AED в час",
+                     origin={"type": "channel", "chat_username": "dxb", "chat_title": "DXB", "message_id": 7})
+    forward["extracted"] = {"kind": "text", "text": "", "description": "", "method": "text", "error": ""}
+    assert not _gate(forward, body)["passed"]
+    assert _gate(forward, "По данным канала, парковка в Marina теперь 4 AED в час.")["passed"]

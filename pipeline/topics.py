@@ -27,16 +27,17 @@ JUNK = (
     # horoscopes, dating, gossip
     "гороскоп", "horoscope", "знакомств", "dating", "сплетн", "gossip", "звезда",
     "знаменитост", "celebrity", "kardashian", "инфлюенсер", "influencer", "тикток", "tiktok",
-    # beauty and body as entertainment
-    "кудряв", "вьющ", "волос", "маникюр", "макияж", "причёск", "прическ", "hair", "makeup",
-    "manicure",
+    # beauty as entertainment (a school rule about hairstyles is news, so the
+    # generic «волосы»/«причёска» stems are deliberately not here)
+    "кудряв", "вьющ", "маникюр", "макияж", "makeup", "manicure",
     # listicles and filler formats
     "топ-10", "топ 10", "top 10", "лучших кафе", "лучшие кафе", "лучших ресторанов",
     "рецепт", "recipe", "тест:", "quiz", "угадай", "мем дня", "капибар",
     # food and nightlife as such
     "бранч", "brunch", "вечеринк", "party", "ночной клуб", "nightclub", "шеф-повар", "chef",
-    # sport results and fitness
-    "матч", "football", "теннис", "tennis", "гольф", "golf", "фитнес", "fitness", "йога", "yoga",
+    # sport results (fitness/golf/yoga are left out: they show up in the
+    # amenities of real-estate launches)
+    "матч", "football", "теннис", "tennis",
 )
 
 

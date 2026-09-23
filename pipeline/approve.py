@@ -71,16 +71,79 @@ def record_reactions(update: dict[str, Any], *, persist: bool = True) -> bool:
     return touched
 
 
+def dubai_time(iso: str | None) -> str:
+    """``2026-09-23T15:30:00+00:00`` → ``23.09 в 19:30`` (Asia/Dubai)."""
+    if not iso:
+        return "ближайший свободный слот"
+    from zoneinfo import ZoneInfo
+
+    try:
+        moment = datetime.fromisoformat(str(iso))
+    except ValueError:
+        return str(iso)
+    if moment.tzinfo is None:
+        moment = moment.replace(tzinfo=timezone.utc)
+    return moment.astimezone(ZoneInfo("Asia/Dubai")).strftime("%d.%m в %H:%M")
+
+
+STATUS_COMMANDS = ("статус", "очередь", "/status", "/queue", "что в очереди", "статус очереди")
+
+STATUS_LABELS = {
+    "approved": "✅ одобрено, выйдет",
+    "queued": "⏳ ждёт вашего решения",
+    "postponed": "🕒 отложено, выйдет",
+    "rewrite": "✍️ переписывается",
+}
+
+
+def status_report(queue: dict[str, Any], *, now: datetime | None = None) -> str:
+    """What is in the queue, in the owner's words and Dubai time.
+
+    Sent when the owner writes «статус» to the bot: she could not tell which
+    taps had been applied and believed approved posts were not going out.
+    """
+    now = now or datetime.now(timezone.utc)
+    groups: dict[str, list[dict[str, Any]]] = {k: [] for k in STATUS_LABELS}
+    published = []
+    for post in queue.get("posts") or []:
+        status = post.get("status")
+        if status in groups:
+            groups[status].append(post)
+        elif status == "published":
+            published.append(post)
+    lines = [f"<b>Очередь на {dubai_time(now.isoformat())} по Дубаю</b>"]
+    for status in ("approved", "postponed", "queued", "rewrite"):
+        for post in sorted(groups[status], key=lambda p: p.get("slot_at") or ""):
+            title = truncate_html(post.get("title") or post.get("post_id") or "", 70)
+            label = STATUS_LABELS[status]
+            when = f" {dubai_time(post.get('slot_at'))}" if status in {"approved", "postponed"} else ""
+            lines.append(f"{label}{when}: «{title}»")
+    if len(lines) == 1:
+        lines.append("Пусто: ни одного поста на решении и ни одного одобренного.")
+    recent = sorted(published, key=lambda p: str((p.get("publish") or {}).get("published_at") or p.get("published_at") or ""))[-3:]
+    if recent:
+        lines.append("")
+        lines.append("Последние опубликованные: " + "; ".join(
+            f"«{truncate_html(p.get('title') or '', 50)}»" for p in recent))
+    lines.append("")
+    lines.append("Одобренные посты выходят в свой слот: 09:30 или 19:30 по Дубаю. "
+                 "Пост, отправленный на переписывание, после нового превью нужно одобрить заново.")
+    return "\n".join(lines)
+
+
 def preview_text(post: dict[str, Any]) -> str:
     gate = post.get("gate") or {}
     warnings = gate.get("warnings") or []
     sources = post.get("sources") or []
     lines = [
         f"<b>Черновик: {post.get('rubric')}</b>",
-        f"Слот: {post.get('slot_at') or 'не назначен'} (UTC)",
+        f"Выйдет {dubai_time(post.get('slot_at'))} по Дубаю, если одобрить",
         f"Длина: {post.get('length_chars', 0)} симв.",
         f"Источников: {len(sources)}",
     ]
+    if int(post.get("rewrite_count") or 0) > 0:
+        lines.append(f"✍️ Переписанный вариант №{int(post['rewrite_count'])}. "
+                     "Прежние нажатия не считаются: чтобы он вышел, нажмите «Опубликовать» здесь.")
     if warnings:
         lines.append("⚠️ " + "; ".join(warnings[:2]))
     lines.append("—" * 12)
@@ -203,6 +266,8 @@ def _apply_update(settings: Settings, client: TelegramClient, queue: dict[str, A
         return None
     message = update.get("message")
     if message:
+        if _answer_status_request(client, queue, message, owner):
+            return None
         edited = _apply_preview_reply(client, queue, message, owner)
         if edited:
             return edited
@@ -238,6 +303,7 @@ def _apply_update(settings: Settings, client: TelegramClient, queue: dict[str, A
         return None
 
     status = ACTIONS[action]
+    was_approved = post.get("status") == "approved"
     if status == "postponed":
         postqueue.postpone(queue, post_id)
         applied = "postponed"
@@ -263,18 +329,24 @@ def _apply_update(settings: Settings, client: TelegramClient, queue: dict[str, A
         applied = status
 
     _ack(client, settings, callback, f"Принято: {APPLIED_TEXT.get(applied, applied)}")
+    note = APPLIED_TEXT.get(applied, applied)
+    if applied in {"approved", "postponed"}:
+        note = f"{note} {dubai_time(post.get('slot_at'))} по Дубаю"
+    if applied == "rewrite" and was_approved:
+        note = ("пост был одобрен, но это нажатие «Переписать» отменяет публикацию: " + note)
     try:
         client.send_message(settings.telegram_owner_id,
-                            f"«{truncate_html(post.get('title') or post_id, 60)}» — {APPLIED_TEXT.get(applied, applied)}")
+                            f"«{truncate_html(post.get('title') or post_id, 60)}» — {note}. "
+                            "Напишите «статус», чтобы увидеть всю очередь.")
     except Exception as exc:
         log.warning("Не удалось сообщить о решении: %s", exc)
     return {"post_id": post_id, "action": action, "status": applied}
 
 
 APPLIED_TEXT = {
-    "approved": "опубликую в свой слот",
+    "approved": "одобрен, опубликую",
     "rejected": "отклонён",
-    "postponed": "отложен на следующий слот, превью придёт снова",
+    "postponed": "отложен, выйдет",
     "rewrite": "перепишу, новое превью придёт в ближайшие полчаса. "
                "Если хотите подсказать, как именно, — ответьте на превью «переписать: …»",
 }
@@ -470,6 +542,18 @@ def _apply_preview_reply(client: TelegramClient, queue: dict[str, Any], message:
     _reply(client, message, "Заменила текст поста вашим. Сейчас пришлю новое превью с кнопками.")
     log.info("Пост %s: текст заменён владелицей (%d симв.)", post_id, len(body))
     return {"post_id": post_id, "action": "edit", "status": "queued"}
+
+
+def _answer_status_request(client: TelegramClient, queue: dict[str, Any], message: dict[str, Any],
+                           owner: str) -> bool:
+    """«статус» from the owner → the queue report. True when handled."""
+    chat = message.get("chat") or {}
+    from_id = str(((message.get("from") or {}).get("id")) or "")
+    text = (message.get("text") or "").strip().lower().rstrip("?!.")
+    if chat.get("type") != "private" or from_id != owner or text not in STATUS_COMMANDS:
+        return False
+    _reply(client, message, status_report(queue))
+    return True
 
 
 def _reply(client: TelegramClient, message: dict[str, Any], text: str) -> None:

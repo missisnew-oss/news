@@ -874,3 +874,57 @@ def test_rewrite_wish_reaches_the_model_prompt(settings, monkeypatch, tmp_path):
     monkeypatch.setattr("pipeline.generate.generate_for_rubric", fake_generate)
     run_stage.regenerate_rewrites(settings)
     assert "короче и без цифр" in seen["instruction"]
+
+
+def test_status_command_reports_the_queue_in_dubai_time(settings, monkeypatch):
+    """The owner believed approved posts were not going out; «статус» shows the
+    queue with Dubai times instead of leaving her guessing."""
+    from pipeline import approve, state
+
+    queue = _queue(status="approved")
+    queue["posts"][0]["slot_at"] = "2026-09-23T15:30:00+00:00"
+    queue["posts"].append({"post_id": "meme-1", "rubric": "meme", "title": "Мем про DEWA",
+                           "body": "x", "status": "queued", "approval": {}, "source_items": []})
+    monkeypatch.setattr(state, "save", lambda *a, **k: None)
+    update = {"update_id": 5, "message": {"message_id": 901, "chat": {"id": 42, "type": "private"},
+                                          "from": {"id": 42}, "text": "Статус"}}
+    client = _ChatClient([update])
+    approve.poll_once(settings, client=client, queue=queue, persist=False)
+    texts = [c[1] for c in client.calls if c[0] == "text"]
+    assert texts and "23.09 в 19:30" in texts[0] and "Заголовок" in texts[0]
+    assert "ждёт вашего решения" in texts[0] and "Мем про DEWA" in texts[0]
+    assert not any("Сохранила" in t for t in texts)  # not stored as inbox material
+
+
+def test_approval_confirmation_names_the_dubai_slot(settings, monkeypatch):
+    from pipeline import approve, state
+
+    queue = _queue()
+    queue["posts"][0]["slot_at"] = "2026-09-24T05:30:00+00:00"
+    monkeypatch.setattr(state, "save", lambda *a, **k: None)
+    client = _ChatClient([_callback_update(1, "ok", "market_pulse-abc123", from_id="42")])
+    approve.poll_once(settings, client=client, queue=queue, persist=False)
+    assert queue["posts"][0]["status"] == "approved"
+    texts = [c[1] for c in client.calls if c[0] == "text"]
+    assert any("24.09 в 09:30" in t and "одобрен" in t for t in texts)
+
+
+def test_rewrite_after_approval_is_explained_and_preview_says_to_approve_again(settings, monkeypatch):
+    from pipeline import approve, state
+
+    queue = _queue(status="approved")
+    monkeypatch.setattr(state, "save", lambda *a, **k: None)
+    client = _ChatClient([_callback_update(1, "redo", "market_pulse-abc123", from_id="42")])
+    approve.poll_once(settings, client=client, queue=queue, persist=False)
+    assert queue["posts"][0]["status"] == "rewrite"
+    texts = [c[1] for c in client.calls if c[0] == "text"]
+    assert any("отменяет публикацию" in t for t in texts)
+    queue["posts"][0]["rewrite_count"] = 1
+    assert "нажмите «Опубликовать» здесь" in approve.preview_text(queue["posts"][0])
+
+
+def test_dubai_time_formatting():
+    from pipeline import approve
+
+    assert approve.dubai_time("2026-09-23T15:30:00+00:00") == "23.09 в 19:30"
+    assert approve.dubai_time(None) == "ближайший свободный слот"

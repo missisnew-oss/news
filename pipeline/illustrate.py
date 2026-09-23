@@ -48,6 +48,10 @@ PRESS_CATEGORIES = {"developers", "official_data", "city_gov"}
 PRESS_MAX_BYTES = 5 * 1024 * 1024
 PRESS_MIN_SIDE = 600
 PRESS_TIMEOUT = 20
+# A downloaded picture is untrusted input for Pillow. Anything over this
+# many pixels is refused before it is decoded (a 30-megapixel photo is far
+# more than a 1080x1350 card needs; a decompression bomb is far more still).
+PHOTO_MAX_PIXELS = 30_000_000
 
 FONT_CANDIDATES_BOLD = (
     "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
@@ -651,28 +655,58 @@ def fetch_stock(settings: Settings, query: str, *, orientation: str = "landscape
     return None
 
 
-def _download(url: str, meta: dict[str, Any]) -> dict[str, Any] | None:
+def _fetch_bounded(url: str, *, max_bytes: int, timeout: int) -> bytes | None:
+    """GET ``url`` streaming, giving up as soon as more than ``max_bytes``
+    arrive — whatever Content-Length claimed. None on any failure."""
     import requests
 
-    try:
-        response = requests.get(url, timeout=30)
+    with requests.get(url, timeout=timeout, stream=True) as response:
         response.raise_for_status()
+        declared = int(response.headers.get("Content-Length") or 0)
+        if declared > max_bytes:
+            log.info("Картинка %s больше %d МБ, пропускаем", url, max_bytes // (1024 * 1024))
+            return None
+        chunks, total = [], 0
+        for chunk in response.iter_content(64 * 1024):
+            total += len(chunk)
+            if total > max_bytes:
+                log.info("Картинка %s больше %d МБ, пропускаем", url, max_bytes // (1024 * 1024))
+                return None
+            chunks.append(chunk)
+    return b"".join(chunks)
+
+
+def _download(url: str, meta: dict[str, Any]) -> dict[str, Any] | None:
+    try:
+        data = _fetch_bounded(url, max_bytes=PRESS_MAX_BYTES, timeout=30)
     except Exception as exc:
         log.warning("Не удалось скачать стоковое фото: %s", exc)
         return None
+    if data is None:
+        return None
     path = GENERATED_DIR / f"stock-{sha1(url)[:12]}.jpg"
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_bytes(response.content)
+    path.write_bytes(data)
+    if not _valid_photo(path, min_side=256):
+        log.info("Стоковое фото %s не картинка, пропускаем", url)
+        path.unlink(missing_ok=True)
+        return None
     meta["path"] = str(path)
     meta["remote_url"] = url
     return meta
 
 
 def _valid_photo(path: Path, min_side: int = PRESS_MIN_SIDE) -> bool:
+    """A real image, at least ``min_side`` px on the short edge, at most
+    ``PHOTO_MAX_PIXELS`` — checked from the header before any pixel is decoded."""
     try:
         from PIL import Image
 
         with Image.open(path) as img:
+            width, height = img.size
+            if width * height > PHOTO_MAX_PIXELS:
+                log.info("Картинка %s: %dx%d px — слишком большая, пропускаем", path.name, width, height)
+                return False
             img.verify()
         with Image.open(path) as img:
             return min(img.size) >= min_side
@@ -682,30 +716,18 @@ def _valid_photo(path: Path, min_side: int = PRESS_MIN_SIDE) -> bool:
 
 def download_press_photo(url: str) -> Path | None:
     """Fetch a source's own picture into assets/cache/ with size and format checks."""
-    import requests
-
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     path = CACHE_DIR / f"press-{sha1(url)[:12]}.img"
     if path.exists() and _valid_photo(path):
         return path
     try:
-        with requests.get(url, timeout=PRESS_TIMEOUT, stream=True) as response:
-            response.raise_for_status()
-            declared = int(response.headers.get("Content-Length") or 0)
-            if declared > PRESS_MAX_BYTES:
-                log.info("Пресс-фото %s больше 5 МБ, пропускаем", url)
-                return None
-            chunks, total = [], 0
-            for chunk in response.iter_content(64 * 1024):
-                total += len(chunk)
-                if total > PRESS_MAX_BYTES:
-                    log.info("Пресс-фото %s больше 5 МБ, пропускаем", url)
-                    return None
-                chunks.append(chunk)
+        data = _fetch_bounded(url, max_bytes=PRESS_MAX_BYTES, timeout=PRESS_TIMEOUT)
     except Exception as exc:
         log.warning("Пресс-фото не скачалось (%s): %s", url, exc)
         return None
-    path.write_bytes(b"".join(chunks))
+    if data is None:
+        return None
+    path.write_bytes(data)
     if not _valid_photo(path):
         log.info("Пресс-фото %s не картинка или меньше %d px, пропускаем", url, PRESS_MIN_SIDE)
         path.unlink(missing_ok=True)
@@ -866,11 +888,16 @@ def _photo_for_draft(settings: Settings, draft, brand: dict[str, Any], sources_d
             log.info("Картинка: рубрика %s про конкретный объект — ИИ-генерацию пропускаем", draft.rubric)
         else:
             prompt = build_image_prompt(spec.get("stock_query", ""), brand)
-            data = generate_image(settings, prompt, size="1024x1536" if portrait else "1536x1024")
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+            path = CACHE_DIR / f"gen-{sha1(prompt)[:12]}.png"
+            # Same prompt, same runner (a rewrite in the same run, a re-run
+            # after a crash): the picture is not paid for twice.
+            data = None if path.exists() and _valid_photo(path, min_side=256) else generate_image(
+                settings, prompt, size="1024x1536" if portrait else "1536x1024",
+            )
             if data:
-                CACHE_DIR.mkdir(parents=True, exist_ok=True)
-                path = CACHE_DIR / f"gen-{sha1(prompt)[:12]}.png"
                 path.write_bytes(data)
+            if data or path.exists():
                 if _valid_photo(path, min_side=256):
                     log.info("Картинка: сгенерирована (%s)", ai_cfg.get("model", "gpt-image-1"))
                     return str(path), {

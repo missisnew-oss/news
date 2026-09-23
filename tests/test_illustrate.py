@@ -352,3 +352,124 @@ def test_place_pill_has_accent_dot(tmp_path):
         margin, pill_h = 64, 56
         region = img.crop((margin, SIZE[1] - margin - pill_h, margin + 80, SIZE[1] - margin))
         assert accent in {px[:3] for px in region.getdata()}, "нет золотой точки в пилюле места"
+
+
+# --------------------------------------------------------------------------
+# QA round 2
+# --------------------------------------------------------------------------
+
+def test_oversized_pictures_are_refused_before_decoding(tmp_path, monkeypatch):
+    """A downloaded picture is untrusted: a decompression bomb must be refused
+    from the header, not decoded into gigabytes."""
+    monkeypatch.setattr(illustrate, "PHOTO_MAX_PIXELS", 1_000_000)
+    big = _fake_photo(tmp_path / "bomb.jpg", size=(1200, 1200))
+    assert illustrate._valid_photo(big) is False
+    ok = _fake_photo(tmp_path / "ok.jpg", size=(900, 900))
+    assert illustrate._valid_photo(ok) is True
+
+
+def test_stock_download_is_bounded_and_checked(monkeypatch, tmp_path):
+    class _Resp:
+        def __init__(self, chunks, declared=None):
+            self.chunks = chunks
+            self.headers = {"Content-Length": str(declared)} if declared else {}
+
+        def raise_for_status(self):
+            pass
+
+        def iter_content(self, n):
+            yield from self.chunks
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *a):
+            pass
+
+    import requests
+
+    monkeypatch.setattr(illustrate, "PRESS_MAX_BYTES", 4096)
+    monkeypatch.setattr(requests, "get", lambda *a, **k: _Resp([b"x" * 1024] * 8))
+    assert illustrate._download("https://images.example.com/huge.jpg", {}) is None, "поток больше лимита"
+    monkeypatch.setattr(requests, "get", lambda *a, **k: _Resp([b"x"], declared=10_000))
+    assert illustrate._download("https://images.example.com/declared.jpg", {}) is None
+    monkeypatch.setattr(requests, "get", lambda *a, **k: _Resp([b"<html>not an image</html>"]))
+    assert illustrate._download("https://images.example.com/page.jpg", {}) is None, "HTML вместо картинки"
+    assert not list((tmp_path / "generated").glob("*")), "мусор не остаётся на диске"
+
+    import io
+
+    buf = io.BytesIO()
+    Image.new("RGB", (400, 400), (1, 2, 3)).save(buf, "JPEG")
+    monkeypatch.setattr(requests, "get", lambda *a, **k: _Resp([buf.getvalue()]))
+    meta = illustrate._download("https://images.example.com/real.jpg", {})
+    assert meta and Path(meta["path"]).exists() and meta["remote_url"].endswith("real.jpg")
+
+
+def test_generated_picture_is_reused_for_the_same_prompt(monkeypatch):
+    """A rewrite in the same run (or a re-run on the same runner) must not
+    pay OpenAI for the same prompt twice."""
+    import io
+
+    buf = io.BytesIO()
+    Image.new("RGB", (1024, 1536), (200, 160, 90)).save(buf, "PNG")
+    calls = []
+
+    def fake_generate(settings, prompt, *, size="1024x1536"):
+        calls.append(prompt)
+        return buf.getvalue()
+
+    monkeypatch.setattr(illustrate, "generate_image", fake_generate)
+    monkeypatch.setattr(illustrate, "fetch_stock", lambda *a, **k: pytest.fail("сток не нужен"))
+    settings = _live_settings(openai_api_key="sk-test")
+    _, meta1 = illustrate.illustrate(settings, _draft(), sources_doc=_sources_doc())
+    _, meta2 = illustrate.illustrate(settings, _draft(title="Другой заголовок, тот же запрос"), sources_doc=_sources_doc())
+    assert meta1["provider"] == meta2["provider"] == "generated"
+    assert len(calls) == 1, "второй вызов gpt-image за тот же промпт"
+
+
+def test_ensure_image_falls_back_to_the_card_when_the_photo_cannot_be_fetched(monkeypatch):
+    """Clean runner, no network (or a 404): the post still gets an image."""
+    monkeypatch.setattr(illustrate, "_fetch_bounded", lambda *a, **k: (_ for _ in ()).throw(OSError("нет сети")))
+    for provider in ("press", "unsplash", "pexels"):
+        post = {
+            "post_id": "p9", "rubric": "market_pulse", "title": "Заголовок",
+            "image_path": "/nonexistent/photo.png",
+            "image_meta": {"provider": provider, "remote_url": "https://images.example.com/x.jpg",
+                           "headline": "Заголовок"},
+        }
+        path = illustrate.ensure_image(_live_settings(), post)
+        assert path and Path(path).exists()
+        assert post["image_meta"]["provider"] == "own_card"
+        assert provider in post["image_meta"]["note"]
+
+
+def test_press_photo_lookup_survives_posts_snapshotted_before_image_url_existed():
+    draft = _draft()
+    draft.source_items = [{"item_id": "i1", "source_id": "demo_official", "url": "https://example.com/a"}]
+    assert illustrate.find_press_photo(draft, _sources_doc()) is None
+    draft.source_items = None
+    assert illustrate.find_press_photo(draft, _sources_doc()) is None
+    draft.sources = None
+    assert illustrate.find_press_photo(draft, _sources_doc()) is None
+
+
+def test_card_renders_yo_quotes_and_dash_without_tofu(tmp_path):
+    """DejaVu/Liberation cover Cyrillic incl. «ё», guillemets and the em dash:
+    the glyphs must differ from the .notdef box the fallback font would draw."""
+    from PIL import ImageFont
+
+    font = illustrate._load_font(48, kind="bold")
+    assert not isinstance(font, ImageFont.ImageFont), "нужен TrueType-шрифт, не растровый"
+    draw = ImageDraw.Draw(Image.new("RGB", (10, 10)))
+    widths = {ch: draw.textlength(ch, font=font) for ch in "ё«»—Ж"}
+    assert all(w > 0 for w in widths.values())
+    assert len({round(w) for w in widths.values()}) > 2, "все символы одной ширины — похоже на квадраты"
+    black = Image.new("RGB", (1200, 675), (0, 0, 0))
+    out = illustrate.render_photo_card(
+        black, "Ёлка на набережной — «Дубай Крик» 90+ символов заголовка для проверки переноса слов",
+        tag_left="ДУБАЙ", tag_right="#АФИША", size=(1200, 675), out_path=tmp_path / "yo.png",
+    )
+    with Image.open(out) as img:
+        gray = img.convert("L")
+        assert gray.crop((1200 - 50, 0, 1200, 675)).getextrema()[1] < 60

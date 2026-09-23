@@ -1614,6 +1614,132 @@
       "rewrite_count": 1,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMaarOkonkOLFZo8g1gameN-AXO-IgAAk4jaxvmpKFJTR5Euoy0OaEBAAMCAAN5AAM9BA"
+    },
+    {
+      "post_id": "meme-79c5efe5c1fb",
+      "rubric": "meme",
+      "title": "Астрономическое лето в Дубае закончилось 23 сентября",
+      "body": "Лето в ОАЭ официально закончилось: наступило осеннее равноденствие. Прохлада, правда, придёт не сразу.\n\nОжидание: лето закончилось, выключаю кондиционер\nРеальность: кондиционер и счёт за DEWA об этом не знают\n\nУ меня так каждый сентябрь.\n\n#дубай #мем #жизньвдубае",
+      "hashtags": [
+        "#дубай",
+        "#мем",
+        "#жизньвдубае"
+      ],
+      "cta": "",
+      "image": {
+        "mode": "meme",
+        "meme": {
+          "format": "expectation",
+          "lines": [
+            "Лето закончилось, выключаю кондиционер",
+            "Кондиционер и счёт за DEWA об этом не знают"
+          ]
+        },
+        "headline": "Лето в Дубае официально закончилось 23 сентября",
+        "accent": "",
+        "stock_query": "dubai apartment air conditioner window"
+      },
+      "sources": [
+        {
+          "source_id": "tg_dubaihighlights",
+          "title": "Лето в Дубае официально закончится 23 сентября",
+          "url": "https://t.me/dubaihighlights/6196"
+        }
+      ],
+      "facts": [],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 263,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-23T10:16:56.254979+00:00",
+      "slot_at": "2026-09-24T05:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/meme-7ddf86a4fe68.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Лето в Дубае официально закончилось 23 сентября",
+        "accent": "",
+        "tag_left": "ДУБАЙ",
+        "tag_right": "#МЕМ",
+        "background": "meme",
+        "card": "meme",
+        "card_path": "/home/runner/work/news/news/assets/generated/meme-7ddf86a4fe68.png",
+        "meme": {
+          "format": "expectation",
+          "lines": [
+            "Лето закончилось, выключаю кондиционер",
+            "Кондиционер и счёт за DEWA об этом не знают"
+          ]
+        }
+      },
+      "item_ids": [
+        "3d3bf83f55426131915d939f2b648b7cbfba92f5",
+        "74da630d0678003876a16dfd74da77c0eef8835e",
+        "d2761b05e44d86f2b79cb44306addf6a68abfd84"
+      ],
+      "source_items": [
+        {
+          "item_id": "3d3bf83f55426131915d939f2b648b7cbfba92f5",
+          "source_id": "tg_dubaihighlights",
+          "category": "events",
+          "title": "Тем временем лето в Дубае официально закончится 23 сентября в 4:05 утра ☀️ В этот момент наступит осеннее равноденствие…",
+          "summary": "Тем временем лето в Дубае официально закончится 23 сентября в 4:05 утра ☀️ В этот момент наступит осеннее равноденствие и завершится астрономическое лето. Правда, прохлада в ОАЭ придёт не сразу. В сентябре дневная температура постепенно опустится ниже +39°C…",
+          "url": "https://t.me/dubaihighlights/6196",
+          "canonical_url": "https://t.me/dubaihighlights/6196",
+          "published_at": "2026-09-23T07:38:40+00:00",
+          "collected_at": "2026-09-23T10:16:35.905907+00:00",
+          "lang": "ru",
+          "image_url": null
+        },
+        {
+          "item_id": "74da630d0678003876a16dfd74da77c0eef8835e",
+          "source_id": "tg_dubai_pike",
+          "category": "lifestyle",
+          "title": "FLTR открывается в Абу-Даби. Завтра новая точка заработает в Creators HQ в Al Qana.",
+          "summary": "FLTR открывается в Абу-Даби. Завтра новая точка заработает в Creators HQ в Al Qana. Creators HQ — пространство для креаторов со студиями, рабочими зонами, мероприятиями и образовательными программами. В Дубае такой хаб уже работает в Emirates Towers, а теперь проект появляется и в столице. Так что запоминаем, куда зайти за кофе, когда начнём гонять на поезде из Дубая в Абу-Даби 😅 📍 FLTR, Creators HQ, Al Qana",
+          "url": "https://t.me/dubai_pike/9045",
+          "canonical_url": "https://t.me/dubai_pike/9045",
+          "published_at": "2026-09-23T08:57:06+00:00",
+          "collected_at": "2026-09-23T10:16:35.908439+00:00",
+          "lang": "ru",
+          "image_url": null
+        },
+        {
+          "item_id": "d2761b05e44d86f2b79cb44306addf6a68abfd84",
+          "source_id": "tg_uaegeneralnews",
+          "category": "city_gov",
+          "title": "​В Дубае объявили о расширении знаменитого курорта",
+          "summary": "​В Дубае объявили о расширении знаменитого курорта Популярный курорт JA The Resort расширяет территорию в районе Джебель Али. https://russianemirates.com/N046044/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/uaegeneralnews/17762",
+          "canonical_url": "https://t.me/uaegeneralnews/17762",
+          "published_at": "2026-09-23T03:15:04+00:00",
+          "collected_at": "2026-09-23T10:16:35.890328+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/TLJHNA-VVBuiD3aKju5_ZCgztQCmFI9oJT_taoSCfCFtRgmV6Gr4lfHvKvTvd6fW_JpB02UCy21RVFdm0X4ngxZMvos6H_Fb0wolwVcWSLoxv-VvdWkleZh0d9V_qxXQB4yKmvND9UYO0oFl23xuq4XbbaHkabSSUG-7FkuMJDkhtYH3lp7SwVfTYU0-8RHbL9pjbIXg__vi02d5mOZ5W4jlaBTdcnotY114O3ET-1CXU-fpn8CRyni7T01krRcTyZiQFga107BevJYED-XXwhZNtZCmIyQUthoEjz6DLLJyTOHSvLz-9dfOjylmBCx7YnAJ1CrdsgxfPQI_ANYoJw.jpg"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 1,
+        "sources_cited": 1
+      },
+      "approval": {
+        "sent_at": "2026-09-23T10:16:57.950742+00:00",
+        "preview_message_id": 32
+      },
+      "rewrite_count": 0,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMgarOnGSi4ni7Az8ZRUj8I8jqdaMgAAmcjaxvmpKFJVqCpF7OcRkcBAAMCAAN5AAM9BA"
     }
   ]
 }

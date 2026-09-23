@@ -910,6 +910,255 @@
       "rewrite_count": 0,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMTarNDLoukRbYTTxXIfVLNnzag1gADrCZrG-akmUnDSsi_MHzelwEAAwIAA3kAAz0E"
+    },
+    {
+      "post_id": "rules_and_laws-335e3b49f3c4",
+      "rubric": "rules_and_laws",
+      "title": "В ОАЭ проверяют фиктивную эмиратизацию",
+      "body": "По данным Telegram-канала @dubai_media, за первое полугодие в ОАЭ выявили 377 случаев фиктивной эмиратизации. Нарушения нашли в 266 частных компаниях. Официального подтверждения на государственном портале я не видела.\n\nСуть схемы: гражданина ОАЭ оформляли в штат только на бумаге, чтобы закрыть обязательную квоту. Фактически человек в компании не работал.\n\nКого касается: владельцев и руководителей частных компаний в ОАЭ, в том числе небольших фирм с сотрудниками-экспатами.\n\nЧто делать:\n— сверить свой штат и реальную занятость сотрудников по квоте;\n— проверять требования по эмиратизации на официальном портале Минтруда, а не по пересказам.\n\nЕсть вопрос по вашей ситуации — напишите мне, разберу.",
+      "hashtags": [
+        "#дубай",
+        "#оаэ",
+        "#правила"
+      ],
+      "cta": "Есть вопрос по вашей ситуации — напишите мне, разберу.",
+      "image": {
+        "mode": "card",
+        "headline": "Проверки по эмиратизации в ОАЭ",
+        "accent": "377 случаев",
+        "stock_query": "dubai government documents passport visa desk"
+      },
+      "sources": [
+        {
+          "source_id": "tg_dubai_media",
+          "title": "В ОАЭ выявили 377 случаев фиктивной эмиратизации",
+          "url": "https://t.me/dubai_media/5472"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Выявлено случаев фиктивной эмиратизации за первое полугодие",
+          "value": "377",
+          "source_url": "https://t.me/dubai_media/5472",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubai_media/5472"
+          ]
+        },
+        {
+          "claim": "Число частных компаний с нарушениями",
+          "value": "266",
+          "source_url": "https://t.me/dubai_media/5472",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubai_media/5472"
+          ]
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 700,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-23T09:15:57.561647+00:00",
+      "slot_at": "2026-09-25T05:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/card-a5b7c967e136.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Проверки по эмиратизации в ОАЭ",
+        "accent": "377 случаев",
+        "tag_left": "ДУБАЙ",
+        "tag_right": "#ПРАВИЛА",
+        "background": "gradient"
+      },
+      "item_ids": [
+        "8aca2b740c43f4901415b0948aa09ee05357bb65",
+        "5326348fffb0ed961e439be2464cc6cc627e5b8e",
+        "a9449f47b2f34bcc02144d66c6063d7b187b19b3"
+      ],
+      "source_items": [
+        {
+          "item_id": "8aca2b740c43f4901415b0948aa09ee05357bb65",
+          "source_id": "tg_dubai_media",
+          "category": "city_gov",
+          "title": "😍 В Шардже появится огромное озеро с водопадами, зелеными горами и парком",
+          "summary": "😍 В Шардже появится огромное озеро с водопадами, зелеными горами и парком В городе Кальба одобрили проект Al Freish Lake. Вокруг озера высадят зелень, оборудуют водопады, парковки, зоны для отдыха, прогулок и развлечения. @dubai_media",
+          "url": "https://t.me/dubai_media/5471",
+          "canonical_url": "https://t.me/dubai_media/5471",
+          "published_at": "2026-09-23T07:45:01+00:00",
+          "collected_at": "2026-09-23T09:15:42.699880+00:00",
+          "lang": "ru",
+          "image_url": null
+        },
+        {
+          "item_id": "5326348fffb0ed961e439be2464cc6cc627e5b8e",
+          "source_id": "tg_dubai_media",
+          "category": "city_gov",
+          "title": "😳 В ОАЭ выявили 377 случаев фиктивной эмиратизации За первое полугодие нарушения нашли в 266 частных компаниях.…",
+          "summary": "😳 В ОАЭ выявили 377 случаев фиктивной эмиратизации За первое полугодие нарушения нашли в 266 частных компаниях. Работодатели оформляли граждан ОАЭ формально, чтобы выполнить обязательные квоты по эмиратизации, но фактически люди там не работали. Нарушителей…",
+          "url": "https://t.me/dubai_media/5472",
+          "canonical_url": "https://t.me/dubai_media/5472",
+          "published_at": "2026-09-23T09:00:01+00:00",
+          "collected_at": "2026-09-23T09:15:42.699800+00:00",
+          "lang": "ru",
+          "image_url": null
+        },
+        {
+          "item_id": "a9449f47b2f34bcc02144d66c6063d7b187b19b3",
+          "source_id": "tg_dubai_media",
+          "category": "city_gov",
+          "title": "🍂 В ОАЭ сегодня началась астрономическая осень — жара начинает отступать",
+          "summary": "🍂 В ОАЭ сегодня началась астрономическая осень — жара начинает отступать В ближайшие недели температура постепенно снизится, а шансы на дождь вырастут. К концу осени днем в Дубае будет около +25°. @dubai_media",
+          "url": "https://t.me/dubai_media/5470",
+          "canonical_url": "https://t.me/dubai_media/5470",
+          "published_at": "2026-09-23T05:30:25+00:00",
+          "collected_at": "2026-09-23T09:15:42.699972+00:00",
+          "lang": "ru",
+          "image_url": null
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 2,
+        "sources_cited": 1
+      },
+      "approval": {
+        "sent_at": "2026-09-23T09:16:14.972638+00:00",
+        "preview_message_id": 20
+      },
+      "rewrite_count": 0,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMUarOY3vFqd0j8vsS-aqUMBOdkhtYAAgIjaxvmpKFJJX_sIwE4sNEBAAMCAAN3AAM9BA"
+    },
+    {
+      "post_id": "dubai_life-0aab6dfd187d",
+      "rubric": "dubai_life",
+      "title": "В ОАЭ началась астрономическая осень",
+      "body": "Жара начинает отступать — для Дубая это самый приятный сезон.\n\nПо данным канала @dubai_media, астрономическая осень в ОАЭ началась сегодня. Официального подтверждения от метеослужбы в источнике нет.\n\n— в ближайшие недели температура будет постепенно снижаться\n— шансы на дождь вырастут\n— к концу осени днём в Дубае ожидается около +25°\n\nЧто это значит для вас: возвращается жизнь на улице. Пляжи, парки, террасы, прогулки вечером — всё это снова комфортно. Если планируете приезд или переезд, ближайшие месяцы — лучшее время.\n\nСохраните — пригодится при планировании поездки.",
+      "hashtags": [
+        "#дубай",
+        "#жизньвдубае",
+        "#погода"
+      ],
+      "cta": "Сохраните — пригодится при планировании поездки.",
+      "image": {
+        "mode": "stock",
+        "headline": "Осень в Дубае: жара отступает",
+        "accent": "+25°",
+        "stock_query": "dubai beach autumn evening skyline"
+      },
+      "sources": [
+        {
+          "source_id": "tg_dubai_media",
+          "title": "В ОАЭ сегодня началась астрономическая осень — жара начинает отступать",
+          "url": "https://t.me/dubai_media/5470"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Температура днём в Дубае к концу осени",
+          "value": "около +25°",
+          "source_url": "https://t.me/dubai_media/5470",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubai_media/5470"
+          ]
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 575,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-23T09:16:05.206118+00:00",
+      "slot_at": "2026-09-25T15:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/card-ea39549dbc0d.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Осень в Дубае: жара отступает",
+        "accent": "+25°",
+        "tag_left": "ДУБАЙ",
+        "tag_right": "#ЖИЗНЬВДУБАЕ",
+        "background": "gradient"
+      },
+      "item_ids": [
+        "5326348fffb0ed961e439be2464cc6cc627e5b8e",
+        "a9449f47b2f34bcc02144d66c6063d7b187b19b3",
+        "9b6839b4595cdca2b0c5c5e7d15c6f92d82d5b4b"
+      ],
+      "source_items": [
+        {
+          "item_id": "5326348fffb0ed961e439be2464cc6cc627e5b8e",
+          "source_id": "tg_dubai_media",
+          "category": "city_gov",
+          "title": "😳 В ОАЭ выявили 377 случаев фиктивной эмиратизации За первое полугодие нарушения нашли в 266 частных компаниях.…",
+          "summary": "😳 В ОАЭ выявили 377 случаев фиктивной эмиратизации За первое полугодие нарушения нашли в 266 частных компаниях. Работодатели оформляли граждан ОАЭ формально, чтобы выполнить обязательные квоты по эмиратизации, но фактически люди там не работали. Нарушителей…",
+          "url": "https://t.me/dubai_media/5472",
+          "canonical_url": "https://t.me/dubai_media/5472",
+          "published_at": "2026-09-23T09:00:01+00:00",
+          "collected_at": "2026-09-23T09:15:42.699800+00:00",
+          "lang": "ru",
+          "image_url": null
+        },
+        {
+          "item_id": "a9449f47b2f34bcc02144d66c6063d7b187b19b3",
+          "source_id": "tg_dubai_media",
+          "category": "city_gov",
+          "title": "🍂 В ОАЭ сегодня началась астрономическая осень — жара начинает отступать",
+          "summary": "🍂 В ОАЭ сегодня началась астрономическая осень — жара начинает отступать В ближайшие недели температура постепенно снизится, а шансы на дождь вырастут. К концу осени днем в Дубае будет около +25°. @dubai_media",
+          "url": "https://t.me/dubai_media/5470",
+          "canonical_url": "https://t.me/dubai_media/5470",
+          "published_at": "2026-09-23T05:30:25+00:00",
+          "collected_at": "2026-09-23T09:15:42.699972+00:00",
+          "lang": "ru",
+          "image_url": null
+        },
+        {
+          "item_id": "9b6839b4595cdca2b0c5c5e7d15c6f92d82d5b4b",
+          "source_id": "tg_russianemiratesnews",
+          "category": "city_gov",
+          "title": "Три вуза ОАЭ вошли в мировой топ-160 программ MBA",
+          "summary": "Три вуза ОАЭ вошли в мировой топ-160 программ MBA Лучший результат показал UAE University в Абу-Даби, впервые занявший 64-е место. https://russianemirates.family/N046060/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/russianemiratesnews/28146",
+          "canonical_url": "https://t.me/russianemiratesnews/28146",
+          "published_at": "2026-09-23T05:05:05+00:00",
+          "collected_at": "2026-09-23T09:15:42.686714+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/KBsv4rDyxI6ZFj9uDMy_erwmc9kmAmm5o5LWbphvXKMpF_rRDA3FKHZHDWRxiSkpAnKnw_oaviwRST8hnubO56s7AEskOg00M7N-GSXaCejY6RZQFh_XMEo1ve5Ewoag0zRo79JtWvPyUpVCV6lFsXfzntgy6fS-GJObQeiIZmwwgBtWRM6kxuoS0lKE8zOHQqy-8pWStJw2Qf1Rs1hkAJHk65PG4IoDyzRuj0HsG7jT7HSV3A7sS1EfGE9T_tG2LNSUwgJT2DBELfREUHqX9sUUzxKBDpnCxgpVrmVzNjoIPQFxMXPwAUShPB43uR-RNGYpvtc1fvwrcNe93xxp2g.jpg"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 1,
+        "sources_cited": 1
+      },
+      "approval": {
+        "sent_at": "2026-09-23T09:16:16.045029+00:00",
+        "preview_message_id": 21
+      },
+      "rewrite_count": 0,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMVarOY37u3zB8tU0js3Xe0x-zpvK8AAgMjaxvmpKFJMlg2sBpYCdUBAAMCAAN3AAM9BA"
     }
   ]
 }

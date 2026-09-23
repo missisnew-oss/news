@@ -2667,7 +2667,8 @@
       "source_id": "tg_russianemiratesnews",
       "title_key": "три вуза оаэ вошли в мировой топ 160 программ mba",
       "url": "https://t.me/russianemiratesnews/28146",
-      "item_id": "9b6839b4595cdca2b0c5c5e7d15c6f92d82d5b4b"
+      "item_id": "9b6839b4595cdca2b0c5c5e7d15c6f92d82d5b4b",
+      "used_at": "2026-09-23T09:16:05.207733+00:00"
     },
     "5db94d524a5467fa1f9fd09eafa0882d67d46145": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
@@ -3038,21 +3039,24 @@
       "source_id": "tg_dubai_media",
       "title_key": "в оаэ выявили 377 случаев фиктивной эмиратизации за первое полугодие нарушения нашли в 266 частных компаниях",
       "url": "https://t.me/dubai_media/5472",
-      "item_id": "5326348fffb0ed961e439be2464cc6cc627e5b8e"
+      "item_id": "5326348fffb0ed961e439be2464cc6cc627e5b8e",
+      "used_at": "2026-09-23T09:16:05.207733+00:00"
     },
     "81ddaa08a758952384debc5002ffc6eab2142559": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
       "source_id": "tg_dubai_media",
       "title_key": "в шардже появится огромное озеро с водопадами зелеными горами и парком",
       "url": "https://t.me/dubai_media/5471",
-      "item_id": "8aca2b740c43f4901415b0948aa09ee05357bb65"
+      "item_id": "8aca2b740c43f4901415b0948aa09ee05357bb65",
+      "used_at": "2026-09-23T09:16:05.207733+00:00"
     },
     "69917a203dcc7b145fb7f15763e0a6ec89491e4d": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
       "source_id": "tg_dubai_media",
       "title_key": "в оаэ сегодня началась астрономическая осень жара начинает отступать",
       "url": "https://t.me/dubai_media/5470",
-      "item_id": "a9449f47b2f34bcc02144d66c6063d7b187b19b3"
+      "item_id": "a9449f47b2f34bcc02144d66c6063d7b187b19b3",
+      "used_at": "2026-09-23T09:16:05.207733+00:00"
     },
     "7a91d3021c529b07dd9ed73ac8c4b72b9a5b10a5": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
@@ -3347,6 +3351,34 @@
       "title_key": "дженнифер лопес приватная деревня посреди лос анджелеса",
       "url": "https://t.me/whitewilldubai/9294",
       "item_id": "02bf6bde43932cf1a78ca957dca8af18f9f11131"
+    },
+    "3f3ee4de9d040405c023e79ba455412f699f23f0": {
+      "first_seen_at": "2026-09-23T09:15:42.707019+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sheikh abdullah meets foreign ministers in new york meetings explored ways to strengthen bilateral cooperation and partnerships across fields just now 2 m read",
+      "url": "https://gulfnews.com/uae/government/sheikh-abdullah-meets-foreign-ministers-senior-officials-in-new-york-1.500684901",
+      "item_id": "840ff01018b26d5518be734d9c957d73a70ed77b"
+    },
+    "29fae1ba518f89c65b5c01980a402d4cfd768cde": {
+      "first_seen_at": "2026-09-23T09:15:42.707019+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "what uae taught this 15 year old about sustainability just now 5 m read",
+      "url": "https://gulfnews.com/uae/people/what-being-born-and-raised-in-the-uae-taught-this-15-year-old-about-education-and-sustainability-1.500684859",
+      "item_id": "dff0df627db0fb76affb56b3de73cb408c3d31d8"
+    },
+    "7f4ff9a76a0504c3a4c051e9219f6fbf4db40e4e": {
+      "first_seen_at": "2026-09-23T09:15:42.707019+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai s etihad rail station takes shape ahead of launch 27m ago 4 m read",
+      "url": "https://gulfnews.com/living-in-uae/transport/etihad-rail-dubai-abu-dhabi-al-yalayis-station-1.500684826",
+      "item_id": "afe651e23f8cf8cdcdf5ffc46866922a160edbc3"
+    },
+    "93ec154a59d12a3d399b3f2515866f570d13e8e5": {
+      "first_seen_at": "2026-09-23T09:15:42.707019+00:00",
+      "source_id": "tg_whitewilldubai",
+      "title_key": "дубай одобрил строительство нового 80 километрового четвёртого коридора",
+      "url": "https://t.me/whitewilldubai/9316",
+      "item_id": "d90aabb348f6bf91b64b5df9d1452feedc898a23"
     }
   }
 }

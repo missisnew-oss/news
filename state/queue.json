@@ -1317,6 +1317,151 @@
       "rewrite_count": 0,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMWarObA8_B2Dx67lxqZ2wCR5Gv_hsAAg0jaxvmpKFJKBAocwU9CikBAAMCAAN3AAM9BA"
+    },
+    {
+      "post_id": "dubai_life-4d3b4af50554",
+      "rubric": "dubai_life",
+      "title": "Билеты на поезд Дубай — Абу-Даби поступили в продажу",
+      "body": "В ОАЭ открыли продажу билетов на железнодорожный рейс из Дубая в Абу-Даби. Это касается всех, кто регулярно ездит между городами на машине.\n\nЦены и расписание в сообщении не приводятся. Как появятся официальные данные — разберу отдельно.\n\nЕщё одна новость по соседству: в Кальбе (Шарджа) утвердили озеро Al Freish с водопадами и прогулочными зонами, площадь 51 200 кв. м. Дату открытия пока не называли.\n\nСохраните — пригодится, если ездите в Абу-Даби.",
+      "hashtags": [
+        "#дубай",
+        "#жизньвоаэ",
+        "#транспорт"
+      ],
+      "cta": "Сохраните — пригодится, если ездите в Абу-Даби.",
+      "image": {
+        "mode": "stock",
+        "headline": "Поезд Дубай — Абу-Даби: билеты в продаже",
+        "accent": "",
+        "stock_query": "modern train station uae desert railway"
+      },
+      "sources": [
+        {
+          "source_id": "tg_uaegeneralnews",
+          "title": "Билеты на ЖД-рейс из Дубая в Абу-Даби поступили в продажу",
+          "url": "https://t.me/uaegeneralnews/17767"
+        },
+        {
+          "source_id": "whatson_ae_feed",
+          "title": "Al Freish Lake: everything we know about Kalba's new waterfall lake in Sharjah",
+          "url": "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah/"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Открыта продажа билетов на железнодорожный рейс Дубай — Абу-Даби",
+          "value": "билеты в продаже",
+          "source_url": "https://t.me/uaegeneralnews/17767",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/uaegeneralnews/17767"
+          ]
+        },
+        {
+          "claim": "Площадь утверждённого озера Al Freish в Кальбе",
+          "value": "51 200 кв. м",
+          "source_url": "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah/",
+          "confidence": "single_source",
+          "sources": [
+            "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah/"
+          ]
+        },
+        {
+          "claim": "Дата открытия озера Al Freish не объявлена",
+          "value": "нет даты",
+          "source_url": "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah/",
+          "confidence": "single_source",
+          "sources": [
+            "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah/"
+          ]
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 452,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-23T09:52:15.601941+00:00",
+      "slot_at": "2026-09-23T15:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-f98bab1f1fe2.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Поезд Дубай — Абу-Даби: билеты в продаже",
+        "accent": "",
+        "tag_left": "АБУ-ДАБИ",
+        "tag_right": "#ЖИЗНЬВДУБАЕ",
+        "background": "light",
+        "card": "light",
+        "card_path": "/home/runner/work/news/news/assets/generated/light-f98bab1f1fe2.png"
+      },
+      "item_ids": [
+        "c3ea3345038666cf7159e1733e9b872cd49100e2",
+        "ca1678cf2c45c800de2b6846c6463dc36569a403",
+        "8c72fdf4311c6fae4da9194f538c024ca29ddb91"
+      ],
+      "source_items": [
+        {
+          "item_id": "c3ea3345038666cf7159e1733e9b872cd49100e2",
+          "source_id": "whatson_ae_feed",
+          "category": "lifestyle",
+          "title": "Al Freish Lake: everything we know about Kalba’s new waterfall lake in Sharjah",
+          "summary": "KalbSharjah’s Ruler has approved Al Freish Lake, a 51,200 square metre attraction with waterfalls, planted mountainsides and walking areas behind Al Marsh Square in Kalba, on Sharjah’s east coast. No opening date has been announced yet. HH Sheikh Dr Sultan bin Mohammed Al Qasimi, Supreme Council Member and Ruler of Sharjah, has approved plans for […] The post Al Freish Lake: everything we know about Kalba’s new waterfall lake in Sharjah appeared first on What's On .",
+          "url": "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah/",
+          "canonical_url": "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah",
+          "published_at": "2026-09-23T06:18:49+00:00",
+          "collected_at": "2026-09-23T09:51:49.892385+00:00",
+          "lang": "en",
+          "image_url": null
+        },
+        {
+          "item_id": "ca1678cf2c45c800de2b6846c6463dc36569a403",
+          "source_id": "tg_russianemiratesnews",
+          "category": "city_gov",
+          "title": "В ОАЭ приближается крайний срок по корпоративному налогу",
+          "summary": "В ОАЭ приближается крайний срок по корпоративному налогу Предприятиям ОАЭ напомнили о приближении крайнего срока по корпоративному налогу. https://businessemirates.ae/N046039/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/russianemiratesnews/28142",
+          "canonical_url": "https://t.me/russianemiratesnews/28142",
+          "published_at": "2026-09-23T04:25:04+00:00",
+          "collected_at": "2026-09-23T09:51:49.895101+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/JUXvZdx1YcRrCGT7_4dq1FiYGyaCQH2X8PIeq48FZpgC2ax2YK62yH8hVATk3nPhn0JHJuGJRggCmyAk5M329Lwu2NfieLHYuFSv5xzsS9F1etFK8IHLDvfzl0Z_vND2U9oQ6xox9iCS0lwiONvXSmBJz2IW1uNADcPQU8S0GeEv2TFsipPuhIY4Nfdk0StOm1lNGIftQS-gnZtJhYq39QhQEoTa-yb5pE75gDy8AqQ7xmJDyiRuMmap7rZRunoMKV8WLtCYTHeIKnmug8ZH2Iab8QF2bX_uvHxwEmkfc09g6pKM6dyJ1OUnHlLUVFJiMPq97P-g5wApNopVN6T2dA.jpg"
+        },
+        {
+          "item_id": "8c72fdf4311c6fae4da9194f538c024ca29ddb91",
+          "source_id": "tg_uaegeneralnews",
+          "category": "city_gov",
+          "title": "Билеты на ЖД-рейс из Дубая в Абу-Даби поступили в продажу",
+          "summary": "Билеты на ЖД-рейс из Дубая в Абу-Даби поступили в продажу В ОАЭ открыли продажу билетов на железнодорожный рейс из Дубая в Абу-Даби. https://russianemirates.com/N046053/?ref=telegram Подпишитесь на наш канал в MAX: https://max.ru/russianemirates",
+          "url": "https://t.me/uaegeneralnews/17767",
+          "canonical_url": "https://t.me/uaegeneralnews/17767",
+          "published_at": "2026-09-23T04:15:03+00:00",
+          "collected_at": "2026-09-23T09:51:49.893661+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/Izie7ywvdXNR50eFN8EFNoEZIP-IwarIfexz9P2u2BDRDnlx_-JKQvW16EvIsJnBSxD1L4VgGBHCs6yfWWDaLfHkLZvbpihEfDHxoaaksgiwdIw0I5mRJx2AVMblrlVFEiRfCf9ClMiUiKWl11TO-owuOBcIzKhO2C_ef5TCTZLSgfBj9HYlP9wQ1TsWpQpUCfU8kWXsEFQ8KVYOeNNVAql741zP90j8kmz7tmvk8eZsXpCmIglXw_A85AiGLHPGKNv1qpTWAbn7fjJJ-iJSNIJ89NmTKav544RO-TGEK-5ZRodtyVZYjwq80ouXwgI5xrAo8m79_AWr2gmUCDcAjQ.jpg"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 1,
+        "sources_cited": 2
+      },
+      "approval": {
+        "sent_at": "2026-09-23T09:52:17.633929+00:00",
+        "preview_message_id": 23
+      },
+      "rewrite_count": 0,
+      "publish_key": "",
+      "telegram_file_id": "AgACAgIAAxkDAAMXarOhUQnJHd60MdQsNyluuSil0aUAAjYjaxvmpKFJoExe1rw4iUIBAAMCAAN5AAM9BA"
     }
   ]
 }

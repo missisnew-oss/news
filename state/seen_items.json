@@ -2626,7 +2626,8 @@
       "source_id": "tg_uaegeneralnews",
       "title_key": "билеты на жд рейс из дубая в абу даби поступили в продажу",
       "url": "https://t.me/uaegeneralnews/17767",
-      "item_id": "8c72fdf4311c6fae4da9194f538c024ca29ddb91"
+      "item_id": "8c72fdf4311c6fae4da9194f538c024ca29ddb91",
+      "used_at": "2026-09-23T09:52:15.603966+00:00"
     },
     "4c9dd39f9d7323887d83cd6f69b88cea785debb4": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
@@ -2692,7 +2693,8 @@
       "source_id": "tg_russianemiratesnews",
       "title_key": "в оаэ приближается крайний срок по корпоративному налогу",
       "url": "https://t.me/russianemiratesnews/28142",
-      "item_id": "ca1678cf2c45c800de2b6846c6463dc36569a403"
+      "item_id": "ca1678cf2c45c800de2b6846c6463dc36569a403",
+      "used_at": "2026-09-23T09:52:15.603966+00:00"
     },
     "5ecba5b7ad74fb784df889a1ff90225e2755ca6a": {
       "first_seen_at": "2026-09-23T09:12:12.174312+00:00",
@@ -3417,6 +3419,63 @@
       "title_key": "marcos extends sympathies to sheikh mohammed 2h ago 1 m read",
       "url": "https://gulfnews.com/uae/philippine-president-extends-sympathies-to-sheikh-mohammed-on-passing-of-sheikh-ahmed-bin-rashid-1.500684734",
       "item_id": "124777a23b18114314619f630e4edf889e3be397"
+    },
+    "64f4027ae08e276779ddd39e24a95d051a259757": {
+      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sheikh abdullah meets foreign ministers in new york meetings explored ways to strengthen bilateral cooperation and partnerships across fields 29m ago 2 m read",
+      "url": "https://gulfnews.com/uae/government/sheikh-abdullah-meets-foreign-ministers-senior-officials-in-new-york-1.500684901",
+      "item_id": "840ff01018b26d5518be734d9c957d73a70ed77b"
+    },
+    "b5b1db4059c2784c138fa2671b6ec52c6e4c81e5": {
+      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "what uae taught this 15 year old about sustainability 31m ago 5 m read",
+      "url": "https://gulfnews.com/uae/people/what-being-born-and-raised-in-the-uae-taught-this-15-year-old-about-education-and-sustainability-1.500684859",
+      "item_id": "dff0df627db0fb76affb56b3de73cb408c3d31d8"
+    },
+    "da73708aca48ee2d2c6f09a4581c553a0a209614": {
+      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai s etihad rail station takes shape ahead of launch 55m ago 4 m read",
+      "url": "https://gulfnews.com/living-in-uae/transport/etihad-rail-dubai-abu-dhabi-al-yalayis-station-1.500684826",
+      "item_id": "afe651e23f8cf8cdcdf5ffc46866922a160edbc3"
+    },
+    "899f21ce894bf29880e231bce85cfda398984f94": {
+      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "7 uae events to add to your autumn calendar 2h ago 3 m read",
+      "url": "https://gulfnews.com/lifestyle/from-concerts-to-culture-7-standout-uae-events-to-plan-for-this-autumn-1.500680951",
+      "item_id": "b64c932461af79efa5ea637c870764ff5e559ea2"
+    },
+    "c43ab2b3a5ef5bc13bb7a346bfb79acc8ef15c12": {
+      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "photos uae rulers offer condolences to sheikh mohammed 2h ago 2 m read",
+      "url": "https://gulfnews.com/uae/government/uae-rulers-and-crown-princes-offer-condolences-to-sheikh-mohammed-on-passing-of-sheikh-ahmed-bin-rashid-1.500684717",
+      "item_id": "970218f294e456e1430cb8750240b6c23ce4dc3e"
+    },
+    "a0d2d4c4926c1aa2bfa12979d56eb6c41e459e1f": {
+      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "hamdan forms board of hamdan bin rashid foundation 1 m read",
+      "url": "https://gulfnews.com/uae/government/sheikh-hamdan-forms-the-board-of-trustees-of-the-hamdan-bin-rashid-al-maktoum-foundation-for-medical-and-educational-sciences-1.500684684",
+      "item_id": "e8ae405e22e9c1db6545710570b8fbdc55a2fc25"
+    },
+    "82bb8657b03e0c68adddaad23be5952e8ca859d3": {
+      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "al freish lake everything we know about kalba s new waterfall lake in sharjah",
+      "url": "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah",
+      "item_id": "c3ea3345038666cf7159e1733e9b872cd49100e2",
+      "used_at": "2026-09-23T09:52:15.603966+00:00"
+    },
+    "9581c0bd6e65c599a361cfa574eee64c3023f802": {
+      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "в дубае на покупку квартиры площадью около 60 м2 рядом с центром потребуется примерно 5 лет среднего дохода",
+      "url": "https://t.me/dubaimap/14506",
+      "item_id": "733bd22134acb58f807da94cdd668381c40e313a"
     }
   }
 }

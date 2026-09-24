@@ -1961,7 +1961,7 @@
       "status": "queued",
       "created_at": "2026-09-23T11:15:38.940242+00:00",
       "slot_at": "2026-09-25T05:30:00+00:00",
-      "image_path": "",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-f017aad5c6e7.png",
       "image_meta": {
         "provider": "own_card",
         "license": "собственная графика канала",
@@ -2042,7 +2042,11 @@
         "sources_cited": 1,
         "owner_edited": true
       },
-      "approval": {},
+      "approval": {
+        "sent_at": "2026-09-24T05:32:03.097854+00:00",
+        "preview_message_id": 56,
+        "preview_photo_message_id": null
+      },
       "rewrite_count": 1,
       "publish_key": "",
       "edited_by_owner_at": "2026-09-24T05:31:33.814375+00:00"

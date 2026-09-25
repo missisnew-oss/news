@@ -2488,6 +2488,253 @@
       "rewrite_count": 0,
       "publish_key": "",
       "telegram_file_id": "AgACAgIAAxkDAAMyarPPD0Z1yyCGZ5wIBSlgmv32j6QAAnImaxsbJ6FJWmg4S3IQzPMBAAMCAAN5AAM9BA"
+    },
+    {
+      "post_id": "rules_and_laws-146c7b5a58eb",
+      "rubric": "rules_and_laws",
+      "title": "Обмен иностранных прав в Дубае: каждое пятое удостоверение выдано по обмену",
+      "body": "<b>Что известно</b>\nС января по июнь 2026 года RTA оформила 119 188 водительских удостоверений. Из них 96 400 — новым водителям, 22 788 — тем, кто обменял иностранные права на местные.\n\n<b>Кого касается</b>\nТех, кто получает резидентскую визу и планирует водить машину в ОАЭ. Часть водителей проходит полный курс с обучением и экзаменом, часть — процедуру обмена.\n\n<b>Что делать</b>\n— Уточнить на портале RTA, попадает ли страна выдачи ваших прав под обмен: списки и требования меняются.\n— Закладывать время на запись и экзамены: обучение и тесты идут с симуляторами, камерами, датчиками и ИИ.\n— Не садиться за руль до получения местных прав — иностранные действуют не для всех и не всегда.\n\n<b>Где проверить</b>\nДанные озвучены RTA; актуальный порядок и статус заявки смотрите на официальном портале RTA. Решение по вашей заявке принимает сам орган.\n\nСохраните пост — правила меняются, но порядок шагов обычно остаётся.",
+      "hashtags": [
+        "#дубай",
+        "#оаэ",
+        "#правила"
+      ],
+      "cta": "Сохраните пост — правила меняются, но порядок шагов обычно остаётся.",
+      "image": {
+        "mode": "card",
+        "headline": "Права в Дубае: 119 188 за полгода",
+        "accent": "22 788 по обмену",
+        "stock_query": "dubai government documents passport visa desk"
+      },
+      "sources": [
+        {
+          "source_id": "tg_dubai_media",
+          "title": "В Дубае за полгода выдали почти 120 тысяч водительских прав",
+          "url": "https://t.me/dubai_media/5483"
+        },
+        {
+          "source_id": "tg_dubaihighlights",
+          "title": "В Дубае за полгода выдали более 119 тысяч водительских прав",
+          "url": "https://t.me/dubaihighlights/6204"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Всего выдано водительских удостоверений в Дубае с января по июнь 2026 года",
+          "value": "119 188",
+          "source_url": "https://t.me/dubaihighlights/6204",
+          "confidence": "confirmed",
+          "sources": [
+            "https://t.me/dubaihighlights/6204",
+            "https://t.me/dubai_media/5483"
+          ]
+        },
+        {
+          "claim": "Из них выдано новым водителям",
+          "value": "96 400",
+          "source_url": "https://t.me/dubaihighlights/6204",
+          "confidence": "confirmed",
+          "sources": [
+            "https://t.me/dubaihighlights/6204",
+            "https://t.me/dubai_media/5483"
+          ]
+        },
+        {
+          "claim": "Выдано по обмену иностранных прав",
+          "value": "22 788",
+          "source_url": "https://t.me/dubaihighlights/6204",
+          "confidence": "confirmed",
+          "sources": [
+            "https://t.me/dubaihighlights/6204",
+            "https://t.me/dubai_media/5483"
+          ]
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 920,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-25T12:10:46.492066+00:00",
+      "slot_at": "2026-09-25T15:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-7716962493fe.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Права в Дубае: 119 188 за полгода",
+        "accent": "22 788 по обмену",
+        "tag_left": "ДУБАЙ",
+        "tag_right": "#ПРАВИЛА",
+        "background": "light",
+        "card": "light",
+        "card_path": "/home/runner/work/news/news/assets/generated/light-7716962493fe.png"
+      },
+      "item_ids": [
+        "3a79ce98f66156dc3a6e09209871f77ae6f98823",
+        "eb0d34a7d55d2730159f36f95317eb3a19d2362e"
+      ],
+      "source_items": [
+        {
+          "item_id": "3a79ce98f66156dc3a6e09209871f77ae6f98823",
+          "source_id": "tg_dubaihighlights",
+          "category": "events",
+          "title": "В Дубае за полгода выдали более 119 тысяч водительских прав",
+          "summary": "В Дубае за полгода выдали более 119 тысяч водительских прав С января по июнь 2026 года RTA оформила 119 188 удостоверений: 96 400 для новых водителей и 22 788 по обмену иностранных прав. Обучение и экзамены становятся всё технологичнее: используются симуляторы, камеры, датчики и ИИ. #DH_news",
+          "url": "https://t.me/dubaihighlights/6204",
+          "canonical_url": "https://t.me/dubaihighlights/6204",
+          "published_at": "2026-09-25T08:36:00+00:00",
+          "collected_at": "2026-09-25T12:10:28.387440+00:00",
+          "lang": "ru",
+          "image_url": null
+        },
+        {
+          "item_id": "eb0d34a7d55d2730159f36f95317eb3a19d2362e",
+          "source_id": "tg_dubai_media",
+          "category": "city_gov",
+          "title": "🚗 В Дубае за полгода выдали почти 120 тысяч водительских прав",
+          "summary": "🚗 В Дубае за полгода выдали почти 120 тысяч водительских прав Из них 96 400 — новые права, 22 788 получили водители, обменявшие иностранные удостоверения. Экзамены в Дубае всё чаще проводят с помощью ИИ, камер и датчиков. @dubai_media",
+          "url": "https://t.me/dubai_media/5483",
+          "canonical_url": "https://t.me/dubai_media/5483",
+          "published_at": "2026-09-24T17:34:21+00:00",
+          "collected_at": "2026-09-25T12:10:28.386022+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/rnXQ37XzzeysIMbfWjsgdqLurFjFmxBZPKXwcbbGRKSDbZgrKZzCl3lt9-GjlCj19siOO-Nb668NBmmqPCqY7CUe-qPH5_wC6Q4xNZ-goiZDljrbqp9oNNinSJaz_SmqhrMo06GBs6Iyy9qJ1S8ioCni5zflnqhmnffrFJkdcp0hdq0ZJ_mQM9wAYU2ya9xzlIH10S-2EkLL2EfvIzg3LiEt4Qz36nvlKBZw7qliZIAICmlMU5JqPYlDBx1jzFB2Bw7PMkGLYHHJ9df21jG1UUzcY0Tza-JUTv2zofs4F0kk1llXMwt5BvSOjUiqXjvtD4dK1pWm9J36pCOcDp33cw.jpg"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 4,
+        "sources_cited": 2
+      },
+      "approval": {
+        "sent_at": "2026-09-25T12:11:06.317025+00:00",
+        "preview_message_id": 59,
+        "preview_photo_message_id": null
+      },
+      "rewrite_count": 0,
+      "publish_key": ""
+    },
+    {
+      "post_id": "dubai_life-f5f9c70644d2",
+      "rubric": "dubai_life",
+      "title": "Британская школа Harrow откроется в Абу-Даби в 2027 году",
+      "body": "🗓 Британская школа Harrow откроется в Абу-Даби в августе 2027 года, на острове Саадият.\n\nЭто история для семей, которые выбирают школу заранее: в топовые британские школы очередь формируется за год-два до открытия, а не в августе перед первым классом.\n\n❗️ Что известно:\n— место: остров Саадият, Абу-Даби\n— старт: август 2027 года\n— обучение: от 74 100 AED в год\n— с питанием: от 80 750 AED в год\n\n💡 Что это значит для вас. Если планируете переезд с детьми и рассматриваете Абу-Даби, Саадият становится ещё более «школьным» районом. На практике это всегда тянет за собой аренду и цены на жильё поблизости: родители снимают рядом со школой, а не наоборот.\n\nЯ бы на месте семей с детьми 2027 года набора уже сейчас смотрела, где жить в радиусе получаса от острова. Ценник по школе — стартовый, за старшие классы обычно выше.\n\nСохраните — пригодится при планировании переезда.",
+      "hashtags": [
+        "#дубай",
+        "#оаэ",
+        "#жизньвдубае",
+        "#школы"
+      ],
+      "cta": "Сохраните — пригодится при планировании переезда.",
+      "image": {
+        "mode": "stock",
+        "headline": "Harrow в Абу-Даби: набор с 2027 года",
+        "accent": "74 100 AED",
+        "stock_query": "british school campus abu dhabi children"
+      },
+      "sources": [
+        {
+          "source_id": "tg_dubai_media",
+          "title": "Британская школа Harrow откроется в Абу-Даби в августе 2027 года на острове Саадият",
+          "url": "https://t.me/dubai_media/5486"
+        }
+      ],
+      "facts": [
+        {
+          "claim": "Открытие школы Harrow в Абу-Даби на острове Саадият",
+          "value": "август 2027 года",
+          "source_url": "https://t.me/dubai_media/5486",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubai_media/5486"
+          ]
+        },
+        {
+          "claim": "Стоимость обучения в год",
+          "value": "от 74 100 AED",
+          "source_url": "https://t.me/dubai_media/5486",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubai_media/5486"
+          ]
+        },
+        {
+          "claim": "Стоимость обучения с питанием в год",
+          "value": "от 80 750 AED",
+          "source_url": "https://t.me/dubai_media/5486",
+          "confidence": "single_source",
+          "sources": [
+            "https://t.me/dubai_media/5486"
+          ]
+        }
+      ],
+      "self_check": {
+        "all_numbers_have_source": true,
+        "no_guaranteed_returns": true,
+        "language_is_russian": true,
+        "no_verbatim_copy": true,
+        "fits_telegram_limit": true
+      },
+      "length_chars": 872,
+      "needs_separate_text": false,
+      "status": "queued",
+      "created_at": "2026-09-25T12:11:02.633003+00:00",
+      "slot_at": "2026-09-27T05:30:00+00:00",
+      "image_path": "/home/runner/work/news/news/assets/generated/light-e5470ffb6f0b.png",
+      "image_meta": {
+        "provider": "own_card",
+        "license": "собственная графика канала",
+        "author": "канал",
+        "source_url": "",
+        "headline": "Harrow в Абу-Даби: набор с 2027 года",
+        "accent": "74 100 AED",
+        "tag_left": "АБУ-ДАБИ",
+        "tag_right": "#ЖИЗНЬВДУБАЕ",
+        "background": "light",
+        "card": "light",
+        "card_path": "/home/runner/work/news/news/assets/generated/light-e5470ffb6f0b.png"
+      },
+      "item_ids": [
+        "bb8bc353b49b1023a0ebc8a9ec0c8987b27143c5"
+      ],
+      "source_items": [
+        {
+          "item_id": "bb8bc353b49b1023a0ebc8a9ec0c8987b27143c5",
+          "source_id": "tg_dubai_media",
+          "category": "city_gov",
+          "title": "🇬🇧 Престижная британская школа Harrow откроется в Абу-Даби в августе 2027 года на острове Саадият",
+          "summary": "🇬🇧 Престижная британская школа Harrow откроется в Абу-Даби в августе 2027 года на острове Саадият Стоимость обучения стартует от 74 100 AED в год, с питанием — от 80 750 AED. @dubai_media",
+          "url": "https://t.me/dubai_media/5486",
+          "canonical_url": "https://t.me/dubai_media/5486",
+          "published_at": "2026-09-25T11:00:01+00:00",
+          "collected_at": "2026-09-25T12:10:28.385776+00:00",
+          "lang": "ru",
+          "image_url": "https://cdn4.telesco.pe/file/P0t677d7oczwb4xOs30Hc1umI1hlo71Xflf6vxu7wzWU_YImXMxza5FU3GSNyGaa1oQ0cIMZlMQQFdQd2bmB8piPg4uhT22Emuz_LYg-hlUeChJzg3Ce_pzBpke5cPPcSS08RK6yBNC_OUfheapGYC2EwB1TreSafkYpOUa22MJ2lVUnkJWfo79DbabilNscDy02UUPlyiJ-BnCKlrnGZ1iBz22QL-EGENoAZvLTh2jSc7b7diL9wk-zo3V813WU4cmMy2fi-JJDKKYmWZmHclylJRzPGgqlIAVURHqjbilsR8Jppf-h6W7OTLSlvxf7Pds9XCvPk0cDlY0ZBCA-aw.jpg"
+        }
+      ],
+      "gate": {
+        "passed": true,
+        "errors": [],
+        "warnings": [],
+        "numbers_checked": 6,
+        "sources_cited": 1
+      },
+      "approval": {
+        "sent_at": "2026-09-25T12:11:08.465965+00:00",
+        "preview_message_id": 60,
+        "preview_photo_message_id": null
+      },
+      "rewrite_count": 0,
+      "publish_key": ""
     }
   ]
 }

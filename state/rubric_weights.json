@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "weights": {
+    "market_pulse": 1.0,
+    "new_launch": 1.0,
+    "investor_math": 1.0,
+    "rules_and_laws": 1.0,
+    "area_guide": 1.0,
+    "dubai_life": 1.0,
+    "events_afisha": 1.0,
+    "faq_answer": 1.0,
+    "case_story": 1.0,
+    "personal": 1.0,
+    "meme": 1.0,
+    "from_owner": 1.0
+  },
+  "updated_at": "2026-09-28T04:12:40.843600+00:00"
+}

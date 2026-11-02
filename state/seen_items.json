@@ -32500,7 +32500,7 @@
     },
     "570814f45b98e70f30a6a855353bd230c11fb406": {
       "first_seen_at": "2026-11-01T17:31:40.932899+00:00",
-      "source_id": "platinumlist_arena_events",
+      "source_id": "platinumlist_dubai_calendar",
       "title_key": "saturday sunday brunch at reef beef steakhouse seafood dubai",
       "url": "https://dubai.platinumlist.net/event-tickets/saturday-sunday-brunch-at-reef-beef-steakhouse-seafood-dubai",
       "item_id": "e718e2d1305f5b4b4cb0dd23329743a5334303cb"
@@ -32511,6 +32511,433 @@
       "title_key": "оаэ надеются на мирное соглашение между сша и ираном но готовы к худшему",
       "url": "https://t.me/dubai_media/5801",
       "item_id": "8782d626f414cea2465147dcadc6c3756e10dd6d"
+    },
+    "ce58ebb4cda649b20d8f47245a7d613038985d12": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "saudi arabia s go telecom awards 49 6mln ai data centre infrastructure contract",
+      "url": "https://www.zawya.com/en/projects/saudi-arabias-go-telecom-awards-49.6mln-ai-data-centre-infrastructure-contract-1858843",
+      "item_id": "3aed8690169cf9d041c9282b1d7289df9a4a9aca"
+    },
+    "7010283d22df90b73f4fac912cc79de45d386d6a": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "pif aramco close deal giving the oil kingpin 49 of ai firm humain",
+      "url": "https://www.zawya.com/en/capital-markets/pif-aramco-close-deal-giving-the-oil-kingpin-49-of-ai-firm-humain-1859071",
+      "item_id": "fc5c94c1765e75a4694aa1c4fcd001a491a04d83"
+    },
+    "5960057ff0fbcdb58a89bc9c13557ecd07385b7d": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "efg hermes launches younit egypt s first retail algorithmic trading api platform",
+      "url": "https://www.zawya.com/en/press-release/companies-news/efg-hermes-launches-younit-egypts-first-retail-algorithmic-trading-api-platform-1858924",
+      "item_id": "abe03a2ac84bd2ce1ae5611df8024d65ea439bde"
+    },
+    "dcda1bf323dc3da704e0aacf5b62fd5d54e501ba": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "mideast stocks qatar surges bucking gulf market slide on iran war concerns",
+      "url": "https://www.zawya.com/en/capital-markets/mideast-stocks-qatar-surges-bucking-gulf-market-slide-on-iran-war-concerns-1858931",
+      "item_id": "52af1af676aa1711cb5308936f7bd9c88239eb7f"
+    },
+    "c9d346c161d0d618a370a65ef958e559b98d979f": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "saudi arabia s october crude exports rise two of three ship trackers say",
+      "url": "https://www.zawya.com/en/projects/commodities/saudi-arabias-october-crude-exports-rise-two-of-three-ship-trackers-say-1858083",
+      "item_id": "6aed7e13f8c8ec0135598f775a2a0e21785dc8d0"
+    },
+    "95edeb4a49483ca13eae8fddc2a68a648c4ca61d": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "displaying the uae flag avoid these common mistakes penalties and practices to avoid when displaying the uae national flag just now 3 m read",
+      "url": "https://gulfnews.com/uae/uae-flag-day-2026-guidelines-for-raising-and-displaying-the-national-flag-1.500732636",
+      "item_id": "ee0b699e29e36358014f2d7d11ca10cb9638327b"
+    },
+    "b0faf633a06fc75bade656f97074bc5922d9353a": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "al habtoor group to sell all lebanon assets 8m ago 1 m read",
+      "url": "https://gulfnews.com/business/dubais-al-habtoor-group-to-sell-all-assets-and-investments-in-lebanon-1.500732616",
+      "item_id": "903f3344ba23fd8145dfa166ff1a4a1a4ecf8caa"
+    },
+    "90e764eccc2fdf45201ac783505eab8f2e5e9160": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "adipec 2026 opens in abu dhabi with ai at energy s core 29m ago 4 m read",
+      "url": "https://gulfnews.com/uae/abu-dhabi/abu-dhabi-hosts-the-largest-adipec-yet-with-ai-at-the-center-of-the-energy-agenda-1.500732586",
+      "item_id": "dd14b55e01e145b123674d838bfd7a4f06eca4b1"
+    },
+    "f859f46ac52efa4cc6c560b6bb599cb992cd0b7d": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "adnoc partners with openai and g42 33m ago 3 m read",
+      "url": "https://gulfnews.com/uae/abu-dhabi/adnoc-partners-with-openai-and-g42-to-revolutionize-energy-sector-with-ai-at-adipec-2026-1.500732521",
+      "item_id": "85f72d16f4f93c374e613f0fbcce59247753e095"
+    },
+    "0112b77c1de15c50f0369fd684b296f2913d384f": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "will there be more heat and rain than usual this nov 39m ago 2 m read",
+      "url": "https://gulfnews.com/uae/weather/weather-update-uae-braces-for-wetter-warmer-november-as-rainfall-and-temperatures-exceed-averages-1.500732571",
+      "item_id": "47ba806a75014a94fe51cd6e7b046e7bfdefeea9"
+    },
+    "8fed9f41c921ab101fc284ba24f83a69f8efa425": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae flag garden returns to dubai s umm suqeim beach 1h ago 2 m read",
+      "url": "https://gulfnews.com/lifestyle/thousands-of-flags-return-to-umm-suqeim-as-dubais-flag-garden-is-back-for-flag-day-1.500732534",
+      "item_id": "4ed4453a4f13f626f8cc0fc9cdc18c32bf172ec4"
+    },
+    "b0f3ae1ea8db7fc3ed742dce3c0592afa30c4acd": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sharjah opens new roads to expo centre 1h ago 1 m read",
+      "url": "https://gulfnews.com/uae/transport/sharjah-opens-key-access-roads-to-expo-centre-ahead-of-international-book-fair-1.500732452",
+      "item_id": "8703417a2b8cb767751ded2596c3b8861014b15d"
+    },
+    "f3383d13a29543d1fb1050d27f62b1904a0a2d05": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "adnoc tasks openai agents with valuing every oil barrel 2h ago 3 m read",
+      "url": "https://gulfnews.com/business/adnoc-becomes-first-energy-company-to-deploy-openai-frontier-1.500732483",
+      "item_id": "e68e20f0e0613ddb673450de131536317b43b357"
+    },
+    "c8a3f940c7a91df000b54dfa559f57ffcdc821a5": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae new traffic rule ignore car recalls at your risk 2h ago 2 m read",
+      "url": "https://gulfnews.com/uae/transport/uae-motorists-who-fail-to-respond-to-vehicle-recalls-could-face-transaction-restrictions-1.500732460",
+      "item_id": "c5158d3411443bb4252f77d5a134ea2314551b25"
+    },
+    "537d2d289b5b51e15ef1da12cba0e7b035f87082": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "love that diwali saree style it for uae brunches 2h ago 5 m read",
+      "url": "https://gulfnews.com/lifestyle/love-that-diwali-saree-heres-how-to-style-it-for-uae-brunches-and-beyond-1.500732439",
+      "item_id": "777e92c87367893b1296d902e065010df50df606"
+    },
+    "fe52d8666ec08913c21e685112df5e39607b69ef": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "abu dhabi aldar championship returns this week 2h ago 4 m read",
+      "url": "https://gulfnews.com/sport/every-shot-carries-real-consequences-abu-dhabi-aldar-championship-returns-this-week-1.500732418",
+      "item_id": "028ff1e4927e4eb443862b3b7599740aa78fe6bd"
+    },
+    "19b449d44fc32f4fc395fbe9ef69b8e09bf4769b": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "anwar gargash pays tribute to sheikh zayed s legacy 2h ago 2 m read",
+      "url": "https://gulfnews.com/uae/government/anwar-gargash-pays-tribute-to-sheikh-zayeds-legacy-vision-and-wisdom-1.500732430",
+      "item_id": "156c02042c4b54d405880ebbe7e2029deb9310cf"
+    },
+    "d79a2038f2ff10716cb2d10c109eac308844be4e": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sheikh mohammed calls for bold ai solutions in the uae 2 m read",
+      "url": "https://gulfnews.com/uae/government/sheikh-mohammed-bin-rashid-launches-annual-government-challenge-to-drive-ai-innovation-1.500732402",
+      "item_id": "8b2a9818a63cc7a6002551e975423b65e76d4234"
+    },
+    "768d6b0e518bf64d496a1553ecae120bc28e831e": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "4 nov pop jony 09 00 pm from د إ1 090 buy tickets pop jony wed 4 nov 09 00 pm from د إ1 090 buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/jony-coca-cola-arena-2026-11-04",
+      "item_id": "e7700a153b03832599f4ca38ae446a3206373c1b"
+    },
+    "0dfae2d42554f2f95013d77a58ae42244fce2189": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "7 nov arabic amr diab 09 00 pm from د إ900 buy tickets arabic amr diab sat 7 nov 09 00 pm from د إ900 buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/amr-diab-coca-cola-arena-2026-11-07",
+      "item_id": "d0e6fc071181144d63e2fed84a37f626b780bc8c"
+    },
+    "41c2319cbaccb9bad1b093eb4e629a30416fc48e": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "14 nov mma pfl dubai nemkov vs bilostenniy 06 00 pm from د إ370 buy tickets mma pfl dubai nemkov vs bilostenniy sat 14 nov 06 00 pm from د إ370 buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/pfl-dubai-nemkov-vs-bilostenniy-coca-cola-arena-2026-11-14",
+      "item_id": "e291ac20d65c0dc3ed91ee7c5b83e547efc8a8e0"
+    },
+    "34a628527bd6ce0e73c16cbd1d848a5ece5adbcb": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "22 nov indian sid sriram sing india 08 00 pm from د إ340 buy tickets indian sid sriram sing india sun 22 nov 08 00 pm from د إ340 buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/sid-sriram-sing-india-coca-cola-arena-2026-11-22",
+      "item_id": "c35bf6b861d93723a375e74d5d70559139b9b951"
+    },
+    "2aa8677bc583d30a1cb4cde890cb8a84b7b4f526": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "27 nov indian atif aslam 09 00 pm from د إ560 buy tickets indian atif aslam fri 27 nov 09 00 pm from د إ560 buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/atif-aslam-coca-cola-arena-2026-11-27",
+      "item_id": "ec7ef2b238ded53b2d5c05fecfa2f73394b91a7a"
+    },
+    "780d6bbc80d7298038b9bbfe671de5b9200fecb4": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "2 dec indian hala mohanlal the complete lalettan show 06 00 pm from د إ370 buy tickets indian hala mohanlal the complete lalettan show wed 2 dec 06 00 pm from د إ370 buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/hala-mohanlal-the-complete-lalettan-show-coca-cola-arena-2026-12-02",
+      "item_id": "df174b4ec2cd47d8d79b5682815ab158132362ad"
+    },
+    "5f540eb711a1f42bfc56abfd0d2bc640d5031f2f": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "6 jan rock kino band 08 00 pm from د إ630 buy tickets rock kino band wed 6 jan 08 00 pm from د إ630 buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/kino-band-coca-cola-arena-2027-01-06",
+      "item_id": "01e1663817f6a4abdbd6746523136bbe4b4fa036"
+    },
+    "912e2629191cc8df4c109fd80d2765a484d1de1a": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "30 jan indian sitar for mental health rishab rikhiram sharma 08 00 pm from د إ650 buy tickets indian sitar for mental health rishab rikhiram sharma sat 30 jan 08 00 pm from د إ650 buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/sitar-for-mental-health-rishab-rikhiram-sharma-coca-cola-arena-2027-01-30",
+      "item_id": "1ac33c80a58bf78f05c122f1afe0ac090d74e895"
+    },
+    "a90856e0f2ecd4c47f287f7ffe3d44209c6de06f": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "17 apr pop a1 and music travel love 08 00 pm from د إ720 buy tickets pop a1 and music travel love sat 17 apr 08 00 pm from د إ720 buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/a1-and-music-travel-love-coca-cola-arena-2027-04-17",
+      "item_id": "a6727e05261d3b3abb23476d7644a1d0e6b78d59"
+    },
+    "ef572a1fc711fca0f1d06c41200925658ba007fe": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "coca_cola_arena_events",
+      "title_key": "6 jun pop richard marx 08 00 pm from د إ830 buy tickets pop richard marx sun 6 jun 08 00 pm from د إ830 buy tickets",
+      "url": "https://cocacolaarenadubai.com/tickets/event/richard-marx-coca-cola-arena-2027-06-06",
+      "item_id": "6925c57dfadf1fb08e33976dcb1580119fcd4cb3"
+    },
+    "b2e2f5190dd4c0093b64eedf226db07eeb16ef53": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "10 fun things to do in abu dhabi this week november 2 to 5",
+      "url": "https://whatson.ae/2026/11/10-fun-things-to-do-in-abu-dhabi-this-week-november-2-to-5",
+      "item_id": "e10f171e79a5db4aaeca09999a248e49257b97f1"
+    },
+    "8e9dfaa79dc396846c14f8ceb66314fab8d93d2d": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "dubai introduces a first of its kind loyalty programme for tourists",
+      "url": "https://whatson.ae/2026/11/dubai-introduces-a-first-of-its-kind-loyalty-programme-for-tourists",
+      "item_id": "1a9d2072a97e24ada90a244a2bf5ba572265854b"
+    },
+    "15d4fc68b222ea82a39d94fe4ab517a3ef9e062f": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "ski dubai s winter wonderland is coming back this december",
+      "url": "https://whatson.ae/2026/11/ski-dubais-winter-wonderland-is-coming-back-this-december",
+      "item_id": "d917c94d6523fcf96394c0a536ccf4bdca92432e"
+    },
+    "c041a904adfbb91d2bfa89880916342826fe7aca": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "the largest m s foodhall outside the uk to open at dubai festival city",
+      "url": "https://whatson.ae/2026/11/the-largest-ms-foodhall-outside-the-uk-to-open-at-dubai-festival-city",
+      "item_id": "bbc41089de9e70bf3ac4e4729579782c0a348e7d"
+    },
+    "c0a7cda3be5a939e6bfca1b3f76e15484200469e": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "25 of the best things to do in dubai this november",
+      "url": "https://whatson.ae/2026/11/25-of-the-best-things-to-do-in-dubai-this-november",
+      "item_id": "e55df024aab2c7c88f462b07ef51a2bf7c724bd3"
+    },
+    "d0442ec4c64b5c04323196d7c7490f85cc3a1314": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "8 fun things to do this week november 2 to 5",
+      "url": "https://whatson.ae/2026/11/things-to-do-this-week-november-2-to-5",
+      "item_id": "98703289bbf61c1de91fcefcce566762de6a5030"
+    },
+    "8ce3ab9b3d303fe7fea80d3cfe49b5390851ebeb": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "nad zabeel dubai unveils futuristic new research hub",
+      "url": "https://whatson.ae/2026/11/nad-zabeel-dubai-unveils-futuristic-new-research-hub",
+      "item_id": "3a25f845693e2f7b9211da5f21c464128361e04f"
+    },
+    "3789a7c23d86834b3f7796ae15a0937ec6e7270d": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "the uae flag garden has returned to kite beach dubai",
+      "url": "https://whatson.ae/2026/11/uae-flag-day-go-snap-happy-at-flag-garden-in-dubai",
+      "item_id": "2ef1775ceabce283fc7d53d3232373060308e5c8"
+    },
+    "79bdc7b34d38f05e42f79785b813f63947104405": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "here s why rixos marina abu dhabi is the perfect day out in the capital",
+      "url": "https://whatson.ae/2026/10/heres-why-rixos-marina-abu-dhabi-is-the-perfect-day-out-in-the-capital",
+      "item_id": "b69eca4db85a86845f9384fda53c836bf9ca1408"
+    },
+    "f3b4208876a03e93669fa3ca6328317fd667e389": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "dubai_edited_rss_hub",
+      "title_key": "organic foods cafe suggests five unusual bbq ideas for november 2026",
+      "url": "https://dubaiedited.ae/organic-foods-cafe-suggests-five-unusual-bbq-ideas-for-november-2026",
+      "item_id": "007f6da3ccd6a2267b0c8b4f54a31dd6e21d9261"
+    },
+    "62d31dd1afb3a23662fbdb115ed4b16a4d6c15b5": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "dubai_edited_rss_hub",
+      "title_key": "tattu dubai launches black dragon brunch every saturday on level 74",
+      "url": "https://dubaiedited.ae/tattu-dubai-launches-black-dragon-brunch-every-saturday-on-level-74",
+      "item_id": "9e90e334b8a544298b9940491b69a9e496ddd9e0"
+    },
+    "bcfc238978b1d10c94aca27e16ad85806626641b": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "dubai_edited_rss_hub",
+      "title_key": "trump international golf club dubai plans a christmas village santa s grotto and a motown new year s eve",
+      "url": "https://dubaiedited.ae/trump-international-golf-club-dubai-plans-a-christmas-village-santas-grotto-and-a-motown-new-years-eve",
+      "item_id": "20cfc6457c728a637082e492ecbe33ef2f81e7e2"
+    },
+    "931a68bd62ea626f3f17885ea4e3b6b9b1132540": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "у побережья оаэ не выявили новых утечек нефти",
+      "url": "https://t.me/uaegeneralnews/18092",
+      "item_id": "631d3b3b63974d177d4795c8bcf82cd61a29c6ca"
+    },
+    "ff27bd8b44aaf49de6daedf11b5ff33894362ae4": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "стали известны имена пилотов героев flydubai",
+      "url": "https://t.me/uaegeneralnews/18091",
+      "item_id": "2dd59980a27545b1cdc3698fab75d934177f42d4"
+    },
+    "41df0bf3757470837f2d636f12a1315334bd126a": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "альтман признался что не ждал от chatgpt такого эффекта",
+      "url": "https://t.me/dubaimap/14848",
+      "item_id": "d33193235f9c4f54b2b16b80638fbffe5deaa7e5"
+    },
+    "85d858ccc397d284ac523048fb39a55d23648975": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "так waze предупреждает дубайских водителей о животных на трассе",
+      "url": "https://t.me/dubaimap/14847",
+      "item_id": "a72f9a375d20a72a360229ac0b72e221055ca704"
+    },
+    "1de21673b46c87ba127036d8b283b231d96d9e07": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "dubai ride поставил рекорд 41 836 велосипедистов",
+      "url": "https://t.me/dubaimap/14844",
+      "item_id": "5c6c8e2f29caf0fc72eb1d710e9ee4b9a8b555e6"
+    },
+    "7b267dc5124a2dbb6f550a98c12d405987190670": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "за первый месяц работы etihad rail продали 120 000 билетов на поезда соединяющие абу даби дубай аль дайд и фуджейру",
+      "url": "https://t.me/dubaimap/14843",
+      "item_id": "3af633323aec1575d633c54a8b1bf1b90d868f75"
+    },
+    "df29bf676bf9783a23d394fd3336f30060bb3c15": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "dubai design week пройдёт 3 8 ноября",
+      "url": "https://t.me/dubaimap/14837",
+      "item_id": "04e35d2f0ca2d5d761a5efd139d5f58f68e8d6e8"
+    },
+    "f8e77fa686a26e30ba118a4cf43772ae426c76dd": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "в оаэ резидентам ограничат количество автомобилей на одного человека",
+      "url": "https://t.me/kstati_dubai/2907",
+      "item_id": "d7d144757dff2f50ca0e4c567dfdf451ccf8fcf2"
+    },
+    "b1be91cc28bb51d1d2726216aa7dc5683ca2a5cc": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "botim выпустил свою платёжную карту",
+      "url": "https://t.me/kstati_dubai/2900",
+      "item_id": "1297a18ee31b786c7d23f2c66f7f74887577e345"
+    },
+    "140c249d487d5911579e7922a6709d555479a668": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "зима в оаэ будет тёплой и дождливой",
+      "url": "https://t.me/kstati_dubai/2899",
+      "item_id": "8643402589a93c90868720c73029329893d5977d"
+    },
+    "622c06823a22ed49e7893d6858550ae99232f572": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "лайфхак недели бесплатные тренировки на пляже в парках и фитнесс клубах до 29 ноября",
+      "url": "https://t.me/dubai_zdorovo/6995",
+      "item_id": "5f8706d40e0ac41a75a89265d523d15ddb482f04"
+    },
+    "605e3c9a5c2aef193fdfc97b1e255c508229ac94": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "мы тоже конечно отправимся в арт приключения и конечно же немного по другому",
+      "url": "https://t.me/dome_dubai/1522",
+      "item_id": "d77f22028200754bb838316bbb788f6a8a600ac2"
+    },
+    "cbd84df7d68fed66a3d8a5e7c075818282f852d3": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "наконец то наступил ноябрь самый самый арт месяц в дубае и эмиратах",
+      "url": "https://t.me/dome_dubai/1520",
+      "item_id": "fe392521470cf1f2602dd1b54c0c9296cda71379"
+    },
+    "ad4088d49ae69707966c05ea4ec08a6cfb71a07f": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "в оаэ ужесточат правила для пользователей электросамокатов",
+      "url": "https://t.me/dubai_media/5807",
+      "item_id": "8c53ce55b91481d5a3ff477c1e3983eabd7a9d99"
+    },
+    "a75ee6630ef1c911b4887f892e0dd2bd76fe8fd8": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "в дубае откроют крупнейший m s food за пределами великобритании",
+      "url": "https://t.me/dubai_media/5804",
+      "item_id": "6933606faa2a64aa5ad1352571fd77c9ee964cf4"
+    },
+    "e31fbdbc79028f7adfaf3ff1ebeec576989f2ead": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "сша могут нанести ядерный удар по ирану в ближайшие дни заявил такер карлсон",
+      "url": "https://t.me/dubai_media/5803",
+      "item_id": "136e9a96adf238605cd26dd56a6ff72df177e0af"
+    },
+    "d1fa522eb78b86b9194f44bcfe9ab869ed73e990": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "в оаэ запустили ежегодный конкурс государственных инноваций",
+      "url": "https://t.me/dubaihighlights/6418",
+      "item_id": "6cfc0f0b696ef3a34edb17b608bb8736d0d0453a"
+    },
+    "de9a1e9807d7086b9b92667531725f25f78c03b7": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "etihad rail продала 120 000 билетов за первый месяц работы",
+      "url": "https://t.me/dubaihighlights/6417",
+      "item_id": "b3780a69dad81813260d543e819c2d3060d44b37"
+    },
+    "da2a04ec71a3d4c097bf7d1a913a88196254f19f": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dubai_pike",
+      "title_key": "и второй вопрос следом кто был на dubai ride шутки что словно часть поехала на заезд после хеллоуина актуальны",
+      "url": "https://t.me/dubai_pike/9329",
+      "item_id": "e2140765b65aef69068ff9b370ae787cbd54b740"
+    },
+    "62100d0203f2c020644a2925b274d3b7b2dc653c": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_dubai_pike",
+      "title_key": "кто праздновал хеллоуин",
+      "url": "https://t.me/dubai_pike/9328",
+      "item_id": "78919ad40b409737e239d74623bb29143868103c"
+    },
+    "0f1c2d1c21b8aae85821f93cd6c13a3e3772a604": {
+      "first_seen_at": "2026-11-02T10:32:54.826150+00:00",
+      "source_id": "tg_whitewilldubai",
+      "title_key": "вечер о рынке дубая вместе с цифра банком и ellington",
+      "url": "https://t.me/whitewilldubai/9429",
+      "item_id": "0de8c632af10d00446d375604ee2646e41ef7de6"
     }
   }
 }

@@ -1,435 +1,6 @@
 {
   "version": 1,
   "items": {
-    "64f4027ae08e276779ddd39e24a95d051a259757": {
-      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "sheikh abdullah meets foreign ministers in new york meetings explored ways to strengthen bilateral cooperation and partnerships across fields 29m ago 2 m read",
-      "url": "https://gulfnews.com/uae/government/sheikh-abdullah-meets-foreign-ministers-senior-officials-in-new-york-1.500684901",
-      "item_id": "840ff01018b26d5518be734d9c957d73a70ed77b"
-    },
-    "b5b1db4059c2784c138fa2671b6ec52c6e4c81e5": {
-      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "what uae taught this 15 year old about sustainability 31m ago 5 m read",
-      "url": "https://gulfnews.com/uae/people/what-being-born-and-raised-in-the-uae-taught-this-15-year-old-about-education-and-sustainability-1.500684859",
-      "item_id": "dff0df627db0fb76affb56b3de73cb408c3d31d8"
-    },
-    "da73708aca48ee2d2c6f09a4581c553a0a209614": {
-      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "dubai s etihad rail station takes shape ahead of launch 55m ago 4 m read",
-      "url": "https://gulfnews.com/living-in-uae/transport/etihad-rail-dubai-abu-dhabi-al-yalayis-station-1.500684826",
-      "item_id": "afe651e23f8cf8cdcdf5ffc46866922a160edbc3"
-    },
-    "899f21ce894bf29880e231bce85cfda398984f94": {
-      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "7 uae events to add to your autumn calendar 2h ago 3 m read",
-      "url": "https://gulfnews.com/lifestyle/from-concerts-to-culture-7-standout-uae-events-to-plan-for-this-autumn-1.500680951",
-      "item_id": "b64c932461af79efa5ea637c870764ff5e559ea2"
-    },
-    "c43ab2b3a5ef5bc13bb7a346bfb79acc8ef15c12": {
-      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "photos uae rulers offer condolences to sheikh mohammed 2h ago 2 m read",
-      "url": "https://gulfnews.com/uae/government/uae-rulers-and-crown-princes-offer-condolences-to-sheikh-mohammed-on-passing-of-sheikh-ahmed-bin-rashid-1.500684717",
-      "item_id": "970218f294e456e1430cb8750240b6c23ce4dc3e"
-    },
-    "a0d2d4c4926c1aa2bfa12979d56eb6c41e459e1f": {
-      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "hamdan forms board of hamdan bin rashid foundation 1 m read",
-      "url": "https://gulfnews.com/uae/government/sheikh-hamdan-forms-the-board-of-trustees-of-the-hamdan-bin-rashid-al-maktoum-foundation-for-medical-and-educational-sciences-1.500684684",
-      "item_id": "e8ae405e22e9c1db6545710570b8fbdc55a2fc25"
-    },
-    "82bb8657b03e0c68adddaad23be5952e8ca859d3": {
-      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
-      "source_id": "whatson_ae_feed",
-      "title_key": "al freish lake everything we know about kalba s new waterfall lake in sharjah",
-      "url": "https://whatson.ae/2026/09/al-freish-lake-kalba-sharjah",
-      "item_id": "c3ea3345038666cf7159e1733e9b872cd49100e2",
-      "used_at": "2026-09-23T09:52:15.603966+00:00"
-    },
-    "9581c0bd6e65c599a361cfa574eee64c3023f802": {
-      "first_seen_at": "2026-09-23T09:51:49.915307+00:00",
-      "source_id": "tg_dubaimap",
-      "title_key": "в дубае на покупку квартиры площадью около 60 м2 рядом с центром потребуется примерно 5 лет среднего дохода",
-      "url": "https://t.me/dubaimap/14506",
-      "item_id": "733bd22134acb58f807da94cdd668381c40e313a",
-      "used_at": "2026-09-23T10:46:26.484869+00:00"
-    },
-    "2bbc818da8f52e332e94f873092032123c79876a": {
-      "first_seen_at": "2026-09-23T10:06:04.753916+00:00",
-      "source_id": "zawya_real_estate",
-      "title_key": "aji group launches new facilities management arm aji fm in saudi arabia to drive the operational",
-      "url": "https://www.zawya.com/en/press-release/companies-news/aji-group-launches-new-facilities-management-arm-aji-fm-in-saudi-arabia-to-drive-the-operational-efficiency-of-assets-1021729",
-      "item_id": "9c13e479e94031151aea64610246facd942da3f3"
-    },
-    "bb7bf2c4d8ae79c9739f436f2994b37910f9c269": {
-      "first_seen_at": "2026-09-23T10:06:04.753916+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "abdullah joins trump meeting with arab leaders at un meeting discussed current regional developments and the situation in the middle east just now 2 m read",
-      "url": "https://gulfnews.com/uae/government/abdullah-bin-zayed-joins-trump-meeting-with-arab-islamic-leaders-on-sidelines-of-un-general-assembly-1.500684960",
-      "item_id": "18ee2a51a430b18310ccc1f04c82305db581e92b"
-    },
-    "69934a70d198900937f66185d3c1a491b24d50ed": {
-      "first_seen_at": "2026-09-23T10:06:04.753916+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "sheikh abdullah meets foreign ministers in new york 52m ago 2 m read",
-      "url": "https://gulfnews.com/uae/government/sheikh-abdullah-meets-foreign-ministers-senior-officials-in-new-york-1.500684901",
-      "item_id": "840ff01018b26d5518be734d9c957d73a70ed77b"
-    },
-    "34225ef7c52424d53e10f1f319e71f0899c65197": {
-      "first_seen_at": "2026-09-23T10:06:04.753916+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "what uae taught this 15 year old about sustainability 54m ago 5 m read",
-      "url": "https://gulfnews.com/uae/people/what-being-born-and-raised-in-the-uae-taught-this-15-year-old-about-education-and-sustainability-1.500684859",
-      "item_id": "dff0df627db0fb76affb56b3de73cb408c3d31d8"
-    },
-    "08a5fa7a0a972f451f25bf214215d60ba6e7f8b4": {
-      "first_seen_at": "2026-09-23T10:06:04.753916+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "dubai s etihad rail station takes shape ahead of launch 1h ago 4 m read",
-      "url": "https://gulfnews.com/living-in-uae/transport/etihad-rail-dubai-abu-dhabi-al-yalayis-station-1.500684826",
-      "item_id": "afe651e23f8cf8cdcdf5ffc46866922a160edbc3"
-    },
-    "393c557f8e3f2bf136a9a7a22365445ec0cb77a6": {
-      "first_seen_at": "2026-09-23T10:06:04.753916+00:00",
-      "source_id": "whatson_ae_feed",
-      "title_key": "flying cars are coming to ras al khaimah",
-      "url": "https://whatson.ae/2026/09/flying-car-future-of-the-uae-ras-al-khaimah",
-      "item_id": "93120327b26f8474609b40fe8b0b487fa698db68",
-      "used_at": "2026-09-23T10:06:24.995948+00:00"
-    },
-    "64128d7ea6d5d13a9cbcf6baeb1efb8829811ea9": {
-      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "legoland dubai s new season starts on october 7 the season opens with a miniland sound and light show and halloween until november 2 22m ago 2 m read",
-      "url": "https://gulfnews.com/lifestyle/a-new-miniland-show-and-halloween-legoland-dubais-season-starts-october-7-1.500684990",
-      "item_id": "01793444b2d64489bf5a06ed388ec9ae8ff344e7"
-    },
-    "89aa1d0aa2e3356cf8ac91ab8aa4e582d57311ac": {
-      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "abdullah joins trump meeting with arab leaders at un 39m ago 2 m read",
-      "url": "https://gulfnews.com/uae/government/abdullah-bin-zayed-joins-trump-meeting-with-arab-islamic-leaders-on-sidelines-of-un-general-assembly-1.500684960",
-      "item_id": "18ee2a51a430b18310ccc1f04c82305db581e92b"
-    },
-    "42f9844ed57ad17e1f521cbf3c44524c60146250": {
-      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "sheikh abdullah meets foreign ministers in new york 1h ago 2 m read",
-      "url": "https://gulfnews.com/uae/government/sheikh-abdullah-meets-foreign-ministers-senior-officials-in-new-york-1.500684901",
-      "item_id": "840ff01018b26d5518be734d9c957d73a70ed77b"
-    },
-    "a86601a02a044995b14f42fd0d53cb510df8db47": {
-      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "what uae taught this 15 year old about sustainability 1h ago 5 m read",
-      "url": "https://gulfnews.com/uae/people/what-being-born-and-raised-in-the-uae-taught-this-15-year-old-about-education-and-sustainability-1.500684859",
-      "item_id": "dff0df627db0fb76affb56b3de73cb408c3d31d8"
-    },
-    "729b72c5ac8518f132ea7928e6ed7f22dc591e8b": {
-      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "7 uae events to add to your autumn calendar 3 m read",
-      "url": "https://gulfnews.com/lifestyle/from-concerts-to-culture-7-standout-uae-events-to-plan-for-this-autumn-1.500680951",
-      "item_id": "b64c932461af79efa5ea637c870764ff5e559ea2"
-    },
-    "c5b290416970bdb3171b8cd7c352520e3584c9ac": {
-      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "photos uae rulers offer condolences to sheikh mohammed 2 m read",
-      "url": "https://gulfnews.com/uae/government/uae-rulers-and-crown-princes-offer-condolences-to-sheikh-mohammed-on-passing-of-sheikh-ahmed-bin-rashid-1.500684717",
-      "item_id": "970218f294e456e1430cb8750240b6c23ce4dc3e"
-    },
-    "f3349105e8fbd573be12fe6d1d8c31f2b664c451": {
-      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "marcos extends sympathies to sheikh mohammed 1 m read",
-      "url": "https://gulfnews.com/uae/philippine-president-extends-sympathies-to-sheikh-mohammed-on-passing-of-sheikh-ahmed-bin-rashid-1.500684734",
-      "item_id": "124777a23b18114314619f630e4edf889e3be397"
-    },
-    "889ac74eb44be97103d72905ce2c35e6e4e0a197": {
-      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
-      "source_id": "whatson_ae_feed",
-      "title_key": "30 of the best business lunches in dubai by neighbourhood",
-      "url": "https://whatson.ae/2026/09/30-of-the-best-business-lunches-in-dubai-by-neighbourhood",
-      "item_id": "56e8eac7ed7208e346673994469aee4e509f773d"
-    },
-    "741b4f943c7b795d31a05b51a68ee3271544c2c0": {
-      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
-      "source_id": "whatson_ae_feed",
-      "title_key": "ras al khaimah signs deal to test flying cars with abu dhabi route planned",
-      "url": "https://whatson.ae/2026/09/flying-car-future-of-the-uae-ras-al-khaimah",
-      "item_id": "93120327b26f8474609b40fe8b0b487fa698db68",
-      "used_at": "2026-09-23T10:46:26.484869+00:00"
-    },
-    "c27e5835469505078093ccee0e3916b59cb21885": {
-      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
-      "source_id": "tg_dome_dubai",
-      "title_key": "готовимся к началу сезону плодотворно новая неделя и новое интервью",
-      "url": "https://t.me/dome_dubai/1351",
-      "item_id": "6bcff624f5829fb06c6532a0a82b34b291531cfa",
-      "used_at": "2026-09-23T11:04:13.160655+00:00"
-    },
-    "93f8808e5cbc916812b693099f3fdccd39267573": {
-      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
-      "source_id": "tg_dubai_media",
-      "title_key": "символ дирхама скоро появится на клавиатурах телефонов",
-      "url": "https://t.me/dubai_media/5473",
-      "item_id": "980eeb4a26e86aee7479680181be73e03b13d935",
-      "used_at": "2026-09-23T10:46:26.484869+00:00"
-    },
-    "524056a2d5a7f0b48b9aa9b96039bed994c6041e": {
-      "first_seen_at": "2026-09-23T10:45:36.841940+00:00",
-      "source_id": "tg_dubaihighlights",
-      "title_key": "в оаэ усилили борьбу с фиктивной эмиратизацией",
-      "url": "https://t.me/dubaihighlights/6197",
-      "item_id": "bdfef3f6d6eec287c7da0293fdd74f4d8e0cd31b",
-      "used_at": "2026-09-23T10:46:26.484869+00:00"
-    },
-    "e3fe5bc802dbd1f2dcd251680c35878ab20a0514": {
-      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
-      "source_id": "zawya_real_estate",
-      "title_key": "sharjah islamic bank launches 500mln 5 year wakala sukuk ipts out",
-      "url": "https://www.zawya.com/en/economy/sharjah-islamic-bank-launches-500mln-5-year-wakala-sukuk-ipts-out-1068428",
-      "item_id": "003f7edd5a0f5037be7ff99a356ce4cd2875cffa"
-    },
-    "656f708e77cf81718bd676a4bbba5d8dccee2c0c": {
-      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "sharjah ruler settles dh17 86m debts in 82 cases sharjah s ruler has issued directives to support citizens and ease family burdens 16m ago 1 m read",
-      "url": "https://gulfnews.com/uae/government/sharjah-ruler-settles-debts-for-82-cases-totalling-over-dh178-million-1.500684978",
-      "item_id": "788a8dc1327b5fd00779085ec210efbe7f0b8d3e"
-    },
-    "2fde8a37fd26a31c13d2489ffe9cf20e941b9012": {
-      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "legoland dubai s new season starts on october 7 39m ago 2 m read",
-      "url": "https://gulfnews.com/lifestyle/a-new-miniland-show-and-halloween-legoland-dubais-season-starts-october-7-1.500684990",
-      "item_id": "01793444b2d64489bf5a06ed388ec9ae8ff344e7"
-    },
-    "5654bfccb20fa8ae046a61fb3ce32bafea39bb40": {
-      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "abdullah joins trump meeting with arab leaders at un 56m ago 2 m read",
-      "url": "https://gulfnews.com/uae/government/abdullah-bin-zayed-joins-trump-meeting-with-arab-islamic-leaders-on-sidelines-of-un-general-assembly-1.500684960",
-      "item_id": "18ee2a51a430b18310ccc1f04c82305db581e92b"
-    },
-    "1fd5517e8f9e5d10564b0551ac697ac331f98e3a": {
-      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "dubai s etihad rail station takes shape ahead of launch 2h ago 4 m read",
-      "url": "https://gulfnews.com/living-in-uae/transport/etihad-rail-dubai-abu-dhabi-al-yalayis-station-1.500684826",
-      "item_id": "afe651e23f8cf8cdcdf5ffc46866922a160edbc3"
-    },
-    "278a637c4b711a5ee5507f80065789d01b14b500": {
-      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
-      "source_id": "tg_russianemiratesnews",
-      "title_key": "музей гуггенхайма в абу даби открыл продажу билетов",
-      "url": "https://t.me/russianemiratesnews/28113",
-      "item_id": "a10c1d62d2c529f590941465ffe56375da9954a6"
-    },
-    "ea31ed99a4c4f08f983295257d8c30f33b30de7e": {
-      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
-      "source_id": "tg_russianemiratesnews",
-      "title_key": "в дубай вернется международный кинофестиваль",
-      "url": "https://t.me/russianemiratesnews/28110",
-      "item_id": "f36e4c11c7eec9504e240de911ca037ae9c5101d"
-    },
-    "c7a9e0445cb81c99eeb45f6ffb332d3327652ecc": {
-      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
-      "source_id": "tg_russianemiratesnews",
-      "title_key": "в дубае построят ж д станцию в районе мейдан",
-      "url": "https://t.me/russianemiratesnews/28109",
-      "item_id": "06186fb4e62cb960df0089124aa64d9bf3a7064f"
-    },
-    "46caf5508a5494a8d55a614e0d42b521277ee76d": {
-      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
-      "source_id": "tg_russianemiratesnews",
-      "title_key": "в дубае предупредили об аферах с билетами на global village",
-      "url": "https://t.me/russianemiratesnews/28107",
-      "item_id": "21fe716193604205acd407833773a8937f48290f"
-    },
-    "fe76c1a35f142676b642dc88a871673aa7316895": {
-      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
-      "source_id": "tg_dubaimap",
-      "title_key": "dubizzle запустил прямое бронирование жилья для посуточной аренды теперь квартиру дом или виллу можно выбрать и",
-      "url": "https://t.me/dubaimap/14507",
-      "item_id": "fc718609f5db3d833d81a5b6ec41b48a29e2f993",
-      "used_at": "2026-09-23T11:04:13.160655+00:00"
-    },
-    "70f954f0dc6be40a65ef556a7c48d61bc230ca64": {
-      "first_seen_at": "2026-09-23T11:03:56.061055+00:00",
-      "source_id": "tg_kstati_dubai",
-      "title_key": "сеть address откроет 2 новых отеля в оаэ",
-      "url": "https://t.me/kstati_dubai/2734",
-      "item_id": "d11d7c6ead5e83baae4bad045fb0aadac549bc1c"
-    },
-    "74280beba46b7e41a2a7c781c6fc99fa149da77c": {
-      "first_seen_at": "2026-09-23T12:10:32.684896+00:00",
-      "source_id": "zawya_real_estate",
-      "title_key": "blackrock to divert up to 100bln toward gcc s infrastructure wealth fund opportunities",
-      "url": "https://www.zawya.com/en/business/blackrock-to-divert-up-to-100bln-toward-gccs-infrastructure-wealth-fund-opportunities-1129372",
-      "item_id": "e7b9e68ec03d194172145a12a49cf87604b049b5"
-    },
-    "aa798ba26199ae05dc4ce178d26faa2281bf0d97": {
-      "first_seen_at": "2026-09-23T12:10:32.684896+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "abu dhabi to showcase 100 government ai uses more than 50 uae government entities will join ai everything abu dhabi in october 20m ago 6 m read",
-      "url": "https://gulfnews.com/uae/government/abu-dhabi-to-showcase-100-live-government-ai-uses-at-global-summit-1.500685135",
-      "item_id": "30d70c94cfdd3add4dbbb8cf9a10e8bd0b7fa093"
-    },
-    "a06e7a3ff34a677a3037839e2414cef119c4cabd": {
-      "first_seen_at": "2026-09-23T12:10:32.684896+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "sharjah ruler settles dh17 86m debts in 82 cases 1h ago 1 m read",
-      "url": "https://gulfnews.com/uae/government/sharjah-ruler-settles-debts-for-82-cases-totalling-over-dh178-million-1.500684978",
-      "item_id": "788a8dc1327b5fd00779085ec210efbe7f0b8d3e"
-    },
-    "11a3be1767d1173d5e4240a02c378d412db11c26": {
-      "first_seen_at": "2026-09-23T12:10:32.684896+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "legoland dubai s new season starts on october 7 1h ago 2 m read",
-      "url": "https://gulfnews.com/lifestyle/a-new-miniland-show-and-halloween-legoland-dubais-season-starts-october-7-1.500684990",
-      "item_id": "01793444b2d64489bf5a06ed388ec9ae8ff344e7"
-    },
-    "fd393a4e410d41b1326efafb76d405cdff43ddd0": {
-      "first_seen_at": "2026-09-23T12:10:32.684896+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "abdullah joins trump meeting with arab leaders at un 2h ago 2 m read",
-      "url": "https://gulfnews.com/uae/government/abdullah-bin-zayed-joins-trump-meeting-with-arab-islamic-leaders-on-sidelines-of-un-general-assembly-1.500684960",
-      "item_id": "18ee2a51a430b18310ccc1f04c82305db581e92b"
-    },
-    "f713bd7571aba225e9569e084a24aaa9351fa45d": {
-      "first_seen_at": "2026-09-23T12:10:32.684896+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "sheikh abdullah meets foreign ministers in new york 2h ago 2 m read",
-      "url": "https://gulfnews.com/uae/government/sheikh-abdullah-meets-foreign-ministers-senior-officials-in-new-york-1.500684901",
-      "item_id": "840ff01018b26d5518be734d9c957d73a70ed77b"
-    },
-    "59f7ce51b3e9ddbab7b09dd1a896d1c2d1aa5de1": {
-      "first_seen_at": "2026-09-23T12:10:32.684896+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "what uae taught this 15 year old about sustainability 2h ago 5 m read",
-      "url": "https://gulfnews.com/uae/people/what-being-born-and-raised-in-the-uae-taught-this-15-year-old-about-education-and-sustainability-1.500684859",
-      "item_id": "dff0df627db0fb76affb56b3de73cb408c3d31d8"
-    },
-    "cd290fca825a606218bbd672dc69b56e21f581d2": {
-      "first_seen_at": "2026-09-23T12:10:32.684896+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "dubai s etihad rail station takes shape ahead of launch 4 m read",
-      "url": "https://gulfnews.com/living-in-uae/transport/etihad-rail-dubai-abu-dhabi-al-yalayis-station-1.500684826",
-      "item_id": "afe651e23f8cf8cdcdf5ffc46866922a160edbc3"
-    },
-    "c711933a1de469cdfa55d40c36b71bfbb312b8db": {
-      "first_seen_at": "2026-09-23T12:10:32.684896+00:00",
-      "source_id": "whatson_ae_feed",
-      "title_key": "5 new peak adventure rak attractions coming soon",
-      "url": "https://whatson.ae/2026/09/jebel-jais-80km-hiking-loop-via-ferrata-ras-al-khaimah",
-      "item_id": "4fdc758e116af4620f017dbb91d9f39d97a9dbfc",
-      "used_at": "2026-09-23T13:07:25.183115+00:00"
-    },
-    "071bc8c9baace4925a74813b22888317f5e4b7fd": {
-      "first_seen_at": "2026-09-23T12:10:32.684896+00:00",
-      "source_id": "whatson_ae_feed",
-      "title_key": "best business lunches in dubai 30 set menus by neighbourhood from dhs59",
-      "url": "https://whatson.ae/2026/09/30-of-the-best-business-lunches-in-dubai-by-neighbourhood",
-      "item_id": "56e8eac7ed7208e346673994469aee4e509f773d"
-    },
-    "62a442487b823fdecb850484d1a2e4f784141e0b": {
-      "first_seen_at": "2026-09-23T12:10:32.684896+00:00",
-      "source_id": "tg_dubaimap",
-      "title_key": "оаэ опередили другие страны региона по совокупности показателей цифровой инфраструктуры госуслуг инноваций",
-      "url": "https://t.me/dubaimap/14508",
-      "item_id": "0426c2d4cf5db326a25412b683c771348f7ef906"
-    },
-    "e5330905b27b5aead7a114577c3578126b9baff1": {
-      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
-      "source_id": "zawya_real_estate",
-      "title_key": "aji group launches new facilities management arm aji fm in saudi arabia to drive the operational efficiency of assets",
-      "url": "https://www.zawya.com/en/press-release/companies-news/aji-group-launches-new-facilities-management-arm-aji-fm-in-saudi-arabia-to-drive-the-operational-efficiency-of-assets-1021729",
-      "item_id": "9c13e479e94031151aea64610246facd942da3f3"
-    },
-    "117cae232e010ede3f84972b4b609cf461ca6180": {
-      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "more to try dubai midweek dining deals this week from burj khalifa views to homely breakfasts deals for every craving just now 6 m read",
-      "url": "https://gulfnews.com/lifestyle/dubai-midweek-dining-deals-from-sky-high-business-lunches-to-dh10-breakfasts-1.500666943",
-      "item_id": "c977e82e53af88b07d440ac5754d0233b19e508d"
-    },
-    "95f13da22346ad3f24dd5de50472df0887043791": {
-      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "indian storekeeper businessman each win 1m ddf draws 14m ago 3 m read",
-      "url": "https://gulfnews.com/uae/indian-expat-storekeeper-in-abu-dhabi-businessman-in-dubai-win-1m-each-in-dubai-duty-free-draws-1.500685235",
-      "item_id": "9cab905d9132481b37b08bafe3b7224b81244e37"
-    },
-    "e244b58e696a3468b09d34952d7dc30e13892f44": {
-      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "levelup spotlights the next step in career growth 45m ago 4 m read",
-      "url": "https://gulfnews.com/uae/education/gulf-news-levelup-spotlights-the-next-step-in-career-growth-1.500683885",
-      "item_id": "56a2a44f2252a36482bc140ceceeeff1ba38807e"
-    },
-    "c8851f7bc99af716d937fe2e14632e33140618d1": {
-      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "abu dhabi to showcase 100 government ai uses 1h ago 6 m read",
-      "url": "https://gulfnews.com/uae/government/abu-dhabi-to-showcase-100-live-government-ai-uses-at-global-summit-1.500685135",
-      "item_id": "30d70c94cfdd3add4dbbb8cf9a10e8bd0b7fa093"
-    },
-    "9579af71f6e75d1a963521efd5e498ff655f0479": {
-      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "sharjah ruler settles dh17 86m debts in 82 cases 2h ago 1 m read",
-      "url": "https://gulfnews.com/uae/government/sharjah-ruler-settles-debts-for-82-cases-totalling-over-dh178-million-1.500684978",
-      "item_id": "788a8dc1327b5fd00779085ec210efbe7f0b8d3e"
-    },
-    "6d178c8323197c76c248fd9589e4f94ed1947dc3": {
-      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "legoland dubai s new season starts on october 7 2h ago 2 m read",
-      "url": "https://gulfnews.com/lifestyle/a-new-miniland-show-and-halloween-legoland-dubais-season-starts-october-7-1.500684990",
-      "item_id": "01793444b2d64489bf5a06ed388ec9ae8ff344e7"
-    },
-    "232b421f8ce0265f3d9c55652c2829f7fb2e8da0": {
-      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "abdullah joins trump meeting with arab leaders at un 2 m read",
-      "url": "https://gulfnews.com/uae/government/abdullah-bin-zayed-joins-trump-meeting-with-arab-islamic-leaders-on-sidelines-of-un-general-assembly-1.500684960",
-      "item_id": "18ee2a51a430b18310ccc1f04c82305db581e92b"
-    },
-    "68ea801827de7706b8323da528c95491310a24f5": {
-      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "sheikh abdullah meets foreign ministers in new york 2 m read",
-      "url": "https://gulfnews.com/uae/government/sheikh-abdullah-meets-foreign-ministers-senior-officials-in-new-york-1.500684901",
-      "item_id": "840ff01018b26d5518be734d9c957d73a70ed77b"
-    },
-    "3cb90ad1139d9e0278df68400d35c042c093c3d6": {
-      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "what uae taught this 15 year old about sustainability 5 m read",
-      "url": "https://gulfnews.com/uae/people/what-being-born-and-raised-in-the-uae-taught-this-15-year-old-about-education-and-sustainability-1.500684859",
-      "item_id": "dff0df627db0fb76affb56b3de73cb408c3d31d8"
-    },
-    "27aa574069c5c1db80bbc918ada53f1b512c06a9": {
-      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
-      "source_id": "whatson_ae_feed",
-      "title_key": "inside abu dhabi falcon hospital meet the desert wings of the uae",
-      "url": "https://whatson.ae/2026/09/inside-abu-dhabi-falcon-hospital-meet-the-desert-wings-of-the-uae",
-      "item_id": "707822eb2c477566c98e9f20dc906332ecbac822"
-    },
-    "4461e796c3e4ba0a281b6c582187ddba7696ec14": {
-      "first_seen_at": "2026-09-23T13:06:55.716808+00:00",
-      "source_id": "tg_dubaimap",
-      "title_key": "саудовская аравия представила свой первый электромобиль ceer",
-      "url": "https://t.me/dubaimap/14509",
-      "item_id": "04b6d61df082dc21e9db68da05a95c6c05e7c738"
-    },
     "c999674542d248e65bedb7724300d1b8d1cf811c": {
       "first_seen_at": "2026-09-24T03:10:19.432349+00:00",
       "source_id": "zawya_real_estate",
@@ -33298,6 +32869,167 @@
       "title_key": "в оаэ пляжи трёх эмиратов остаются закрытыми из за разлива нефти",
       "url": "https://t.me/dubaihighlights/6439",
       "item_id": "fe3f78a0b02a8277eeec8dea549385adc2bd80c7"
+    },
+    "ba5a7c561d5ca7dab7413c7a7c7c22b76e2d53c2": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "video testimonials from zawya s gcc capital markets forum",
+      "url": "https://www.zawya.com/en/multimedia/videos/video-testimonials-from-zawyas-gcc-capital-markets-forum-1103126",
+      "item_id": "16795d85d1980e473ada6da9335d6bd862492624"
+    },
+    "ceedda3889367e4986091d152998c4cf75c9a337": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae minister joins indian leaders for dubai fitness run more than 60 indian entrepreneurs and business leaders join the 5km run at kite beach 7m ago 1 m read",
+      "url": "https://gulfnews.com/uae/health/dubai-fitness-challenge-brings-uae-minister-and-indian-leaders-together-1.500739695",
+      "item_id": "62d2eeba749bdcab9e8e09f9a49ca7584f0e3763"
+    },
+    "fe956b552d3eacdaf0af1dd76bb94ac1621350f7": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "middle east war 9 key updates for uae residents 1h ago 4 m read",
+      "url": "https://gulfnews.com/uae/middle-east-war-9-things-uae-residents-need-to-know-tonight-november-7-1.500739647",
+      "item_id": "2f10b1408a9b8a8c42f82fe15387482ac2be196e"
+    },
+    "a176978b7336395deb4189252e3ab78324704125": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "abu dhabi steps up fight against drugs and cybercrime 2h ago 3 m read",
+      "url": "https://gulfnews.com/uae/government/abu-dhabi-police-launch-campaign-to-protect-families-from-drugs-cybercrime-1.500739578",
+      "item_id": "6517f457a8da80d512776d9223e01b8df6bb050a"
+    },
+    "35496a5c0436f8770fc9fcf7857fbf1f87ab2509": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "nearly 20 000 ofws reached by serbisyo caravan in dubai 2h ago 8 m read",
+      "url": "https://gulfnews.com/uae/people/nearly-20000-ofws-reached-as-philippine-government-holds-fourth-ofw-serbisyo-caravan-in-dubai-1.500739516",
+      "item_id": "e5c1dc8b52b79572f5f5873add59de387c770e57"
+    },
+    "882dc1aa8e1b1f748bae4d0f489d0df7ace50e12": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae hosts mass wedding in gaza amid humanitarian push 2 m read",
+      "url": "https://gulfnews.com/uae/uae-brings-joy-to-gaza-with-mass-wedding-amid-ongoing-humanitarian-efforts-1.500739461",
+      "item_id": "8d476eea045d40b25355ee905b9e301bcd2a61b0"
+    },
+    "fc144da2c7ccbd0dcde615dd6b6296e7e76ff2ff": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "abu dhabi real estate transactions surge to dh171 26b 3 m read",
+      "url": "https://gulfnews.com/uae/abu-dhabi/abu-dhabi-real-estate-transactions-surge-76-to-dh17126-billion-in-2026-1.500739456",
+      "item_id": "83347762a536f8ca67d7c5dca9ff2e124ca7db2f"
+    },
+    "b65154d8d321802a03dc0470af4ef9fd70a21cb2": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sheikh mohammed extends diwali wishes to uae residents 1 m read",
+      "url": "https://gulfnews.com/uae/sheikh-mohammed-extends-diwali-greetings-to-residents-in-uae-and-around-the-world-1.500739446",
+      "item_id": "8c4edb11256b7470369aedad718deba7640fe207"
+    },
+    "3dbd945800de36ba68383201f6608c347aef32be": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "al wahda v al ain could shape uae pro league title race 3 m read",
+      "url": "https://gulfnews.com/sport/al-wahda-vs-al-ain-abu-dhabi-derby-could-shape-uae-pro-league-title-race-1.500739419",
+      "item_id": "754555881204dadf2911672c67b7c5c0a00cc6a0"
+    },
+    "4761c71ff9c22b3cdb1a5d9be3e08b38802c0116": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "us mission to uae warns americans of higher attack risk 1 m read",
+      "url": "https://gulfnews.com/uae/us-mission-to-uae-warns-americans-of-increased-threat-of-attacks-across-middle-east-1.500739410",
+      "item_id": "f710988db4eddac65d677564bd214871ad388283"
+    },
+    "a8593bb1f1babd0d68f7cd173faf0ab1f15204c2": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "abu dhabi warns against mixing household cleaners 4 m read",
+      "url": "https://gulfnews.com/uae/abu-dhabi/abu-dhabi-warns-against-mixing-household-cleaners-over-toxic-gas-risks-1.500739414",
+      "item_id": "eb2d2e7888f5a8bd1d993c5ed139ce0585ed33da"
+    },
+    "5205ab156b723eb341f060381b01befa53526437": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "trending new uae traffic rules dh25m win holidays 6 m read",
+      "url": "https://gulfnews.com/uae/weekend-digest-new-uae-traffic-rules-dh25-million-big-ticket-win-an-a380-suite-at-home-and-more-1.500739371",
+      "item_id": "bca03ece3d4a1d6c3a78290f35e94e96e00df400"
+    },
+    "b8bd41bebce290d6aca2f926d2374cd7786c00e2": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae businesswoman gifts iphone duo to female staff 2 m read",
+      "url": "https://gulfnews.com/uae/uae-businesswoman-gifts-iphones-to-all-female-employees-housekeeping-staffer-breaks-down-1.500739374",
+      "item_id": "8690a4c5a214c69b680ccc1cfdbb534642988741"
+    },
+    "e7a857897ab2aa497a0b998eeccf05a965078ea2": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "abu dhabi surgeons remove a rare 4 4kg cancerous tumour 2 m read",
+      "url": "https://gulfnews.com/uae/health/abu-dhabi-surgeons-remove-rare-44kg-cancerous-tumour-from-49-year-old-patient-1.500739322",
+      "item_id": "eac597b6716c67f81605ef5c1cdeaa5c95fe8983"
+    },
+    "a6169b1a6f0d366b8c9c1e8f33742e54cd8725f7": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "в дубае женщину обязали вернуть 190 000 за продажу поддельных часов patek philippe",
+      "url": "https://t.me/dubaimap/14904",
+      "item_id": "f82a1967b71e565db617d2c49cd7b0386212f7c7"
+    },
+    "c9042ff8f9d9ad0e7f29dca953042598521c43f1": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "в оаэ пляжи трёх эмиратов остаются закрытыми уже почти 2 недели из за разлива нефти",
+      "url": "https://t.me/kstati_dubai/2928",
+      "item_id": "77e1a4fb5cb96edf88c052e31bd3953802d79304"
+    },
+    "42baafcb35021384b2f870507d7b81b3b8fb9a8f": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "с 1 января 2027 года в оаэ ограничат время водителей за рулем до 9 часов в сутки причём правило распространяется не",
+      "url": "https://t.me/kstati_dubai/2919",
+      "item_id": "783825fa576f108000be7c23d656a956478332e7"
+    },
+    "e16f83acbd58f0093f96cceb0b0c9008a7fa8634": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "tg_probrokerae",
+      "title_key": "друзья всем привет",
+      "url": "https://t.me/probrokerae/981",
+      "item_id": "4b84546cc10a742e152b709394aebc9f890391cf"
+    },
+    "667e5db43f07267fe4f5231a3a125433b0dc258f": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "tg_dome_dubai",
+      "title_key": "всем привет",
+      "url": "https://t.me/dome_dubai/1518",
+      "item_id": "409dd9feac4474f05e768924df726c19f1329cbf"
+    },
+    "dcd2b8e54fe6652e29f09bebb4e842befac4094f": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "посольство сша в оаэ предупредило о возросшей угрозе атак на ближнем востоке",
+      "url": "https://t.me/dubai_media/5850",
+      "item_id": "9b9d4982371da56bb50a151f67296e28ea1ee2e9"
+    },
+    "4dbbdbd924f43c47c9a24c745074744aeac8aa0d": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "сша предупредили о повышенной угрозе атак на ближнем востоке",
+      "url": "https://t.me/dubaihighlights/6442",
+      "item_id": "37c73224657766fb3e654bf9eba77e12122e9e3c"
+    },
+    "f6d37a1f4910f2b7e799e9f4f6abfc2365bf60c4": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "шейх мухаммед поздравил жителей оаэ с праздником дивали",
+      "url": "https://t.me/dubaihighlights/6441",
+      "item_id": "9c627cf997515464c06b8a9c8acc549c926e861d"
+    },
+    "882dc9fc3fc1ad8c03116d1065daa0c7992da574": {
+      "first_seen_at": "2026-11-07T14:48:29.307853+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "выпускница школы дубая получила премию принцессы дианы",
+      "url": "https://t.me/dubaihighlights/6440",
+      "item_id": "34034dddd2de3bcb0c3eb834f8cb50b14466a8d8"
     }
   }
 }

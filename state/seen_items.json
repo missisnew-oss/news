@@ -1,146 +1,6 @@
 {
   "version": 1,
   "items": {
-    "fbcddbee4a60846410f9e12599ed7507d2484816": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "world police summit signs 3 year emirates partnership three year agreement will help connect global police and security leaders with dubai 27m ago 3 m read",
-      "url": "https://gulfnews.com/uae/world-police-summit-emirates-sign-three-year-strategic-partnership-1.500689627",
-      "item_id": "e2b3ee98e7c44329d27751576a3bf88f6bce888b"
-    },
-    "af1839832f19b224115e79bd0ed540359b06c77b": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "uae s integrated judicial system protects justice 37m ago 2 m read",
-      "url": "https://gulfnews.com/uae/justice-minister-uae-has-integrated-judicial-system-to-prevent-exploitation-of-borders-to-evade-justice-1.500689621",
-      "item_id": "7d46e96367c10c99a16b6acec718a75b628a616d"
-    },
-    "9d00d587035e49b342e31258bebe170e53fd1f16": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "uae jobs mal opens new job opportunities for emiratis 1h ago 2 m read",
-      "url": "https://gulfnews.com/uae/uae-jobs-mal-opens-new-career-opportunities-for-emiratis-in-abu-dhabi-1.500689600",
-      "item_id": "24fa5fab8f78ea9fbf261331baf21882eb5eeb1d"
-    },
-    "77e56072cc26728e874750a406486d067100ab42": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "flydubai dubai catania flights cancelled as etna erupts 1h ago 2 m read",
-      "url": "https://gulfnews.com/uae/dubai/flydubai-cancels-dubai-catania-flights-as-mount-etna-ash-disrupts-airport-1.500689580",
-      "item_id": "7e03a4ee8ef71f1d7e8145913065e7b20b3bc27e"
-    },
-    "898664aca1e4f608641325e375f94dbbe414ac1f": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "dubai k fest what s still on until october 4 1h ago 3 m read",
-      "url": "https://gulfnews.com/entertainment/win-a-genesis-learn-k-dance-eat-korean-k-fests-next-week-in-dubai-1.500689556",
-      "item_id": "63ffe48187c7ce6328847d64efb883911159701c"
-    },
-    "dc58368d7b7fc35f0a0294170f6b97722f47f205": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "ai investment boom leaves social impact behind 2h ago 2 m read",
-      "url": "https://gulfnews.com/uae/abu-dhabi/ai-investment-boom-leaves-social-impact-behind-1.500689527",
-      "item_id": "3112d73c5651a84f999e944027f2ca30ba43ac64"
-    },
-    "a49af67c6716067ef56bbf472f3ab1ce8fc19622": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "uae recalls 892 toyota lexus cars over software issue 2h ago 1 m read",
-      "url": "https://gulfnews.com/auto/uae-recalls-892-lexus-and-toyota-vehicles-over-camera-software-issue-1.500689419",
-      "item_id": "cb22a48bf19c088010458e79dd3ffbb48d2cf7b6"
-    },
-    "b12f0b332693715fbabadb1fb1e30628a1edc4b2": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "arab monetary fund marks 50 years with abu dhabi summit 2h ago 2 m read",
-      "url": "https://gulfnews.com/business/abu-dhabi-to-host-amf-golden-jubilee-arab-finance-ministers-1.500689442",
-      "item_id": "48f03b178540b082cfd6bdf03d783c2f1254c120"
-    },
-    "b521d0edb7a1b4cd1b24687151776bed4e634ec3": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "traffic alert accident on expo road causes delays 1 m read",
-      "url": "https://gulfnews.com/uae/dubai/uae-traffic-alert-accident-reported-on-dubai-road-causes-delays-1.500689486",
-      "item_id": "ababba820856e52e8fbb331e0ceee5fbb5fce852"
-    },
-    "1cd19a496289c217f4a3b075a8c2539db1593560": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "uae deepens ties with us in genomic and digital health 4 m read",
-      "url": "https://gulfnews.com/uae/uae-strengthens-cooperation-with-us-in-genomic-medicine-digital-health-and-specialised-care-1.500689473",
-      "item_id": "11f888dcaf1c779b328bab9ace72f1ef00e4aede"
-    },
-    "1c647c2bb9e552710d6f18007f5ab4c3755ebbb2": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "germany has 650 000 jobs for skilled professionals 3 m read",
-      "url": "https://gulfnews.com/uae/germany-has-650000-jobs-for-skilled-professionals-clint-khan-on-opportunity-card-1.500689439",
-      "item_id": "ab2830f1879e0b4b75f5e36abb409fb2dc3e8111"
-    },
-    "5d4d23ef7665521e0199ba30a584004ecae1a0ed": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "dubai police share 10 tips to avoid car insurance scams 2 m read",
-      "url": "https://gulfnews.com/uae/crime/dubai-police-issue-10-tips-to-avoid-vehicle-insurance-scams-1.500689424",
-      "item_id": "921860cd23151c1424fbda4073208001941f9fc0"
-    },
-    "c5d414e75973d464546441ec120c9d4309da5ed0": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "whatson_ae_feed",
-      "title_key": "where to walk in dubai to get your 10k steps in",
-      "url": "https://whatson.ae/2026/09/where-to-walk-in-dubai-to-get-your-10k-steps-in",
-      "item_id": "66c5aa522749a43e2fc80fc878944eee4da113bc"
-    },
-    "66bba8c23fbb20c76f641ee7de314688b772cc86": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "tg_uaegeneralnews",
-      "title_key": "оаэ выделят us 5 млн на борьбу с преступностью",
-      "url": "https://t.me/uaegeneralnews/17791",
-      "item_id": "90f52f24d0e99901d4eacae00616655ab080bab1"
-    },
-    "53c11705eaa87b1cb28006f90283ff4a000a2982": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "tg_uaegeneralnews",
-      "title_key": "в оаэ выпустили предупреждение о тумане",
-      "url": "https://t.me/uaegeneralnews/17790",
-      "item_id": "323b1fd5b9ab5ca5004dd81cd77a68c409452641"
-    },
-    "3e46db179191c5187e632e3119e8e94e9c2457e4": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "tg_dubaimap",
-      "title_key": "кусочки старого дубая",
-      "url": "https://t.me/dubaimap/14532",
-      "item_id": "3a418e51204c80d8f0f5da5520c6d3a09c0883d1"
-    },
-    "bb14216eb2371810bbe6a5d2850cc828336313ec": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "tg_dubai_media",
-      "title_key": "живёте в оаэ но до сих пор не понимаете арабский",
-      "url": "https://t.me/dubai_media/5497",
-      "item_id": "0f31bc8d4a8c9cf651c09a2cdfea79d8d1451faf"
-    },
-    "9d9b4fe13306691d4196470bc5a7f6a611a68d33": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "tg_dubai_media",
-      "title_key": "оаэ вошли в топ 25 стран мира по развитию туризма",
-      "url": "https://t.me/dubai_media/5496",
-      "item_id": "02ea1bf69a2297b2d3a6116b1df7d96027b760e3"
-    },
-    "bbb18d4c76b2e5be8741151b84c6c9d603832c98": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "tg_dubaihighlights",
-      "title_key": "в оаэ всё больше экспатов составляют завещания уже в 35 44 года",
-      "url": "https://t.me/dubaihighlights/6219",
-      "item_id": "7e550b389b2bdc8ce2d352a7ddacbc9d96c6938c"
-    },
-    "236c2f610d750ad6fba2491e389377e1bb74484a": {
-      "first_seen_at": "2026-09-27T12:10:02.555910+00:00",
-      "source_id": "tg_whitewilldubai",
-      "title_key": "лот недели просторная резиденция с видами на море в абу даби",
-      "url": "https://t.me/whitewilldubai/9320",
-      "item_id": "7d9798ae352ce49ec4aa500c4334590525c54bd3"
-    },
     "ee1ddbb9fda5202756355b67250c66e8669f6138": {
       "first_seen_at": "2026-09-28T03:11:11.340670+00:00",
       "source_id": "zawya_real_estate",
@@ -33250,6 +33110,286 @@
       "title_key": "лучшая покупка за 55 aed однозначно берём тележку для продуктов нашли в spinneys",
       "url": "https://t.me/dubai_pike/9397",
       "item_id": "9de8947cd1e00eefb013d6c63c621d5455e48b42"
+    },
+    "b41a08a8dc962ed4ec55365f4ee50af03810016c": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "sukuk from saudi arabia qatar and kuwait most liquid among gcc countries fitch",
+      "url": "https://www.zawya.com/en/economy/sukuk-from-saudi-arabia-qatar-and-kuwait-most-liquid-among-gcc-countries-fitch-2194658",
+      "item_id": "43f6269023c089dffb01b8060a8e630f170e5a90"
+    },
+    "3178cd9589a6a3bd5e9e5a6b8766b7febb77d6b7": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "living in al jazzat sharjah pros cons and neighbourhood guide",
+      "url": "https://www.propertyfinder.ae/blog/living-in-al-jazzat-sharjah",
+      "item_id": "76d70bc0fe110e6d097ea19ef76043d3edb076db"
+    },
+    "d6a8becf2735d67dc19eded31249db58b4017aca": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "property_finder_blog",
+      "title_key": "living in al helio ajman pros cons and neighbourhood guide",
+      "url": "https://www.propertyfinder.ae/blog/living-in-al-helio-ajman",
+      "item_id": "e86f8aeb2bbc9285a1c07949c4ad06df5717a154"
+    },
+    "c19bd13f5a231733e26f21e15698182c61264423": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "rain lashes the uae is the worst still to come motorists warned as uae braces for further downpours and hazardous conditions 1h ago 4 m read",
+      "url": "https://gulfnews.com/uae/weather/rain-lashes-the-uae-is-the-worst-of-the-weather-still-to-come-1.500744056",
+      "item_id": "167436b55f4cac85ef7cf087118b97cb2992a963"
+    },
+    "8cb8a539d2e7052c92fa6f19606f698bc5fddd44": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sharjah ruler raises marriage furniture grants 1h ago 1 m read",
+      "url": "https://gulfnews.com/uae/sharjah/sharjah-ruler-raises-marriage-furniture-grants-to-dh30000-each-1.500743903",
+      "item_id": "080d16764368b8a7ae69632ced6a2fdd36993b32"
+    },
+    "9d10f22e92a1a710dc00db62bb55c6877771acdc": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sharjah prepares 580 tankers to tackle heavy rain 1h ago 3 m read",
+      "url": "https://gulfnews.com/uae/sharjah/sharjah-deploys-1100-staff-580-tankers-ahead-of-rainy-season-1.500743971",
+      "item_id": "3c1c44d9471aef3a93085cf67353dbbbf4dd35ff"
+    },
+    "f8f518a6438a824ba0394d85efd6c4c42de7b57c": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "ras al khaimah announces reopening of 7 beaches 1h ago 2 m read",
+      "url": "https://gulfnews.com/uae/ras-al-khaimah-reopens-seven-beaches-after-precautionary-closures-over-oil-spill-concerns-1.500743998",
+      "item_id": "d4a06bea6d52547b7bf69cc35dee86d509da7543"
+    },
+    "e053ca5dd45dae543c0bc3e5ccf4e6d9409906dc": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "middle east war 8 key updates for uae residents 1h ago 5 m read",
+      "url": "https://gulfnews.com/uae/middle-east-war-8-things-uae-residents-need-to-know-tonight-november-11-1.500743997",
+      "item_id": "c9a09041bff9f61f2b90fd19a1eec8699197aebf"
+    },
+    "b581afcdb8b4650b0ba28ebf52010028a287140b": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "where to see christmas tree lighting ceremonies 2h ago 3 m read",
+      "url": "https://gulfnews.com/lifestyle/christmas-in-dubai-2026-where-to-watch-tree-lighting-ceremonies-1.500743905",
+      "item_id": "dfb510c87bcb3b5313ddc282e35718f0a37e809e"
+    },
+    "66b76ce5222333cfe64db0cfba8ecb96f4b2f268": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae talks yield biggest russia ukraine prisoner swap 2h ago 3 m read",
+      "url": "https://gulfnews.com/world/europe/russia-ukraine-agree-major-prisoner-swap-at-abu-dhabi-peace-talks-as-us-envoys-head-to-meet-putin-1.500743963",
+      "item_id": "b0c12e9345f6a1dfd086b77d73fcde55bf79da07"
+    },
+    "248452e2f704cae772d8ef5d87a965536cc75a88": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "art and heritage at abu dhabi s founder s memorial 4 m read",
+      "url": "https://gulfnews.com/uae/abu-dhabi/beneath-a-constellation-of-suspended-shapes-abu-dhabi-remembers-its-founder-1.500743808",
+      "item_id": "c5925a175549bd046c7799a7898e983334d86a2c"
+    },
+    "b0cc483da7a69dcd8353a3285953222178bc48a5": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sharjah s souq al jubail story to be told in book 3 m read",
+      "url": "https://gulfnews.com/entertainment/books/sharjahs-souq-al-jubail-history-to-be-told-in-new-bilingual-book-1.500743870",
+      "item_id": "310aa52dbb71592ffdc299f3248cb95977bc3220"
+    },
+    "03b7199a29a7ad20362541fc165daf7d51728042": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "abu dhabi activates 332 ev charging points 3 m read",
+      "url": "https://gulfnews.com/uae/transport/abu-dhabi-activates-332-ev-charging-points-in-public-parking-areas-1.500743860",
+      "item_id": "942450f6522aff59ff7f41d86c490b375a1f23c6"
+    },
+    "34983471a98f12c61b668210ac1e5615315f9c84": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "ozempic wegovy warning what uae patients must know 4 m read",
+      "url": "https://gulfnews.com/business/markets/taking-ozempic-or-wegovy-new-eye-warning-raises-questions-in-uae-1.500743835",
+      "item_id": "d7cb0341a735f10349aaadd8ead69fd85b6e906c"
+    },
+    "cd3c2dcf20468ab032862ec29d4d6355cd13f038": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "manga to moby dick readers sharjah book finds 3 m read",
+      "url": "https://gulfnews.com/entertainment/books/from-manga-to-moby-dick-what-readers-bought-at-sharjah-book-fair-1.500743830",
+      "item_id": "a7bc4052e6c3824d63053266d52e8a642b508347"
+    },
+    "fdbd7ac5e4237e33d9418a117652cd1a51730891": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae issues nationwide weather alert over thunderstorms 2 m read",
+      "url": "https://gulfnews.com/uae/weather/uae-issues-nationwide-weather-alert-as-thunderstorms-loom-1.500743790",
+      "item_id": "a11ef53f487dfafb0ca10079a247161c01b7a53b"
+    },
+    "14219fd2e284c9aa9619d00fcba6569885de7655": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "dubai is getting a first of its kind light and laser show this dsf",
+      "url": "https://whatson.ae/2026/11/dubai-is-getting-a-first-of-its-kind-light-and-laser-show-this-dsf",
+      "item_id": "773417517f2382d9ac0afa3d03524f7eabcc0ed3"
+    },
+    "03a83f90c47acbf119487744d8aa6136d3849f0c": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "whatson_ae_feed",
+      "title_key": "reservations are now open for lpm sur mer dubai",
+      "url": "https://whatson.ae/2026/11/an-lpm-beach-concept-is-opening-in-dubai-this-november",
+      "item_id": "916dff727c0552339267487baae6b2ddbb6275f5"
+    },
+    "38f1b1824ced747aca3f5d2b3278a2184f5d0936": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "новый главный",
+      "url": "https://t.me/uaegeneralnews/18167",
+      "item_id": "5a8610f87823de95b3c72a6777e1b2ae1503bc2f"
+    },
+    "02462e29ac7742c9932d4606042994b0795c0862": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_uaegeneralnews",
+      "title_key": "в москве отметили 55 летие дипотношений рф и оаэ",
+      "url": "https://t.me/uaegeneralnews/18166",
+      "item_id": "60d94aaa9a5c99f75cf59b15f6c5cdecb4bbc7d1"
+    },
+    "be2a614be8c8a428b21513fc910ac6d63b9ad4dd": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "жителей оаэ призвали не смешивать химикаты",
+      "url": "https://t.me/russianemiratesnews/28714",
+      "item_id": "1cd5da520a566ebda33020b39e49f620e2d0abbb"
+    },
+    "7ef7bbb92027f5eabd123eb41371c7df411bd215": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "в дубае открыли мозаичный тоннель",
+      "url": "https://t.me/russianemiratesnews/28713",
+      "item_id": "47090469ae7f6e46aa68a49524ebaa31c33dc009"
+    },
+    "5d270ac0a2dc6f21805f3898b4cdea16c59d955f": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "для жителей оаэ упростили въезд в европу",
+      "url": "https://t.me/russianemiratesnews/28712",
+      "item_id": "977e423e6a1718708a022102bc4d97fab679b1e8"
+    },
+    "bf4a0392c081c382673b91db7b44168ef5577c37": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "на севере оаэ анонсировали 11 часовой новогодний фестиваль",
+      "url": "https://t.me/russianemiratesnews/28709",
+      "item_id": "807cc4ff608d5886e4223b291cd881048ecc031f"
+    },
+    "c434eeb7322739cf47c49806f055171f297bf09b": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "торги christie s вошли в историю аукционов абу даби",
+      "url": "https://t.me/russianemiratesnews/28707",
+      "item_id": "6127cfbe42dc7d79ea77310036e8f00440c95c38"
+    },
+    "b4a576241614eb00af543213d8276137fee17e8f": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "беспилотное такси остановилось посреди дороги",
+      "url": "https://t.me/dubaimap/14936",
+      "item_id": "9319626d52e6242399a3253417dbbe44cf559b59"
+    },
+    "4b9e7ad24c6b0aaa1e0bec9fb8e08a807d56da54": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "84 опрошенных жителей оаэ считают дубай наиболее привлекательным городом для долгосрочных инвестиций предпочитая",
+      "url": "https://t.me/dubaimap/14935",
+      "item_id": "f0a617687f5ddfb08aa748cad71d8c1430dcffb7"
+    },
+    "b84b11e6eee52dad7ff2949f4df4e3305cc71827": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "в дубае ресторан на alserkal avenue до 30 ноября предлагает бесплатную еду в обмен на пройденные шаги",
+      "url": "https://t.me/dubaimap/14934",
+      "item_id": "d79ff1bc414213ff9175c01c31010e5c06a13bff"
+    },
+    "d9639d161f88005e4e278735fc2028eeb3a97b07": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_ruble_uae",
+      "title_key": "лувру абу даби 9 лет",
+      "url": "https://t.me/ruble_uae/1075",
+      "item_id": "fc06cd26d2f369ecac7936a15f23dcdfc8e293ff"
+    },
+    "e420bb8a232c73bdc591249645978cde6aeadb95": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_kstati_dubai",
+      "title_key": "власти дубая разрабатывают пдд для летающих автомобилей",
+      "url": "https://t.me/kstati_dubai/2940",
+      "item_id": "0520b184f6c1d02654936c4f88add2a9513568b4"
+    },
+    "53dc56f6ba48dd27a611fe36c999dddb522d8daf": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "в абу даби завершились переговоры россии сша и украины о чём договорились",
+      "url": "https://t.me/dubai_zdorovo/7025",
+      "item_id": "0c49356218cc569cef247a5cb4fc3b2b5ed3e224"
+    },
+    "5f79c40cbe737bb3a2ac19aab07e36add29de1fd": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "в рас эль хайме открыли 7 пляжей после трёх недель закрытия из за разлива нефти",
+      "url": "https://t.me/dubai_media/5882",
+      "item_id": "b4c77c3fa727dca3642e7d1ee0be341dab030250"
+    },
+    "86b5131df7f3e5cd9894db187d785478eb8045c5": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "в абу даби начался второй день трехсторонних переговоров россии сша и украины dubai_media",
+      "url": "https://t.me/dubai_media/5880",
+      "item_id": "c0effda11a6963d12363d2e1396751606cef6356"
+    },
+    "649a436d0e014d69a5c360667e9442e71ee19081": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "британская сеть премиальных супермаркетов waitrose откроет новый магазин в дубае",
+      "url": "https://t.me/dubai_media/5879",
+      "item_id": "dfa2fa636d1a4b45f66826910bba638366573784"
+    },
+    "7cf93df950858d23b32a6ffbd4f2dcecc92d4a9d": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "tesla открыла бронирование нового roadster в эмиратах компания обещает невероятные характеристики разгон до 100 км ч",
+      "url": "https://t.me/dubaihighlights/6484",
+      "item_id": "a24f3a0de5ecaae79accad0c3f5fd534680c7317"
+    },
+    "fc619e6e2914212ec0819d460bf98ffc9fdedb62": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "соскучились по любимым блюдам домашней кухни теперь за ними можно отправиться в dubai mall",
+      "url": "https://t.me/dubaihighlights/6478",
+      "item_id": "ee96304f22ca12f14fb291204add6034c14460e5"
+    },
+    "8bf1aaf0fec30a9bcdddf9427ec810f087e93bf5": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_dubaihighlights",
+      "title_key": "российская делегация выступит перед прессой в абу даби сегодня днём представители россии планируют прокомментировать",
+      "url": "https://t.me/dubaihighlights/6477",
+      "item_id": "dde8ac7ea22d09b04613f8ef4641f97050ab0730"
+    },
+    "633232c578d30500ae769db057e51de9b2a4401a": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_dubai_pike",
+      "title_key": "вау мы увидели шейха мухаммеда бин рашида аль мактума правителя дубая",
+      "url": "https://t.me/dubai_pike/9409",
+      "item_id": "c9f25f638159d9bc797d05204ca676b02672ea17"
+    },
+    "294f6648ca2d87fe1c5913b09bc3440817b256e9": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_dubai_pike",
+      "title_key": "дубайская щука pinned лучшие посты октября новое место итальянский ресторан rocambolesco в uptown dubai терраса",
+      "url": "https://t.me/dubai_pike/9408",
+      "item_id": "6b6699dfc8381bf2b51b650f98f71fa14bbe1f6f"
+    },
+    "7c64746decf56f7056510c5c99372569bfdffff0": {
+      "first_seen_at": "2026-11-11T15:58:22.324472+00:00",
+      "source_id": "tg_dubai_pike",
+      "title_key": "в paus club новая коллаба с lancaster и sephora и внимание при заказе из специального меню первые 30 гостей получают",
+      "url": "https://t.me/dubai_pike/9399",
+      "item_id": "bae9c400efebc1be4f89456e3c189702b344ebeb"
     }
   }
 }

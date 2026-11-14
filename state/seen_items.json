@@ -32497,21 +32497,21 @@
     },
     "3817ca88946418c156d667d5af404df3e8c1e79b": {
       "first_seen_at": "2026-11-13T16:00:12.170635+00:00",
-      "source_id": "platinumlist_arena_events",
+      "source_id": "platinumlist_dubai_calendar",
       "title_key": "winter city disney present once upon a holiday",
       "url": "https://dubai.platinumlist.net/event-tickets/winter-city",
       "item_id": "d84f2486d2b95561c859e28127b3e5a3a46b061f"
     },
     "682bfb41001722e6301bcf162bf47a3d57a53477": {
       "first_seen_at": "2026-11-13T16:00:12.170635+00:00",
-      "source_id": "platinumlist_arena_events",
+      "source_id": "platinumlist_dubai_calendar",
       "title_key": "mahmut orhan at ushuaïa dubai harbour experience",
       "url": "https://dubai.platinumlist.net/event-tickets/108523/mahmut-orhan-at-ushuaia-dubai-harbour-experience",
       "item_id": "2ba7cdaf7b0f72ee0bd14dcad3762b7777dc2e21"
     },
     "119e60bd2510e1047ace0b0169e6b5db7b9b5ef2": {
       "first_seen_at": "2026-11-13T16:00:12.170635+00:00",
-      "source_id": "platinumlist_arena_events",
+      "source_id": "platinumlist_dubai_calendar",
       "title_key": "argy presents neworld new year s eve at ushuaïa dubai harbour experience",
       "url": "https://dubai.platinumlist.net/event-tickets/108451/argy-presents-neworld-new-years-eve-at-ushuaia-dubai-harbour-experience",
       "item_id": "95b3f67b2978364257a29e5ccdb2e4f6dd32cfa3"
@@ -32938,14 +32938,14 @@
     },
     "14e01f018245b2c08c56b7e12ea2ef6f3ac20370": {
       "first_seen_at": "2026-11-14T09:49:11.491216+00:00",
-      "source_id": "platinumlist_arena_events",
+      "source_id": "platinumlist_dubai_calendar",
       "title_key": "campaign agency of the year middle east 2026 in dubai",
       "url": "https://dubai.platinumlist.net/event-tickets/107185/campaign-agency-of-the-year-middle-east",
       "item_id": "aecd870410708ef50af6b25b2c62d3a7fe372bb7"
     },
     "3596f4e7b81d8bb1e09f45c8ee283cb63c15cb41": {
       "first_seen_at": "2026-11-14T09:49:11.491216+00:00",
-      "source_id": "platinumlist_arena_events",
+      "source_id": "platinumlist_dubai_calendar",
       "title_key": "kumar sanu live in concert in dubai",
       "url": "https://dubai.platinumlist.net/event-tickets/109713/kumar-sanu",
       "item_id": "11524a8ce65fe70a23d487d0e6562f2a10477ff3"
@@ -33222,6 +33222,104 @@
       "title_key": "от первого поднятия флага до грандиозных шоу как оаэ отмечали день единства на протяжении 55 лет",
       "url": "https://t.me/dubaihighlights/6498",
       "item_id": "6acf1cdb7d30fa6e3d5a5fffe0f598b163aecb12"
+    },
+    "1fb5973f4fb67ba5c8cd8fa0abd189ecaa1ddac1": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae mozambique trade hits 2 5b as cepa talks conclude non oil trade rose 49 in the first nine months of 2026 opening the way for deeper ties just now 2 m read",
+      "url": "https://gulfnews.com/business/economy/uae-mozambique-trade-hits-25b-as-cepa-talks-conclude-1.500747510",
+      "item_id": "308daa9069aec34d2b012d2c51521ca8a01a2c7b"
+    },
+    "0ca9241608603d9d66d288b4c002f5ed11d5a35b": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae leaders review development plans at dubai meeting 1h ago 1 m read",
+      "url": "https://gulfnews.com/uae/government/uae-president-dubai-ruler-discuss-plans-for-nations-growth-1.500747575",
+      "item_id": "005e4d6676de3cffae91b858f46a2f73d854b4a8"
+    },
+    "0ff3d132c62a02cb7ad2ced2a4cdae18a732a8dc": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "fujairah crash how ambulance crews respond to tragedy 1h ago 1 m read",
+      "url": "https://gulfnews.com/uae/transport/fujairah-crash-national-ambulance-reveals-challenges-faced-by-emergency-crews-1.500747580",
+      "item_id": "06171303a6681e85214281e79c62c0e14fec6e2f"
+    },
+    "2b4cfa4b3a7749cecdf78d6a31d310ad3796583e": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae diabetes cases could hit 1 9 million by 2050 mohap 1h ago 2 m read",
+      "url": "https://gulfnews.com/uae/health/uae-diabetes-cases-could-reach-19-million-by-2050-costing-economy-dh9-billion-annually-1.500747538",
+      "item_id": "883fb137058d932937da0a6da4a3474b2990a14a"
+    },
+    "4e60074a603dff6956ff3baf2b532d5c418ab5b9": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "middle east war 7 key updates for uae residents 3 m read",
+      "url": "https://gulfnews.com/uae/middle-east-war-7-things-uae-residents-need-to-know-tonight-november-14-1.500747461",
+      "item_id": "890278b8fcbcca7bb24308f81315513e05db494b"
+    },
+    "3afb851e77661144ef628766f4197ead2e38674a": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "how a lebanese expat gives back through uae adventures 5 m read",
+      "url": "https://gulfnews.com/uae/people/how-this-lebanese-expat-supports-women-and-underprivileged-children-through-adventures-in-uae-1.500747452",
+      "item_id": "e000d15829430be734768f2e20fb8c7676c20fbf"
+    },
+    "e8468bee631935a9b07c49977503c51ae98cbe95": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "fujairah crash crown prince consoles indian family 2 m read",
+      "url": "https://gulfnews.com/uae/transport/fujairah-crown-prince-visits-indian-family-that-lost-three-members-in-accident-1.500747410",
+      "item_id": "9e83f2364ca55086b2e394793f61213f48659537"
+    },
+    "74e86e37132b47425535d5edd5a39b4c65cdfe86": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "sheikh theyab offers condolences after fujairah tragedy 2 m read",
+      "url": "https://gulfnews.com/uae/sheikh-theyab-bin-mohamed-offers-condolences-to-families-of-fujairah-crash-victims-1.500747421",
+      "item_id": "6e080be43514d5ba89cd294a9146acf28e3995a9"
+    },
+    "895597a48fe96c0834f7055413f76cccfaf29237": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae leaders mourn sheikha intisar al sabah 1 m read",
+      "url": "https://gulfnews.com/uae/government/uae-leaders-condole-with-emir-of-kuwait-over-death-of-sheikha-intisar-jassem-mohammed-al-malik-al-sabah-1.500747165",
+      "item_id": "d54e1d35a7ae6f337c5e7cbe39c0b93618e20720"
+    },
+    "5dbe53a3c05b418416939bbc865216b976a15fce": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae denounces israeli airstrikes on gaza hospital 1 m read",
+      "url": "https://gulfnews.com/uae/government/c392jg5-uae-strongly-condemns-targeting-nasser-medical-1.500747374",
+      "item_id": "b2a0b99145c8a004288a91147c8796c2baf1038b"
+    },
+    "d97cd896a28899866833a4b5d9ff59536b8cd297": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae mozambique seek stronger trade and investment ties 2 m read",
+      "url": "https://gulfnews.com/uae/government/uae-and-mozambique-presidents-explore-ways-to-strengthen-bilateral-cooperation-1.500747379",
+      "item_id": "2c421a7b74715045dc69f14edf0a032c809cb3dd"
+    },
+    "c3254793454416aa493c910ca2307749eeaf6d8a": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "happy b day fazza every picture has a story to tell 4 m read",
+      "url": "https://gulfnews.com/uae/every-picture-has-a-story-celebrating-sheikh-hamdans-birthday-through-the-candid-moments-that-show-who-he-truly-is-1.500747247",
+      "item_id": "4765bf1882c7558ee5cf25f68634c4211cbe847e"
+    },
+    "2f1135cce3b7966c25c72ec1a41bcfac06c3283b": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "tg_dubaimap",
+      "title_key": "21 и 22 ноября в дубае пройдёт шестой фестиваль icons of porsche",
+      "url": "https://t.me/dubaimap/14958",
+      "item_id": "bbea99ff4198a0026a562177d3a3c971787f6ee0"
+    },
+    "e37938543687e70a3e8e6c7039db10bff9d4102b": {
+      "first_seen_at": "2026-11-14T17:35:04.337607+00:00",
+      "source_id": "tg_dubai_zdorovo",
+      "title_key": "клевер van cleef за 75 дирхамов",
+      "url": "https://t.me/dubai_zdorovo/7041",
+      "item_id": "1f8d23bfe0d50fb3bd77489cb3b3f0962de202c5"
     }
   }
 }

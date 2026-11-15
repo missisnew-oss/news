@@ -32763,7 +32763,7 @@
     },
     "0c8a793cf309f97146ca3f953bdb11f466eedb84": {
       "first_seen_at": "2026-11-15T15:29:56.343906+00:00",
-      "source_id": "platinumlist_arena_events",
+      "source_id": "platinumlist_dubai_calendar",
       "title_key": "deep dive dubai surface snorkeling experience",
       "url": "https://dubai.platinumlist.net/event-tickets/deep-dive-dubai",
       "item_id": "554a8a310f8eff4b2760aff89a4d0f8c74089034"
@@ -32858,6 +32858,76 @@
       "title_key": "в оаэ объявили 5 дневные выходные в декабре",
       "url": "https://t.me/dubaihighlights/6507",
       "item_id": "81db9140a08a021eb64ee78913d018ea6e962f7a"
+    },
+    "b467c599ef910593ee430a8a643efb66f6869366": {
+      "first_seen_at": "2026-11-15T18:23:27.897829+00:00",
+      "source_id": "zawya_real_estate",
+      "title_key": "alshaya group opens 15 brand stores at aventura mall kuwait s newest shopping destination",
+      "url": "https://www.zawya.com/en/press-release/companies-news/alshaya-group-opens-15-brand-stores-at-aventura-mall-kuwaits-newest-shopping-destination-2277541",
+      "item_id": "89e21527536a2e14422d9789062759033c10aa0d"
+    },
+    "516f15d383dd75ee094909e9e253aed74883ca2d": {
+      "first_seen_at": "2026-11-15T18:23:27.897829+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "hamdan bin mohamed condoles death of abdullah hamad sheikh hamdan offers solace to grieving family in al qarayyah area of fujairah just now 1 m read",
+      "url": "https://gulfnews.com/uae/hamdan-bin-mohamed-bin-zayed-offers-condolences-on-passing-of-abdullah-hamad-al-hafiti-his-wife-1.500748417",
+      "item_id": "304fa3a4d130b4a0b73b195d0e12b92db20949a7"
+    },
+    "1c492e04d6ca48aa8c849032fd2c2c54ff81ffd3": {
+      "first_seen_at": "2026-11-15T18:23:27.897829+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "where to see the leonids meteor shower this week in uae 9m ago 2 m read",
+      "url": "https://gulfnews.com/uae/dubai/the-leonids-meteor-shower-is-happening-this-week-heres-where-you-can-catch-it-in-the-uae-1.500748412",
+      "item_id": "a30f8fb3be68177ea0f72e616adbe607590de972"
+    },
+    "08619bef0725e9f0ae753121cc52fcc2031a274e": {
+      "first_seen_at": "2026-11-15T18:23:27.897829+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "tyrrell hatton crowned winner of dp world championship 1h ago 2 m read",
+      "url": "https://gulfnews.com/uae/dubai/mansoor-bin-mohammed-crowns-tyrrell-hatton-winner-of-dp-world-tour-championship-in-dubai-1.500748383",
+      "item_id": "0d71bd6f68c6556cfd78127d807775c20e33076f"
+    },
+    "88e12d850e027ae4b588d5ffbb08b9aea82584fb": {
+      "first_seen_at": "2026-11-15T18:23:27.897829+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "middle east war 4 things uae residents need to know 2h ago 2 m read",
+      "url": "https://gulfnews.com/uae/middle-east-war-things-uae-residents-need-to-know-today-nov-15-2026-1.500748341",
+      "item_id": "b4071073bd1206df1f9b67229107ea4443f07ce5"
+    },
+    "ace2ef2169053f28191c9c1f0a3069f2626d67ac": {
+      "first_seen_at": "2026-11-15T18:23:27.897829+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "fujairah crash visiting indian boy to be buried in uae 2 m read",
+      "url": "https://gulfnews.com/uae/fujairah-accident-funeral-of-fourth-indian-victim-13-year-old-boy-visiting-from-gujarat-to-be-held-in-uae-1.500748300",
+      "item_id": "cf4c7d988d50898b3a14d2fa875fbc5d120f4c36"
+    },
+    "38e480ae89243868023385540ae6de101062ae23": {
+      "first_seen_at": "2026-11-15T18:23:27.897829+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai police reports near perfect public safety scores 2 m read",
+      "url": "https://gulfnews.com/uae/how-safe-is-dubai-police-reveal-999-daytime-safety-perception-score-1.500748298",
+      "item_id": "bf8c326867ed1b2bd3a45a1aed63d59d0df2ebf0"
+    },
+    "57ed947877ae146716a5719c1e3088dbe40257a0": {
+      "first_seen_at": "2026-11-15T18:23:27.897829+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "erth dubai unveils first ten books in 100 book project 3 m read",
+      "url": "https://gulfnews.com/uae/dubai/erth-dubai-unveils-first-ten-books-documenting-lives-of-dubais-community-1.500748276",
+      "item_id": "7db1190e5c72a9b60e7f045fd21ae2ca853b8e6c"
+    },
+    "02ab5dcb8827fb447cd89f678329ae6f4f751271": {
+      "first_seen_at": "2026-11-15T18:23:27.897829+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai s hope makers draws 21 000 entries in three weeks 3 m read",
+      "url": "https://gulfnews.com/uae/dh1-million-hope-makers-award-attracts-over-21000-entries-in-three-weeks-1.500748200",
+      "item_id": "66fa2eaef8a453c10afa0a81e2cde5a0bdcc29c3"
+    },
+    "639d6a946ee31b54e4e43ca8184749940ca9c9fe": {
+      "first_seen_at": "2026-11-15T18:23:27.897829+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "в дубае можно выиграть кроссовки adidas выполнив 99 берпи за 4 минуты",
+      "url": "https://t.me/dubai_media/5917",
+      "item_id": "d247fbefbdc5ef2d80e688b08948bae4bf3b8244"
     }
   }
 }

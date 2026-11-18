@@ -1,76 +1,6 @@
 {
   "version": 1,
   "items": {
-    "c9444ca10a3f7767ff0d18ac71239c62972a19de": {
-      "first_seen_at": "2026-10-04T18:12:17.839129+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "uae sends condolences to kenya after deadly road crash mofa offers condolences to families of victims and wishes injured a speedy recovery 33m ago 1 m read",
-      "url": "https://gulfnews.com/uae/government/uae-expresses-solidarity-with-kenya-after-deadly-road-crash-1.500698210",
-      "item_id": "8f9558133596146e86cc3948ec13aea35983179c"
-    },
-    "39e8d9d9e4331b2bbb345537497bee2e6ef31014": {
-      "first_seen_at": "2026-10-04T18:12:17.839129+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "sheikh ahmed attends saudi national day celebrations 35m ago 1 m read",
-      "url": "https://gulfnews.com/uae/ahmed-bin-mohammed-attends-saudi-national-day-celebrations-in-dubai-1.500698200",
-      "item_id": "91032ad15b7776aa43143953952a1b53121ba0d5"
-    },
-    "7650c38586477022d0c4e1640dc5bb915465e12b": {
-      "first_seen_at": "2026-10-04T18:12:17.839129+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "baps mandir prays for hero pilot captain smit machchhar 1h ago 3 m read",
-      "url": "https://gulfnews.com/uae/abu-dhabis-baps-hindu-mandir-prays-for-flydubai-hero-pilot-captain-smit-machchhar-1.500698149",
-      "item_id": "262657cbab69bd4b213dc4d4a88489e22c54646e"
-    },
-    "561565caeaa4622d27522db3ee32bdb25fb9005c": {
-      "first_seen_at": "2026-10-04T18:12:17.839129+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "beloved uae theatre veteran and educator eric dury dies 1h ago 4 m read",
-      "url": "https://gulfnews.com/uae/beloved-uae-theatre-veteran-and-educator-eric-dury-dies-1.500698147",
-      "item_id": "4b05db0f491b2821849bf39dc9370be6a12b2baa"
-    },
-    "558eb4263617738fc2d8ed31ba366b728c906f3d": {
-      "first_seen_at": "2026-10-04T18:12:17.839129+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "us iran war what uae residents need to know today 2h ago 3 m read",
-      "url": "https://gulfnews.com/uae/us-iran-war-what-uae-residents-need-to-know-today-october-4-2026-1.500698130",
-      "item_id": "ca45ddb10ca9d102341c97d35b64f7314de8e975"
-    },
-    "3fdf95b43342dc33044326e81fbd97794a12aa78": {
-      "first_seen_at": "2026-10-04T18:12:17.839129+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "sheikh mohamed meloni discuss ties regional issues 2h ago 1 m read",
-      "url": "https://gulfnews.com/uae/government/sheikh-mohamed-meloni-discuss-stronger-uae-italy-ties-1.500698121",
-      "item_id": "39b1e56ec79754565f3c789463d1e88f6121c62f"
-    },
-    "e0c096c67a22bd5d430a9e245d531bb30f79899f": {
-      "first_seen_at": "2026-10-04T18:12:17.839129+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "abu dhabi pushes ai from pilots to real world use 7 m read",
-      "url": "https://gulfnews.com/uae/government/abu-dhabi-puts-ai-to-work-as-global-race-shifts-from-hype-to-deployment-1.500698086",
-      "item_id": "f5b4aa9fee2b4a90b4254089e6695e199da62636"
-    },
-    "ae442e9a20f0edcd5cd36a784a335e4dd590ed96": {
-      "first_seen_at": "2026-10-04T18:12:17.839129+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "uae fan flights sell out in 10 min for gulf cup final 1 m read",
-      "url": "https://gulfnews.com/sport/football/uae-fan-flights-sell-out-in-under-10-minutes-for-gulf-cup-final-against-saudi-arabia-1.500698037",
-      "item_id": "89d66e8e7e4069a31b3fa87f67165be406399142"
-    },
-    "986be8493a9574424341d14b0fc948c354b66d08": {
-      "first_seen_at": "2026-10-04T18:12:17.839129+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "abu dhabi museum credits teachers for shaping learning 2 m read",
-      "url": "https://gulfnews.com/uae/abu-dhabi/zayed-national-museum-celebrates-teachers-role-in-shaping-uaes-heritage-education-1.500698000",
-      "item_id": "18eae8111076aa0c0831c27dece1b5c5dda52c44"
-    },
-    "282842edaecb9cd205dd6d8836f6cc4dad4fc2d1": {
-      "first_seen_at": "2026-10-04T18:12:17.839129+00:00",
-      "source_id": "gulf_news_uae",
-      "title_key": "how ai is transforming education for uae students 5 m read",
-      "url": "https://gulfnews.com/uae/education/how-ai-is-changing-what-uae-students-must-learn-1.500697864",
-      "item_id": "b98379b10ee7b937be048127f64dff0f5fcf8d79"
-    },
     "e7746b5683ff1380084713de96955791f1c30c2f": {
       "first_seen_at": "2026-10-05T03:12:21.763929+00:00",
       "source_id": "zawya_real_estate",
@@ -33243,6 +33173,167 @@
       "title_key": "сохраняйте место для эстетичного ужина побывали в madame li паназиатском ресторане с китайской и юго восточной",
       "url": "https://t.me/dubai_pike/9459",
       "item_id": "7073e56cdd21ccfbe01453b7a36d4de95cc7faa0"
+    },
+    "45453ecdf064866b6a192a11b3c167f0e7a14117": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae 96 feel safe walking alone at night survey finds equal safety perceptions among men and women across the country 34m ago 4 m read",
+      "url": "https://gulfnews.com/uae/government/uae-ranks-worlds-safest-for-walking-alone-at-night-gallup-2026-report-finds-1.500752766",
+      "item_id": "65bf1f24468e1f02ca0831bbdf4bde274c3e5713"
+    },
+    "ddd6bec13aafbda1f1771f35aebaa569b896ce07": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "watch it s raining in fujairah ras al khaimah 1h ago 2 m read",
+      "url": "https://gulfnews.com/uae/weather/watch-its-raining-in-fujairah-ras-al-khaimah-1.500752314",
+      "item_id": "cdba7d85859f33d8224c442af0a2b3c720df29e6"
+    },
+    "09d415706350c3c6081fb4024eb619279c63430d": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dh30m uae lottery did your numbers bring you luck 1h ago 1 m read",
+      "url": "https://gulfnews.com/uae/dh30m-uae-lottery-did-your-numbers-bring-you-luck-in-the-latest-draw-1.500752423",
+      "item_id": "77f5d782aaf28c7c319d163376be55d64ed38870"
+    },
+    "81c0b7afbf4998ee8c5a57a24c73b3bf470a7fe8": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae expresses solidarity with jordan over copter crash 2h ago 1 m read",
+      "url": "https://gulfnews.com/uae/uae-expresses-solidarity-with-jordan-over-helicopter-crash-1.500752671",
+      "item_id": "842bfbd2532191915780c700f0ae7d477a788aa3"
+    },
+    "1ad2630fd161142b5a7b9da6741ee56ba5ea0a1b": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai launches dh325m drive to support cancer patients 2h ago 2 m read",
+      "url": "https://gulfnews.com/uae/sheikh-hamdan-launches-dubais-dh325-million-seed-of-hope-campaign-to-support-cancer-patients-1.500752670",
+      "item_id": "e38f81cd4da151c2f49b67b5f2e8c04e41ae6bb3"
+    },
+    "0e81b3545c12480b9789bb416d2dd953fc7633a5": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai launches city ai agent to revolutionise services 4 m read",
+      "url": "https://gulfnews.com/uae/dubai-launches-city-ai-agent-to-understand-residents-needs-and-revolutionise-services-1.500752633",
+      "item_id": "902c68c93ce586166e97bb27dbbc0a7cff0d28a1"
+    },
+    "5270c4c38c330beef75034e0baac3843fb829e82": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "525hp defender joins dubai police luxury patrol fleet 2 m read",
+      "url": "https://gulfnews.com/uae/dubai/dubai-police-add-240kmh-land-rover-defender-to-patrol-fleet-1.500752476",
+      "item_id": "fc80de25d653a5a52809efb1b991cba55132e89c"
+    },
+    "3558845c6f77bffdccdc44f1c6b4e16f3f26ad0f": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae warns of fake domestic worker recruitment scams 2 m read",
+      "url": "https://gulfnews.com/uae/uae-warns-against-fake-domestic-worker-recruitment-accounts-1.500752571",
+      "item_id": "ef4639a0acdeb5bf4e226d366d13dee1ecd6d6af"
+    },
+    "6f4e076d7b8bc18052365c54653aec81621a845b": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "global village offers free entry to 4 000 omanis 1 m read",
+      "url": "https://gulfnews.com/uae/global-village-offers-free-entry-to-4000-omanis-for-sultanates-national-day-1.500752606",
+      "item_id": "a4f14ad124bbca6bd0ef3b831514e85d95f06130"
+    },
+    "9f0667c7c78a12c0ed29f5605c70f5b1f4d1e6d6": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "dubai invites innovators to test 10 projects in 90 days 3 m read",
+      "url": "https://gulfnews.com/uae/dubai-calls-on-global-innovators-to-turn-37-city-challenges-into-10-projects-in-90-days-1.500752544",
+      "item_id": "ad6cc1dff51441e8d08f3c6b56eb746077433a49"
+    },
+    "059f5ad011bad455152ce96526755b2c3848b527": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "uae exporters must stand out to win overseas expert 3 m read",
+      "url": "https://gulfnews.com/uae/abu-dhabi/uae-exporters-must-stand-out-to-win-overseas-says-orbitworks-executive-1.500752486",
+      "item_id": "27aee7358885d7cec5e4ae14a87e3b25fac24356"
+    },
+    "70690d2f5299e9ed6bbf18b466edb8194dcfe8ba": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "abu dhabi s mbzuai launches global art call 2 m read",
+      "url": "https://gulfnews.com/uae/abu-dhabi/abu-dhabis-mbzuai-launches-250000-global-art-call-ahead-of-frieze-abu-dhabi-1.500752450",
+      "item_id": "0e617b240039652c3ad8bac8070d261e21319e12"
+    },
+    "96c506a2a537f36b9706541e2dcc1aa0b8b46f6b": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "юлия подгорная и unique persona приняли в дубае участников the iconic",
+      "url": "https://t.me/russianemiratesnews/28837",
+      "item_id": "b262de6aea3fe570e8d22ba7400214d677677dbb"
+    },
+    "b70f56d9d8f7b77827b8ddb7dfc4b5a50ba8b064": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "два жилых района абу даби получили 12 новых парков",
+      "url": "https://t.me/russianemiratesnews/28834",
+      "item_id": "24e656c030ef87c5a80c29954582538813458777"
+    },
+    "a43aa77966576bc1d74cedaf2e58a4044fa994f7": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "за качеством блюд в ресторанах дубая будет следить ии",
+      "url": "https://t.me/russianemiratesnews/28833",
+      "item_id": "de760ed97ddcf8cc3fca03f087863691da51764a"
+    },
+    "01426232d06a6e44b6081a51192dab174611b6da": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "дубайская опера выпустила предупреждение о мошенничестве",
+      "url": "https://t.me/russianemiratesnews/28832",
+      "item_id": "f13a661f31127121c565d8bc3036088d90b3e462"
+    },
+    "7bc78f81bf315bc92308930912933821b9e7dc47": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "в оаэ запускают первый отель сети six senses",
+      "url": "https://t.me/russianemiratesnews/28830",
+      "item_id": "940e10a3e36b0540f8a9cb0132388942714447a4"
+    },
+    "9e138d934700f470845b6e5ddb6a7f3fb37746cb": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "население оаэ впервые превысило 12 миллионов человек",
+      "url": "https://t.me/russianemiratesnews/28829",
+      "item_id": "4cd246970b2f943c416d538ddd44e17a61106785"
+    },
+    "0ec5ba33a8ff014647fc819572155597e48a775c": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "россия и оаэ активизируют сотрудничество по линии спецслужб",
+      "url": "https://t.me/russianemiratesnews/28827",
+      "item_id": "2e79f725aaa24c293298c011ea8ea5d04580bb16"
+    },
+    "fedd0790937fff30d5d230613c3ff52bfd264b85": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "жителей оаэ оштрафовали за избиение курьера",
+      "url": "https://t.me/russianemiratesnews/28825",
+      "item_id": "15a09a71fe565a2f0d29d78c00d1287108967008"
+    },
+    "75d38ddbd93613f06414beaf2acbd82feda296db": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "tg_russianemiratesnews",
+      "title_key": "усману нурмагомедову предложили новый контракт после драки в оаэ",
+      "url": "https://t.me/russianemiratesnews/28824",
+      "item_id": "cd164309f7c6ca8769ceb687fb03a0e38a0ab40a"
+    },
+    "8d39fd4c5c48a68810c8074ffa64e92b2be7ccdf": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "в дубае на новый год устроят шоу цирк дю солей у бурдж халифы впервые артисты знаменитого цирка примут участие в",
+      "url": "https://t.me/dubai_media/5948",
+      "item_id": "aa2869bae427565b4d0306591c104289ec628f23"
+    },
+    "2b6f42fa76a3438cd9e6f1cfff0205fbd0fa6002": {
+      "first_seen_at": "2026-11-18T19:52:35.991957+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "беспилотные такси uber появятся в downtown dubai difc и business bay",
+      "url": "https://t.me/dubai_media/5947",
+      "item_id": "c308c874a6d4897c7ad1e265385ec9967805880a"
     }
   }
 }

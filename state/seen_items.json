@@ -32886,6 +32886,41 @@
       "title_key": "собрали главные новости недели от новых проектов и транспортных новинок до праздничных событий которые стоит добавить",
       "url": "https://t.me/dubaihighlights/6547",
       "item_id": "a15df5ef673612a40d8ca6848f5c30e0d3ae20d3"
+    },
+    "85101dfc31678401569d4e4459796b151c6db22c": {
+      "first_seen_at": "2026-11-22T18:57:17.395153+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "kalba stages maritime parade for 55th eid al etihad families and fishermen join maritime celebration of uae unity and national pride 46m ago 2 m read",
+      "url": "https://gulfnews.com/uae/uae-flags-fill-kalba-waters-as-boats-parade-to-mark-55th-eid-al-etihad-1.500757272",
+      "item_id": "d418c2aa53374babfc372774fe576a4bd05e20dd"
+    },
+    "6e6977fb5d3d95038041772fe58738d63bfecf63": {
+      "first_seen_at": "2026-11-22T18:57:17.395153+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "ajman horse auction records over dh10 million in sales 1h ago 1 m read",
+      "url": "https://gulfnews.com/uae/ajman/ajman-arabian-horse-auction-records-over-dh10-million-in-sales-1.500757199",
+      "item_id": "cc3486b19f61fc7e50f9f6c374213e29fa28f8b8"
+    },
+    "76b981603314527ec3505617bef5012ec50c866c": {
+      "first_seen_at": "2026-11-22T18:57:17.395153+00:00",
+      "source_id": "gulf_news_uae",
+      "title_key": "watch indians bring back bigger uae flag at dubai run 4 m read",
+      "url": "https://gulfnews.com/uae/dubai-run-2026-indian-expats-bring-back-giant-uae-flag-this-time-even-bigger-1.500757031",
+      "item_id": "9bfd9485b42be3803073894ef713d81f76d0960e"
+    },
+    "cde646bb10c032442585e18fb2b5d149cc979b30": {
+      "first_seen_at": "2026-11-22T18:57:17.395153+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "в дубае показали новые поезда metro blue line",
+      "url": "https://t.me/dubai_media/5995",
+      "item_id": "0c54d2bdc50c634d1532eeb783b25f8166a40209"
+    },
+    "356f069dab48d7521fbe1e1ffb854f969baf5826": {
+      "first_seen_at": "2026-11-22T18:57:17.395153+00:00",
+      "source_id": "tg_dubai_media",
+      "title_key": "шейх хамдан заявил что люди будут в центре будущего дубая",
+      "url": "https://t.me/dubai_media/5994",
+      "item_id": "595bf588c8c789c3b18b469c455ad78319307782"
     }
   }
 }
